@@ -4,7 +4,7 @@
  * Carlos Eduardo Guimarães da Silva
  */
 
-//% weight=10 color=#004696 icon="\uf121" block="HACKBIT" advanced=false
+//% weight=10 color=#004696 icon="\uf121" block="hackbit" advanced=false
 //% groups=['Motors', 'Sensors', 'Actuators', 'Display', 'Communication']
 namespace hackbit {
     const initRegisterArray: number[] = [
@@ -225,7 +225,7 @@ namespace hackbit {
     //% block="stop both motors"
     //% group="Motors"
     export function motorStop(): void {
-        robotMove(HACKBIT.RobotDirection.Stop, 0)
+        robotMove(hackbit.RobotDirection.Stop, 0)
     }
     /**
      * get distance from ultrasonic range sensor [cm]
