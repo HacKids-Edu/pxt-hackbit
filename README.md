@@ -1,3 +1,14 @@
+# HACKBIT
+Biblioteca para módulos Grove utilizados na placa hack:bit
+
+Library for Grove micro:bit project board
+
+https://www.hackids.com.br
+
+![](icon.png)  
+
+## Exemplos/Samples:
+
 
 > Open this page at [https://hackids-edu.github.io/pxt-hackbit/](https://hackids-edu.github.io/pxt-hackbit/)
 
@@ -29,3 +40,13 @@ This image may take a few minutes to refresh.
 
 * for PXT/microbit
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+
+## License
+
+MIT
+
+Copyright (c) 2020, Hackids Editora Educacional Ltda
+
+## Supported targets
+
+* for PXT/microbit
