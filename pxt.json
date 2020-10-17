@@ -1,13 +1,16 @@
 {
-    "name": "pxt-hackbit",
-    "description": "",
+    "name": "hackbit",
+    "version": "0.0.1",
+    "description": "Grove micro:bit project board",
     "dependencies": {
         "core": "*",
         "radio": "*"
     },
     "files": [
         "main.blocks",
-        "main.ts",
+        "_locales/fr/hackbit-strings.json",
+	    "_locales/fr/hackbit-jsdoc-strings.json",        
+        "hackbit.ts",
         "README.md"
     ],
     "testFiles": [
