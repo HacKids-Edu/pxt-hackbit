@@ -409,7 +409,7 @@ namespace hackbit {
      * @param clkPin value of clk pin number
      * @param dataPin value of data pin number
      */
-    //% blockId=HACKBIT_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
+    //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
     //% group="Display"
     //% weight=60
     export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
@@ -504,7 +504,7 @@ namespace hackbit {
     * Show a 4 digits number on display
     * @param dispData value of number
     */
-    //% blockId=HACKBIT_tm1637_display_number block="show number|%dispData"
+    //% blockId=hackbit_tm1637_display_number block="show number|%dispData"
     //% group="Display"
     //% weight=59
     export function digit_show(dispData: number) {
@@ -572,7 +572,7 @@ namespace hackbit {
      * Set the brightness level of display at from 0 to 7
      * @param level value of brightness light level
      */
-    //% blockId=HACKBIT_tm1637_set_display_level block="brightness level to|%level"
+    //% blockId=hackbit_tm1637_set_display_level block="brightness level to|%level"
     //% level.min=0 level.max=7
     //% group="Display"
     //% weight=58
