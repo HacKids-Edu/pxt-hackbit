@@ -9,9 +9,9 @@
     "files": [
         "main.blocks",
         "_locales/fr/hackbit-strings.json",
-	    "_locales/fr/hackbit-jsdoc-strings.json",        
-        "hackbit.ts",
-        "README.md"
+        "_locales/fr/hackbit-jsdoc-strings.json",
+        "README.md",
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"
