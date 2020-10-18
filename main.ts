@@ -204,7 +204,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="A4_Robot_Driver" advanced=false
     //% speed.defl=75
-    //% group="Motors"
+    //% subcategory=Motors  group="Motors DC" color=#EA5532
     export function motorSpeed(motor: Motors, speed: number): void {
         setSpeed(motor, speed);
         setMotors();
