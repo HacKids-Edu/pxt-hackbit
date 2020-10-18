@@ -2,7 +2,7 @@
  * MakeCode extension for Neopixel 
  * Well known colors for a NeoPixel strip 
  */
-//% color=#1371FF icon="\uf1eb" block="Hackbit Neopixel"
+//% color=#1371FF icon="\uf110" block="Hackbit Neopixel"
 
 enum NeoPixelColors {
     //% block=red
@@ -69,7 +69,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
-        //% parts="Hackbit Neopixel"
+        //% parts="neopixel"
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
