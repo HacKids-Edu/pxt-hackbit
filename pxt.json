@@ -1,7 +1,7 @@
 {
     "name": "hackbit",
     "version": "0.0.1",
-    "description": "Grove micro:bit project board",
+    "description": "Hack:bit - grove micro:bit project board",
     "dependencies": {
         "core": "*",
         "radio": "*"
