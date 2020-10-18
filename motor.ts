@@ -384,6 +384,8 @@ namespace hackibitmotors {
     //% blockId=hackbit_stop_all block="Motor Stop All"
     //% weight=79
     //% blockGap=50
+    //% color=#FF1344 
+
     export function MotorStopAll(): void {
         if (!initialized) {
             initPCA9685()
