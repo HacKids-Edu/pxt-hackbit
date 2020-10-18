@@ -217,6 +217,8 @@ namespace hackibitmotors {
 
     //% blockId=hackbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
     //% weight=90
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF214F icon="\uf1eb"
+
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
             initPCA9685()
