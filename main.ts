@@ -586,7 +586,7 @@ namespace hackbit {
     //% blockId=grove_tm1637_display_bit block="%strip|show single number|%dispData|at digit|%bitAddr"
     //% dispData.min=0 dispData.max=9
     //% bitAddr.min=0 bitAddr.max=3
-    //% advanced=true
+    //% advanced=false
     //% subcategory=Display  group="7-Seg" color=#EA5532    
     export function digit_bit(dispData: number, bitAddr: number) {
         if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
@@ -614,7 +614,7 @@ namespace hackbit {
      */
     //% blockId=grove_tm1637_display_point block="%strip|turn|%point|colon point"
     //% subcategory=Display  group="7-Seg" color=#EA5532    
-    //% advanced=true
+    //% advanced=false
     export function digit_point(point: boolean) {
         digit_pointFlag = point;
 
@@ -629,7 +629,7 @@ namespace hackbit {
      */
     //% blockId=grove_tm1637_display_clear block="%strip|clear"
     //% subcategory=Display  group="7-Seg" color=#EA5532    
-    //% advanced=true
+    //% advanced=false
     export function digit_clear() {
         digit_bit(0x7f, 0x00);
         digit_bit(0x7f, 0x01);
