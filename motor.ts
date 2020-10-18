@@ -160,6 +160,8 @@ namespace hackibitmotors {
     //% weight=100
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory=ServoMotor  group="Servo Motor" color=#FF1344 icon="\uf1eb"
+
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
