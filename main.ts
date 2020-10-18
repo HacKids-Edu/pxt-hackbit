@@ -157,7 +157,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="RobotDriver" advanced=false
     //% speed.defl=75
-    //% subcategory=Motor  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#FF1344 icon="\uf1eb"
     export function robotMove(dir: RobotDirection, speed: number): void {
         setSpeed(Motors.MotorFull, speed);
         switch (dir) {
@@ -200,7 +200,7 @@ namespace hackbit {
     //% block="set %motor| %dir"
     //% parts="RobotDriver" advanced=false
     //% motor.defl=MotorFull
-    //% subcategory=Motor  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#FF1344
     export function motorDir(motor: Motors, dir: MotorDirection): void {
         setDir(motor, dir);
         setMotors();
@@ -217,7 +217,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="A4_Robot_Driver" advanced=false
     //% speed.defl=75
-    //% subcategory=Motor  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#FF1344
     export function motorSpeed(motor: Motors, speed: number): void {
         setSpeed(motor, speed);
         setMotors();
@@ -228,7 +228,7 @@ namespace hackbit {
     */
     //% blockId=RobotDriverRobotStop
     //% block="stop both motors"
-    //% subcategory=Motor  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#FF1344
     export function motorStop(): void {
         robotMove(hackbit.RobotDirection.Stop, 0)
     }
@@ -242,7 +242,7 @@ namespace hackbit {
     //% parts="RobotDriver" advanced=false
     //% angle.shadow="protractorPicker"
     //% angle.defl=90
-    //% subcategory=Motor  group="Servo Motors" color=#EA5532
+    //% subcategory=Motor  group="Servo Motors" color=#FF1344
     export function setServoMotor(pin: AnalogPin, angle: number): void {
         pins.servoWritePin(pin, Math.constrain(angle, 0, 180));
     }
@@ -257,7 +257,7 @@ namespace hackbit {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensor  group="Digital" color=#EA5532
+    //% subcategory=Sensor  group="Digital" color=#1371FF
     export function measureDistanceCentimeter(name: DigitalPin): number {
         let duration = 0;
         let distance = 0;
@@ -277,7 +277,7 @@ namespace hackbit {
     */
     //% blockId=hackbitLineRead
     //% block="line sensor |%pin|"
-    //% subcategory=Sensor  group="Digital" color=#EA5532        
+    //% subcategory=Sensor  group="Digital" color=#1371FF        
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
@@ -287,7 +287,7 @@ namespace hackbit {
     */
     //% blockId=hackbitPotargRead
     //% block="potentiometer |%pin|"
-    //% subcategory=Input  group="Analog" color=#EA5532
+    //% subcategory=Input  group="Analog" color=#851DE8
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
@@ -297,7 +297,7 @@ namespace hackbit {
     */
     //% blockId=hackbitCollisionRead
     //% block="collision sensor |%pin|"
-    //% subcategory=Input  group="Digital" color=#EA5532    
+    //% subcategory=Input  group="Digital" color=#851DE8    
     export function collisionSensor(pin: BP): boolean {
         if (pin)
             return input.buttonIsPressed(Button.A);
@@ -309,7 +309,7 @@ namespace hackbit {
     */
     //% blockId=hackbitButtonRead
     //% block="button |%pin|"
-    //% subcategory=Input  group="Digital" color=#EA5532    
+    //% subcategory=Input  group="Digital" color=#851DE8    
     export function buttonState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
@@ -320,7 +320,7 @@ namespace hackbit {
     //% blockId=hackbitLedSet
     //% block="led |%pin| to |%state|"
     //% state.min=0 state.max=1
-    //% subcategory=Display  group="Digital" color=#EA5532    
+    //% subcategory=Display  group="Digital" color=#F57513    
     export function ledState(pin: DigitalPin, state: OnOff): void {
         pins.digitalWritePin(pin, state);
     }
@@ -495,7 +495,7 @@ namespace hackbit {
      * @param dataPin value of data pin number
      */
     //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     //% weight=60
     export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
         digit_buf = pins.createBuffer(4);
@@ -511,7 +511,7 @@ namespace hackbit {
     * @param dispData value of number
     */
     //% blockId=hackbit_tm1637_display_number block="show number|%dispData"
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     //% weight=59
     export function digit_show(dispData: number) {
         let compare_01: number = dispData % 100;
@@ -581,7 +581,7 @@ namespace hackbit {
     //% blockId=hackbit_tm1637_set_display_level block="brightness level to|%level"
     //% level.min=0 level.max=7
     //% weight=58
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     export function digit_set(level: number) {
         digit_brightnessLevel = level;
 
@@ -600,7 +600,7 @@ namespace hackbit {
     //% dispData.min=0 dispData.max=9
     //% bitAddr.min=0 bitAddr.max=3
     //% advanced=false
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     export function digit_bit(dispData: number, bitAddr: number) {
         if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
             let segData = 0;
@@ -626,7 +626,7 @@ namespace hackbit {
      * @param pointEn value of point switch
      */
     //% blockId=grove_tm1637_display_point block="%strip|turn|%point|colon point"
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     //% advanced=false
     export function digit_point(point: boolean) {
         digit_pointFlag = point;
@@ -641,7 +641,7 @@ namespace hackbit {
      * Clear the display
      */
     //% blockId=grove_tm1637_display_clear block="%strip|clear"
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% subcategory=Display  group="7-Seg" color=#F57513    
     //% advanced=false
     export function digit_clear() {
         digit_bit(0x7f, 0x00);
@@ -659,7 +659,7 @@ namespace hackbit {
     //% rx.defl=SerialPin.P1
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function connectWifi(tx: SerialPin, rx: SerialPin, baudrate: BaudRate, ssid: string, pw: string) {
@@ -684,7 +684,7 @@ namespace hackbit {
     //% block="Upload data to ThingSpeak|URL/IP = %ip|Write API key = %write_api_key|Field 1 = %n1|Field 2 = %n2|Field 3 = %n3|Field 4 = %n4|Field 5 = %n5|Field 6 = %n6|Field 7 = %n7|Field 8 = %n8"
     //% ip.defl=api.thingspeak.com
     //% write_api_key.defl=your_write_api_key
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function connectThingSpeak(ip: string, write_api_key: string, n1: number, n2: number, n3: number, n4: number, n5: number, n6: number, n7: number, n8: number) {
@@ -709,7 +709,7 @@ namespace hackbit {
     */
     //% block="Wait %delay ms"
     //% delay.min=0 delay.defl=5000
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function wait(delay: number) {
@@ -720,7 +720,7 @@ namespace hackbit {
     * Check if ESP8266 successfully connected to Wifi
     */
     //% block="Wifi connected ?"
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function isWifiConnected() {
@@ -731,7 +731,7 @@ namespace hackbit {
     * Check if ESP8266 successfully connected to ThingSpeak
     */
     //% block="ThingSpeak connected ?"
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function isThingSpeakConnected() {
@@ -742,7 +742,7 @@ namespace hackbit {
     * Check if ESP8266 successfully uploaded data to ThingSpeak
     */
     //% block="Last data upload successful ?"
-    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#00F5A9 icon="\uf1eb"    
     //% advanced=false
 
     export function isLastUploadSuccessful() {
