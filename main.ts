@@ -1,7 +1,7 @@
 /**
  * Library for Grove micro:bit project board https://www.hackids.com.br
 */
-//% weight=10 color=#FF1344 icon="\uf135" block="Hackbit" advanced=false
+//% weight=10 color=#FF1344 icon="\uf135"
 
 namespace hackbit {
     const initRegisterArray: number[] = [
@@ -43,7 +43,7 @@ namespace hackbit {
  * Library for Grove micro:bit project board https://www.hackids.com.br
 */
 /** 
-* //% weight=10 color=#FF1344 icon="\uf135" block="Hackbit" advanced=false
+* //% weight=10 color=#FF1344 icon="\uf135"
 **/
 
     export enum MotorDirection {
