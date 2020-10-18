@@ -1,7 +1,8 @@
 /**
  * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/
  */
-//% color=#851DE8 icon="\uf1eb" block="Hackibit ThingSpeak"
+//% color=#851DE8 icon="\uf1eb" block="Hackbit IoT"
+//% subcategory=IoT group="Thingspeak" color=#851DE8
 namespace ESP8266ThingSpeak {
 
     let wifi_connected: boolean = false
