@@ -1,5 +1,5 @@
 /**
- * MakeCode extension for Motor DC, Steep Motor and Servo Motor
+ * MakeCode extension for DC Motor, Steep Motor and Servo Motor
  */
 //% color=#FF1344 icon="\uf085" block="Hackbit Motors"
 
@@ -309,7 +309,7 @@ namespace hackibitmotors {
     //% weight=85
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRun(index: Motors, speed: number): void {
         if (!initialized) {
@@ -348,7 +348,7 @@ namespace hackibitmotors {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
         MotorRun(motor1, speed1);
@@ -365,7 +365,7 @@ namespace hackibitmotors {
     //% weight=81
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
@@ -375,7 +375,7 @@ namespace hackibitmotors {
 
     //% blockId=hackbit_stop block="Motor Stop|%index|"
     //% weight=80
-    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
