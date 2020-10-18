@@ -2,7 +2,6 @@
  * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/
  */
 //% color=#851DE8 icon="\uf1eb" block="Hackbit IoT"
-//% subcategory=IoT group="Thingspeak" color=#851DE8
 namespace ESP8266ThingSpeak {
 
     let wifi_connected: boolean = false
@@ -42,6 +41,7 @@ namespace ESP8266ThingSpeak {
     //% rx.defl=SerialPin.P1
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
+    //% subcategory="Thingspeak" color=#851DE8    
     export function connectWifi(tx: SerialPin, rx: SerialPin, baudrate: BaudRate, ssid: string, pw: string) {
         wifi_connected = false
         thingspeak_connected = false
