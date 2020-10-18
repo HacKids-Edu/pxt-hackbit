@@ -11,7 +11,8 @@
         "_locales/fr/hackbit-strings.json",
         "_locales/fr/hackbit-jsdoc-strings.json",
         "README.md",
-        "main.ts"
+        "main.ts",
+        "thingspeak.ts"
     ],
     "testFiles": [
         "test.ts"
