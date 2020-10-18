@@ -160,7 +160,7 @@ namespace hackibitmotors {
     //% weight=100
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF1344 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
 
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
@@ -181,7 +181,7 @@ namespace hackibitmotors {
     //% weight=99
     //% degree.min=-45 degree.max=225
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF1344 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
     export function GeekServo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -202,7 +202,7 @@ namespace hackibitmotors {
     //% blockGap=50
     //% degree.min=0 degree.max=360
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF1344 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
 
     export function GeekServo2KG(index: Servos, degree: number): void {
         if (!initialized) {
@@ -217,7 +217,7 @@ namespace hackibitmotors {
 
     //% blockId=hackbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
     //% weight=90
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
 
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
@@ -232,7 +232,7 @@ namespace hackibitmotors {
 
     //% blockId=hackbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
     //% weight=90
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
         StepperDegree(index, degree);
@@ -240,7 +240,7 @@ namespace hackibitmotors {
 
     //% blockId=hackbit_stepper_dual block="Dual Stepper(Degree) |M1 %degree1| M2 %degree2"
     //% weight=89
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperDual(degree1: number, degree2: number): void {
         if (!initialized) {
             initPCA9685()
@@ -268,7 +268,7 @@ namespace hackibitmotors {
     */
     //% blockId=hackbit_stpcar_move block="Car Forward|Distance(cm) %distance|Wheel Diameter(mm) %diameter"
     //% weight=88
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
 
     export function StpCarMove(distance: number, diameter: number): void {
         if (!initialized) {
@@ -291,7 +291,7 @@ namespace hackibitmotors {
     //% blockId=hackbit_stpcar_turn block="Car Turn|Degree %turn|Wheel Diameter(mm) %diameter|Track(mm) %track"
     //% weight=87
     //% blockGap=50
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
 
     export function StpCarTurn(turn: number, diameter: number, track: number): void {
         if (!initialized) {
@@ -373,10 +373,10 @@ namespace hackibitmotors {
         MotorRun(index, 0);
     }
 
-
-
     //% blockId=hackbit_stop block="Motor Stop|%index|"
     //% weight=80
+    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
     }
