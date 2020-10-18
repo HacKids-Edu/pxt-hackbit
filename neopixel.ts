@@ -72,7 +72,6 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
-        //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
 
         showColor(rgb: number) {
             rgb = rgb >> 0;
@@ -306,6 +305,8 @@ namespace neopixel {
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
         //% weight=59
         //% parts="neopixel" advanced=true
+        //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
         }
@@ -347,6 +348,8 @@ namespace neopixel {
         //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range
+        //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
         range(start: number, length: number): Strip {
             start = start >> 0;
             length = length >> 0;
@@ -511,6 +514,8 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
+    //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -533,6 +538,8 @@ namespace neopixel {
     //% weight=1
     //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
     //% advanced=true
+    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
