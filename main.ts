@@ -260,6 +260,16 @@ namespace hackbit {
     }
 
     /**
+     * Get line sensor state [0-1]
+    */
+    //% blockId=hackbitLineRead
+    //% block="line sensor |%pin|"
+    //% subcategory=Sensors  group="Digital" color=#EA5532        
+    export function detectline(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
      * Get analog potentiometer value [0-1023]
     */
     //% blockId=hackbitPotargRead
@@ -279,17 +289,6 @@ namespace hackbit {
         if (pin)
             return input.buttonIsPressed(Button.A);
         return input.buttonIsPressed(Button.B);
-    }
-
-    /**
-     * Get line sensor state [0-1]
-    */
-    //% blockId=hackbitLineRead
-    //% block="line sensor |%pin|"
-    //% subcategory=Sensor  group="Digital" color=#EA5532        
-    //% group="Sensors"
-    export function detectline(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -320,9 +319,10 @@ namespace hackbit {
     */
     //% blockId="grovecolorsensorgetcolor" 
     //% block="color %Color"
-    //% subcategory=Sensors  group="IIC" color=#EA5532    
     //% block.loc.fr="Valeur de la couleur %Color du capteur de couleur grove"
     //% jsdoc = "Grab sensor value from grove color sensor"
+    //% subcategory=Sensors  group="IIC" color=#EA5532    
+
     export function color(col: Color): NumberFormat.UInt16BE {
         let nums, red, green, blue, clear: number;
 
@@ -424,7 +424,6 @@ namespace hackbit {
      */
     //% blockId=hackbitGroveGesture
     //% subcategory=Sensors  group="IIC" color=#EA5532    
-    //% group="Sensors"
     export function grove_gesture_reads(): number {
         let data = 0, result = 0;
 
@@ -568,8 +567,8 @@ namespace hackbit {
      */
     //% blockId=hackbit_tm1637_set_display_level block="brightness level to|%level"
     //% level.min=0 level.max=7
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% weight=58
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     export function digit_set(level: number) {
         digit_brightnessLevel = level;
 
@@ -587,8 +586,8 @@ namespace hackbit {
     //% blockId=grove_tm1637_display_bit block="%strip|show single number|%dispData|at digit|%bitAddr"
     //% dispData.min=0 dispData.max=9
     //% bitAddr.min=0 bitAddr.max=3
-    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% advanced=true
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     export function digit_bit(dispData: number, bitAddr: number) {
         if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
             let segData = 0;
