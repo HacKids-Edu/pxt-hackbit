@@ -45,6 +45,7 @@ enum NeoPixelMode {
 //% color=#1371FF icon="\uf110" block="Hackbit Neopixel"
 
 namespace neopixel {
+    let neoStrip: neopixel.Strip;
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
     }
