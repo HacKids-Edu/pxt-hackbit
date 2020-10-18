@@ -134,9 +134,18 @@ namespace hackbit {
     export let digit_pointFlag: boolean;
     export let digit_buf: Buffer;
 
+    /**
+     * Iot ThingSpeak
+    **/
+    
     let wifi_connected: boolean = false
     let thingspeak_connected: boolean = false
     let last_upload_successful: boolean = false
+
+    /**
+     * end Iot ThingSpeak
+    **/
+
 
     /**
      * Control Robot speed [0-100%]
@@ -650,7 +659,7 @@ namespace hackbit {
     //% rx.defl=SerialPin.P1
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function connectWifi(tx: SerialPin, rx: SerialPin, baudrate: BaudRate, ssid: string, pw: string) {
@@ -675,7 +684,7 @@ namespace hackbit {
     //% block="Upload data to ThingSpeak|URL/IP = %ip|Write API key = %write_api_key|Field 1 = %n1|Field 2 = %n2|Field 3 = %n3|Field 4 = %n4|Field 5 = %n5|Field 6 = %n6|Field 7 = %n7|Field 8 = %n8"
     //% ip.defl=api.thingspeak.com
     //% write_api_key.defl=your_write_api_key
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function connectThingSpeak(ip: string, write_api_key: string, n1: number, n2: number, n3: number, n4: number, n5: number, n6: number, n7: number, n8: number) {
@@ -700,7 +709,7 @@ namespace hackbit {
     */
     //% block="Wait %delay ms"
     //% delay.min=0 delay.defl=5000
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function wait(delay: number) {
@@ -711,7 +720,7 @@ namespace hackbit {
     * Check if ESP8266 successfully connected to Wifi
     */
     //% block="Wifi connected ?"
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function isWifiConnected() {
@@ -722,7 +731,7 @@ namespace hackbit {
     * Check if ESP8266 successfully connected to ThingSpeak
     */
     //% block="ThingSpeak connected ?"
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function isThingSpeakConnected() {
@@ -733,7 +742,7 @@ namespace hackbit {
     * Check if ESP8266 successfully uploaded data to ThingSpeak
     */
     //% block="Last data upload successful ?"
-    //% subcategory=WiFi-IoT group="ESP8266 ThingSpeak" color=#009b5b icon="\uf1eb"    
+    //% subcategory=IoT group="ThingSpeak" color=#009b5b icon="\uf1eb"    
     //% advanced=false
 
     export function isLastUploadSuccessful() {
@@ -883,6 +892,10 @@ namespace hackbit {
         paj7620SelectBank(0);
     }
 
+    /**
+     * Iot ThingSpeak
+    **/
+
     // write AT command with CR+LF ending
     function sendAT(command: string, wait: number = 100) {
         serial.writeString(command + "\u000D\u000A")
@@ -892,21 +905,24 @@ namespace hackbit {
     // wait for certain response from ESP8266
     function waitResponse(): boolean {
         let serial_str: string = ""
-        let result: boolean = false
+        let result2: boolean = false
         let time: number = input.runningTime()
         while (true) {
             serial_str += serial.readString()
             if (serial_str.length > 200) serial_str = serial_str.substr(serial_str.length - 200)
             if (serial_str.includes("OK") || serial_str.includes("ALREADY CONNECTED")) {
-                result = true
+                result2 = true
                 break
             } else if (serial_str.includes("ERROR") || serial_str.includes("SEND FAIL")) {
                 break
             }
             if (input.runningTime() - time > 30000) break
         }
-        return result
+        return result2
     }
+    /**
+     * end Iot ThingSpeak
+    **/
 
 
 }
