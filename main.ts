@@ -144,7 +144,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="RobotDriver" advanced=false
     //% speed.defl=75
-    //% group="Motors"
+    //% subcategory=Motors  group="Motors DC" color=#EA5532
     export function robotMove(dir: RobotDirection, speed: number): void {
         setSpeed(Motors.MotorFull, speed);
         switch (dir) {
@@ -187,7 +187,7 @@ namespace hackbit {
     //% block="set %motor| %dir"
     //% parts="RobotDriver" advanced=false
     //% motor.defl=MotorFull
-    //% group="Motors"
+    //% subcategory=Motors  group="Motors DC" color=#EA5532
     export function motorDir(motor: Motors, dir: MotorDirection): void {
         setDir(motor, dir);
         setMotors();
@@ -215,10 +215,25 @@ namespace hackbit {
     */
     //% blockId=RobotDriverRobotStop
     //% block="stop both motors"
-    //% group="Motors"
+    //% subcategory=Motors  group="Motors DC" color=#EA5532
     export function motorStop(): void {
         robotMove(hackbit.RobotDirection.Stop, 0)
     }
+
+    /**
+     * Set the servomotor position [0-180deg]
+     * @param pin servomotor pin (right or left)
+     */
+    //% blockId=RobotDriverservodegrees
+    //% block="servomotor |%pin| to |%angle| degree"
+    //% parts="RobotDriver" advanced=false
+    //% angle.shadow="protractorPicker"
+    //% angle.defl=90
+    //% subcategory=Motors  group="Servo Motors" color=#EA5532
+    export function setServoMotor(pin: AnalogPin, angle: number): void {
+        pins.servoWritePin(pin, Math.constrain(angle, 0, 180));
+    }
+
     /**
      * get distance from ultrasonic range sensor [cm]
      * @param pin Input pin
@@ -229,7 +244,7 @@ namespace hackbit {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% group="Sensors"
+    //% subcategory=Sensors  group="Digital" color=#EA5532
     export function measureDistanceCentimeter(name: DigitalPin): number {
         let duration = 0;
         let distance = 0;
@@ -249,7 +264,7 @@ namespace hackbit {
     */
     //% blockId=hackbitPotargRead
     //% block="potentiometer |%pin|"
-    //% group="Sensors"
+    //% subcategory=Input  group="Analog" color=#EA5532
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
@@ -259,7 +274,7 @@ namespace hackbit {
     */
     //% blockId=hackbitCollisionRead
     //% block="collision sensor |%pin|"
-    //% group="Sensors"
+    //% subcategory=Input  group="Digital" color=#EA5532    
     export function collisionSensor(pin: BP): boolean {
         if (pin)
             return input.buttonIsPressed(Button.A);
@@ -271,6 +286,7 @@ namespace hackbit {
     */
     //% blockId=hackbitLineRead
     //% block="line sensor |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#EA5532        
     //% group="Sensors"
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
@@ -281,23 +297,20 @@ namespace hackbit {
     */
     //% blockId=hackbitButtonRead
     //% block="button |%pin|"
-    //% group="Sensors"
+    //% subcategory=Input  group="Digital" color=#EA5532    
     export function buttonState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
 
     /**
-     * Set the servomotor position [0-180deg]
-     * @param pin servomotor pin (right or left)
-     */
-    //% blockId=RobotDriverservodegrees
-    //% block="servomotor |%pin| to |%angle| degree"
-    //% parts="RobotDriver" advanced=false
-    //% angle.shadow="protractorPicker"
-    //% angle.defl=90
-    //% group="Actuator"
-    export function setServoMotor(pin: AnalogPin, angle: number): void {
-        pins.servoWritePin(pin, Math.constrain(angle, 0, 180));
+     * Set Led state
+    */
+    //% blockId=hackbitLedSet
+    //% block="led |%pin| to |%state|"
+    //% state.min=0 state.max=1
+    //% subcategory=Display  group="Digital" color=#EA5532    
+    export function ledState(pin: DigitalPin, state: OnOff): void {
+        pins.digitalWritePin(pin, state);
     }
 
     /**
@@ -307,7 +320,7 @@ namespace hackbit {
     */
     //% blockId="grovecolorsensorgetcolor" 
     //% block="color %Color"
-    //% group="Sensors"
+    //% subcategory=Sensors  group="IIC" color=#EA5532    
     //% block.loc.fr="Valeur de la couleur %Color du capteur de couleur grove"
     //% jsdoc = "Grab sensor value from grove color sensor"
     export function color(col: Color): NumberFormat.UInt16BE {
@@ -397,23 +410,6 @@ namespace hackbit {
     }
 
     /**
-     * Create a new driver Grove - 4-Digit Display
-     * @param clkPin value of clk pin number
-     * @param dataPin value of data pin number
-     */
-    //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
-    //% group="Display"
-    //% weight=60
-    export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
-        digit_buf = pins.createBuffer(4);
-        digit_clkPin = clkPin;
-        digit_dataPin = dataPin;
-        digit_brightnessLevel = 0;
-        digit_pointFlag = false;
-        digit_clear();
-    }
-
-    /**
      * Detect and recognize the gestures from Grove - Gesture
      * None:0
      * Right:1
@@ -427,7 +423,7 @@ namespace hackbit {
      * Wave:9
      */
     //% blockId=hackbitGroveGesture
-    //% block="grove gesture"
+    //% subcategory=Sensors  group="IIC" color=#EA5532    
     //% group="Sensors"
     export function grove_gesture_reads(): number {
         let data = 0, result = 0;
@@ -482,14 +478,20 @@ namespace hackbit {
     }
 
     /**
-     * Set Led state
-    */
-    //% blockId=hackbitLedSet
-    //% block="led |%pin| to |%state|"
-    //% state.min=0 state.max=1
-    //% group="Display"
-    export function ledState(pin: DigitalPin, state: OnOff): void {
-        pins.digitalWritePin(pin, state);
+     * Create a new driver Grove - 4-Digit Display
+     * @param clkPin value of clk pin number
+     * @param dataPin value of data pin number
+     */
+    //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
+    //% weight=60
+    export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
+        digit_buf = pins.createBuffer(4);
+        digit_clkPin = clkPin;
+        digit_dataPin = dataPin;
+        digit_brightnessLevel = 0;
+        digit_pointFlag = false;
+        digit_clear();
     }
 
     /**
@@ -497,7 +499,7 @@ namespace hackbit {
     * @param dispData value of number
     */
     //% blockId=hackbit_tm1637_display_number block="show number|%dispData"
-    //% group="Display"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% weight=59
     export function digit_show(dispData: number) {
         let compare_01: number = dispData % 100;
@@ -566,7 +568,7 @@ namespace hackbit {
      */
     //% blockId=hackbit_tm1637_set_display_level block="brightness level to|%level"
     //% level.min=0 level.max=7
-    //% group="Display"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% weight=58
     export function digit_set(level: number) {
         digit_brightnessLevel = level;
@@ -585,7 +587,7 @@ namespace hackbit {
     //% blockId=grove_tm1637_display_bit block="%strip|show single number|%dispData|at digit|%bitAddr"
     //% dispData.min=0 dispData.max=9
     //% bitAddr.min=0 bitAddr.max=3
-    //% group="Display"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% advanced=true
     export function digit_bit(dispData: number, bitAddr: number) {
         if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
@@ -612,7 +614,7 @@ namespace hackbit {
      * @param pointEn value of point switch
      */
     //% blockId=grove_tm1637_display_point block="%strip|turn|%point|colon point"
-    //% group="Display"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% advanced=true
     export function digit_point(point: boolean) {
         digit_pointFlag = point;
@@ -627,7 +629,7 @@ namespace hackbit {
      * Clear the display
      */
     //% blockId=grove_tm1637_display_clear block="%strip|clear"
-    //% group="Display"
+    //% subcategory=Display  group="7-Seg" color=#EA5532    
     //% advanced=true
     export function digit_clear() {
         digit_bit(0x7f, 0x00);
