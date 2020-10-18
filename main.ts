@@ -1,3 +1,11 @@
+/**
+* //% color=#FF1344 icon="\uf135"
+* //% block="Hackbit" blockId="hackbit"
+**/
+
+//% color=#FF1344 icon="\uf135"
+//% block="Hackbit" blockId="hackbit"
+
 namespace hackbit {
     const initRegisterArray: number[] = [
         0xEF, 0x00, 0x32, 0x29, 0x33, 0x01, 0x34, 0x00, 0x35, 0x01, 0x36, 0x00, 0x37, 0x07, 0x38, 0x17,
@@ -142,12 +150,6 @@ namespace hackbit {
     let thingspeak_connected: boolean = false
     let last_upload_successful: boolean = false
 
-    /**
-     * end Iot ThingSpeak
-    **/
-
-    //% color=#FF1344 icon="\uf135"
-    //% block="Hackbit" blockId="hackbit"
 
     /**
      * Control Robot speed [0-100%]
