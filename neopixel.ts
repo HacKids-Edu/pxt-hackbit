@@ -42,6 +42,8 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
+//% color=#1371FF icon="\uf110" block="Hackbit Neopixel"
+
 namespace neopixel {
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
