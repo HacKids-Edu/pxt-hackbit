@@ -144,7 +144,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="RobotDriver" advanced=false
     //% speed.defl=75
-    //% subcategory=Motors  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#EA5532
     export function robotMove(dir: RobotDirection, speed: number): void {
         setSpeed(Motors.MotorFull, speed);
         switch (dir) {
@@ -187,7 +187,7 @@ namespace hackbit {
     //% block="set %motor| %dir"
     //% parts="RobotDriver" advanced=false
     //% motor.defl=MotorFull
-    //% subcategory=Motors  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#EA5532
     export function motorDir(motor: Motors, dir: MotorDirection): void {
         setDir(motor, dir);
         setMotors();
@@ -204,7 +204,7 @@ namespace hackbit {
     //% speed.min=0 speed.max=100
     //% parts="A4_Robot_Driver" advanced=false
     //% speed.defl=75
-    //% subcategory=Motors  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#EA5532
     export function motorSpeed(motor: Motors, speed: number): void {
         setSpeed(motor, speed);
         setMotors();
@@ -215,7 +215,7 @@ namespace hackbit {
     */
     //% blockId=RobotDriverRobotStop
     //% block="stop both motors"
-    //% subcategory=Motors  group="Motors DC" color=#EA5532
+    //% subcategory=Motor  group="Motors DC" color=#EA5532
     export function motorStop(): void {
         robotMove(hackbit.RobotDirection.Stop, 0)
     }
@@ -229,7 +229,7 @@ namespace hackbit {
     //% parts="RobotDriver" advanced=false
     //% angle.shadow="protractorPicker"
     //% angle.defl=90
-    //% subcategory=Motors  group="Servo Motors" color=#EA5532
+    //% subcategory=Motor  group="Servo Motors" color=#EA5532
     export function setServoMotor(pin: AnalogPin, angle: number): void {
         pins.servoWritePin(pin, Math.constrain(angle, 0, 180));
     }
@@ -244,7 +244,7 @@ namespace hackbit {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensors  group="Digital" color=#EA5532
+    //% subcategory=Sensor  group="Digital" color=#EA5532
     export function measureDistanceCentimeter(name: DigitalPin): number {
         let duration = 0;
         let distance = 0;
@@ -264,7 +264,7 @@ namespace hackbit {
     */
     //% blockId=hackbitLineRead
     //% block="line sensor |%pin|"
-    //% subcategory=Sensors  group="Digital" color=#EA5532        
+    //% subcategory=Sensor  group="Digital" color=#EA5532        
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
@@ -321,7 +321,7 @@ namespace hackbit {
     //% block="color %Color"
     //% block.loc.fr="Valeur de la couleur %Color du capteur de couleur grove"
     //% jsdoc = "Grab sensor value from grove color sensor"
-    //% subcategory=Sensors  group="IIC" color=#EA5532    
+    //% subcategory=Sensor  group="IIC" color=#EA5532    
 
     export function color(col: Color): NumberFormat.UInt16BE {
         let nums, red, green, blue, clear: number;
@@ -423,7 +423,7 @@ namespace hackbit {
      * Wave:9
      */
     //% blockId=hackbitGroveGesture
-    //% subcategory=Sensors  group="IIC" color=#EA5532    
+    //% subcategory=Sensor  group="IIC" color=#EA5532    
     export function grove_gesture_reads(): number {
         let data = 0, result = 0;
 
