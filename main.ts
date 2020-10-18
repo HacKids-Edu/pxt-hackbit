@@ -1,5 +1,7 @@
-//% color=#FF1344 icon="\uf135"
-//% block="Hackbit" blockId="hackbit"
+/**
+ * Library for Grove micro:bit project board https://www.hackids.com.br
+*/
+//% weight=10 color=#FF1344 icon="\uf135" block="Hackbit" advanced=false
 
 namespace hackbit {
     const initRegisterArray: number[] = [
@@ -35,8 +37,13 @@ namespace hackbit {
 
 /**
 * Sempre adicionar ao inicio de main.ts antes de submeter
-* //% color=#FF1344 icon="\uf135"
-* //% block="Hackbit" blockId="hackbit"
+**/
+
+/**
+ * Library for Grove micro:bit project board https://www.hackids.com.br
+*/
+/** 
+* //% weight=10 color=#FF1344 icon="\uf135" block="Hackbit" advanced=false
 **/
 
     export enum MotorDirection {
