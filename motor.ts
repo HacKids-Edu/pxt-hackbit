@@ -309,6 +309,8 @@ namespace hackibitmotors {
     //% weight=85
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+
     export function MotorRun(index: Motors, speed: number): void {
         if (!initialized) {
             initPCA9685()
@@ -346,6 +348,8 @@ namespace hackibitmotors {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
@@ -361,6 +365,8 @@ namespace hackibitmotors {
     //% weight=81
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Motor DC"  group="Motor DC" color=#FF7692 icon="\uf1eb"
+
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
         basic.pause(delay * 1000);
