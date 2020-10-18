@@ -72,6 +72,8 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
+        //% color=#1371FF 
+
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
@@ -86,6 +88,8 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
+        //% color=#1371FF 
+
         showRainbow(startHue: number = 1, endHue: number = 360) {
             if (this._length <= 0) return;
 
@@ -153,6 +157,8 @@ namespace neopixel {
         //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high" 
         //% icon="\uf080"
         //% parts="neopixel"
+        //% color=#1371FF 
+
         showBarGraph(value: number, high: number): void {
             if (high <= 0) {
                 this.clear();
@@ -191,6 +197,8 @@ namespace neopixel {
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=true
+        //% color=#FE1370
+
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
