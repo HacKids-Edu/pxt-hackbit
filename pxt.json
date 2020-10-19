@@ -1,7 +1,7 @@
 {
     "name": "hackbit",
     "version": "0.0.1",
-    "description": "Hack:bit - grove micro:bit project board",
+    "description": "hack:bit - grove micro:bit project board https://www.hackids.com.br",
     "dependencies": {
         "core": "*",
         "radio": "*"
