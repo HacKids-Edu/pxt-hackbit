@@ -305,7 +305,7 @@ namespace neopixel {
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
         //% weight=59
         //% parts="neopixel" advanced=false
-        //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+        //% subcategory="Configuration"  group="NeoPixel" color=#F68C3B icon="\uf1eb"
 
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
@@ -348,7 +348,7 @@ namespace neopixel {
         //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range
-        //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+        //% subcategory="Configuration"  group="NeoPixel" color=#F68C3B icon="\uf1eb"
 
         range(start: number, length: number): Strip {
             start = start >> 0;
@@ -514,7 +514,7 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    //% subcategory="Configuration"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+    //% subcategory="Configuration"  group="NeoPixel" color=#F68C3B icon="\uf1eb"
 
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
@@ -538,7 +538,7 @@ namespace neopixel {
     //% weight=1
     //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
     //% advanced=false
-    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#F9AC72 icon="\uf1eb"
 
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
@@ -550,7 +550,7 @@ namespace neopixel {
     //% weight=2 blockGap=8
     //% blockId="neopixel_colors" block="%color"
     //% advanced=false
-    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#F9AC72 icon="\uf1eb"
 
     export function colors(color: NeoPixelColors): number {
         return color;
@@ -579,7 +579,7 @@ namespace neopixel {
      * @param l luminosity from 0 to 99
      */
     //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
-    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#F9AC72 icon="\uf1eb"
 
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
