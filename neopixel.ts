@@ -549,7 +549,9 @@ namespace neopixel {
     */
     //% weight=2 blockGap=8
     //% blockId="neopixel_colors" block="%color"
-    //% advanced=true
+    //% advanced=false
+    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
     export function colors(color: NeoPixelColors): number {
         return color;
     }
