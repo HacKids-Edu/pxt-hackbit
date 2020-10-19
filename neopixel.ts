@@ -577,6 +577,8 @@ namespace neopixel {
      * @param l luminosity from 0 to 99
      */
     //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
+    //% subcategory="Color"  group="NeoPixel" color=#FE1370 icon="\uf1eb"
+
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
