@@ -43,7 +43,6 @@ enum NeoPixelMode {
  * Functions to operate NeoPixel strips.
  */
 //% color=#F57513 icon="\uf110" block="Hackbit NeoPixel"
-
 namespace neopixel {
     let neoStrip: neopixel.Strip;
     //% shim=sendBufferAsm
@@ -72,7 +71,7 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
-
+        //% subcategory=NeoPixel group="Set" color=#1371FF icon="\uf1eb"
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
