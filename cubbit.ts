@@ -6,19 +6,6 @@
  */
 //% color=#00C6F5 icon="\uf1b2" block="Hackbit cubbit"
 namespace cubbit {
-    export enum LedLr {
-        //% block="A button"
-        AButtonSide = 8,
-        //% block="B button"
-        BButtonSide = 16
-    }
-
-    export enum LedOnOff {
-        //% block="on"
-        On = 0,
-        //% block="off"
-        Off = 1
-    }
 
     export enum StdMotions {
         //% block="Walk Forward"
@@ -140,7 +127,6 @@ namespace cubbit {
     let initPCA9865 = false;
     //
     loadPos();
-    eyeLed(LedOnOff.On);
 
     export function secretIncantation() {
         write8(0xFE, 0x85);//PRE_SCALE
@@ -151,52 +137,7 @@ namespace cubbit {
         write8(0x00, 0x01);
     }
 
-    //% blockId=cub:bit_Sensor
-    //% block="read sensor %num"
-    export function sensorLR(num: LedLr) {
-        return pins.analogReadPin( (num == 16) ? AnalogPin.P2 : AnalogPin.P0 );
-    }
-
-    /**
-     * Make this block insert "on start", when using checkMic. Use by substitution to a variable.
-     * @param num - cubbit.LedLr.AButtonSide or BButtonSide 
-    */
-    //% block="Init Mic %num"
-    export function initMic(num: LedLr){
-        let cal = 0;
-        for (let i = 0; i < 100; i++) {
-            cal += pins.analogReadPin( (num == 16) ? AnalogPin.P2 : AnalogPin.P0 )
-        }
-        return cal = cal / 100
-    }
-
-    /**
-     * Check mic
-     * @param num - pins
-     * @param value - Threshold , Max: 1023 - 'Standard Value'
-     * @param adjust - Standard value
-     */
-    // Threshold "しきい値"
-    //% block="Side %num, Mic Value %value, InitValue $adjust"
-    //% value.min=0 value.max=511 value.defl=100
-    //% adjust.min=0 adjust.max=1023 adjust.defl=550
-    export function checkMic(num: LedLr,value:number,adjust:number){
-        let n = (num == 16) ? AnalogPin.P2 : AnalogPin.P0;
-        return ( pins.analogReadPin(n) <= (adjust-value) || (adjust+value) <= pins.analogReadPin(n) ) ? true:false;
-    }
-
-    /**
-     * Check distance
-     * @param num - pins
-     * @param value - Threshold
-     */
-    //% block="Side %num, Distance Value %value"
-    //% value.min=22 value.max=700 value.defl=600
-    export function checkDistane(num: LedLr,value:number){
-        let n = (num == 16) ? AnalogPin.P2 : AnalogPin.P0;
-        return ( value <= pins.analogReadPin(n) ) ? true:false;
-    }
-    
+   
     /**
      * Get the angle in the direction that "cub:bit" is facing
      */
@@ -532,39 +473,6 @@ namespace cubbit {
         return hex;
     }
 
-    function bleInit() {
-        serial.redirect(SerialPin.P8, SerialPin.P12, 115200);
-        pins.digitalWritePin(DigitalPin.P16, 0);
-        initBle = true;
-    }
-
-    //% blockId=cub:bit_BLE
-    //% block="enable control from smartphone"
-    //% advanced=true
-    export function serialRead() {
-        if (initBle == false) bleInit();
-        pins.digitalWritePin(DigitalPin.P16, 1);
-        while (1) {
-            let buf = serial.readString();
-            if ((buf[0] != "$") && (buf[0] != "#")) {
-                break;
-            }
-            let bufB = buf[1] + buf[2];
-            if (bufB == "PM") {
-                bufB = buf[3] + buf[4];
-                //basic.showString(bufB);
-                motion(parseIntM(bufB));
-                break;
-            } else if (bufB == "SM") {
-                break;
-            } else {
-                //display.show("b")
-                break;
-            }
-        }
-        pins.digitalWritePin(DigitalPin.P16, 0);
-    }
-
     //% block="servo motor initial"
     export function servoInitialSet() {
         for (let n = 0; n < 8; n++) {
@@ -585,9 +493,4 @@ namespace cubbit {
         initPCA9865 == false;
     }
 
-    //% block="eye led is %onoff"
-    export function eyeLed(ledOnOff: LedOnOff) {
-        pins.digitalWritePin(DigitalPin.P8, ledOnOff);
-        pins.digitalWritePin(DigitalPin.P16, ledOnOff);
-    }
 }

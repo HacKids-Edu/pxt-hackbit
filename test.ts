@@ -7,10 +7,6 @@ basic.showLeds(`
     . # # # .
     `);
 
-basic.forever(function () {
-    cubbit.serialRead()
-
-})
 input.onButtonPressed(Button.A, function () {
     //cubbit.dance_motion(cubbit.danceMotions.DanceLStep)
     cubbit.stdMotion(cubbit.StdMotions.ArmPataPata)
