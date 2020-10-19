@@ -14,7 +14,8 @@
         "main.ts",
         "thingspeak.ts",
         "neopixel.ts",
-        "motor.ts"
+        "motor.ts",
+        "hackbit.ts"
     ],
     "testFiles": [
         "test.ts"
