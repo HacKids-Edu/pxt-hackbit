@@ -1,7 +1,7 @@
 /**
  * Blocks for cub:bit
- * cub:bit is a small humanoid robot with movable arms and legs, 
- * and an LED matrix to express emotions. 
+ * cub:bit is a small humanoid robot with movable arms and legs, and
+ * an LED matrix to express emotions. 
  * Anyone can easily use cub:bit through programing and onboard sensors.
  */
 //% color=#00C6F5 icon="\uf1b2" block="Hackbit cubbit"
