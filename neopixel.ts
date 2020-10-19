@@ -71,7 +71,7 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
-        //% group="Set" color=#F57513 icon="\uf1eb"
+        //% group="Show" color=#F57513 icon="\uf1eb"
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
@@ -86,6 +86,7 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
+        //% group="Show" color=#F57513 icon="\uf1eb"
 
         showRainbow(startHue: number = 1, endHue: number = 360) {
             if (this._length <= 0) return;
@@ -154,6 +155,7 @@ namespace neopixel {
         //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high" 
         //% icon="\uf080"
         //% parts="neopixel"
+        //% group="Show" color=#F57513 icon="\uf1eb"
 
         showBarGraph(value: number, high: number): void {
             if (high <= 0) {
@@ -193,7 +195,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=false
-
+        //% group="Set" color=#F57513 icon="\uf1eb"
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
@@ -208,6 +210,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=5
         //% parts="neopixel" advanced=false
+        //% group="Set" color=#F57513 icon="\uf1eb"
         setMatrixWidth(width: number, rotation: number, chain: number) {
             this._matrixWidth = Math.min(this._length, width >> 0);
             this._matrixRotation = rotation >> 0;
@@ -224,6 +227,7 @@ namespace neopixel {
         //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
         //% weight=4
         //% parts="neopixel" advanced=false
+        //% group="Set" color=#F57513 icon="\uf1eb"        
         setMatrixColor(x: number, y: number, rgb: number) {
             if (this._matrixWidth <= 0) return; // not a matrix, ignore
             x = x >> 0;
@@ -259,6 +263,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=false
+        //% group="Set" color=#F57513 icon="\uf1eb"        
         setPixelWhiteLED(pixeloffset: number, white: number): void {
             if (this._mode === NeoPixelMode.RGBW) {
                 this.setPixelW(pixeloffset >> 0, white >> 0);
@@ -272,6 +277,8 @@ namespace neopixel {
         //% blockId="neopixel_show" block="%strip|show" blockGap=8
         //% weight=79
         //% parts="neopixel"
+        //% group="Show" color=#F57513 icon="\uf1eb"
+
         show() {
             sendBuffer(this.buf, this.pin);
         }
@@ -283,6 +290,8 @@ namespace neopixel {
         //% blockId="neopixel_clear" block="%strip|clear"
         //% weight=76
         //% parts="neopixel"
+        //% group="Show" color=#F57513 icon="\uf1eb"
+
         clear(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
