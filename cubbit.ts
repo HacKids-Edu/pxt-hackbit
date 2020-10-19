@@ -4,7 +4,7 @@
  * and an LED matrix to express emotions. 
  * Anyone can easily use cub:bit through programing and onboard sensors.
  */
-//% weight=100 color=#00C6F5 icon="\uf544" block="Hackdis cub:bit"
+//% weight=100 color=#00C6F5 icon="\uf544"
 namespace cubbit {
     export enum LedLr {
         //% block="A button"
