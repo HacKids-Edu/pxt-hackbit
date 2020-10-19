@@ -12,10 +12,10 @@
         "_locales/fr/hackbit-jsdoc-strings.json",
         "README.md",
         "main.ts",
-        "thingspeak.ts",
-        "neopixel.ts",
+        "hackbit.ts",
         "motor.ts",
-        "hackbit.ts"
+        "neopixel.ts",
+        "thingspeak.ts"
     ],
     "testFiles": [
         "test.ts"
