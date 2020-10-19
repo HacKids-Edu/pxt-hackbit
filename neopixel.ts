@@ -65,6 +65,103 @@ namespace neopixel {
         _matrixRotation: number; // the rotation type of matrix
 
         /**
+         * Set LED to a given color (range 0-255 for r, g, b). 
+         * You need to call ``show`` to make the changes visible.
+         * @param pixeloffset position of the NeoPixel in the strip
+         * @param rgb RGB color of the LED
+         */
+        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
+        //% blockGap=8
+        //% weight=80
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#D46109 icon="\uf1eb"
+        setPixelColor(pixeloffset: number, rgb: number): void {
+            this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
+        }
+
+        /**
+         * Sets the number of pixels in a matrix shaped strip
+         * @param width number of pixels in a row
+	     * @param rotation type of matrix
+	     * @param chain type of matrix
+         */
+        //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width|rotation %rotation|chain %chain"
+        //% blockGap=8
+        //% weight=5
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#D46109 icon="\uf1eb"
+        setMatrixWidth(width: number, rotation: number, chain: number) {
+            this._matrixWidth = Math.min(this._length, width >> 0);
+            this._matrixRotation = rotation >> 0;
+            this._matrixChain = chain >> 0;
+        }
+
+        /**
+         * Set LED to a given color (range 0-255 for r, g, b) in a matrix shaped strip 
+         * You need to call ``show`` to make the changes visible.
+         * @param x horizontal position
+         * @param y horizontal position
+         * @param rgb RGB color of the LED
+         */
+        //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
+        //% weight=4
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#D46109 icon="\uf1eb"
+        setMatrixColor(x: number, y: number, rgb: number) {
+            if (this._matrixWidth <= 0) return; // not a matrix, ignore
+            x = x >> 0;
+            y = y >> 0;
+            rgb = rgb >> 0;
+            const cols = Math.idiv(this._length, this._matrixWidth);
+
+            if (this._matrixRotation == 1) {
+                let t = y;
+                y = x;
+                x = t;
+            } else if (this._matrixRotation == 2) {
+                x = this._matrixWidth - x - 1;
+            }
+
+            // here be the physical mapping
+            if (this._matrixChain == 1 && y % 2 == 1) {
+                x = this._matrixWidth - x - 1;
+            }
+            if (x < 0 || x >= this._matrixWidth || y < 0 || y >= cols) return;
+
+            let i = x + y * this._matrixWidth;
+            this.setPixelColor(i, rgb);
+        }
+
+        /**
+         * For NeoPixels with RGB+W LEDs, set the white LED brightness. This only works for RGB+W NeoPixels.
+         * @param pixeloffset position of the LED in the strip
+         * @param white brightness of the white LED
+         */
+        //% blockId="neopixel_set_pixel_white" block="%strip|set pixel white LED at %pixeloffset|to %white" 
+        //% blockGap=8
+        //% weight=80
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#D46109 icon="\uf1eb"
+        setPixelWhiteLED(pixeloffset: number, white: number): void {
+            if (this._mode === NeoPixelMode.RGBW) {
+                this.setPixelW(pixeloffset >> 0, white >> 0);
+            }
+        }
+
+        /**
+         * Set the pin where the neopixel is connected, defaults to P0.
+         */
+        //% weight=10
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#D46109 icon="\uf1eb"
+
+        setPin(pin: DigitalPin): void {
+            this.pin = pin;
+            pins.digitalWritePin(this.pin, 0);
+            // don't yield to avoid races on initialization
+        }
+
+        /**
          * Shows all LEDs to a given color (range 0-255 for r, g, b). 
          * @param rgb RGB color of the LED
          */
@@ -195,103 +292,6 @@ namespace neopixel {
 
         show() {
             sendBuffer(this.buf, this.pin);
-        }
-
-        /**
-         * Set LED to a given color (range 0-255 for r, g, b). 
-         * You need to call ``show`` to make the changes visible.
-         * @param pixeloffset position of the NeoPixel in the strip
-         * @param rgb RGB color of the LED
-         */
-        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
-        //% blockGap=8
-        //% weight=80
-        //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
-        setPixelColor(pixeloffset: number, rgb: number): void {
-            this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
-        }
-
-        /**
-         * Sets the number of pixels in a matrix shaped strip
-         * @param width number of pixels in a row
-	     * @param rotation type of matrix
-	     * @param chain type of matrix
-         */
-        //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width|rotation %rotation|chain %chain"
-        //% blockGap=8
-        //% weight=5
-        //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
-        setMatrixWidth(width: number, rotation: number, chain: number) {
-            this._matrixWidth = Math.min(this._length, width >> 0);
-            this._matrixRotation = rotation >> 0;
-            this._matrixChain = chain >> 0;
-        }
-
-        /**
-         * Set LED to a given color (range 0-255 for r, g, b) in a matrix shaped strip 
-         * You need to call ``show`` to make the changes visible.
-         * @param x horizontal position
-         * @param y horizontal position
-         * @param rgb RGB color of the LED
-         */
-        //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
-        //% weight=4
-        //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
-        setMatrixColor(x: number, y: number, rgb: number) {
-            if (this._matrixWidth <= 0) return; // not a matrix, ignore
-            x = x >> 0;
-            y = y >> 0;
-            rgb = rgb >> 0;
-            const cols = Math.idiv(this._length, this._matrixWidth);
-
-            if (this._matrixRotation == 1) {
-                let t = y;
-                y = x;
-                x = t;
-            } else if (this._matrixRotation == 2) {
-                x = this._matrixWidth - x - 1;
-            }
-
-            // here be the physical mapping
-            if (this._matrixChain == 1 && y % 2 == 1) {
-                x = this._matrixWidth - x - 1;
-            }
-            if (x < 0 || x >= this._matrixWidth || y < 0 || y >= cols) return;
-
-            let i = x + y * this._matrixWidth;
-            this.setPixelColor(i, rgb);
-        }
-
-        /**
-         * For NeoPixels with RGB+W LEDs, set the white LED brightness. This only works for RGB+W NeoPixels.
-         * @param pixeloffset position of the LED in the strip
-         * @param white brightness of the white LED
-         */
-        //% blockId="neopixel_set_pixel_white" block="%strip|set pixel white LED at %pixeloffset|to %white" 
-        //% blockGap=8
-        //% weight=80
-        //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
-        setPixelWhiteLED(pixeloffset: number, white: number): void {
-            if (this._mode === NeoPixelMode.RGBW) {
-                this.setPixelW(pixeloffset >> 0, white >> 0);
-            }
-        }
-
-        /**
-         * Set the pin where the neopixel is connected, defaults to P0.
-         */
-        //% weight=10
-        //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
-
-        setPin(pin: DigitalPin): void {
-            this.pin = pin;
-            pins.digitalWritePin(this.pin, 0);
-            // don't yield to avoid races on initialization
         }
 
         /**
