@@ -1,3 +1,9 @@
+/**
+ * Library for Grove micro:bit project board https://www.hackids.com.br
+*/
+
+//% weight=10 color=#FF1344 icon="\uf135"
+
 namespace hackbit {
     const initRegisterArray: number[] = [
         0xEF, 0x00, 0x32, 0x29, 0x33, 0x01, 0x34, 0x00, 0x35, 0x01, 0x36, 0x00, 0x37, 0x07, 0x38, 0x17,
@@ -127,10 +133,6 @@ namespace hackbit {
         Wave = 9
     }
 
-    export let _speed_left = 700; //1023 = 100% speed
-    export let _speed_right = 700;
-    export let _dir_right = 1; //0 = stop, 1 = forward, 2 = backward
-    export let _dir_left = 1;
     export let identifiant = 0;
     export let grovegestureinit = 0;
 
@@ -144,107 +146,6 @@ namespace hackbit {
     export let digit_brightnessLevel: number;
     export let digit_pointFlag: boolean;
     export let digit_buf: Buffer;
-
-
-    /**
-     * Control Robot speed [0-100%]
-     * @param dir direction
-     * @param speed speed in %
-     */
-    //% blockId=RobotDriverRobotMove
-    //% block="move %dir| speed %speed"
-    //% speed.min=0 speed.max=100
-    //% parts="RobotDriver" advanced=false
-    //% speed.defl=75
-    //% subcategory=Motor  group="Motors DC" color=#FF1344 icon="\uf1eb"
-    export function robotMove(dir: RobotDirection, speed: number): void {
-        setSpeed(Motors.MotorFull, speed);
-        switch (dir) {
-            case RobotDirection.Forward:
-                setDir(Motors.MotorFull, MotorDirection.Forward);
-                break
-            case RobotDirection.Reverse:
-                setDir(Motors.MotorFull, MotorDirection.Reverse);
-                break
-            case RobotDirection.RotateRight:
-                setDir(Motors.Motor1, MotorDirection.Forward);
-                setDir(Motors.Motor2, MotorDirection.Reverse);
-                break
-            case RobotDirection.RotateLef:
-                setDir(Motors.Motor1, MotorDirection.Reverse);
-                setDir(Motors.Motor2, MotorDirection.Forward);
-                break
-            case RobotDirection.TurnRigh:
-                setDir(Motors.Motor1, MotorDirection.Forward);
-                setDir(Motors.Motor2, MotorDirection.Stop);
-                break
-            case RobotDirection.TurnLef:
-                setDir(Motors.Motor1, MotorDirection.Stop);
-                setDir(Motors.Motor2, MotorDirection.Forward);
-                break
-            case RobotDirection.Stop:
-                setDir(Motors.MotorFull, MotorDirection.Stop);
-                break
-        }
-        setMotors();
-    }
-
-
-    /**
-     * Change the motor direction
-     * @param motor selection (left, right)
-     * @param dir rotation direction (forward, backward)
-     */
-    //% blockId=RobotDrivermotordir
-    //% block="set %motor| %dir"
-    //% parts="RobotDriver" advanced=false
-    //% motor.defl=MotorFull
-    //% subcategory=Motor  group="Motors DC" color=#FF1344 icon="\uf1eb"
-    export function motorDir(motor: Motors, dir: MotorDirection): void {
-        setDir(motor, dir);
-        setMotors();
-    }
-
-    /**
-     * Change the motor speed [0-100%]
-     * @param motor selection (left, right)
-     * @param new speed (0-100%)
-     */
-
-    //% blockId=robotdrivermotorspeed
-    //% block="set %motor| to %speed %"
-    //% speed.min=0 speed.max=100
-    //% parts="A4_Robot_Driver" advanced=false
-    //% speed.defl=75
-    //% subcategory=Motor  group="Motors DC" color=#FF1344 icon="\uf1eb"
-    export function motorSpeed(motor: Motors, speed: number): void {
-        setSpeed(motor, speed);
-        setMotors();
-    }
-
-    /**
-     * Stop both motors
-    */
-    //% blockId=RobotDriverRobotStop
-    //% block="stop both motors"
-    //% subcategory=Motor  group="Motors DC" color=#FF1344 icon="\uf1eb"
-    export function motorStop(): void {
-        robotMove(hackbit.RobotDirection.Stop, 0)
-    }
-
-    /**
-     * Set the servomotor position [0-180deg]
-     * @param pin servomotor pin (right or left)
-     */
-    //% blockId=RobotDriverservodegrees
-    //% block="servomotor |%pin| to |%angle| degree"
-    //% parts="RobotDriver" advanced=false
-    //% angle.shadow="protractorPicker"
-    //% angle.defl=90
-    //% subcategory=Motor  group="Servo Motors" color=#FF1344 icon="\uf1eb"
-    export function setServoMotor(pin: AnalogPin, angle: number): void {
-        pins.servoWritePin(pin, Math.constrain(angle, 0, 180));
-    }
 
     /**
      * get distance from ultrasonic range sensor [cm]
@@ -655,60 +556,6 @@ namespace hackbit {
     function swap16(val: NumberFormat.UInt16BE) {
         return ((val & 0xFF) << 8)
             | ((val >> 8) & 0xFF);
-    }
-
-    function setDir(motor: Motors, dir: MotorDirection): void {
-        switch (motor) {
-            case Motors.Motor1: //gauche
-                _dir_left = dir;
-                break
-            case Motors.Motor2: //droit
-                _dir_right = dir;
-                break
-            case Motors.MotorFull: //droit
-                _dir_left = dir;
-                _dir_right = dir;
-                break
-        }
-    }
-
-    function setSpeed(motor: Motors, speed: number): void {
-        let corrected_speed = Math.min(Math.map(speed, 0, 100, 0, 1023), 1023);
-        switch (motor) {
-            case Motors.Motor1:
-                _speed_left = corrected_speed;
-                break
-            case Motors.Motor2:
-                _speed_right = corrected_speed;
-                break
-            case Motors.MotorFull:
-                _speed_left = corrected_speed;
-                _speed_right = corrected_speed;
-                break
-        }
-    }
-
-    function setMotors(): void {
-        if (_dir_right == 1) {
-            pins.digitalWritePin(DigitalPin.P15, 0);
-            pins.analogWritePin(AnalogPin.P16, _speed_right);
-        } else if (_dir_right == 2) {
-            pins.analogWritePin(AnalogPin.P15, _speed_right);
-            pins.digitalWritePin(DigitalPin.P16, 0);
-        } else {
-            pins.digitalWritePin(DigitalPin.P15, 0);
-            pins.digitalWritePin(DigitalPin.P16, 0);
-        }
-        if (_dir_left == 1) {
-            pins.digitalWritePin(DigitalPin.P13, 0);
-            pins.analogWritePin(AnalogPin.P14, _speed_left);
-        } else if (_dir_left == 2) {
-            pins.analogWritePin(AnalogPin.P13, _speed_left);
-            pins.digitalWritePin(DigitalPin.P14, 0);
-        } else {
-            pins.digitalWritePin(DigitalPin.P13, 0);
-            pins.digitalWritePin(DigitalPin.P14, 0);
-        }
     }
 
     function digit_writeByte(wrData: number) {
