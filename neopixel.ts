@@ -42,7 +42,7 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
-//% color=#1371FF icon="\uf110" block="Hackbit NeoPixel"
+//% color=#FE1370 icon="\uf110" block="Hackbit NeoPixel"
 
 namespace neopixel {
     let neoStrip: neopixel.Strip;
