@@ -9,6 +9,12 @@ https://www.hackids.com.br
 
 ## Exemplos/Samples:
 
+// cub:bit
+// Reproduz movimento WalkForward quando o botão A é pressionado
+// Você pode ter vários outros movimentos.
+input.onButtonPressed(Button.A, function () {
+    cubbit.stdMotion(cubbit.StdMotions.WalkForward)
+})
 
 > Open this page at [https://hackids-edu.github.io/pxt-hackbit/](https://hackids-edu.github.io/pxt-hackbit/)
 
