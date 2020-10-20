@@ -169,9 +169,9 @@ namespace hackbitRTCDS1307 {
 
     /**
      * set Date and Time
-     * @param year is the Year will be set, eg: 2019
-     * @param month is the Month will be set, eg: 1
-     * @param day is the Day will be set, eg: 17
+     * @param year is the Year will be set, eg: 2020
+     * @param month is the Month will be set, eg: 10
+     * @param day is the Day will be set, eg: 20
      * @param hour is the Hour will be set, eg: 12
      * @param minute is the Minute will be set, eg: 31
      * @param second is the Second will be set, eg: 19
