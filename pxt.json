@@ -17,7 +17,8 @@
         "neopixel.ts",
         "thingspeak.ts",
         "cubbit.ts",
-        "oled.ts"
+        "oled.ts",
+        "rtc.ts"
     ],
     "testFiles": [
         "test.ts"
