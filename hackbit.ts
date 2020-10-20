@@ -334,6 +334,7 @@ namespace hackbit {
      * Wave:9
      */
     //% blockId=hackbitGroveGesture
+    //% block="grove gesture"
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
     export function grove_gesture_reads(): number {
         let data = 0, result = 0;
