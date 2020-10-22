@@ -89,7 +89,8 @@ namespace cubbit {
 		}
 	}
 
-	// InsideOutWave
+    //% blockId=cub:bit_InsideOutWave
+    //% block="inside out wave"
 	export function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
@@ -140,9 +141,10 @@ namespace cubbit {
 			basic.pause(700)
 		}
 	}
-	
-	//Shrug
-	export function Shrug2() {
+
+    //% blockId=cub:bit_Shrug
+    //% block="shrug"
+	export function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
 	        DoServo(7, 10)
@@ -211,7 +213,8 @@ namespace cubbit {
 	    }
 	}
 	
-	// MoveBack
+    //% blockId=cub:bit_MoveBack
+    //% block="move back"
 	export function MoveBack() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(3, 105)
@@ -241,8 +244,9 @@ namespace cubbit {
 	    }
 	}
 	
-	// MovementChest
-	export function MovementChest2() {
+    //% blockId=cub:bit_MovementChest
+    //% block="movement chest"
+	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
 	        DoServo(8, 10)
@@ -261,8 +265,9 @@ namespace cubbit {
 	    }
 	}
 	
-	// Left
-	export function Left2() {
+    //% blockId=cub:bit_Left
+    //% block="left"
+	export function Left() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(1, 140)
 	        DoServo(8, 140)
@@ -287,8 +292,9 @@ namespace cubbit {
 		}
 	}
 
-	// Right
-	export function Right2() {
+    //% blockId=cub:bit_Right
+    //% block="right"
+	export function Right() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(1, 40)
 			DoServo(8, 40)
@@ -313,7 +319,8 @@ namespace cubbit {
 		}
 	}
 
-	// Forward
+    //% blockId=cub:bit_Forward
+    //% block="forward"
 	export function Forward() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(3, 100)
@@ -343,22 +350,24 @@ namespace cubbit {
 		}
 	}
 
-	// Right to left
-	export function RightToLeft2() {
+    //% blockId=cub:bit_RightToLeft
+    //% block="right to left"
+	export function RightToLeft() {
 		for (let i = 0; i < 1; i++) {
-			Right2()
+			Right()
 			basic.pause(200)
 			InitialPosition()
 			basic.pause(200)
-			Left2()
+			Left()
 			basic.pause(200)
 			InitialPosition()
 			basic.pause(200)
 		}
 	}
 
-	// BackForward
-	export function BackForward2() {
+    //% blockId=cub:bit_BackForward
+    //% block="back forward"
+	export function BackForward() {
 		for (let i = 0; i < 1; i++) {
 			MoveBack()
 			basic.pause(200)
@@ -371,7 +380,8 @@ namespace cubbit {
 		}
 	}
 
-	// Movement of limbs
+    //% blockId=cub:bit_MovementOfLimbs
+    //% block="movement of limbs"
 	export function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
