@@ -3,7 +3,7 @@
  */
 //% color=#FF1344 icon="\uf085" block="Hackbit Motors"
 
-namespace hackibitmotors {
+namespace hackbitmotors {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const PRESCALE = 0xFE
