@@ -4,7 +4,7 @@
  * an LED matrix to express emotions. A tribute to The Norby Chronicles.  
  * Anyone can easily use Norbi through programing and onboard sensors.
  */
-//% color=#F47412 icon="\uf689" block="Hackbit Norbi"
+//% color=#F47412 icon="\uf002" block="Hackbit Norbi"
 namespace norbi {
     export enum ServoPort {
         S1 = 0x01,
