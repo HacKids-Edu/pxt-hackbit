@@ -54,8 +54,9 @@ namespace cubbit {
 		}
 	}
 
-	// MovimentHand
-	export function MovimentHand2() {
+    //% blockId=cub:bit_MovimentHand
+    //% block="moviment hand"
+	export function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
 			DoServo(8, 125)
