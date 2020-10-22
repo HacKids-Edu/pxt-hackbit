@@ -4,7 +4,7 @@
  * an LED matrix to express emotions. 
  * Anyone can easily use cub:bit through programing and onboard sensors.
  */
-//% color=#00CA26 icon="\uf1b2" block="Hackbit cubbit"
+//% color=#00CA26 icon="\uf1b2" block="Hackbit cub:bit"
 namespace cubbit {
     export enum ServoPort {
         S1 = 0x01,
