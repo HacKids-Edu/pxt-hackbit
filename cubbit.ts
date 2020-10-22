@@ -49,6 +49,28 @@ namespace cubbit {
 		DoServos([90, 95, 85, 100, 100, 90, 90, 90])
 	}
 
+    /**
+     * Servo Execute
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=hackbit_servo block="Servo|%index|degree %degree"
+    //% weight=100
+    //% degree.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
+
+    export function cubbitServo(index: ServoPort, degree: number): void {
+        if (!initialized) {
+            hackbitmotors.initPCA9685()
+        }
+        // 50hz: 20,000 us
+        let v_us = (degree * 1800 / 180 + 600) // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000
+        hackbitmotors.setPwm(index + 7, 0, value)
+    }
+
+
     //% blockId=cub:bit_init
     //% block="initial position"
 	export function InitialPosition2() {
