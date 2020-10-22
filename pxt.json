@@ -16,9 +16,9 @@
         "motor.ts",
         "neopixel.ts",
         "thingspeak.ts",
-        "cubbit.ts",
         "oled.ts",
-        "rtc.ts"
+        "rtc.ts",
+        "norbi.ts"
     ],
     "testFiles": [
         "test.ts"
