@@ -29,7 +29,7 @@ namespace cubbit {
     	hackbitmotors.Servos.S7,
     	hackbitmotors.Servos.S8]
 
-	export function DoServo(ServoNum: number, Degree: number) {
+	function DoServo(ServoNum: number, Degree: number) {
         if (!initialized) {
             hackbitmotors.initPCA9685()
         }        
@@ -38,13 +38,13 @@ namespace cubbit {
 		}
 	}
 
-	export function DoServos(Rotate: number[]) {
+	function DoServos(Rotate: number[]) {
 		for (let i = 1; i <= 8; i++) {
 			DoServo(i, Rotate[i-1])
 		}
 	}
 
-	export function InitialPosition() {
+	function InitialPosition() {
 		DoServos([90, 95, 85, 100, 100, 90, 90, 90])
 	}
 
@@ -56,7 +56,7 @@ namespace cubbit {
     //% blockId=cub:bit_servo block="Servo|%index|degree %degree"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function cubbitServo(index: ServoPort, degree: number): void {
+    function cubbitServo(index: ServoPort, degree: number): void {
         if (!initialized) {
             hackbitmotors.initPCA9685()
         }
@@ -69,7 +69,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_init
     //% block="initial position"
-	export function InitialPosition2() {
+	function InitialPosition2() {
 		for (let i = 0; i < 8; i++) {
 			DoServo(1, 20)
 			DoServo(8, 160)
@@ -86,7 +86,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_MovimentHand
     //% block="moviment hand"
-	export function MovimentHand() {
+	function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
 			DoServo(8, 125)
@@ -121,7 +121,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_InsideOutWave
     //% block="inside out wave"
-	export function InsideOutWave() {
+	function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
 			DoServo(7, 50)
@@ -174,7 +174,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Shrug
     //% block="shrug"
-	export function Shrug() {
+	function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
 	        DoServo(7, 10)
@@ -245,7 +245,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MoveBack
     //% block="move back"
-	export function MoveBack() {
+	function MoveBack() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(3, 105)
 	        DoServo(6, 112)
@@ -276,7 +276,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementChest
     //% block="movement chest"
-	export function MovementChest() {
+	function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
 	        DoServo(8, 10)
@@ -297,7 +297,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_Left
     //% block="left"
-	export function Left() {
+	function Left() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(1, 140)
 	        DoServo(8, 140)
@@ -324,7 +324,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Right
     //% block="right"
-	export function Right() {
+	function Right() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(1, 40)
 			DoServo(8, 40)
@@ -351,7 +351,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Forward
     //% block="forward"
-	export function Forward() {
+	function Forward() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(3, 100)
 			DoServo(6, 115)
@@ -382,7 +382,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_RightToLeft
     //% block="right to left"
-	export function RightToLeft() {
+	function RightToLeft() {
 		for (let i = 0; i < 1; i++) {
 			Right()
 			basic.pause(200)
@@ -397,7 +397,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_BackForward
     //% block="back forward"
-	export function BackForward() {
+	function BackForward() {
 		for (let i = 0; i < 1; i++) {
 			MoveBack()
 			basic.pause(200)
@@ -412,7 +412,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_MovementOfLimbs
     //% block="movement of limbs"
-	export function MovementOfLimbs() {
+	function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
 			DoServo(8, 10)
@@ -433,7 +433,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Sway
     //% block="sway"
-	export function Sway() {
+	function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
 			DoServo(7, 10)
@@ -473,7 +473,7 @@ namespace cubbit {
     //% blockId=cub:bit_Calibrate
     //% block="calibrate"
 	// Regulation of movement
-	export function Calibrate() {
+	function Calibrate() {
 		for (let i = 0; i < 4; i++) {
 			InitialPosition()
 			basic.pause(500)
@@ -492,7 +492,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Relax
     //% block="Relax"
-	export function Relax() {
+	function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
 			DoServo(5, 100)
@@ -515,5 +515,4 @@ namespace cubbit {
 			basic.pause(1000)
 		}
 	}
-
 }
