@@ -401,7 +401,8 @@ namespace cubbit {
 		}
 	}
 
-	// Sway
+    //% blockId=cub:bit_Sway
+    //% block="sway"
 	export function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
@@ -439,8 +440,10 @@ namespace cubbit {
 		}
 	}
 
+    //% blockId=cub:bit_Calibrate
+    //% block="calibrate"
 	// Regulation of movement
-	export function RegulationOfMovement() {
+	export function Calibrate() {
 		for (let i = 0; i < 4; i++) {
 			InitialPosition()
 			basic.pause(500)
@@ -457,7 +460,8 @@ namespace cubbit {
 		}
 	}
 
-	// Relax
+    //% blockId=cub:bit_Relax
+    //% block="Relax"
 	export function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
