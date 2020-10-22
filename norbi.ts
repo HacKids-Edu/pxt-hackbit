@@ -54,7 +54,7 @@ namespace norbi {
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
     //% blockId=norbi_servo block="servo|%index|degree %degree"
-    //% group="Custom"
+    //% subcategory=Humanoid group="Custom"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function norbiServo(index: ServoPort, degree: number): void {
