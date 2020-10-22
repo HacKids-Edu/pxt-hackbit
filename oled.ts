@@ -1,6 +1,3 @@
-declare interface Math {
-    floor(x: number): number;
-}
 /**
  * MakeCode extension for OLED Display
  */
