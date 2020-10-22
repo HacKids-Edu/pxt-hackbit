@@ -77,7 +77,7 @@ namespace hackbitmotors {
         return val;
     }
 
-    function initPCA9685(): void {
+    export function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
         for (let idx = 0; idx < 16; idx++) {
