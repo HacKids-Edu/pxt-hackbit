@@ -228,7 +228,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_RightToLeft
     //% block="right to left"
-    //% group="Dance Steps"    
+    //% group="Steps"    
 	export function RightToLeft() {
 		for (let i = 0; i < 1; i++) {
 			Right()
@@ -244,7 +244,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_BackForward
     //% block="back forward"
-    //% group="Dance Steps"    
+    //% group="Steps"    
 	export function BackForward() {
 		for (let i = 0; i < 1; i++) {
 			MoveBack()
@@ -260,7 +260,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_MovimentHand
     //% block="moviment hand"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
 	export function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
@@ -296,7 +296,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Shrug
     //% block="shrug"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
     export function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
@@ -368,7 +368,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementChest
     //% block="moviment chest"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
 	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
@@ -390,7 +390,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementOfLimbs
     //% block="movement of limbs"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
 	export function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
@@ -412,7 +412,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Sway
     //% block="sway"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
 	export function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
@@ -452,7 +452,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Relax
     //% block="Relax"
-    //% group="Dance Patterns"    
+    //% group="Patterns"    
 	export function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
@@ -479,7 +479,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_InsideOutWave
     //% block="inside out wave"
-    //% group="Dance Movements"    
+    //% group="Movements"    
 	export function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
