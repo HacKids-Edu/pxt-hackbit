@@ -144,6 +144,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_InsideOutWave
     //% block="inside out wave"
+    //% group="Moviment"    
 	export function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
@@ -197,6 +198,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Shrug
     //% block="shrug"
+    //% group="Moviment"    
 	export function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
@@ -268,6 +270,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MoveBack
     //% block="move back"
+    //% group="Moviment"    
 	export function MoveBack() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(3, 105)
@@ -299,6 +302,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementChest
     //% block="movement chest"
+    //% group="Moviment"    
 	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
@@ -320,6 +324,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_Left
     //% block="left"
+    //% group="Moviment"    
 	export function Left() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(1, 140)
@@ -347,6 +352,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Right
     //% block="right"
+    //% group="Moviment"    
 	export function Right() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(1, 40)
@@ -374,6 +380,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Forward
     //% block="forward"
+    //% group="Moviment"    
 	export function Forward() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(3, 100)
@@ -405,6 +412,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_RightToLeft
     //% block="right to left"
+    //% group="Moviment"    
 	export function RightToLeft() {
 		for (let i = 0; i < 1; i++) {
 			Right()
@@ -420,6 +428,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_BackForward
     //% block="back forward"
+    //% group="Moviment"    
 	export function BackForward() {
 		for (let i = 0; i < 1; i++) {
 			MoveBack()
@@ -435,6 +444,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_MovementOfLimbs
     //% block="movement of limbs"
+    //% group="Moviment"    
 	export function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
@@ -456,6 +466,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Sway
     //% block="sway"
+    //% group="Moviment"    
 	export function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
@@ -495,6 +506,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Relax
     //% block="Relax"
+    //% group="Moviment"    
 	export function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
