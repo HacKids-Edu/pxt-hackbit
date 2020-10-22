@@ -30,8 +30,6 @@ namespace cubbit {
     	hackbitmotors.Servos.S8]
 
 
-    //% blockId=cub:bit_servo block="servo|%index|degree %degree"
-    //% degree.min=0 degree.max=180
 	export function DoServo(ServoNum: number, Degree: number) {
         if (!initialized) {
             hackbitmotors.initPCA9685()
