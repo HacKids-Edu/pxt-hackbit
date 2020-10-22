@@ -35,7 +35,7 @@ namespace cubbit {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=cub:bit_servo block="ServoNum|%index|Degree %degree"
+    //% blockId=cub:bit_servo block="servo|%index|degree %degree"
     //% Degree.min=0 Degree.max=180
 	export function DoServo(ServoNum: number, Degree: number) {
         if (!initialized) {
