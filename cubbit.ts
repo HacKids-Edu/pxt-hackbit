@@ -37,7 +37,7 @@ namespace cubbit {
 		DoServos([90, 95, 85, 100, 100, 90, 90, 90])
 	}
 
-    //% blockId=cub:bit_servo
+    //% blockId=cub:bit_init
     //% block="initial position"
 	export function InitialPosition2() {
 		for (let i = 0; i < 8; i++) {
