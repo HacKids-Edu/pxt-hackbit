@@ -53,7 +53,8 @@ namespace cubbit {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=cub:bit_servo block="Servo|%index|degree %degree"
+    //% blockId=cub:bit_servo block="servo|%index|degree %degree"
+    //% group="Custom"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function cubbitServo(index: ServoPort, degree: number): void {
@@ -66,9 +67,9 @@ namespace cubbit {
         hackbitmotors.setPwm(index + 7, 0, value)
     }
 
-
     //% blockId=cub:bit_init
     //% block="initial position"
+    //% group="Custom"    
 	export function InitialPosition2() {
 		for (let i = 0; i < 8; i++) {
 			DoServo(1, 20)
@@ -84,8 +85,30 @@ namespace cubbit {
 		}
 	}
 
+    //% blockId=cub:bit_Calibrate
+    //% block="calibrate"
+    //% group="Custom"    
+	// Regulation of movement
+	export function Calibrate() {
+		for (let i = 0; i < 4; i++) {
+			InitialPosition()
+			basic.pause(500)
+			DoServo(2, 130)
+			DoServo(7, 55)
+			basic.pause(500)
+			InitialPosition()
+			basic.pause(500)
+			DoServo(2, 170)
+			DoServo(7, 10)
+			DoServo(4, 80)
+			DoServo(5, 120)
+			basic.pause(500)
+		}
+	}
+
     //% blockId=cub:bit_MovimentHand
     //% block="moviment hand"
+    //% group="Moviment"    
 	export function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
@@ -467,26 +490,6 @@ namespace cubbit {
 			DoServo(2, 170)
 			DoServo(7, 10)
 			basic.pause(700)
-		}
-	}
-
-    //% blockId=cub:bit_Calibrate
-    //% block="calibrate"
-	// Regulation of movement
-	export function Calibrate() {
-		for (let i = 0; i < 4; i++) {
-			InitialPosition()
-			basic.pause(500)
-			DoServo(2, 130)
-			DoServo(7, 55)
-			basic.pause(500)
-			InitialPosition()
-			basic.pause(500)
-			DoServo(2, 170)
-			DoServo(7, 10)
-			DoServo(4, 80)
-			DoServo(5, 120)
-			basic.pause(500)
 		}
 	}
 
