@@ -29,7 +29,6 @@ namespace cubbit {
     	hackbitmotors.Servos.S7,
     	hackbitmotors.Servos.S8]
 
-
 	export function DoServo(ServoNum: number, Degree: number) {
         if (!initialized) {
             hackbitmotors.initPCA9685()
@@ -54,8 +53,7 @@ namespace cubbit {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=hackbit_servo block="Servo|%index|degree %degree"
-    //% weight=100
+    //% blockId=cub:bit_servo block="Servo|%index|degree %degree"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function cubbitServo(index: ServoPort, degree: number): void {
