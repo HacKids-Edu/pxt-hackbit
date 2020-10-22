@@ -226,9 +226,41 @@ namespace cubbit {
 		}
 	}
 
+    //% blockId=cub:bit_RightToLeft
+    //% block="right to left"
+    //% group="Dance Steps"    
+	export function RightToLeft() {
+		for (let i = 0; i < 1; i++) {
+			Right()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+			Left()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+		}
+	}
+
+    //% blockId=cub:bit_BackForward
+    //% block="back forward"
+    //% group="Dance Steps"    
+	export function BackForward() {
+		for (let i = 0; i < 1; i++) {
+			MoveBack()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+			Forward()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+		}
+	}
+
     //% blockId=cub:bit_MovimentHand
     //% block="moviment hand"
-    //% group="Moviment"    
+    //% group="Dance Patterns"    
 	export function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
@@ -264,8 +296,8 @@ namespace cubbit {
 
     //% blockId=cub:bit_Shrug
     //% block="shrug"
-    //% group="Moviment"    
-	export function Shrug() {
+    //% group="Dance Patterns"    
+    export function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
 	        DoServo(7, 10)
@@ -336,7 +368,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementChest
     //% block="moviment chest"
-    //% group="Moviment"    
+    //% group="Dance Patterns"    
 	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
@@ -358,7 +390,7 @@ namespace cubbit {
 	
     //% blockId=cub:bit_MovementOfLimbs
     //% block="movement of limbs"
-    //% group="Moviment"    
+    //% group="Dance Patterns"    
 	export function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
@@ -380,7 +412,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Sway
     //% block="sway"
-    //% group="Moviment"    
+    //% group="Dance Patterns"    
 	export function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
@@ -420,7 +452,7 @@ namespace cubbit {
 
     //% blockId=cub:bit_Relax
     //% block="Relax"
-    //% group="Moviment"    
+    //% group="Dance Patterns"    
 	export function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
@@ -445,42 +477,9 @@ namespace cubbit {
 		}
 	}
 
-    //% blockId=cub:bit_RightToLeft
-    //% block="right to left"
-    //% group="Dance Patterns"    
-	export function RightToLeft() {
-		for (let i = 0; i < 1; i++) {
-			Right()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-			Left()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-		}
-	}
-
-    //% blockId=cub:bit_BackForward
-    //% block="back forward"
-    //% group="Dance Patterns"    
-	export function BackForward() {
-		for (let i = 0; i < 1; i++) {
-			MoveBack()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-			Forward()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-		}
-	}
-
-
     //% blockId=cub:bit_InsideOutWave
     //% block="inside out wave"
-    //% group="Dance"    
+    //% group="Dance Movements"    
 	export function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
