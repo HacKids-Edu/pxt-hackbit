@@ -106,6 +106,126 @@ namespace cubbit {
 		}
 	}
 
+    //% blockId=cub:bit_Forward
+    //% block="move forward"
+    //% group="Basic Moviment"    
+	export function Forward() {
+		for (let i = 0; i < 2; i++) {
+			DoServo(3, 100)
+			DoServo(6, 115)
+			DoServo(4, 80)
+			DoServo(5, 95)
+			DoServo(2, 60)
+			DoServo(7, 55)
+			basic.pause(500)
+			DoServo(3, 100)
+			DoServo(6, 115)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+			DoServo(3, 60)
+			DoServo(6, 72)
+			DoServo(4, 105)
+			DoServo(5, 120)
+			DoServo(2, 130)
+			DoServo(7, 125)
+			basic.pause(500)
+			DoServo(3, 80)
+			DoServo(6, 92)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+		}
+	}
+
+    //% blockId=cub:bit_MoveBack
+    //% block="move back"
+    //% group="Basic Moviment"    
+	export function MoveBack() {
+	    for (let i = 0; i < 2; i++) {
+	        DoServo(3, 105)
+	        DoServo(6, 112)
+	        DoServo(4, 105)
+			DoServo(5, 120)
+	        DoServo(2, 60)
+	        DoServo(7, 55)
+	        basic.pause(500)
+	        DoServo(3, 105)
+	        DoServo(6, 112)
+	        DoServo(4, 100)
+	        DoServo(5, 100)
+	        basic.pause(500)
+	        DoServo(3, 60)
+	        DoServo(6, 72)
+	        DoServo(4, 80)
+	        DoServo(5, 95)
+	        DoServo(2, 130)
+	        DoServo(7, 125)
+	        basic.pause(500)
+	        DoServo(3, 60)
+	        DoServo(6, 72)
+	        DoServo(4, 100)
+	        DoServo(5, 100)
+	        basic.pause(500)
+	    }
+	}
+
+    //% blockId=cub:bit_Left
+    //% block="move left"
+    //% group="Basic Moviment"    
+	export function Left() {
+	    for (let i = 0; i < 2; i++) {
+	        DoServo(1, 140)
+	        DoServo(8, 140)
+	        DoServo(4, 100)
+	        DoServo(5, 135)
+	        basic.pause(500)
+	        DoServo(1, 40)
+			DoServo(8, 140)
+			DoServo(4, 65)
+			DoServo(5, 135)
+			basic.pause(700)
+			DoServo(1, 40)
+			DoServo(8, 40)
+			DoServo(4, 65)
+			DoServo(5, 100)
+			basic.pause(500)
+			DoServo(1, 90)
+			DoServo(8, 90)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+		}
+	}
+
+    //% blockId=cub:bit_Right
+    //% block="move right"
+    //% group="Basic Moviment"    
+	export function Right() {
+		for (let i = 0; i < 2; i++) {
+			DoServo(1, 40)
+			DoServo(8, 40)
+			DoServo(4, 65)
+			DoServo(5, 100)
+			basic.pause(500)
+			DoServo(1, 140)
+			DoServo(8, 40)
+			DoServo(4, 65)
+			DoServo(5, 135)
+			basic.pause(700)
+			DoServo(1, 140)
+			DoServo(8, 140)
+			DoServo(4, 100)
+			DoServo(5, 135)
+			basic.pause(500)
+			DoServo(1, 90)
+			DoServo(8, 90)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+		}
+	}
+
     //% blockId=cub:bit_MovimentHand
     //% block="moviment hand"
     //% group="Moviment"    
@@ -138,60 +258,6 @@ namespace cubbit {
 			DoServo(5, 100)
 			DoServo(2, 95)
 			DoServo(7, 90)
-			basic.pause(700)
-		}
-	}
-
-    //% blockId=cub:bit_InsideOutWave
-    //% block="inside out wave"
-    //% group="Moviment"    
-	export function InsideOutWave() {
-	    for (let i = 0; i < 2; i++) {
-			DoServo(2, 135)
-			DoServo(7, 50)
-			DoServo(1, 30)
-			DoServo(8, 150)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-			DoServo(2, 165)
-			DoServo(7, 20)
-			DoServo(1, 90)
-			DoServo(8, 90)
-			DoServo(4, 75)
-			DoServo(5, 122)
-			basic.pause(700)
-			DoServo(2, 135)
-			DoServo(7, 50)
-			DoServo(1, 125)
-			DoServo(8, 55)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-			InitialPosition()
-			basic.pause(700)
-			DoServo(2, 135)
-			DoServo(7, 50)
-			DoServo(1, 125)
-			DoServo(8, 55)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-			DoServo(2, 165)
-			DoServo(7, 20)
-			DoServo(1, 90)
-			DoServo(8, 90)
-			DoServo(4, 75)
-			DoServo(5, 122)
-			basic.pause(700)
-			DoServo(2, 135)
-			DoServo(7, 50)
-			DoServo(1, 30)
-			DoServo(8, 150)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-			InitialPosition()
 			basic.pause(700)
 		}
 	}
@@ -268,40 +334,8 @@ namespace cubbit {
 	    }
 	}
 	
-    //% blockId=cub:bit_MoveBack
-    //% block="move back"
-    //% group="Moviment"    
-	export function MoveBack() {
-	    for (let i = 0; i < 2; i++) {
-	        DoServo(3, 105)
-	        DoServo(6, 112)
-	        DoServo(4, 105)
-			DoServo(5, 120)
-	        DoServo(2, 60)
-	        DoServo(7, 55)
-	        basic.pause(500)
-	        DoServo(3, 105)
-	        DoServo(6, 112)
-	        DoServo(4, 100)
-	        DoServo(5, 100)
-	        basic.pause(500)
-	        DoServo(3, 60)
-	        DoServo(6, 72)
-	        DoServo(4, 80)
-	        DoServo(5, 95)
-	        DoServo(2, 130)
-	        DoServo(7, 125)
-	        basic.pause(500)
-	        DoServo(3, 60)
-	        DoServo(6, 72)
-	        DoServo(4, 100)
-	        DoServo(5, 100)
-	        basic.pause(500)
-	    }
-	}
-	
     //% blockId=cub:bit_MovementChest
-    //% block="movement chest"
+    //% block="moviment chest"
     //% group="Moviment"    
 	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
@@ -322,126 +356,6 @@ namespace cubbit {
 	    }
 	}
 	
-    //% blockId=cub:bit_Left
-    //% block="left"
-    //% group="Moviment"    
-	export function Left() {
-	    for (let i = 0; i < 2; i++) {
-	        DoServo(1, 140)
-	        DoServo(8, 140)
-	        DoServo(4, 100)
-	        DoServo(5, 135)
-	        basic.pause(500)
-	        DoServo(1, 40)
-			DoServo(8, 140)
-			DoServo(4, 65)
-			DoServo(5, 135)
-			basic.pause(700)
-			DoServo(1, 40)
-			DoServo(8, 40)
-			DoServo(4, 65)
-			DoServo(5, 100)
-			basic.pause(500)
-			DoServo(1, 90)
-			DoServo(8, 90)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-		}
-	}
-
-    //% blockId=cub:bit_Right
-    //% block="right"
-    //% group="Moviment"    
-	export function Right() {
-		for (let i = 0; i < 2; i++) {
-			DoServo(1, 40)
-			DoServo(8, 40)
-			DoServo(4, 65)
-			DoServo(5, 100)
-			basic.pause(500)
-			DoServo(1, 140)
-			DoServo(8, 40)
-			DoServo(4, 65)
-			DoServo(5, 135)
-			basic.pause(700)
-			DoServo(1, 140)
-			DoServo(8, 140)
-			DoServo(4, 100)
-			DoServo(5, 135)
-			basic.pause(500)
-			DoServo(1, 90)
-			DoServo(8, 90)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-		}
-	}
-
-    //% blockId=cub:bit_Forward
-    //% block="forward"
-    //% group="Moviment"    
-	export function Forward() {
-		for (let i = 0; i < 2; i++) {
-			DoServo(3, 100)
-			DoServo(6, 115)
-			DoServo(4, 80)
-			DoServo(5, 95)
-			DoServo(2, 60)
-			DoServo(7, 55)
-			basic.pause(500)
-			DoServo(3, 100)
-			DoServo(6, 115)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-			DoServo(3, 60)
-			DoServo(6, 72)
-			DoServo(4, 105)
-			DoServo(5, 120)
-			DoServo(2, 130)
-			DoServo(7, 125)
-			basic.pause(500)
-			DoServo(3, 80)
-			DoServo(6, 92)
-			DoServo(4, 100)
-			DoServo(5, 100)
-			basic.pause(500)
-		}
-	}
-
-    //% blockId=cub:bit_RightToLeft
-    //% block="right to left"
-    //% group="Moviment"    
-	export function RightToLeft() {
-		for (let i = 0; i < 1; i++) {
-			Right()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-			Left()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-		}
-	}
-
-    //% blockId=cub:bit_BackForward
-    //% block="back forward"
-    //% group="Moviment"    
-	export function BackForward() {
-		for (let i = 0; i < 1; i++) {
-			MoveBack()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-			Forward()
-			basic.pause(200)
-			InitialPosition()
-			basic.pause(200)
-		}
-	}
-
     //% blockId=cub:bit_MovementOfLimbs
     //% block="movement of limbs"
     //% group="Moviment"    
@@ -528,6 +442,93 @@ namespace cubbit {
 			basic.pause(1000)
 			InitialPosition()
 			basic.pause(1000)
+		}
+	}
+
+    //% blockId=cub:bit_RightToLeft
+    //% block="right to left"
+    //% group="Dance Patterns"    
+	export function RightToLeft() {
+		for (let i = 0; i < 1; i++) {
+			Right()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+			Left()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+		}
+	}
+
+    //% blockId=cub:bit_BackForward
+    //% block="back forward"
+    //% group="Dance Patterns"    
+	export function BackForward() {
+		for (let i = 0; i < 1; i++) {
+			MoveBack()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+			Forward()
+			basic.pause(200)
+			InitialPosition()
+			basic.pause(200)
+		}
+	}
+
+
+    //% blockId=cub:bit_InsideOutWave
+    //% block="inside out wave"
+    //% group="Dance"    
+	export function InsideOutWave() {
+	    for (let i = 0; i < 2; i++) {
+			DoServo(2, 135)
+			DoServo(7, 50)
+			DoServo(1, 30)
+			DoServo(8, 150)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+			DoServo(2, 165)
+			DoServo(7, 20)
+			DoServo(1, 90)
+			DoServo(8, 90)
+			DoServo(4, 75)
+			DoServo(5, 122)
+			basic.pause(700)
+			DoServo(2, 135)
+			DoServo(7, 50)
+			DoServo(1, 125)
+			DoServo(8, 55)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+			InitialPosition()
+			basic.pause(700)
+			DoServo(2, 135)
+			DoServo(7, 50)
+			DoServo(1, 125)
+			DoServo(8, 55)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+			DoServo(2, 165)
+			DoServo(7, 20)
+			DoServo(1, 90)
+			DoServo(8, 90)
+			DoServo(4, 75)
+			DoServo(5, 122)
+			basic.pause(700)
+			DoServo(2, 135)
+			DoServo(7, 50)
+			DoServo(1, 30)
+			DoServo(8, 150)
+			DoServo(4, 100)
+			DoServo(5, 100)
+			basic.pause(500)
+			InitialPosition()
+			basic.pause(700)
 		}
 	}
 }
