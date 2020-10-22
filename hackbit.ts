@@ -1,7 +1,7 @@
 /**
  * Library for hackbit,  grove micro:bit project board https://www.hackids.com.br
 */
-//% weight=10 color=#FF1344 icon="\uf135"
+//% weight=10 color=#FF1344 icon="\uf0eb"
 namespace hackbit {
     const initRegisterArray: number[] = [
         0xEF, 0x00, 0x32, 0x29, 0x33, 0x01, 0x34, 0x00, 0x35, 0x01, 0x36, 0x00, 0x37, 0x07, 0x38, 0x17,
