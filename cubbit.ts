@@ -6,6 +6,16 @@
  */
 //% color=#00CA26 icon="\uf1b2" block="Hackbit cubbit"
 namespace cubbit {
+    export enum ServosPort {
+        S1 = 0x01,
+        S2 = 0x02,
+        S3 = 0x03,
+        S4 = 0x04,
+        S5 = 0x05,
+        S6 = 0x06,
+        S7 = 0x07,
+        S8 = 0x08
+    }
 
     let cubbitServos: hackbitmotors.Servos[] =
        	[hackbitmotors.Servos.S1,
@@ -17,10 +27,16 @@ namespace cubbit {
     	hackbitmotors.Servos.S7,
     	hackbitmotors.Servos.S8]
 
-    //% blockId=cub:bit_servo
-    //% block="servo motor %ServoNum|number %Degree|degrees"
-    //% ServoNum.min=1 ServoNum.max=8
+
+    /**
+     * Servo Execute
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=cub:bit_servo block="ServosPort|%index|degree %degree"
+    //% weight=100
     //% degree.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
 	export function DoServo(ServoNum: number, Degree: number) {
 		if (ServoNum > 0 && Degree >= 0) {
             hackbitmotors.Servo(cubbitServos[ServoNum - 1], Degree)
