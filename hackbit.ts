@@ -45,15 +45,6 @@ namespace hackbit {
 * //% weight=10 color=#FF1344 icon="\uf135"
 **/
 
-    export enum MotorDirection {
-        //% block="Forward"
-        Forward = 1,
-        //% block="Backward"
-        Reverse = 2,
-        //% block="Stop"
-        Stop = 0
-    }
-
     export enum OnOff {
         //% block="On"
         On = 1,
@@ -66,35 +57,6 @@ namespace hackbit {
         BPA = 1,
         //% block="BPB"
         BPB = 0
-    }
-
-    export enum RobotDirection {
-        //% block="Forward"
-        Forward,
-        //% block="Backward"
-        Reverse,
-        //% block="Turn Right"
-        TurnRigh,
-        //% block="Turn Left"
-        TurnLef,
-        //% block="Rotate Right"
-        RotateRight,
-        //% block="Rotate Left"
-        RotateLef,
-        //% block="Stop"
-        Stop
-    }
-
-    export enum Motors {
-        //%blockId=A4_Robot_Driver_motor_one
-        //% block="left motor"
-        Motor1,
-        //%blockId=A4_Robot_Driver_motor_two
-        //% block="right motor"
-        Motor2,
-        //%blockId=A4_Robot_Driver_motor_full
-        //% block="left and right motor"
-        MotorFull
     }
 
     export enum Color {
