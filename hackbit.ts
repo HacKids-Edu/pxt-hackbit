@@ -244,6 +244,27 @@ namespace hackbit {
         return Math.round(lightintensity);
     }
 
+    /**
+    * Get UV level value (0~15)
+    * @param uvlevelpin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitUVLevelRead" block="UV sensor (0~15) at pin %uvlevelpin"
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
+    export function UVLevel(uvlevelpin: AnalogPin): number {
+        let UVlevel = pins.analogReadPin(uvlevelpin);
+        if (UVlevel > 625) {
+            UVlevel = 625
+        }
+        UVlevel = pins.map(
+            UVlevel,
+            0,
+            625,
+            0,
+            15
+        );
+        return Math.round(UVlevel)
+    }
+
     /** 
     * Get noise(dB)
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
@@ -360,7 +381,6 @@ namespace hackbit {
         noise = Math.round(noise)
         return Math.round(noise)
     }
-
 
     /**
      * Get analog potentiometer value [0-1023]
