@@ -208,9 +208,7 @@ namespace hackbit {
     * Get soil moisture(0~100%)
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
-    //% blockId="readsoilmoisture" block="value of soil moisture(0~100) at pin %soilhumiditypin"
-    //% blockId=hackbitSoilMoistureRead
-    //% block="water |%pin|"
+    //% blockId="hackbitSoilMoistureRead" block="value of soil moisture(0~100) at pin %soilhumiditypin"
     //% subcategory=Sensor  group="Analog" color=#851DE8 icon="\uf1eb"    
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
         let voltage = 0;
