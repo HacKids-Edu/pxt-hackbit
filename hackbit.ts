@@ -518,7 +518,6 @@ namespace hackbit {
 
     /** 
     * Get Gas Sensor concentration value 
-    * @param concentrationpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitGasRead" block="%sensor gas sensor at pin %gaspin concentration value"
     //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=2
