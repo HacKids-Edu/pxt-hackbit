@@ -215,6 +215,16 @@ namespace hackbit {
     }
 
     /**
+     * Get PIR state [0-1]
+    */
+    //% blockId=hackbitPIRRead
+    //% block="PIR |%pin|"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function PIRState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
      * Set Led state
     */
     //% blockId=hackbitLedSet
