@@ -131,6 +131,28 @@ namespace hackbit {
     }
 
     /**
+     * Set vibration motor state
+    */
+    //% blockId=hackbitVibrationMotor
+    //% block="vibration motor pin |%pin| stat |%VibrationMotorState|"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=2
+    //% VibrationMotor.fieldEditor="gridpicker"
+    //% VibrationMotor.fieldOptions.columns=1
+    //% VibrationMotor.min=0 state.max=1
+    //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
+    export function hackbitVibrationMotorState(pin: DigitalPin, VibrationMotorState: OnOff): void {
+        switch (VibrationMotorState) {
+            case 0:
+                pins.digitalWritePin(pin, 0)
+                break;
+            case 1:
+                pins.digitalWritePin(pin, 1)
+                break;
+        }
+    }
+
+    /**
      * get distance from ultrasonic range sensor [cm]
      * @param pin Input pin
      */
