@@ -185,12 +185,32 @@ namespace hackbit {
     }
 
     /**
-     * Get MagneticSwitch state [0-1]
+     * Get Magnetic Switch state [0-1]
     */
     //% blockId=hackbitMagneticSwitchRead
     //% block="magnetic switch |%pin|"
     //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function MagneticSwitchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get Switch (P) state [0-1]
+    */
+    //% blockId=hackbitSwitchRead
+    //% block="switch |%pin|"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function SwitchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get Hall state [0-1]
+    */
+    //% blockId=hackbitHallRead
+    //% block="hall |%pin|"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function HallState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
 
