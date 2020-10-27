@@ -105,7 +105,7 @@ namespace hackbit {
     export let digit_buf: Buffer;
 
     /**
-     * Set Led state
+     * Set relay state
     */
     //% blockId=hackbitRelay
     //% block="relay pin |%pin| stat |%state|"
