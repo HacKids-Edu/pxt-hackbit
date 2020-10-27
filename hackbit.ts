@@ -124,7 +124,7 @@ namespace hackbit {
      * @param pin Input pin
      */
     //% blockId=RobotDriverultrasonic_cm 
-    //% block="ultrasonic distance|%name| (cm)"
+    //% block="ultrasonic ranger pin |%name| distance(cm)"
     //% name.fieldEditor="gridpicker" 
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
