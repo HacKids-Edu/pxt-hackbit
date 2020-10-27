@@ -523,7 +523,7 @@ namespace hackbit {
     //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=2
     //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2    
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
-    export function ReadGasConcentration(sensor: GasList, gaspin: AnalogPin): number {
+    export function hackbitGasRead(sensor: GasList, gaspin: AnalogPin): number {
         if(sensor==GasList.Co2){
             return 1024-pins.analogReadPin(gaspin)
         }
