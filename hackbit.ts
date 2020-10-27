@@ -205,8 +205,8 @@ namespace hackbit {
      * Get crash button state [0-1]
     */
     //% blockId=hackbitCrashRead
-    //% block="Crash sensor |%pin| is pressed"
-    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
+    //% block="crash sensor |%pin| is pressed"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"    
     export function CrashButton(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
