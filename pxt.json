@@ -20,7 +20,8 @@
         "rtc.ts",
         "norbi.ts",
         "lcd.ts",
-        "irt.ts"
+        "irt.ts",
+        "irr.ts"
     ],
     "testFiles": [
         "test.ts"
