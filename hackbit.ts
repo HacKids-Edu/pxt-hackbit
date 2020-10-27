@@ -320,10 +320,29 @@ namespace hackbit {
     }
 
     /** 
+    * Get temperature value
+    * @param temperaturepin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitTemperatureRead" block="value of temperature at pin %temperaturepin"
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
+    export function ReadTemperature(temperaturepin: AnalogPin): number {
+        let A               // value 
+        let B = 4275        // B value of the thermistor
+        let R = 0
+        let R0 = 100000     // R0 = 100k
+        let temp = 0
+        A = pins.analogReadPin(temperaturepin)
+        R = 1023.0/A-1.0
+        R = R0*R;
+        temp = 1.0/(Math.log(R/R0)/B+1/298.15)-273.15 // convert to temperature via datasheet
+        return Math.round(temp)
+    }
+
+    /** 
     * Get noise(dB)
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
     */
-    //% blockId="hackbitreadnoise" block="value of noise(dB) at pin %noisepin"
+    //% blockId="hackbitNoiseRead" block="value of noise(dB) at pin %noisepin"
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadNoise(noisepin: AnalogPin): number {
         let level = 0
