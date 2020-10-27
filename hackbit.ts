@@ -213,7 +213,7 @@ namespace hackbit {
     */
     //% blockId=hackbitMagneticSwitchRead
     //% block="magnetic switch pin |%pin| activated"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function MagneticSwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
