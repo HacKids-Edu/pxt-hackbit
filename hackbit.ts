@@ -225,6 +225,26 @@ namespace hackbit {
     }
 
     /**
+    * Get light intensity(0~100%)
+    * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
+    //% subcategory=Sensor  group="Analog" color=#851DE8 icon="\uf1eb"    
+    export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
+        let voltage = 0;
+        let lightintensity = 0;
+        voltage = pins.map(
+            pins.analogReadPin(lightintensitypin),
+            0,
+            1023,
+            0,
+            100
+        );
+        lightintensity = voltage;
+        return Math.round(lightintensity);
+    }
+
+    /**
      * Get analog potentiometer value [0-1023]
     */
     //% blockId=hackbitPotargRead
