@@ -112,7 +112,7 @@ namespace hackbit {
      * Set relay state
     */
     //% blockId=hackbitRelay
-    //% block="relay pin |%pin| stat |%RelayState|"
+    //% block="relay pin |%pin| state |%RelayState|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=2
     //% RelayState.fieldEditor="gridpicker"
@@ -134,7 +134,7 @@ namespace hackbit {
      * Set vibration motor state
     */
     //% blockId=hackbitVibrationMotor
-    //% block="vibration motor pin |%pin| stat |%VibrationMotorState|"
+    //% block="vibration motor pin |%pin| state |%VibrationMotorState|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=2
     //% VibrationMotor.fieldEditor="gridpicker"
@@ -151,6 +151,29 @@ namespace hackbit {
                 break;
         }
     }
+
+    /**
+     * Set mini fan state
+    */
+    //% blockId=hackbitMiniFan
+    //% block="mini fan pin |%pin| state |%MiniFanState|"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=2
+    //% MiniFanState.fieldEditor="gridpicker"
+    //% MiniFanState.fieldOptions.columns=1
+    //% MiniFanState.min=0 state.max=1
+    //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
+    export function hackbitMiniFanState(pin: DigitalPin, MiniFanState: OnOff): void {
+        switch (MiniFanState) {
+            case 0:
+                pins.digitalWritePin(pin, 0)
+                break;
+            case 1:
+                pins.digitalWritePin(pin, 1)
+                break;
+        }
+    }
+
 
     /**
      * get distance from ultrasonic range sensor [cm]
