@@ -155,7 +155,7 @@ namespace hackbit {
     }
 
     /**
-     * Get Hall Sensor state [0-1]
+     * Get hall sensor state [0-1]
     */
     //% blockId=hackbitHallRead
     //% block="hall |%pin|"
@@ -165,7 +165,7 @@ namespace hackbit {
     }
 
     /**
-     * Get PIR Sensor state [0-1]
+     * Get PIR sensor state [0-1]
     */
     //% blockId=hackbitPIRRead
     //% block="PIR |%pin|"
@@ -175,7 +175,7 @@ namespace hackbit {
     }
 
     /**
-     * Get Flame Sensor state [0-1]
+     * Get flame sensor state [0-1]
     */
     //% blockId=hackbitFlameRead
     //% block="flame |%pin|"
@@ -185,13 +185,45 @@ namespace hackbit {
     }
 
     /**
-     * Get Touch Sensor state [0-1]
+     * Get touch sensor state [0-1]
     */
     //% blockId=hackbitTouchRead
     //% block="touch |%pin|"
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function TouchState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get water sensor state [0-1]
+    */
+    //% blockId=hackbitWaterRead
+    //% block="water |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function WaterState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+    * Get soil moisture(0~100%)
+    * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="readsoilmoisture" block="value of soil moisture(0~100) at pin %soilhumiditypin"
+    //% blockId=hackbitSoilMoistureRead
+    //% block="water |%pin|"
+    //% subcategory=Sensor  group="Analog" color=#851DE8 icon="\uf1eb"    
+    export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
+        let voltage = 0;
+        let soilmoisture = 0;
+        voltage = pins.map(
+            pins.analogReadPin(soilmoisturepin),
+            0,
+            1023,
+            0,
+            100
+        );
+        soilmoisture = voltage;
+        return Math.round(soilmoisture);
     }
 
     /**
