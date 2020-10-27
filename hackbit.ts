@@ -105,6 +105,17 @@ namespace hackbit {
     export let digit_buf: Buffer;
 
     /**
+     * Set Led state
+    */
+    //% blockId=hackbitRelay
+    //% block="relay pin |%pin| stat |%state|"
+    //% state.min=0 state.max=1
+    //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
+    export function RelayState(pin: DigitalPin, state: OnOff): void {
+        pins.digitalWritePin(pin, state);
+    }
+
+    /**
      * get distance from ultrasonic range sensor [cm]
      * @param pin Input pin
      */
