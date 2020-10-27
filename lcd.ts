@@ -254,7 +254,7 @@ const enum TextOption {
 /**
  * MakeCode extension for LCD Display
  */
-//% color=#27b0ba icon="\uf0c9" block="Hackbit LCD"
+//% color=#1B91E0 icon="\uf0c9" block="Hackbit LCD"
 
 namespace HackbitLCD {
   const enum Lcd {
@@ -457,7 +457,7 @@ namespace HackbitLCD {
    * Displays a text on a LCD1602 in the given position range.
    * The text will be cropped if it is longer than the provided length.
    * If there is space left, it will be filled with pad characters.
-   * @param text the text to show, eg: "HackBit"
+   * @param text the text to show, eg: "Hack:bit"
    * @param startPosition the start position on the LCD, [1 - 32]
    * @param length the maximum space used on the LCD, eg: 16
    * @param option configures padding and alignment, eg: TextOption.Left
@@ -501,7 +501,7 @@ namespace HackbitLCD {
    * Displays a text on a LCD2004 in the given position range.
    * The text will be cropped if it is longer than the provided length.
    * If there is space left, it will be filled with pad characters.
-   * @param text the text to show, eg: "hackBit"
+   * @param text the text to show, eg: "Hack:bit"
    * @param startPosition the start position on the LCD, [1 - 80]
    * @param length the maximum space used on the LCD, eg: 20
    * @param option configures padding and alignment, eg: TextOption.Left
