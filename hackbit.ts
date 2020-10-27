@@ -209,7 +209,7 @@ namespace hackbit {
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitSoilMoistureRead" block="value of soil moisture(0~100) at pin %soilhumiditypin"
-    //% subcategory=Sensor  group="Analog" color=#851DE8 icon="\uf1eb"    
+    //% subcategory=Sensor  group="Analog" color=#00F52E icon="\uf1eb"    
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
         let voltage = 0;
         let soilmoisture = 0;
@@ -229,7 +229,7 @@ namespace hackbit {
     * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
-    //% subcategory=Sensor  group="Analog" color=#851DE8 icon="\uf1eb"    
+    //% subcategory=Sensor  group="Analog" color=#00F52E icon="\uf1eb"    
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
         let voltage = 0;
         let lightintensity = 0;
