@@ -108,11 +108,22 @@ namespace hackbit {
      * Set relay state
     */
     //% blockId=hackbitRelay
-    //% block="relay pin |%pin| stat |%state|"
-    //% state.min=0 state.max=1
+    //% block="relay pin |%pin| stat |%RelayState|"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=2
+    //% RelayState.fieldEditor="gridpicker"
+    //% RelayState.fieldOptions.columns=1
+    //% RelayState.min=0 state.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
-    export function RelayState(pin: DigitalPin, state: OnOff): void {
-        pins.digitalWritePin(pin, state);
+    export function hackbitRelayState(pin: DigitalPin, RelayState: OnOff): void {
+        switch (RelayState) {
+            case 0:
+                pins.digitalWritePin(pin, 0)
+                break;
+            case 1:
+                pins.digitalWritePin(pin, 1)
+                break;
+        }
     }
 
     /**
