@@ -320,10 +320,10 @@ namespace hackbit {
     }
 
     /** 
-    * Get temperature value
+    * Get temperature value Celsius
     * @param temperaturepin describe parameter here, eg: AnalogPin.P1
     */
-    //% blockId="hackbitTemperatureRead" block="value of temperature at pin %temperaturepin"
+    //% blockId="hackbitTemperatureRead" block="value of temperature (Celsius) at pin %temperaturepin"
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadTemperature(temperaturepin: AnalogPin): number {
         let A               // value 
