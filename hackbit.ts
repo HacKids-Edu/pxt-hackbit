@@ -41,13 +41,6 @@ namespace hackbit {
         Off = 0
     }
 
-    export enum BP {
-        //% block="BPA"
-        BPA = 1,
-        //% block="BPB"
-        BPB = 0
-    }
-
     export enum Color {
         //% block="Red"
         Red,
@@ -152,75 +145,99 @@ namespace hackbit {
     }
 
     /**
-     * Get line sensor state [0-1]
+     * Get line finder sensor state [0-1]
     */
-    //% blockId=hackbitLineRead
-    //% block="line sensor |%pin|"
+    //% blockId=hackbitLineFinderRead
+    //% block="pin |%pin| line finder is seeing black"
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function detectline(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
+    export function detectline(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     /**
      * Get collision sensor state [0-1]
     */
     //% blockId=hackbitCollisionRead
-    //% block="collision sensor |%pin|"
+    //% block="collision sensor pin |%pin| activated"
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function collisionSensor(pin: BP): boolean {
-        if (pin)
-            return input.buttonIsPressed(Button.A);
-        return input.buttonIsPressed(Button.B);
-    }
-
-    /**
-     * Get hall sensor state [0-1]
-    */
-    //% blockId=hackbitHallRead
-    //% block="hall |%pin|"
-    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function HallState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
+    export function collisionSensor(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     /**
      * Get PIR sensor state [0-1]
     */
     //% blockId=hackbitPIRRead
-    //% block="PIR |%pin|"
+    //% block="PIR sensor pin |%pin| detects motion"
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function PIRState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get flame sensor state [0-1]
-    */
-    //% blockId=hackbitFlameRead
-    //% block="flame |%pin|"
-    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function FlameState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get touch sensor state [0-1]
-    */
-    //% blockId=hackbitTouchRead
-    //% block="touch |%pin|"
-    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function TouchState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
+    export function PIRState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     /**
      * Get water sensor state [0-1]
     */
     //% blockId=hackbitWaterRead
-    //% block="water |%pin|"
+    //% block="water sensor pin |%pin| detects water"
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
-    export function WaterState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
+    export function WaterState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get Magnetic Switch state [0-1]
+    */
+    //% blockId=hackbitMagneticSwitchRead
+    //% block="magnetic switch pin |%pin| activated"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function MagneticSwitchState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get hall sensor state [0-1]
+    */
+    //% blockId=hackbitHallRead
+    //% block="hall sensor pin |%pin| activated"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function HallState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     /**
@@ -238,6 +255,38 @@ namespace hackbit {
             return false
         }
     }        
+
+    /**
+     * Get flame sensor state [0-1]
+    */
+    //% blockId=hackbitFlameRead
+    //% block="flame sensor pin |%pin| detects flame"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function FlameState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get touch sensor state [0-1]
+    */
+    //% blockId=hackbitTouchRead
+    //% block="touch sensor pin |%pin| touched"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function TouchState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     /**
      * Get vibration state [0-1]
@@ -538,7 +587,6 @@ namespace hackbit {
         return Math.round(RotaryAngle)
     }
 
-
     /**
      * Get button state [0-1]
     */
@@ -566,16 +614,6 @@ namespace hackbit {
     //% block="tilt |%pin|"
     //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function TiltState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get Magnetic Switch state [0-1]
-    */
-    //% blockId=hackbitMagneticSwitchRead
-    //% block="magnetic switch |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function MagneticSwitchState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
 
