@@ -19,7 +19,8 @@
         "oled.ts",
         "rtc.ts",
         "norbi.ts",
-        "lcd.ts"
+        "lcd.ts",
+        "irt.ts"
     ],
     "testFiles": [
         "test.ts"
