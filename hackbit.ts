@@ -143,6 +143,58 @@ namespace hackbit {
     }
 
     /**
+     * Get collision sensor state [0-1]
+    */
+    //% blockId=hackbitCollisionRead
+    //% block="collision sensor |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function collisionSensor(pin: BP): boolean {
+        if (pin)
+            return input.buttonIsPressed(Button.A);
+        return input.buttonIsPressed(Button.B);
+    }
+
+    /**
+     * Get Hall Sensor state [0-1]
+    */
+    //% blockId=hackbitHallRead
+    //% block="hall |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function HallState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get PIR Sensor state [0-1]
+    */
+    //% blockId=hackbitPIRRead
+    //% block="PIR |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function PIRState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get Flame Sensor state [0-1]
+    */
+    //% blockId=hackbitFlameRead
+    //% block="flame |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function FlameState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
+     * Get Touch Sensor state [0-1]
+    */
+    //% blockId=hackbitTouchRead
+    //% block="touch |%pin|"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
+    export function TouchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
      * Get analog potentiometer value [0-1023]
     */
     //% blockId=hackbitPotargRead
@@ -150,18 +202,6 @@ namespace hackbit {
     //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
-    }
-
-    /**
-     * Get collision sensor state [0-1]
-    */
-    //% blockId=hackbitCollisionRead
-    //% block="collision sensor |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function collisionSensor(pin: BP): boolean {
-        if (pin)
-            return input.buttonIsPressed(Button.A);
-        return input.buttonIsPressed(Button.B);
     }
 
     /**
@@ -211,46 +251,6 @@ namespace hackbit {
     //% block="switch |%pin|"
     //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function SwitchState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get Hall Sensor state [0-1]
-    */
-    //% blockId=hackbitHallRead
-    //% block="hall |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function HallState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get PIR Sensor state [0-1]
-    */
-    //% blockId=hackbitPIRRead
-    //% block="PIR |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function PIRState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get Flame Sensor state [0-1]
-    */
-    //% blockId=hackbitFlameRead
-    //% block="flame |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function FlameState(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-
-    /**
-     * Get Touch Sensor state [0-1]
-    */
-    //% blockId=hackbitTouchRead
-    //% block="touch |%pin|"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function TouchState(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
 
