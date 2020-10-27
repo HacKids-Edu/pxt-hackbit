@@ -305,6 +305,70 @@ namespace hackbit {
     }        
 
     /**
+     * Get button state [0-1]
+    */
+    //% blockId=hackbitButtonRead
+    //% block="button pin |%pin| is pressed"
+    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function buttonState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get button LED state [0-1]
+    */
+    //% blockId=hackbitButtonLEDRead
+    //% block="button pin LED |%pin| is pressed"
+    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function buttonLEDState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get Tilt state [0-1]
+    */
+    //% blockId=hackbitTiltRead
+    //% block="tilt switch pin |%pin| tilted"
+    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function TiltState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get Switch (P) state [0-1]
+    */
+    //% blockId=hackbitSwitchRead
+    //% block="switch(P) pin |%pin| activated"
+    //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function SwitchState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
     * Get soil moisture(0~100%)
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
@@ -585,70 +649,6 @@ namespace hackbit {
             300
         );
         return Math.round(RotaryAngle)
-    }
-
-    /**
-     * Get button state [0-1]
-    */
-    //% blockId=hackbitButtonRead
-    //% block="button pin |%pin| is pressed"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function buttonState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
-     * Get button LED state [0-1]
-    */
-    //% blockId=hackbitButtonLEDRead
-    //% block="button pin LED |%pin| is pressed"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function buttonLEDState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
-     * Get Tilt state [0-1]
-    */
-    //% blockId=hackbitTiltRead
-    //% block="tilt switch pin |%pin| tilted"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function TiltState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
-     * Get Switch (P) state [0-1]
-    */
-    //% blockId=hackbitSwitchRead
-    //% block="switch(P) pin |%pin| activated"
-    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
-    export function SwitchState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
     }
 
     /**
