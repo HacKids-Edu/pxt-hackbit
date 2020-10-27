@@ -520,7 +520,9 @@ namespace hackbit {
     * Get Gas Sensor concentration value 
     * @param concentrationpin describe parameter here, eg: AnalogPin.P1
     */
-    //% blockId="hackbitGasRead" block="concentration value of gas at pin %gaspin"
+    //% blockId="hackbitGasRead" block="%sensor gas sensor at pin %gaspin concentration value"
+    //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=2
+    //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2    
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadGasConcentration(sensor: GasList, gaspin: AnalogPin): number {
         if(sensor==GasList.Co2){
