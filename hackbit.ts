@@ -229,7 +229,7 @@ namespace hackbit {
     * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
-    //% subcategory=Sensor  group="Analog" color=#04FE33 icon="\uf1eb"    
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
         let voltage = 0;
         let lightintensity = 0;
@@ -249,7 +249,7 @@ namespace hackbit {
     * @param noisepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitreadnoise" block="value of noise(dB) at pin %noisepin"
-    //% subcategory=Sensor  group="Analog" color=#04FE33 icon="\uf1eb"    
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadNoise(noisepin: AnalogPin): number {
         let level = 0
         let voltage = 0
@@ -258,7 +258,7 @@ namespace hackbit {
         let l = 0
         let sumh = 0
         let suml = 0
-        //pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P0, 0)
         for (let i = 0; i < 1000; i++) {
             level = level + pins.analogReadPin(noisepin)
         }
