@@ -34,17 +34,6 @@ namespace hackbit {
         0x7C, 0x84, 0x7D, 0x03, 0x7E, 0x01
     ];
 
-/**
-* Sempre adicionar ao inicio de main.ts antes de submeter
-**/
-
-/**
- * Library for Grove micro:bit project board https://www.hackids.com.br
-*/
-/** 
-* //% weight=10 color=#FF1344 icon="\uf135"
-**/
-
     export enum OnOff {
         //% block="On"
         On = 1,
@@ -91,6 +80,14 @@ namespace hackbit {
         Anticlockwise = 8,
         //% block=Wave
         Wave = 9
+    }
+
+    export enum DHT11_state {
+        //% block="temperature(℃)" enumval=0
+        DHT11_temperature_C,
+
+        //% block="humidity(0~100)" enumval=1
+        DHT11_humidity,
     }
 
     export let identifiant = 0;
@@ -263,6 +260,63 @@ namespace hackbit {
             15
         );
         return Math.round(UVlevel)
+    }
+
+    /**
+    * Get dht11 temperature and humidity Value
+    * @param dht11pin describe parameter here, eg: DigitalPin.P15     
+    */
+    //% blockId="hackbitDHT11Read" block="DHT11 sensor %DHT11pin %dht11state value"
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
+    export function dht11Sensor(DHT11pin: DigitalPin, dht11state: DHT11_state): number {
+        basic.pause(1000)  //There must be more than 2000ms between two requests
+        pins.digitalWritePin(DHT11pin, 0)
+        basic.pause(18)
+        let i = pins.digitalReadPin(DHT11pin)
+        pins.setPull(DHT11pin, PinPullMode.PullUp);
+        switch (dht11state) {
+            case 0:
+                let dhtvalue1 = 0;
+                let dhtcounter1 = 0;
+                while (pins.digitalReadPin(DHT11pin) == 1);
+                while (pins.digitalReadPin(DHT11pin) == 0);
+                while (pins.digitalReadPin(DHT11pin) == 1);
+                for (let i = 0; i <= 32 - 1; i++) {
+                    while (pins.digitalReadPin(DHT11pin) == 0);
+                    dhtcounter1 = 0
+                    while (pins.digitalReadPin(DHT11pin) == 1) {
+                        dhtcounter1 += 1;
+                    }
+                    if (i > 15) {
+                        if (dhtcounter1 > 2) {
+                            dhtvalue1 = dhtvalue1 + (1 << (31 - i));
+                        }
+                    }
+                }
+                return ((dhtvalue1 & 0x0000ff00) >> 8);
+                break;
+            case 1:
+                while (pins.digitalReadPin(DHT11pin) == 1);
+                while (pins.digitalReadPin(DHT11pin) == 0);
+                while (pins.digitalReadPin(DHT11pin) == 1);
+
+                let value = 0;
+                let counter = 0;
+
+                for (let i = 0; i <= 8 - 1; i++) {
+                    while (pins.digitalReadPin(DHT11pin) == 0);
+                    counter = 0
+                    while (pins.digitalReadPin(DHT11pin) == 1) {
+                        counter += 1;
+                    }
+                    if (counter > 3) {
+                        value = value + (1 << (7 - i));
+                    }
+                }
+                return value;
+            default:
+                return 0;
+        }
     }
 
     /** 
