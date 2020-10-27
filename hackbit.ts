@@ -174,6 +174,28 @@ namespace hackbit {
         }
     }
 
+    /**
+     * Set laser state
+    */
+    //% blockId=hackbitLaser
+    //% block="laser pin |%pin| state |%LaserState|"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=2
+    //% LaserState.fieldEditor="gridpicker"
+    //% LaserState.fieldOptions.columns=1
+    //% LaserState.min=0 state.max=1
+    //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
+    export function hackbitLaserState(pin: DigitalPin, LaserState: OnOff): void {
+        switch (LaserState) {
+            case 0:
+                pins.digitalWritePin(pin, 0)
+                break;
+            case 1:
+                pins.digitalWritePin(pin, 1)
+                break;
+        }
+    }
+
 
     /**
      * get distance from ultrasonic range sensor [cm]
