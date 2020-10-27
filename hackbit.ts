@@ -185,6 +185,16 @@ namespace hackbit {
     }
 
     /**
+     * Get MagneticSwitch state [0-1]
+    */
+    //% blockId=hackbitMagneticSwitchRead
+    //% block="magnetic switch |%pin|"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function MagneticSwitchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
      * Set Led state
     */
     //% blockId=hackbitLedSet
