@@ -83,6 +83,17 @@ namespace hackbit {
         DHT11_humidity,
     }
 
+    export enum GasList {
+        //% block="Co"
+        Co,
+        //% block="Co2"
+        Co2,
+        //% block="Smoke"
+        Smoke,
+        //% block="Alcohol"
+        Alcohol
+    }
+    
     export let identifiant = 0;
     export let grovegestureinit = 0;
 
@@ -506,6 +517,20 @@ namespace hackbit {
     }
 
     /** 
+    * Get Gas Sensor concentration value 
+    * @param concentrationpin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitGasRead" block="concentration value of gas at pin %gaspin"
+    //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
+    export function ReadGasConcentration(sensor: GasList, gaspin: AnalogPin): number {
+        if(sensor==GasList.Co2){
+            return 1024-pins.analogReadPin(gaspin)
+        }
+        return pins.analogReadPin(gaspin)
+    }
+
+
+    /** 
     * Get noise(dB)
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
     */
@@ -626,7 +651,7 @@ namespace hackbit {
      * Get analog potentiometer value [0-1023]
     */
     //% blockId=hackbitPotargRead
-    //% block="potentiometer |%pin|"
+    //% block="potentiometer pin |%pin| value"
     //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
