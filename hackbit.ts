@@ -240,6 +240,22 @@ namespace hackbit {
     }        
 
     /**
+     * Get vibration state [0-1]
+    */
+    //% blockId=hackbitVibrationRead
+    //% block="vibration sensor pin |%pin| detects vibration"
+    //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"    
+    export function VibrationRead(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }        
+
+    /**
     * Get soil moisture(0~100%)
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
