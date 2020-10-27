@@ -175,6 +175,16 @@ namespace hackbit {
     }
 
     /**
+     * Get Tilt state [0-1]
+    */
+    //% blockId=hackbitTiltRead
+    //% block="tilt |%pin|"
+    //% subcategory=Input  group="Digital" color=#851DE8 icon="\uf1eb"    
+    export function TiltState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+
+    /**
      * Set Led state
     */
     //% blockId=hackbitLedSet
