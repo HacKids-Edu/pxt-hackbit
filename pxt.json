@@ -18,7 +18,8 @@
         "thingspeak.ts",
         "oled.ts",
         "rtc.ts",
-        "norbi.ts"
+        "norbi.ts",
+        "lcd.ts"
     ],
     "testFiles": [
         "test.ts"
