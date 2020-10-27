@@ -258,7 +258,7 @@ namespace hackbit {
         let l = 0
         let sumh = 0
         let suml = 0
-        pins.digitalWritePin(DigitalPin.P0, 0)
+        //pins.digitalWritePin(DigitalPin.P0, 0)
         for (let i = 0; i < 1000; i++) {
             level = level + pins.analogReadPin(noisepin)
         }
