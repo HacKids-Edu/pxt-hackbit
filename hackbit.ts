@@ -482,6 +482,26 @@ namespace hackbit {
     }
 
     /**
+     * Get rotary angle sensor [0-300]
+    */
+    //% blockId=hackbitRotaryRead
+    //% block="rotary angle sensor pin |%pin| value"
+    //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
+    export function rotaryValue(pin: AnalogPin): number {
+        let tRotaryAngle = pins.analogReadPin(pin)
+        let RotaryAngle
+        RotaryAngle = pins.map(
+            tRotaryAngle,
+            0,
+            1023,
+            0,
+            300
+        );
+        return Math.round(RotaryAngle)
+    }
+
+
+    /**
      * Get button state [0-1]
     */
     //% blockId=hackbitButtonRead
