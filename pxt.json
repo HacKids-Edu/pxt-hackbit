@@ -21,7 +21,8 @@
         "lcd.ts",
         "irt.ts",
         "irr.ts",
-        "main.ts"
+        "main.ts",
+        "color.ts"
     ],
     "testFiles": [
         "test.ts"
