@@ -3,6 +3,7 @@
 */
 //% weight=10 color=#FF1344 icon="\uf0eb"
 namespace hackbit {
+    let gesture_first_init = true
     const initRegisterArray: number[] = [
         0xEF, 0x00, 0x32, 0x29, 0x33, 0x01, 0x34, 0x00, 0x35, 0x01, 0x36, 0x00, 0x37, 0x07, 0x38, 0x17,
         0x39, 0x06, 0x3A, 0x12, 0x3F, 0x00, 0x40, 0x02, 0x41, 0xFF, 0x42, 0x01, 0x46, 0x2D, 0x47, 0x0F,
@@ -986,73 +987,104 @@ namespace hackbit {
         }
     }
 
-
-    /**
-     * Detect and recognize the gestures from Grove - Gesture
-     * None:0
-     * Right:1
-     * Left:2
-     * Up:3
-     * Down:4
-     * Forward:5
-     * Backward:6
-     * Clockwise:7
-     * Anticlockwise:8
-     * Wave:9
-     */
-    //% blockId=hackbitGroveGesture
-    //% block="grove gesture"
-    //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
-    export function grove_gesture_reads(): number {
-        let data = 0, result = 0;
-
-        if (grovegestureinit == 0) {
-            paj7620Init();
+    export class PAJ7620 {
+        private paj7620WriteReg(addr: number, cmd: number) {
+            let buf: Buffer = pins.createBuffer(2);
+            buf[0] = addr;
+            buf[1] = cmd;
+            pins.i2cWriteBuffer(0x73, buf, false);
+        }
+        private paj7620ReadReg(addr: number): number {
+            let buf: Buffer = pins.createBuffer(1);
+            buf[0] = addr;
+            pins.i2cWriteBuffer(0x73, buf, false);
+            buf = pins.i2cReadBuffer(0x73, 1, false);
+            return buf[0];
+        }
+        private paj7620SelectBank(bank: number) {
+            if (bank == 0) this.paj7620WriteReg(0xEF, 0);
+            else if (bank == 1) this.paj7620WriteReg(0xEF, 1);
+        }
+        private paj7620Init() {
+            let temp = 0;
+            this.paj7620SelectBank(0);
+            temp = this.paj7620ReadReg(0);
+            if (temp == 0x20) {
+                for (let i = 0; i < 438; i += 2) {
+                    this.paj7620WriteReg(initRegisterArray[i], initRegisterArray[i + 1]);
+                }
+            }
+            this.paj7620SelectBank(0);
+        }
+        init() {
+            this.paj7620Init();
             basic.pause(200);
-            grovegestureinit = 1;
         }
-
-        data = paj7620ReadReg(0x43);
-        switch (data) {
-            case 0x01:
-                result = GroveGesture.Right;
-                break;
-
-            case 0x02:
-                result = GroveGesture.Left;
-                break;
-
-            case 0x04:
-                result = GroveGesture.Up;
-                break;
-
-            case 0x08:
-                result = GroveGesture.Down;
-                break;
-
-            case 0x10:
-                result = GroveGesture.Forward;
-                break;
-
-            case 0x20:
-                result = GroveGesture.Backward;
-                break;
-
-            case 0x40:
-                result = GroveGesture.Clockwise;
-                break;
-
-            case 0x80:
-                result = GroveGesture.Anticlockwise;
-                break;
-
-            default:
-                data = paj7620ReadReg(0x44);
-                if (data == 0x01)
-                    result = GroveGesture.Wave;
-                break;
+        read(): number {
+            let data = 0, result = 0;
+            data = this.paj7620ReadReg(0x43);
+            switch (data) {
+                case 0x01:
+                    result = GroveGesture.Right;
+                    break;
+                case 0x02:
+                    result = GroveGesture.Left;
+                    break;
+                case 0x04:
+                    result = GroveGesture.Up;
+                    break;
+                case 0x08:
+                    result = GroveGesture.Down;
+                    break;
+                case 0x10:
+                    result = GroveGesture.Forward;
+                    break;
+                case 0x20:
+                    result = GroveGesture.Backward;
+                    break;
+                case 0x40:
+                    result = GroveGesture.Clockwise;
+                    break;
+                case 0x80:
+                    result = GroveGesture.Anticlockwise;
+                    break;
+                default:
+                    data = this.paj7620ReadReg(0x44);
+                    if (data == 0x01)
+                        result = GroveGesture.Wave;
+                    break;
+            }
+            return result;
         }
-        return result;
+    }        
+
+    const gestureEventId = 3100;
+    let lastGesture = GroveGesture.None;
+    let paj7620 = new PAJ7620();
+    /**
+        * Do something when a gesture is detected
+        * @param gesture type of gesture to detect
+        * @param handler code to run
+    */
+    //% blockId= gesture_create_event block="on gesture sensor is %gesture"
+    //% gesture.fieldEditor="gridpicker" gesture.fieldOptions.columns=3
+    //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
+    export function onGesture(gesture: GroveGesture, handler: () => void) {
+        control.onEvent(gestureEventId, gesture, handler);
+        if(gesture_first_init){
+            paj7620.init();
+            gesture_first_init = false
+        }
+        control.inBackground(() => {
+            while (true) {
+                const gesture = paj7620.read();
+                if (gesture != lastGesture) {
+                    lastGesture = gesture;
+                    control.raiseEvent(gestureEventId, lastGesture);
+                }
+                basic.pause(100);
+            }
+        })
     }
 
     /**
@@ -1262,47 +1294,6 @@ namespace hackbit {
         else dispData = TubeTab[dispData] + pointData;
 
         return dispData;
-    }
-
-    function paj7620WriteReg(addr: number, cmd: number) {
-        let buf: Buffer = pins.createBuffer(2);
-
-        buf[0] = addr;
-        buf[1] = cmd;
-
-        pins.i2cWriteBuffer(0x73, buf, false);
-    }
-
-    function paj7620ReadReg(addr: number): number {
-        let buf2: Buffer = pins.createBuffer(1);
-
-        buf2[0] = addr;
-
-        pins.i2cWriteBuffer(0x73, buf2, false);
-
-        buf2 = pins.i2cReadBuffer(0x73, 1, false);
-
-        return buf2[0];
-    }
-
-    function paj7620SelectBank(bank: number) {
-        if (bank == 0) paj7620WriteReg(0xEF, 0);
-        else if (bank == 1) paj7620WriteReg(0xEF, 1);
-    }
-
-    function paj7620Init() {
-        let temp = 0;
-
-        paj7620SelectBank(0);
-
-        temp = paj7620ReadReg(0);
-        if (temp == 0x20) {
-            for (let j = 0; j < 438; j += 2) {
-                paj7620WriteReg(initRegisterArray[j], initRegisterArray[j + 1]);
-            }
-        }
-
-        paj7620SelectBank(0);
     }
 
     /***********   APDS 9960  **********/
