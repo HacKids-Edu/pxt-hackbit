@@ -836,7 +836,6 @@ namespace hackbit {
      * Useful for comparisons
      */
     //% blockId=joystickkey block="%jkey"
-    //% jkey.fieldEditor="gridpicker" jkey.fieldOptions.columns=2        
     //% group="Analog"
     //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function joystickkey(key: GroveJoystickKey): number {
