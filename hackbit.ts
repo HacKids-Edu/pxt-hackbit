@@ -773,14 +773,14 @@ namespace hackbit {
     }
 
     export class GroveJoystick
-        {
-            /**
-            * detect position from Grove - Thumb Joystick
-            * @param xPin
-            * @param yPin
-            */
+    {
+        /**
+        * detect position from Grove - Thumb Joystick
+        * @param xPin
+        * @param yPin
+        */
      
-           joyread(xPin: AnalogPin, yPin: AnalogPin): number {
+        joyread(xPin: AnalogPin, yPin: AnalogPin): number {
 
             let xdata = 0, ydata = 0, result = 0;
             if (xPin && yPin) {
@@ -819,7 +819,7 @@ namespace hackbit {
      * get joystick key
      * 
      */
-    //% blockId=grove_getjoystick block="get joystick key at|%xpin|and|%ypin"
+    //% blockId=grove_getjoystick block="get joystick key at|%pin|and|%pin"
     //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
