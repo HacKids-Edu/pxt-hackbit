@@ -885,6 +885,9 @@ namespace hackbit {
         return 0;
     }
 
+    /**
+    * Read color from I2C APDS9960 Color Sensor [0;360]
+    */
     //% blockId=apds9960_readcolor block="APDS9960 get color HUE (0~360)"
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    	
 	
@@ -911,7 +914,11 @@ namespace hackbit {
         let hue = rgb2hsl(r, g, b)
         return hue
     }
-	
+
+    /**
+    * Read color from I2C APDS9960 Color Sensor 
+    * @param selected color
+    */
     //% block="APDS9960 color sensor %color detects"
     //% subcategory=Sensor group="IIC Port"
     //% color.fieldEditor="gridpicker" color.fieldOptions.columns=3
