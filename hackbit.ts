@@ -835,7 +835,8 @@ namespace hackbit {
      * Converts the key name to a number
      * Useful for comparisons
      */
-    //% blockId=joystickkey block="%key"
+    //% blockId=joystickkey block="%joystickkey"
+    //% joystickkey.fieldEditor="gridpicker" joystickkey.fieldOptions.columns=2        
     //% group="Analog"
     //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function joystickkey(key: GroveJoystickKey): number {
