@@ -835,9 +835,9 @@ namespace hackbit {
      * Converts the key name to a number
      * Useful for comparisons
      */
-    //% blockId=joystickkey block="%GroveJoystickKey"
-    //% GroveJoystickKey.fieldEditor="gridpicker" 
-    //% GroveJoystickKey.fieldOptions.columns=3
+    //% blockId=joystickkey block="%key"
+    //% key.fieldEditor="gridpicker" 
+    //% key.fieldOptions.columns=3
     //% group="Analog"
     //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function joystickkey(key: GroveJoystickKey): number {
@@ -846,14 +846,16 @@ namespace hackbit {
 
     /**
      * Do something when a key is detected by Grove - Thumb Joystick
-     * @param GroveJoystickKey type of joystick to detect
+     * @param key type of joystick to detect
      * @param xpin
      * @param ypin
      * @param handler code to run
      */
     //% blockId=grove_joystick_create_event 
-    //% block="on key|%GroveJoystickKey at |%xpin|and|%ypin"
-    //% grove_joystick_create_event.fieldEditor="gridpicker" grove_joystick_create_event.fieldOptions.columns=3
+    //% block="on key|%key at |%xpin|and|%ypin"
+    //% key.fieldEditor="gridpicker" key.fieldOptions.columns=3
+    //% xpin.fieldEditor="gridpicker" xpin.fieldOptions.columns=3    
+    //% ypin.fieldEditor="gridpicker" ypin.fieldOptions.columns=3        
     //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     //% subcategory=Input  color=#851DE8 icon="\uf1eb"
 
