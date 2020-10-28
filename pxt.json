@@ -11,7 +11,6 @@
         "_locales/fr/hackbit-strings.json",
         "_locales/fr/hackbit-jsdoc-strings.json",
         "README.md",
-        "main.ts",
         "hackbit.ts",
         "motor.ts",
         "neopixel.ts",
@@ -21,7 +20,8 @@
         "norbi.ts",
         "lcd.ts",
         "irt.ts",
-        "irr.ts"
+        "irr.ts",
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"

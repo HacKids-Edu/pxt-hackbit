@@ -597,7 +597,6 @@ namespace hackbit {
         return pins.analogReadPin(gaspin)
     }
 
-
     /** 
     * Get noise(dB)
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
@@ -756,7 +755,7 @@ namespace hackbit {
     }
 
     /**
-    * Get color from I2C Grove Color Sensor v1.3 or v2.0
+    * Get color from I2C Grove Color Sensor v1.3 (TCS3414CS) or v2.0 (TCS3472)
     * [0;65534]
     * @param selected color
     */
