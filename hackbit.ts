@@ -816,12 +816,12 @@ namespace hackbit {
     let joystick = new GroveJoystick();    
 
     /**
-     * get Joystick key
+     * get joystick key
      * 
      */
     //% blockId=grove_getjoystick block="get joystick key at|%xpin|and|%ypin"
-    //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
-    //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
+    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
     }
@@ -831,8 +831,8 @@ namespace hackbit {
      * Useful for comparisons
      */
     //% blockId=joystickkey block="%key"
-    //% group="Thumbjoystick"
-    //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
+    //% group="Analog"
+    //% subcategory=Input color=#851DE8 icon="\uf1eb"
 
     export function joystickkey(key: GroveJoystickKey): number {
         return key;
@@ -846,8 +846,8 @@ namespace hackbit {
      * @param handler code to run
      */
     //% blockId=grove_joystick_create_event block="on Key|%key at |%xpin|and|%ypin"
-    //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
-    //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
+    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% subcategory=Input  color=#851DE8 icon="\uf1eb"
 
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
         control.onEvent(joystickEventID, key, handler);
