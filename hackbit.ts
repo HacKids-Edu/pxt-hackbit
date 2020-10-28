@@ -850,10 +850,9 @@ namespace hackbit {
      * @param handler code to run
      */
     //% blockId=grove_joystick_create_event 
-    //% block="on key|%key at |%xpin|and|%ypin"
+    //% block="on key |%key at |%xpin| and |%ypin"
     //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
-    //% subcategory=Input  color=#851DE8 icon="\uf1eb"
-
+    //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
         control.onEvent(joystickEventID, key, handler);
         control.inBackground(() => {
