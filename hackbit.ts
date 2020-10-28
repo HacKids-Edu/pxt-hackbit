@@ -760,7 +760,7 @@ namespace hackbit {
     * @param selected color
     */
     //% blockId="grovecolorsensorgetcolor" 
-    //% block="color %Color"
+    //% block="color sensor detected %Color"
     //% block.loc.fr="Valeur de la couleur %Color du capteur de couleur grove"
     //% jsdoc = "Grab sensor value from grove color sensor"
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
