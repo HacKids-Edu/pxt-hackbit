@@ -821,7 +821,10 @@ namespace hackbit {
      */
     //% blockId=grove_getjoystick 
     //% block="get joystick key at|%xpin|and|%ypin"
-    //% grove_getjoystick.fieldEditor="gridpicker" grove_getjoystick.fieldOptions.columns=3
+    //% xpin.fieldEditor="gridpicker" 
+    //% xpin.fieldOptions.columns=3
+    //% ypin.fieldEditor="gridpicker" 
+    //% ypin.fieldOptions.columns=3
     //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     //% subcategory=Input color=#851DE8 icon="\uf1eb"
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
