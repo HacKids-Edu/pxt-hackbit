@@ -162,7 +162,7 @@ namespace HackbitOLEDDisplay {
     //% line.min=1 line.max=8 line.defl=1
     //% text.defl="Hello,Hackids"
     //% block="OLED show line %line|text %text"
-    //% subcategory=Display group="OLED" color=#00B1ED
+    //% group="OLED" color=#00B1ED
     export function showUserText(line: number, text: string) {
         if (firstoledinit) {
             oledinit()
@@ -185,7 +185,7 @@ namespace HackbitOLEDDisplay {
     //% line.min=1 line.max=8 line.defl=2 
     //% n.defl=20200508
     //% block="OLED show line %line|number %n"
-    //% subcategory=Display group="OLED" color=#00B1ED
+    //% group="OLED" color=#00B1ED
     export function showUserNumber(line: number, n: number) {
         if (firstoledinit) {
             oledinit()
@@ -194,7 +194,7 @@ namespace HackbitOLEDDisplay {
         showUserText(line, "" + n)
     }
     //% block="clear display" color=#00B1ED
-    //% subcategory=Display group="OLED"
+    //% group="OLED"
     export function oledClear() {
         //oledcmd(DISPLAY_OFF);   //display off
         for (let j = 0; j < 8; j++) {
