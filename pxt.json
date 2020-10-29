@@ -21,8 +21,7 @@
         "lcd.ts",
         "irt.ts",
         "irr.ts",
-        "main.ts",
-        "joystick.ts"
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"
