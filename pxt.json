@@ -4,7 +4,8 @@
     "description": "hack:bit - grove micro:bit project board https://www.hackids.com.br",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "OLED": "github:PiSupply/pxt-oled-ssd1306"
     },
     "files": [
         "main.blocks",
