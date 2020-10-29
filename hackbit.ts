@@ -824,7 +824,7 @@ namespace hackbit {
     //% xpin.fieldOptions.columns=3
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
-    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% group="Thumb Joystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     //% subcategory=Input  color=#851DE8 
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
@@ -837,7 +837,7 @@ namespace hackbit {
     //% blockId=joystickkey block="%key"
     //% key.fieldEditor="gridpicker"
     //% key.fieldOptions.columns=2
-    //% group="Analog"
+    //% group="Thumb Joystick"
     //% subcategory=Input  color=#851DE8 
 
     export function joystickkey(key: GroveJoystickKey): number {
@@ -858,7 +858,7 @@ namespace hackbit {
     //% xpin.fieldOptions.columns=3
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
-    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% group="Thumb Joystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     //% subcategory=Input  color=#851DE8 
 
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
