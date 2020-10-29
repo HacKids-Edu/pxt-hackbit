@@ -181,7 +181,8 @@ namespace hackbitmotors {
     //% blockId=hackbit_gservo block="Geek Servo|%index|degree %degree"
     //% weight=99
     //% degree.min=-45 degree.max=225
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
     export function GeekServo(index: Servos, degree: number): void {
         if (!initialized) {
@@ -202,7 +203,8 @@ namespace hackbitmotors {
     //% weight=98
     //% blockGap=50
     //% degree.min=0 degree.max=360
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
 
     export function GeekServo2KG(index: Servos, degree: number): void {
@@ -218,6 +220,8 @@ namespace hackbitmotors {
 
     //% blockId=hackbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
     //% weight=90
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
 
     export function StepperDegree(index: Steppers, degree: number): void {
@@ -233,6 +237,8 @@ namespace hackbitmotors {
 
     //% blockId=hackbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
     //% weight=90
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
@@ -308,6 +314,8 @@ namespace hackbitmotors {
 
     //% blockId=hackbit_motor_run block="Motor|%index|speed %speed"
     //% weight=85
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
@@ -346,6 +354,10 @@ namespace hackbitmotors {
     */
     //% blockId=hackbit_motor_dual block="Motor|%motor1|speed %speed1|%motor2|speed %speed2"
     //% weight=84
+    //% motor1.fieldEditor="gridpicker"
+    //% motor1.fieldOptions.columns=2
+    //% motor2.fieldEditor="gridpicker"
+    //% motor2.fieldOptions.columns=2
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
