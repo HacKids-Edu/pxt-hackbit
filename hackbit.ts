@@ -979,8 +979,8 @@ namespace hackbit {
     */
     //% blockId="grovecolorsensorgetcolor" 
     //% block="color sensor detected %Color"
-    //% block.loc.fr="Valeur de la couleur %Color du capteur de couleur grove"
-    //% jsdoc = "Grab sensor value from grove color sensor"
+    //% Color.fieldEditor="gridpicker"
+    //% Color.fieldOptions.columns=3
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
 
     export function color(col: Color): NumberFormat.UInt16BE {
