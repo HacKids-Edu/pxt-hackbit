@@ -40,7 +40,6 @@ namespace HackbitOLED {
     let displayWidth = 128
     let displayHeight = 64 / 8
     let screenSize = 0
-    //let font: Array<Array<number>>
     let loadStarted: boolean;
     let loadPercent: number;
     function command(cmd: number) {
