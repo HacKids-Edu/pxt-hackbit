@@ -237,6 +237,8 @@ namespace hackbitmotors {
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
+    //% turn.fieldEditor="gridpicker"
+    //% turn.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
