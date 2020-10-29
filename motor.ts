@@ -225,7 +225,6 @@ namespace hackbitmotors {
     //% degree.fieldEditor="gridpicker"
     //% degree.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
-
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -236,13 +235,10 @@ namespace hackbitmotors {
         MotorStopAll()
     }
 
-
     //% blockId=hackbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% turn.fieldEditor="gridpicker"
-    //% turn.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
@@ -250,10 +246,6 @@ namespace hackbitmotors {
     }
 
     //% blockId=hackbit_stepper_dual block="Dual Stepper(Degree) |M1 %degree1| M2 %degree2"
-    //% degree1.fieldEditor="gridpicker"
-    //% degree1.fieldOptions.columns=2
-    //% degree2.fieldEditor="gridpicker"
-    //% degree2.fieldOptions.columns=2
     //% weight=89
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperDual(degree1: number, degree2: number): void {
@@ -272,7 +264,6 @@ namespace hackbitmotors {
             stopMotor(1); stopMotor(2);
             basic.pause(10240 * (degree2 - degree1) / 360);
         }
-
         MotorStopAll()
     }
 
