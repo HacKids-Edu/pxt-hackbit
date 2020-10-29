@@ -540,7 +540,8 @@ namespace hackbit {
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitSoilMoistureRead" block="value of soil moisture(0~100) at pin %soilhumiditypin"
-    //% soilhumiditypin.min=0 soilhumiditypin.max=255
+    //% soilhumiditypin.fieldEditor="gridpicker"
+    //% soilhumiditypin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
         let voltage = 0;
@@ -561,6 +562,8 @@ namespace hackbit {
     * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
+    //% lightintensitypin.fieldEditor="gridpicker"
+    //% lightintensitypin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
         let voltage2 = 0;
@@ -581,6 +584,8 @@ namespace hackbit {
     * @param uvlevelpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitUVLevelRead" block="UV sensor (0~15) at pin %uvlevelpin"
+    //% uvlevelpin.fieldEditor="gridpicker"
+    //% uvlevelpin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function UVLevel(uvlevelpin: AnalogPin): number {
         let UVlevel = pins.analogReadPin(uvlevelpin);
@@ -602,6 +607,11 @@ namespace hackbit {
     * @param dht11pin describe parameter here, eg: DigitalPin.P15     
     */
     //% blockId="hackbitDHT11Read" block="DHT11 sensor %DHT11pin %dht11state value"
+    //% DHT11pin.fieldEditor="gridpicker"
+    //% DHT11pin.fieldOptions.columns=3
+    //% dht11state.fieldEditor="gridpicker"
+    //% dht11state.fieldOptions.columns=2
+    //% dht11state.min=0 dht11state.max=1
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function dht11Sensor(DHT11pin: DigitalPin, dht11state: DHT11_state): number {
         basic.pause(1000)  //There must be more than 2000ms between two requests
@@ -659,6 +669,8 @@ namespace hackbit {
     * @param temperaturepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitTemperatureRead" block="value of temperature (Celsius) at pin %temperaturepin"
+    //% temperaturepin.fieldEditor="gridpicker"
+    //% temperaturepin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadTemperature(temperaturepin: AnalogPin): number {
         let A               // value 
@@ -677,7 +689,7 @@ namespace hackbit {
     * Get Gas Sensor concentration value 
     */
     //% blockId="hackbitGasRead" block="%sensor gas sensor at pin %gaspin concentration value"
-    //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=2
+    //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=3
     //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2    
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function hackbitGasRead(sensor: GasList, gaspin: AnalogPin): number {
@@ -692,6 +704,8 @@ namespace hackbit {
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
     */
     //% blockId="hackbitNoiseRead" block="value of noise(dB) at pin %noisepin"
+    //% noisepin.fieldEditor="gridpicker"
+    //% noisepin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadNoise(noisepin: AnalogPin): number {
         let level = 0
