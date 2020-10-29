@@ -465,7 +465,7 @@ namespace HackbitLCD {
   //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_show_string_on_1602"
   //% block="LCD1602 show %text | at position %startPosition=hackbit_lcd_position_1602 with length %length || and %option"
-  //% text.shadowOptions.toString=true
+  //% text.shadowOptions.toString=true 
   //% length.min=1 length.max=32 length.fieldOptions.precision=1
   //% expandableArgumentMode="toggle"
   //% inlineInputMode="inline"
