@@ -2,13 +2,8 @@
 * Functions to hackbit board by Hackids 
 */
 //% color=#EA5532 icon="\uf110" block="PlanetX_Display" blockId="PlanetX_Display"
-//% groups='["LED", "Digital", "Analog", "IIC Port", "OLED", "8*16 Matrix", "7-Seg 4-Dig LED Nixietube"]'
-namespace PlanetX_Display {
-    ////////////////////////////////TM 1637/////////////////
-    let TM1637_CMD1 = 0x40;
-    let TM1637_CMD2 = 0xC0;
-    let TM1637_CMD3 = 0x80;
-    let _SEGMENTS = [0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71];
+//% groups="Hackids OLED"
+namespace OLEDDisplay {
     /////////////////////OLED///////////////////////////////
     let firstoledinit = true
     const basicFont: string[] = [
@@ -163,88 +158,6 @@ namespace PlanetX_Display {
         oledcmd(0xAF);  // Set display On
         oledClear();
     }
-    //////////////////////////////////////////////////////////////Matrix
-    let initializedMatrix = false
-    const HT16K33_ADDRESS = 0x70
-    const HT16K33_BLINK_CMD = 0x80
-    const HT16K33_BLINK_DISPLAYON = 0x01
-    const HT16K33_CMD_BRIGHTNESS = 0xE0
-    let matBuf = pins.createBuffer(17)
-    function matrixInit() {
-        i2ccmd(HT16K33_ADDRESS, 0x21);// turn on oscillator
-        i2ccmd(HT16K33_ADDRESS, HT16K33_BLINK_CMD | HT16K33_BLINK_DISPLAYON | (0 << 1));
-        i2ccmd(HT16K33_ADDRESS, HT16K33_CMD_BRIGHTNESS | 0xF);
-    }
-    function i2ccmd(addr: number, value: number) {
-        let buf = pins.createBuffer(1)
-        buf[0] = value
-        pins.i2cWriteBuffer(addr, buf)
-    }
-    function matrixShow() {
-        matBuf[0] = 0x00;
-        pins.i2cWriteBuffer(HT16K33_ADDRESS, matBuf);
-    }
-    ///////////////////////////////enum
-    export enum DigitalRJPin {
-        //% block="J1" 
-        J1,
-        //% block="J2"
-        J2,
-        //% block="J3"
-        J3,
-        //% block="J4"
-        J4
-    }
-    export enum AnalogRJPin {
-        //% block="J1"
-        J1,
-        //% block="J2"
-        J2
-    }
-    export enum EmojiList {
-        //% block="😆"
-        Grinning_Squinting_Face,
-        //% block="😐"
-        Neutral_Face,
-        //% block="😞"
-        Sad_Face,
-        //% block="🙂"
-        Slightly_Smiling_Face,
-        //% block="😠"
-        Angry_Face
-    }
-    ///////////////////////////////////////////////////////RJpin_to_pin
-    function RJpin_to_analog(Rjpin: AnalogRJPin): any {
-        let pin = AnalogPin.P1
-        switch (Rjpin) {
-            case AnalogRJPin.J1:
-                pin = AnalogPin.P1
-                break;
-            case AnalogRJPin.J2:
-                pin = AnalogPin.P2
-                break;
-        }
-        return pin
-    }
-    function RJpin_to_digital(Rjpin: DigitalRJPin): any {
-        let pin = DigitalPin.P1
-        switch (Rjpin) {
-            case DigitalRJPin.J1:
-                pin = DigitalPin.P8
-                break;
-            case DigitalRJPin.J2:
-                pin = DigitalPin.P12
-                break;
-            case DigitalRJPin.J3:
-                pin = DigitalPin.P14
-                break;
-            case DigitalRJPin.J4:
-                pin = DigitalPin.P16
-                break;
-        }
-        return pin
-    }
-    /////////////////////////////User_function//////////////////
 
     //% line.min=1 line.max=8 line.defl=1
     //% text.defl="Hello,Hackids"
@@ -296,29 +209,5 @@ namespace PlanetX_Display {
         //oledcmd(DISPLAY_ON);    //display on
         setText(0, 0);
     }
-    //% shim=sendBufferAsm
-    function sendBuffer(buf: Buffer, pin: DigitalPin) {
-    }
 
-    function packRGB(a: number, b: number, c: number): number {
-        return ((a & 0xFF) << 16) | ((b & 0xFF) << 8) | (c & 0xFF);
-    }
-    function unpackR(rgb: number): number {
-        let r = (rgb >> 16) & 0xFF;
-        return r;
-    }
-    function unpackG(rgb: number): number {
-        let g = (rgb >> 8) & 0xFF;
-        return g;
-    }
-    function unpackB(rgb: number): number {
-        let b = (rgb) & 0xFF;
-        return b;
-    }
-
-    export enum HueInterpolationDirection {
-        Clockwise,
-        CounterClockwise,
-        Shortest
-    }
 }
