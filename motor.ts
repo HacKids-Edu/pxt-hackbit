@@ -159,7 +159,8 @@ namespace hackbitmotors {
     //% blockId=hackbit_servo block="Servo|%index|degree %degree"
     //% weight=100
     //% degree.min=0 degree.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
 
     export function Servo(index: Servos, degree: number): void {
