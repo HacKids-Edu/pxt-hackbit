@@ -575,6 +575,8 @@ namespace HackbitLCD {
    */
   //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_backlight" block="switch LCD backlight %backlight"
+  //% backlight.fieldEditor="gridpicker"
+  //% backlight.fieldOptions.columns=2
   //% weight=79
   export function setLcdBacklight(backlight: LcdBacklight): void {
     if (!lcdState && !connect()) {
