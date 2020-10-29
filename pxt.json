@@ -20,7 +20,8 @@
         "irt.ts",
         "irr.ts",
         "main.ts",
-        "hackbit.ts"
+        "hackbit.ts",
+        "oled.ts"
     ],
     "testFiles": [
         "test.ts"
