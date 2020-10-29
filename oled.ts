@@ -1,9 +1,9 @@
 /**
 * Functions to hackbit board by Hackids 
 */
-//% color=#EA5532 icon="\uf110" block="PlanetX_Display" blockId="PlanetX_Display"
-//% groups="Hackids OLED"
-namespace OLEDDisplay {
+//% color=#EA5532 icon="\uf110" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
+//% groups="OLED"
+namespace HackbitOLEDDisplay {
     /////////////////////OLED///////////////////////////////
     let firstoledinit = true
     const basicFont: string[] = [
