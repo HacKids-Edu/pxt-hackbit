@@ -1,7 +1,7 @@
 /**
-* Functions to hackbit board by Hackids 
+* Functions to hack:bit board by Hackids 
 */
-//% color=#EA5532 icon="\uf110" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
+//% color=#EA5532 icon="\uf2c2" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
 //% groups="OLED"
 namespace HackbitOLEDDisplay {
     /////////////////////OLED///////////////////////////////
