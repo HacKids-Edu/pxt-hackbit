@@ -222,8 +222,6 @@ namespace hackbitmotors {
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% degree.fieldEditor="gridpicker"
-    //% degree.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
