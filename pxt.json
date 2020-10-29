@@ -12,7 +12,6 @@
         "_locales/fr/hackbit-strings.json",
         "_locales/fr/hackbit-jsdoc-strings.json",
         "README.md",
-        "hackbit.ts",
         "motor.ts",
         "neopixel.ts",
         "thingspeak.ts",
