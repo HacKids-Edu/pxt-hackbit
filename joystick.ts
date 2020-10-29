@@ -21,14 +21,12 @@ enum GroveJoystickKey {
     Press = 9
 }
 
-
 /**
  * Functions to operate Grove module.
  */
 //% weight=10 color=#9F79EE icon="\uf1b3" block="Joy"
 //% groups='["4-Digit","Ultrasonic","Gesture","Thumbjoystick","UartWiFi"]'
 namespace joy {
-
     export class GroveJoystick
     {
         /**
@@ -118,26 +116,5 @@ namespace joy {
             }
         })
         
-    }
-
-    function waitAtResponse(target1: string, target2: string, target3: string, timeout: number) {
-        let buffer = ""
-        let start = input.runningTime()
-
-        while ((input.runningTime() - start) < timeout) {
-            buffer += serial.readString()
-
-            if (buffer.includes(target1)) return 1
-            if (buffer.includes(target2)) return 2
-            if (buffer.includes(target3)) return 3
-
-            basic.pause(100)
-        }
-
-        return 0
-    }
-
-    function sendAtCmd(cmd: string) {
-        serial.writeString(cmd + "\u000D\u000A")
     }
 }
