@@ -16,7 +16,6 @@
         "motor.ts",
         "neopixel.ts",
         "thingspeak.ts",
-        "oled.ts",
         "rtc.ts",
         "norbi.ts",
         "lcd.ts",
