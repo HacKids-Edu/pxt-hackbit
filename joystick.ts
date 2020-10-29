@@ -24,8 +24,8 @@ enum GroveJoystickKey {
 /**
  * Functions to operate Grove module.
  */
-//% weight=10 color=#9F79EE icon="\uf1b3" block="Joy"
-//% groups='["4-Digit","Ultrasonic","Gesture","Thumbjoystick","UartWiFi"]'
+//% weight=10 color=#9F79EE icon="\uf1b3" block="Hackids Joystick"
+//% groups="Thumbjoystick"
 namespace joy {
     export class GroveJoystick
     {
@@ -69,10 +69,7 @@ namespace joy {
     
     const joystickEventID = 3101;
     let lastJoystick = GroveJoystickKey.None;
-    let distanceBackup: number = 0;
     let joystick = new GroveJoystick();
-    // adapted to Calliope mini V2 Core by M.Klein 17.09.2020
-
     /**
      * get Joystick key
      * 
