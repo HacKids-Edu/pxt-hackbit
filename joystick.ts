@@ -109,62 +109,6 @@ namespace joy {
             this.paj7620SelectBank(0);
         }
     }
-    /**
-     * 
-     */
-    export class TM1637
-    {
-        clkPin: DigitalPin;
-        dataPin: DigitalPin;
-        brightnessLevel: number;     
-        pointFlag: boolean;
-        buf: Buffer;
-
-        private writeByte(wrData: number) 
-        {
-            for(let i = 0; i < 8; i ++)
-            {
-                pins.digitalWritePin(this.clkPin, 0);
-                if(wrData & 0x01)pins.digitalWritePin(this.dataPin, 1);
-                else pins.digitalWritePin(this.dataPin, 0);
-                wrData >>= 1;
-                pins.digitalWritePin(this.clkPin, 1);
-            }
-            
-            pins.digitalWritePin(this.clkPin, 0); // Wait for ACK
-            pins.digitalWritePin(this.dataPin, 1);
-            pins.digitalWritePin(this.clkPin, 1);
-        }
-        
-        private start()
-        {
-            pins.digitalWritePin(this.clkPin, 1);
-            pins.digitalWritePin(this.dataPin, 1);
-            pins.digitalWritePin(this.dataPin, 0);
-            pins.digitalWritePin(this.clkPin, 0);
-        }
-        
-        private stop()
-        {
-            pins.digitalWritePin(this.clkPin, 0);
-            pins.digitalWritePin(this.dataPin, 0);
-            pins.digitalWritePin(this.clkPin, 1);
-            pins.digitalWritePin(this.dataPin, 1);
-        }
-        
-        private coding(dispData: number): number
-        {
-            let pointData = 0;
-            
-            if(this.pointFlag == true)pointData = 0x80;
-            else if(this.pointFlag == false)pointData = 0;
-            
-            if(dispData == 0x7f)dispData = 0x00 + pointData;
-            else dispData = TubeTab[dispData] + pointData;
-            
-            return dispData;
-        } 
-    }
 
     export class GroveJoystick
     {
