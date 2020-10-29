@@ -43,6 +43,8 @@ namespace ESP8266ThingSpeak {
     //% tx.fieldOptions.columns=3
     //% rx.fieldEditor="gridpicker"
     //% rx.fieldOptions.columns=3
+    //% baudrate.fieldEditor="gridpicker"
+    //% baudrate.fieldOptions.columns=3
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
     //% subcategory="Thingspeak" color=#851DE8    
