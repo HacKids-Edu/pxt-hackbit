@@ -34,32 +34,6 @@ let TubeTab: number [] = [
     0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71
 ];
 
-/**
- * Grove Gestures
- */
-enum GroveGesture {
-    //% block=None
-    None = 0,
-    //% block=Right
-    Right = 1,
-    //% block=Left
-    Left = 2,
-    //% block=Up
-    Up = 3,
-    //% block=Down
-    Down = 4,
-    //% block=Forward
-    Forward = 5,
-    //% block=Backward
-    Backward = 6,
-    //% block=Clockwise
-    Clockwise = 7,
-    //% block=Anticlockwise
-    Anticlockwise = 8,
-    //% block=Wave
-    Wave = 9
-}
-
 enum GroveJoystickKey {
     //% block="None"
     None = 0,
@@ -134,67 +108,7 @@ namespace joy {
 
             this.paj7620SelectBank(0);
         }
-
-        /**
-         * Create a new driver of Grove - Gesture
-         */
-        init() {
-            this.paj7620Init();
-            basic.pause(200);
-        }
-
-        /**
-         * Detect and recognize the gestures from Grove - Gesture
-         */
-
-        read(): number {
-            let data = 0, result = 0;
-
-            data = this.paj7620ReadReg(0x43);
-            switch (data) {
-                case 0x01:
-                    result = GroveGesture.Right;
-                break;
-
-                case 0x02:
-                    result = GroveGesture.Left;
-                break;
-
-                case 0x04:
-                    result = GroveGesture.Up;
-                break;
-
-                case 0x08:
-                    result = GroveGesture.Down;
-                break;
-
-                case 0x10:
-                    result = GroveGesture.Forward;
-                break;
-
-                case 0x20:
-                    result = GroveGesture.Backward;
-                break;
-
-                case 0x40:
-                    result = GroveGesture.Clockwise;
-                break;
-
-                case 0x80:
-                    result = GroveGesture.Anticlockwise;
-                break;
-
-                default:
-                    data = this.paj7620ReadReg(0x44);
-                    if (data == 0x01)
-                        result = GroveGesture.Wave;
-                break;
-            }
-
-            return result;
-        }
     }
-    
     /**
      * 
      */
@@ -444,9 +358,7 @@ namespace joy {
         }
     }
     
-    const gestureEventId = 3100;
     const joystickEventID = 3101;
-    let lastGesture = GroveGesture.None;
     let lastJoystick = GroveJoystickKey.None;
     let distanceBackup: number = 0;
     let joystick = new GroveJoystick();
@@ -542,27 +454,6 @@ namespace joy {
     }
  
     /**
-     * init Grove Gesture modules
-     * 
-     */
-    //% blockId=grove_initgesture block="init gesture"
-    //% group="Gesture"
-    export function initGesture() {
-        if (!paj7620) {
-            paj7620.init();
-        }
-    }
-
-    /**
-     * get Grove Gesture model
-     * 
-     */
-    //% blockId=grove_getgesture block="get gesture model"
-    //% group="Gesture"
-    export function getGestureModel(): number {
-        return paj7620.read();
-    }
-    /**
      * get Joystick key
      * 
      */
@@ -570,38 +461,6 @@ namespace joy {
     //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
-    }
-
-   /**
-     * Converts the gesture name to a number
-     * Useful for comparisons
-     */
-    //% blockId=ggesture block="%key"
-    //% group="Gesture"
-    export function ggesture(g: GroveGesture): number {
-        return g;
-    }
-    
-    /**
-     * Do something when a gesture is detected by Grove - Gesture
-     * @param gesture type of gesture to detect
-     * @param handler code to run
-     */
-    //% blockId=grove_gesture_create_event block="on Gesture|%gesture"
-    //% group="Gesture"
-    export function onGesture(gesture: GroveGesture, handler: () => void) {
-        control.onEvent(gestureEventId, gesture, handler);
-        paj7620.init();
-        control.inBackground(() => {
-            while(true) {
-                const gesture = paj7620.read();
-                if (gesture != lastGesture) {
-                    lastGesture = gesture;
-                    control.raiseEvent(gestureEventId, lastGesture);
-                }
-                basic.pause(50);
-            }
-        })
     }
 
     /**
