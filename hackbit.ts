@@ -179,7 +179,7 @@ namespace hackbit {
     //% pin.fieldOptions.columns=3
     //% RelayState.fieldEditor="gridpicker"
     //% RelayState.fieldOptions.columns=2
-    //% RelayState.min=0 state.max=1
+    //% RelayState.min=0 RelayState.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitRelayState(pin: DigitalPin, RelayState: OnOff): void {
         switch (RelayState) {
@@ -199,9 +199,9 @@ namespace hackbit {
     //% block="vibration motor pin |%pin| state |%VibrationMotorState|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% VibrationMotor.fieldEditor="gridpicker"
-    //% VibrationMotor.fieldOptions.columns=2
-    //% VibrationMotor.min=0 state.max=1
+    //% VibrationMotorState.fieldEditor="gridpicker"
+    //% VibrationMotorState.fieldOptions.columns=2
+    //% VibrationMotorState.min=0 VibrationMotorState.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitVibrationMotorState(pin: DigitalPin, VibrationMotorState: OnOff): void {
         switch (VibrationMotorState) {
@@ -223,7 +223,7 @@ namespace hackbit {
     //% pin.fieldOptions.columns=3
     //% MiniFanState.fieldEditor="gridpicker"
     //% MiniFanState.fieldOptions.columns=2
-    //% MiniFanState.min=0 state.max=1
+    //% MiniFanState.min=0 MiniFanState.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitMiniFanState(pin: DigitalPin, MiniFanState: OnOff): void {
         switch (MiniFanState) {
@@ -245,7 +245,7 @@ namespace hackbit {
     //% pin.fieldOptions.columns=3
     //% LaserState.fieldEditor="gridpicker"
     //% LaserState.fieldOptions.columns=2
-    //% LaserState.min=0 state.max=1
+    //% LaserState.min=0 LaserState.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitLaserState(pin: DigitalPin, LaserState: OnOff): void {
         switch (LaserState) {
@@ -257,7 +257,6 @@ namespace hackbit {
                 break;
         }
     }
-
 
     /**
      * get distance from ultrasonic range sensor [cm]
@@ -541,6 +540,7 @@ namespace hackbit {
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitSoilMoistureRead" block="value of soil moisture(0~100) at pin %soilhumiditypin"
+    //% soilhumiditypin.min=0 soilhumiditypin.max=255
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
         let voltage = 0;
