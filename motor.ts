@@ -158,6 +158,7 @@ namespace hackbitmotors {
     */
     //% blockId=hackbit_servo block="Servo|%index|degree %degree"
     //% weight=100
+    //% degree.shadow="protractorPicker"
     //% degree.min=0 degree.max=180
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
