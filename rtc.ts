@@ -73,7 +73,6 @@ namespace hackbitRTCDS1307 {
     //% block="set %datatype |%data"
     //% datatype.fieldEditor="gridpicker"
     //% datatype.fieldOptions.columns=2
-
     export function setTime(datatype: TimeType, data: number): void {
         switch (datatype) {
             case 0:
@@ -105,6 +104,8 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_GET_TIME" 
     //% block="%data"
+    //% data.fieldEditor="gridpicker"
+    //% data.fieldOptions.columns=2
     export function getTime(data: TimeType): number {
         switch (data) {
             case 0:
@@ -127,7 +128,6 @@ namespace hackbitRTCDS1307 {
                 break
             default:
                 return 0
-
         }
     }
 
@@ -136,6 +136,8 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_GET_TIME" 
     //% block="%data"
+    //% data.fieldEditor="gridpicker"
+    //% data.fieldOptions.columns=2
 
     /**
      * get  weekday
