@@ -9,6 +9,7 @@ declare interface Math {
 namespace HackbitOLED {
     let font: Buffer;
 
+
     const SSD1306_SETCONTRAST = 0x81
     const SSD1306_SETCOLUMNADRESS = 0x21
     const SSD1306_SETPAGEADRESS = 0x22
@@ -40,6 +41,7 @@ namespace HackbitOLED {
     let displayWidth = 128
     let displayHeight = 64 / 8
     let screenSize = 0
+    //let font: Array<Array<number>>
     let loadStarted: boolean;
     let loadPercent: number;
     function command(cmd: number) {
