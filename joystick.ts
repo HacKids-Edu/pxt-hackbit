@@ -89,6 +89,9 @@ namespace joy {
      * Useful for comparisons
      */
     //% blockId=joystickkey block="%key"
+    //% key.fieldEditor="gridpicker"
+    //% key.fieldOptions.columns=3
+
     //% group="Thumbjoystick"
     export function joystickkey(key: GroveJoystickKey): number {
         return key;
