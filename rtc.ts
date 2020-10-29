@@ -71,6 +71,9 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_SET_TIME" 
     //% block="set %datatype |%data"
+    //% datatype.fieldEditor="gridpicker"
+    //% datatype.fieldOptions.columns=2
+
     export function setTime(datatype: TimeType, data: number): void {
         switch (datatype) {
             case 0:
