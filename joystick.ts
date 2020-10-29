@@ -25,7 +25,6 @@ enum GroveJoystickKey {
  * Functions to operate Grove module.
  */
 //% weight=10 color=#9F79EE icon="\uf1b3" block="Hackids Joystick"
-//% groups="Thumbjoystick"
 namespace joy {
     export class GroveJoystick
     {
@@ -79,7 +78,8 @@ namespace joy {
     //% xpin.fieldOptions.columns=3
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
-    //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% subcategory=Input  color=#851DE8 
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
     }
@@ -91,7 +91,9 @@ namespace joy {
     //% blockId=joystickkey block="%key"
     //% key.fieldEditor="gridpicker"
     //% key.fieldOptions.columns=2
-    //% group="Thumbjoystick"
+    //% group="Analog"
+    //% subcategory=Input  color=#851DE8 
+
     export function joystickkey(key: GroveJoystickKey): number {
         return key;
     }
@@ -110,7 +112,8 @@ namespace joy {
     //% xpin.fieldOptions.columns=3
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
-    //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% group="Analog" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
+    //% subcategory=Input  color=#851DE8 
 
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
         control.onEvent(joystickEventID, key, handler);
