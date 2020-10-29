@@ -530,6 +530,8 @@ namespace neopixel {
      */
     //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
     //% weight=90 blockGap=8
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
@@ -568,6 +570,8 @@ namespace neopixel {
     */
     //% weight=2 blockGap=8
     //% blockId="neopixel_colors" block="%color"
+    //% color.fieldEditor="gridpicker"
+    //% color.fieldOptions.columns=3
     //% advanced=false
     //% subcategory="Color"  group="NeoPixel" color=#B95407 icon="\uf1eb"
 
