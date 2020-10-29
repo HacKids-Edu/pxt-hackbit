@@ -176,7 +176,7 @@ namespace hackbit {
     //% blockId=hackbitRelay
     //% block="relay pin |%pin| state |%RelayState|"
     //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=2
+    //% pin.fieldOptions.columns=3
     //% RelayState.fieldEditor="gridpicker"
     //% RelayState.fieldOptions.columns=1
     //% RelayState.min=0 state.max=1
@@ -198,7 +198,7 @@ namespace hackbit {
     //% blockId=hackbitVibrationMotor
     //% block="vibration motor pin |%pin| state |%VibrationMotorState|"
     //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=2
+    //% pin.fieldOptions.columns=3
     //% VibrationMotor.fieldEditor="gridpicker"
     //% VibrationMotor.fieldOptions.columns=1
     //% VibrationMotor.min=0 state.max=1
@@ -220,7 +220,7 @@ namespace hackbit {
     //% blockId=hackbitMiniFan
     //% block="mini fan pin |%pin| state |%MiniFanState|"
     //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=2
+    //% pin.fieldOptions.columns=3
     //% MiniFanState.fieldEditor="gridpicker"
     //% MiniFanState.fieldOptions.columns=1
     //% MiniFanState.min=0 state.max=1
@@ -242,7 +242,7 @@ namespace hackbit {
     //% blockId=hackbitLaser
     //% block="laser pin |%pin| state |%LaserState|"
     //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=2
+    //% pin.fieldOptions.columns=3
     //% LaserState.fieldEditor="gridpicker"
     //% LaserState.fieldOptions.columns=1
     //% LaserState.min=0 state.max=1
@@ -289,6 +289,8 @@ namespace hackbit {
     */
     //% blockId=hackbitLineFinderRead
     //% block="pin |%pin| line finder is seeing black"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function detectline(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -305,6 +307,8 @@ namespace hackbit {
     */
     //% blockId=hackbitCollisionRead
     //% block="collision sensor pin |%pin| activated"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function collisionSensor(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -321,6 +325,8 @@ namespace hackbit {
     */
     //% blockId=hackbitPIRRead
     //% block="PIR sensor pin |%pin| detects motion"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function PIRState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -337,6 +343,8 @@ namespace hackbit {
     */
     //% blockId=hackbitWaterRead
     //% block="water sensor pin |%pin| detects water"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function WaterState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -353,6 +361,8 @@ namespace hackbit {
     */
     //% blockId=hackbitMagneticSwitchRead
     //% block="magnetic switch pin |%pin| activated"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function MagneticSwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -369,6 +379,8 @@ namespace hackbit {
     */
     //% blockId=hackbitHallRead
     //% block="hall sensor pin |%pin| activated"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function HallState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
