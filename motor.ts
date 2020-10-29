@@ -222,6 +222,8 @@ namespace hackbitmotors {
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
+    //% degree.fieldEditor="gridpicker"
+    //% degree.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
 
     export function StepperDegree(index: Steppers, degree: number): void {
@@ -239,6 +241,8 @@ namespace hackbitmotors {
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
+    //% turn.fieldEditor="gridpicker"
+    //% turn.fieldOptions.columns=2
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
@@ -246,6 +250,10 @@ namespace hackbitmotors {
     }
 
     //% blockId=hackbit_stepper_dual block="Dual Stepper(Degree) |M1 %degree1| M2 %degree2"
+    //% degree1.fieldEditor="gridpicker"
+    //% degree1.fieldOptions.columns=2
+    //% degree2.fieldEditor="gridpicker"
+    //% degree2.fieldOptions.columns=2
     //% weight=89
     //% subcategory="Stepper Motor"  group="Stepper Motor" color=#FF597C icon="\uf1eb"
     export function StepperDual(degree1: number, degree2: number): void {
@@ -317,7 +325,6 @@ namespace hackbitmotors {
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
     //% speed.min=-255 speed.max=255
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRun(index: Motors, speed: number): void {
@@ -360,7 +367,6 @@ namespace hackbitmotors {
     //% motor2.fieldOptions.columns=2
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
@@ -375,9 +381,10 @@ namespace hackbitmotors {
      * @param delay seconde delay to stop; eg: 1
     */
     //% blockId=hackbit_motor_rundelay block="Motor|%index|speed %speed|delay %delay|s"
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% weight=81
     //% speed.min=-255 speed.max=255
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
