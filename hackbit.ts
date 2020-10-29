@@ -178,7 +178,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% RelayState.fieldEditor="gridpicker"
-    //% RelayState.fieldOptions.columns=1
+    //% RelayState.fieldOptions.columns=2
     //% RelayState.min=0 state.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitRelayState(pin: DigitalPin, RelayState: OnOff): void {
@@ -200,7 +200,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% VibrationMotor.fieldEditor="gridpicker"
-    //% VibrationMotor.fieldOptions.columns=1
+    //% VibrationMotor.fieldOptions.columns=2
     //% VibrationMotor.min=0 state.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitVibrationMotorState(pin: DigitalPin, VibrationMotorState: OnOff): void {
@@ -222,7 +222,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% MiniFanState.fieldEditor="gridpicker"
-    //% MiniFanState.fieldOptions.columns=1
+    //% MiniFanState.fieldOptions.columns=2
     //% MiniFanState.min=0 state.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitMiniFanState(pin: DigitalPin, MiniFanState: OnOff): void {
@@ -244,7 +244,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% LaserState.fieldEditor="gridpicker"
-    //% LaserState.fieldOptions.columns=1
+    //% LaserState.fieldOptions.columns=2
     //% LaserState.min=0 state.max=1
     //% subcategory=Actuators  group="Digital" color=#E52297 icon="\uf1eb"    
     export function hackbitLaserState(pin: DigitalPin, LaserState: OnOff): void {
@@ -950,7 +950,7 @@ namespace hackbit {
     //% pin.fieldOptions.columns=3
     //% state.fieldEditor="gridpicker"
     //% state.fieldOptions.columns=2
-    //% LaserState.min=0 state.max=1
+    //% state.min=0 state.max=1
 
     //% state.min=0 state.max=1
     //% subcategory=Display  group="Digital" color=#F57513 icon="\uf1eb"    
