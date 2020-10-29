@@ -181,6 +181,8 @@ namespace neopixel {
          * @param endHue the end hue value for the rainbow, eg: 360
          */
         //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue" 
+        //% startHue.min=0 startHue.max=360
+        //% endHue.min=0 endHue.max=360
         //% weight=85 blockGap=8
         //% parts="neopixel"
         //% group="Show" color=#EF6D0A icon="\uf1eb"
@@ -250,6 +252,7 @@ namespace neopixel {
          */
         //% weight=84
         //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high" 
+        //% high.min=0 high.max=255
         //% icon="\uf080"
         //% parts="neopixel"
         //% group="Show" color=#EF6D0A icon="\uf1eb"
@@ -407,6 +410,7 @@ namespace neopixel {
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
+        //% brightness.min=0 brightness.max=255
         //% weight=59
         //% parts="neopixel" advanced=false
         //% subcategory="Configuration"  group="NeoPixel" color=#9E4806 icon="\uf1eb"
@@ -605,6 +609,9 @@ namespace neopixel {
      * @param l luminosity from 0 to 99
      */
     //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
+    //% h.min=0 h.max=360
+    //% s.min=0 s.max=99
+    //% l.min=0 l.max=99
     //% subcategory="Color"  group="NeoPixel" color=#B95407 icon="\uf1eb"
 
     export function hsl(h: number, s: number, l: number): number {
