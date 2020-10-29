@@ -1,8 +1,12 @@
 /**
  * Library for hackbit,  grove micro:bit project board https://www.hackids.com.br
 */
-//% weight=10 color=#FF1344 icon="\uf0eb"
+//% weight=10 color=#FF1344 icon="\uf0eb"    
 namespace hackbit {
+// /**
+//  * Library for hackbit,  grove micro:bit project board https://www.hackids.com.br
+// */
+// //% weight=10 color=#FF1344 icon="\uf0eb"    
     let gesture_first_init = true
     const initRegisterArray: number[] = [
         0xEF, 0x00, 0x32, 0x29, 0x33, 0x01, 0x34, 0x00, 0x35, 0x01, 0x36, 0x00, 0x37, 0x07, 0x38, 0x17,
@@ -531,16 +535,16 @@ namespace hackbit {
     //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
-        let voltage = 0;
+        let voltage2 = 0;
         let lightintensity = 0;
-        voltage = pins.map(
+        voltage2 = pins.map(
             pins.analogReadPin(lightintensitypin),
             0,
             1023,
             0,
             100
         );
-        lightintensity = voltage;
+        lightintensity = voltage2;
         return Math.round(lightintensity);
     }
 
@@ -584,15 +588,15 @@ namespace hackbit {
                 while (pins.digitalReadPin(DHT11pin) == 1);
                 while (pins.digitalReadPin(DHT11pin) == 0);
                 while (pins.digitalReadPin(DHT11pin) == 1);
-                for (let i = 0; i <= 32 - 1; i++) {
+                for (let j = 0; j <= 32 - 1; j++) {
                     while (pins.digitalReadPin(DHT11pin) == 0);
                     dhtcounter1 = 0
                     while (pins.digitalReadPin(DHT11pin) == 1) {
                         dhtcounter1 += 1;
                     }
-                    if (i > 15) {
+                    if (j > 15) {
                         if (dhtcounter1 > 2) {
-                            dhtvalue1 = dhtvalue1 + (1 << (31 - i));
+                            dhtvalue1 = dhtvalue1 + (1 << (31 - j));
                         }
                     }
                 }
@@ -606,14 +610,14 @@ namespace hackbit {
                 let value = 0;
                 let counter = 0;
 
-                for (let i = 0; i <= 8 - 1; i++) {
+                for (let k = 0; k <= 8 - 1; k++) {
                     while (pins.digitalReadPin(DHT11pin) == 0);
                     counter = 0
                     while (pins.digitalReadPin(DHT11pin) == 1) {
                         counter += 1;
                     }
                     if (counter > 3) {
-                        value = value + (1 << (7 - i));
+                        value = value + (1 << (7 - k));
                     }
                 }
                 return value;
@@ -663,25 +667,25 @@ namespace hackbit {
     //% subcategory=Sensor  group="Analog" color=#00D828 icon="\uf1eb"    
     export function ReadNoise(noisepin: AnalogPin): number {
         let level = 0
-        let voltage = 0
+        let voltage3 = 0
         let noise = 0
         let h = 0
         let l = 0
         let sumh = 0
         let suml = 0
         pins.digitalWritePin(DigitalPin.P0, 0)
-        for (let i = 0; i < 1000; i++) {
+        for (let m = 0; m < 1000; m++) {
             level = level + pins.analogReadPin(noisepin)
         }
         level = level / 1000
-        for (let i = 0; i < 1000; i++) {
-            voltage = pins.analogReadPin(noisepin)
-            if (voltage >= level) {
+        for (let n = 0; n < 1000; n++) {
+            voltage3 = pins.analogReadPin(noisepin)
+            if (voltage3 >= level) {
                 h += 1
-                sumh = sumh + voltage
+                sumh = sumh + voltage3
             } else {
                 l += 1
-                suml = suml + voltage
+                suml = suml + voltage3
             }
         }
         if (h == 0) {
@@ -1053,10 +1057,10 @@ namespace hackbit {
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    	
 
     export function checkColor(color: ColorList): boolean {
-        let hue = readColor()
+        let hue2 = readColor()
         switch (color) {
             case ColorList.red:
-                if (hue > 330 || hue < 20) {
+                if (hue2 > 330 || hue2 < 20) {
                     return true
                 }
                 else {
@@ -1064,7 +1068,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.green:
-                if (hue > 110 && 150 > hue) {
+                if (hue2 > 110 && 150 > hue2) {
                     return true
                 }
                 else {
@@ -1072,7 +1076,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.blue:
-                if (hue > 200 && 270 > hue) {
+                if (hue2 > 200 && 270 > hue2) {
                     return true
                 }
                 else {
@@ -1080,7 +1084,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.cyan:
-                if (hue > 160 && 180 > hue) {
+                if (hue2 > 160 && 180 > hue2) {
                     return true
                 }
                 else {
@@ -1088,7 +1092,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.magenta:
-                if (hue > 260 && 330 > hue) {
+                if (hue2 > 260 && 330 > hue2) {
                     return true
                 }
                 else {
@@ -1096,7 +1100,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.yellow:
-                if (hue > 30 && 90 > hue) {
+                if (hue2 > 30 && 90 > hue2) {
                     return true
                 }
                 else {
@@ -1104,7 +1108,7 @@ namespace hackbit {
                 }
                 break
             case ColorList.white:
-                if (hue >= 180 && 200 > hue) {
+                if (hue2 >= 180 && 200 > hue2) {
                     return true
                 }
                 else {
@@ -1122,23 +1126,23 @@ namespace hackbit {
             pins.i2cWriteBuffer(0x73, buf, false);
         }
         private paj7620ReadReg(addr: number): number {
-            let buf: Buffer = pins.createBuffer(1);
-            buf[0] = addr;
-            pins.i2cWriteBuffer(0x73, buf, false);
-            buf = pins.i2cReadBuffer(0x73, 1, false);
-            return buf[0];
+            let buf2: Buffer = pins.createBuffer(1);
+            buf2[0] = addr;
+            pins.i2cWriteBuffer(0x73, buf2, false);
+            buf2 = pins.i2cReadBuffer(0x73, 1, false);
+            return buf2[0];
         }
         private paj7620SelectBank(bank: number) {
             if (bank == 0) this.paj7620WriteReg(0xEF, 0);
             else if (bank == 1) this.paj7620WriteReg(0xEF, 1);
         }
         private paj7620Init() {
-            let temp = 0;
+            let temp2 = 0;
             this.paj7620SelectBank(0);
-            temp = this.paj7620ReadReg(0);
-            if (temp == 0x20) {
-                for (let i = 0; i < 438; i += 2) {
-                    this.paj7620WriteReg(initRegisterArray[i], initRegisterArray[i + 1]);
+            temp2 = this.paj7620ReadReg(0);
+            if (temp2 == 0x20) {
+                for (let o = 0; o < 438; o += 2) {
+                    this.paj7620WriteReg(initRegisterArray[o], initRegisterArray[o + 1]);
                 }
             }
             this.paj7620SelectBank(0);
@@ -1148,40 +1152,40 @@ namespace hackbit {
             basic.pause(200);
         }
         read(): number {
-            let data = 0, result = 0;
+            let data = 0, result2 = 0;
             data = this.paj7620ReadReg(0x43);
             switch (data) {
                 case 0x01:
-                    result = GroveGesture.Right;
+                    result2 = GroveGesture.Right;
                     break;
                 case 0x02:
-                    result = GroveGesture.Left;
+                    result2 = GroveGesture.Left;
                     break;
                 case 0x04:
-                    result = GroveGesture.Up;
+                    result2 = GroveGesture.Up;
                     break;
                 case 0x08:
-                    result = GroveGesture.Down;
+                    result2 = GroveGesture.Down;
                     break;
                 case 0x10:
-                    result = GroveGesture.Forward;
+                    result2 = GroveGesture.Forward;
                     break;
                 case 0x20:
-                    result = GroveGesture.Backward;
+                    result2 = GroveGesture.Backward;
                     break;
                 case 0x40:
-                    result = GroveGesture.Clockwise;
+                    result2 = GroveGesture.Clockwise;
                     break;
                 case 0x80:
-                    result = GroveGesture.Anticlockwise;
+                    result2 = GroveGesture.Anticlockwise;
                     break;
                 default:
                     data = this.paj7620ReadReg(0x44);
                     if (data == 0x01)
-                        result = GroveGesture.Wave;
+                        result2 = GroveGesture.Wave;
                     break;
             }
-            return result;
+            return result2;
         }
     }        
 
@@ -1384,7 +1388,7 @@ namespace hackbit {
     }
 
     function digit_writeByte(wrData: number) {
-        for (let i = 0; i < 8; i++) {
+        for (let p = 0; p < 8; p++) {
             pins.digitalWritePin(digit_clkPin, 0);
             if (wrData & 0x01) pins.digitalWritePin(digit_dataPin, 1);
             else pins.digitalWritePin(digit_dataPin, 0);
@@ -1425,10 +1429,10 @@ namespace hackbit {
 
     /***********   APDS 9960  **********/
     function i2cwrite_color(addr: number, reg: number, value: number) {
-        let buf = pins.createBuffer(2)
-        buf[0] = reg
-        buf[1] = value
-        pins.i2cWriteBuffer(addr, buf)
+        let buf3 = pins.createBuffer(2)
+        buf3[0] = reg
+        buf3[1] = value
+        pins.i2cWriteBuffer(addr, buf3)
     }
 
     function i2cread_color(addr: number, reg: number) {
@@ -1440,12 +1444,12 @@ namespace hackbit {
     function rgb2hsl(color_r: number, color_g: number, color_b: number): number {
         let Hue = 0
         // Convert the RGB value to the middle value of [0, 1].
-        let R = color_r * 100 / 255;   //Since H25 does not support floating point operations, it is calculated by zooming 100 times, and the following calculations are also zooming 100 times
+        let R2 = color_r * 100 / 255;   //Since H25 does not support floating point operations, it is calculated by zooming 100 times, and the following calculations are also zooming 100 times
         let G = color_g * 100 / 255;
-        let B = color_b * 100 / 255;
+        let B2 = color_b * 100 / 255;
 
-        let maxVal = Math.max(R, Math.max(G, B))//Find the maximum of R, G, and B
-        let minVal = Math.min(R, Math.min(G, B)) //Find the minimum of R, G and B
+        let maxVal = Math.max(R2, Math.max(G, B2))//Find the maximum of R, G, and B
+        let minVal = Math.min(R2, Math.min(G, B2)) //Find the minimum of R, G and B
 
         let Delta = maxVal - minVal;  //△ = Max - Min
 
@@ -1453,19 +1457,19 @@ namespace hackbit {
         if (Delta < 0) {
             Hue = 0;
         }
-        else if (maxVal == R && G >= B) //Maximum value is red
+        else if (maxVal == R2 && G >= B2) //Maximum value is red
         {
-            Hue = (60 * ((G - B) * 100 / Delta)) / 100;  //Magnify 100 times
+            Hue = (60 * ((G - B2) * 100 / Delta)) / 100;  //Magnify 100 times
         }
-        else if (maxVal == R && G < B) {
-            Hue = (60 * ((G - B) * 100 / Delta) + 360 * 100) / 100;
+        else if (maxVal == R2 && G < B2) {
+            Hue = (60 * ((G - B2) * 100 / Delta) + 360 * 100) / 100;
         }
         else if (maxVal == G) //Maximum value is green
         {
-            Hue = (60 * ((B - R) * 100 / Delta) + 120 * 100) / 100;
+            Hue = (60 * ((B2 - R2) * 100 / Delta) + 120 * 100) / 100;
         }
-        else if (maxVal == B) {
-            Hue = (60 * ((R - G) * 100 / Delta) + 240 * 100) / 100;
+        else if (maxVal == B2) {
+            Hue = (60 * ((R2 - G) * 100 / Delta) + 240 * 100) / 100;
         }
         return Hue
     }
@@ -1481,7 +1485,7 @@ namespace hackbit {
     }
 
     function colorMode(): void {
-        let tmp = i2cread_color(APDS9960_ADDR, APDS9960_ENABLE) | 0x2;
-        i2cwrite_color(APDS9960_ADDR, APDS9960_ENABLE, tmp);
+        let tmp2 = i2cread_color(APDS9960_ADDR, APDS9960_ENABLE) | 0x2;
+        i2cwrite_color(APDS9960_ADDR, APDS9960_ENABLE, tmp2);
     }
 }

@@ -19,7 +19,8 @@
         "lcd.ts",
         "irt.ts",
         "irr.ts",
-        "main.ts"
+        "main.ts",
+        "hackbit.ts"
     ],
     "testFiles": [
         "test.ts"
