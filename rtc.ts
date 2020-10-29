@@ -136,9 +136,6 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_GET_TIME" 
     //% block="%data"
-    //% data.fieldEditor="gridpicker"
-    //% data.fieldOptions.columns=2
-
     /**
      * get  weekday
      * 0 means Sunday
