@@ -577,7 +577,6 @@ namespace neopixel {
     */
     //% weight=2 blockGap=8
     //% blockId="neopixel_colors" block="%color"
-    //% color.shadow="colorNumberPicker"    
     //% color.fieldEditor="gridpicker"
     //% color.fieldOptions.columns=3
     //% advanced=false
