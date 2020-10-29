@@ -980,7 +980,7 @@ namespace hackbit {
     //% blockId="grovecolorsensorgetcolor" 
     //% block="color sensor detected %Color"
     //% Color.fieldEditor="gridpicker"
-    //% Color.fieldOptions.columns=3
+    //% Color.fieldOptions.columns=2
     //% subcategory=Sensor  group="IIC" color=#EA5532 icon="\uf1eb"    
 
     export function color(col: Color): NumberFormat.UInt16BE {
@@ -1276,6 +1276,10 @@ namespace hackbit {
      * @param dataPin value of data pin number
      */
     //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
+    //% clkPin.fieldEditor="gridpicker"
+    //% clkPin.fieldOptions.columns=3
+    //% dataPin.fieldEditor="gridpicker"
+    //% dataPin.fieldOptions.columns=3
     //% subcategory=Display  group="7-Seg" color=#F57513 icon="\uf1eb"    
     //% weight=60
     export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
