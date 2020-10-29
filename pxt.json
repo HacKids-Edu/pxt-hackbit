@@ -5,7 +5,7 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "OLED": "github:PiSupply/pxt-oled-ssd1306"
+        "Hackids OLED": "github:PiSupply/pxt-oled-ssd1306"
     },
     "files": [
         "main.blocks",
