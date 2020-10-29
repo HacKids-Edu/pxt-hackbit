@@ -39,6 +39,10 @@ namespace ESP8266ThingSpeak {
     //% block="Initialize ESP8266|RX (Tx of micro:bit) %tx|TX (Rx of micro:bit) %rx|Baud rate %baudrate|Wifi SSID = %ssid|Wifi PW = %pw"
     //% tx.defl=SerialPin.P0
     //% rx.defl=SerialPin.P1
+    //% tx.fieldEditor="gridpicker"
+    //% tx.fieldOptions.columns=3
+    //% rx.fieldEditor="gridpicker"
+    //% rx.fieldOptions.columns=3
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
     //% subcategory="Thingspeak" color=#851DE8    
