@@ -397,6 +397,8 @@ namespace hackbit {
     */
     //% blockId=hackbitCrashRead
     //% block="crash sensor |%pin| is pressed"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"    
     export function CrashButton(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -413,6 +415,8 @@ namespace hackbit {
     */
     //% blockId=hackbitFlameRead
     //% block="flame sensor pin |%pin| detects flame"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function FlameState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -429,6 +433,8 @@ namespace hackbit {
     */
     //% blockId=hackbitTouchRead
     //% block="touch sensor pin |%pin| touched"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"        
     export function TouchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -445,6 +451,8 @@ namespace hackbit {
     */
     //% blockId=hackbitVibrationRead
     //% block="vibration sensor pin |%pin| detects vibration"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#1371FF icon="\uf1eb"    
     export function VibrationRead(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -461,6 +469,8 @@ namespace hackbit {
     */
     //% blockId=hackbitButtonRead
     //% block="button pin |%pin| is pressed"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function buttonState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -477,6 +487,8 @@ namespace hackbit {
     */
     //% blockId=hackbitButtonLEDRead
     //% block="button pin LED |%pin| is pressed"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function buttonLEDState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -493,6 +505,8 @@ namespace hackbit {
     */
     //% blockId=hackbitTiltRead
     //% block="tilt switch pin |%pin| tilted"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function TiltState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -509,6 +523,8 @@ namespace hackbit {
     */
     //% blockId=hackbitSwitchRead
     //% block="switch(P) pin |%pin| activated"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" color=#851DE8 icon="\uf1eb"    
     export function SwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -897,6 +913,8 @@ namespace hackbit {
     */
     //% blockId=hackbitPotargRead
     //% block="potentiometer pin |%pin| value"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
@@ -907,6 +925,8 @@ namespace hackbit {
     */
     //% blockId=hackbitRotaryRead
     //% block="rotary angle sensor pin |%pin| value"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Analog" color=#851DE8 icon="\uf1eb"
     export function rotaryValue(pin: AnalogPin): number {
         let tRotaryAngle = pins.analogReadPin(pin)
@@ -926,6 +946,12 @@ namespace hackbit {
     */
     //% blockId=hackbitLedSet
     //% block="led |%pin| to |%state|"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
+    //% state.fieldEditor="gridpicker"
+    //% state.fieldOptions.columns=2
+    //% LaserState.min=0 state.max=1
+
     //% state.min=0 state.max=1
     //% subcategory=Display  group="Digital" color=#F57513 icon="\uf1eb"    
     export function ledState(pin: DigitalPin, state: OnOff): void {
