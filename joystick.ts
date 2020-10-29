@@ -29,11 +29,6 @@ const initRegisterArray: number[] = [
     0x7C, 0x84, 0x7D, 0x03, 0x7E, 0x01
 ];
 
-let TubeTab: number [] = [
-    0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07,
-    0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71
-];
-
 enum GroveJoystickKey {
     //% block="None"
     None = 0,
@@ -64,51 +59,6 @@ enum GroveJoystickKey {
 //% weight=10 color=#9F79EE icon="\uf1b3" block="Joy"
 //% groups='["4-Digit","Ultrasonic","Gesture","Thumbjoystick","UartWiFi"]'
 namespace joy {
-    /**
-     * 
-     */
-    export class PAJ7620 {
-        private paj7620WriteReg(addr: number, cmd: number) {
-            let buf: Buffer = pins.createBuffer(2);
-
-            buf[0] = addr;
-            buf[1] = cmd;
-
-            pins.i2cWriteBuffer(0x73, buf, false);
-        }
-
-        private paj7620ReadReg(addr: number): number {
-            let buf: Buffer = pins.createBuffer(1);
-
-            buf[0] = addr;
-
-            pins.i2cWriteBuffer(0x73, buf, false);
-
-            buf = pins.i2cReadBuffer(0x73, 1, false);
-
-            return buf[0];
-        }
-
-        private paj7620SelectBank(bank: number) {
-            if (bank == 0) this.paj7620WriteReg(0xEF, 0);
-            else if (bank == 1) this.paj7620WriteReg(0xEF, 1);
-        }
-
-        private paj7620Init() {
-            let temp = 0;
-
-            this.paj7620SelectBank(0);
-
-            temp = this.paj7620ReadReg(0);
-            if (temp == 0x20) {
-                for (let i = 0; i < 438; i += 2) {
-                    this.paj7620WriteReg(initRegisterArray[i], initRegisterArray[i + 1]);
-                }
-            }
-
-            this.paj7620SelectBank(0);
-        }
-    }
 
     export class GroveJoystick
     {
@@ -154,7 +104,6 @@ namespace joy {
     let lastJoystick = GroveJoystickKey.None;
     let distanceBackup: number = 0;
     let joystick = new GroveJoystick();
-    let paj7620 = new PAJ7620();
     // adapted to Calliope mini V2 Core by M.Klein 17.09.2020
 
     /**
