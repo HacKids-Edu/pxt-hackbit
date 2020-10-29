@@ -75,6 +75,10 @@ namespace joy {
      * 
      */
     //% blockId=grove_getjoystick block="get joystick key at|%xpin|and|%ypin"
+    //% xpin.fieldEditor="gridpicker"
+    //% xpin.fieldOptions.columns=3
+    //% ypin.fieldEditor="gridpicker"
+    //% ypin.fieldOptions.columns=3
     //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
