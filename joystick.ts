@@ -91,7 +91,6 @@ namespace joy {
     //% blockId=joystickkey block="%key"
     //% key.fieldEditor="gridpicker"
     //% key.fieldOptions.columns=3
-
     //% group="Thumbjoystick"
     export function joystickkey(key: GroveJoystickKey): number {
         return key;
@@ -105,6 +104,10 @@ namespace joy {
      * @param handler code to run
      */
     //% blockId=grove_joystick_create_event block="on Key|%key at |%xpin|and|%ypin"
+    //% xpin.fieldEditor="gridpicker"
+    //% xpin.fieldOptions.columns=3
+    //% ypin.fieldEditor="gridpicker"
+    //% ypin.fieldOptions.columns=3
     //% group="Thumbjoystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
 
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
