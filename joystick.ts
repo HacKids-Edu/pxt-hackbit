@@ -1,5 +1,5 @@
 enum GroveJoystickKey {
-    //% block="None"
+    //% block="none"
     None = 0,
     //% block="Right"
     Right = 1,
