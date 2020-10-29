@@ -387,6 +387,8 @@ namespace hackbitmotors {
     }
 
     //% blockId=hackbit_stop block="Motor Stop|%index|"
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
     //% weight=80
     //% subcategory="DC Motor"  group="DC Motor" color=#FF7692 icon="\uf1eb"
 
