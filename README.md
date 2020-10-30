@@ -53,5 +53,5 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 
 * for PXT/microbit
 
-## Edit this project ![Build status badge](https://github.com/hackids-edu/pxt-hackbit/workflows/MakeCode/badge.svg)
-* **https://github.com/hackids-edu/pxt-hackbit**
+## Path
+* https://github.com/hackids-edu/pxt-hackbit
