@@ -7,11 +7,13 @@ https://www.hackids.com.br
 ## Exemplos/Samples:
 
 ```blocks
-// norbi
-// Reproduz movimento WalkForward quando o botão A é pressionado
-// Você pode ter vários outros movimentos.
+// Reproduz movimento do Servo Motor quando 
+// o botão A ou o botão B é pressionado
 input.onButtonPressed(Button.A, function () {
-    norbi.Forward()
+    hackbitmotors.Servo(hackbitmotors.Servos.S1, 180)
+})
+input.onButtonPressed(Button.B, function () {
+    hackbitmotors.Servo(hackbitmotors.Servos.S1, 0)
 })
 ```
 
