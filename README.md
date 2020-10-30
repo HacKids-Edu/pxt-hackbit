@@ -1,8 +1,5 @@
 # HACKBIT
-Biblioteca para módulos Grove utilizados na placa hack:bit
-
-Library for Grove micro:bit project board
-
+Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
 https://www.hackids.com.br
 
 ![](icon.png)  
@@ -10,11 +7,11 @@ https://www.hackids.com.br
 ## Exemplos/Samples:
 
 ```blocks
-// cub:bit
+// norbi
 // Reproduz movimento WalkForward quando o botão A é pressionado
 // Você pode ter vários outros movimentos.
 input.onButtonPressed(Button.A, function () {
-    cubbit.stdMotion(cubbit.StdMotions.WalkForward)
+    norbi.Forward()
 })
 ```
 
