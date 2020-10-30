@@ -15,24 +15,21 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-> Open this page at [https://hackids-edu.github.io/pxt-hackbit/](https://hackids-edu.github.io/pxt-hackbit/)
-
 ## Use as Extension
 
-This repository can be added as an **extension** in MakeCode.
+Este repositório pode ser adicionado como uma **extensão** no MakeCode.
+* abra [https://makecode.microbit.org/](https://makecode.microbit.org/)
+* clique em **Novo Projeto**
+* clique em **Avançado** 
+* clique em **Extensions** ao final do menu
+* procure por **https://github.com/hackids-edu/pxt-hackbit** e importe
 
+This repository can be added as an **extension** in MakeCode.
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
 * search for **https://github.com/hackids-edu/pxt-hackbit** and import
 
-## Edit this project ![Build status badge](https://github.com/hackids-edu/pxt-hackbit/workflows/MakeCode/badge.svg)
-
-To edit this repository in MakeCode.
-
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/hackids-edu/pxt-hackbit** and click import
 
 ## Blocks preview
 
@@ -55,3 +52,6 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 ## Supported targets
 
 * for PXT/microbit
+
+## Edit this project ![Build status badge](https://github.com/hackids-edu/pxt-hackbit/workflows/MakeCode/badge.svg)
+* **https://github.com/hackids-edu/pxt-hackbit**
