@@ -22,7 +22,8 @@
         "main.ts",
         "hackbit.ts",
         "oled.ts",
-        "_locales/pt-BR/hackbit-jsdoc-strings.json"
+        "_locales/pt-BR/hackbit-jsdoc-strings.json",
+        "_locales/pt-BR/hackbit-strings.json"
     ],
     "testFiles": [
         "test.ts"
