@@ -23,7 +23,8 @@
         "thingspeak.ts",
         "rtc.ts",
         "norbi.ts",
-        "_locale/pt-BR/hackbit-strings.json"
+        "_locale/pt-BR/hackbit-strings.json",
+        "_locale/pt-BR/hackbit-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
