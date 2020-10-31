@@ -378,5 +378,5 @@
     "{id:subcategory}Sensor": "Sensor",
     "{id:subcategory}Servo Motor": "Servo Motor",
     "{id:subcategory}Stepper Motor": "Motor de Passo",
-    "{id:subcategory}Thingspeak": "Thingspeak"    
+    "{id:subcategory}Thingspeak": "Thingspeak"
 }
