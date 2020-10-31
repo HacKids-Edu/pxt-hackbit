@@ -113,7 +113,7 @@
     "hackbitmotors.MotorRunDelay|block": "Motor|%index|velocidade %speed|atraso %delay|s",
     "hackbitmotors.MotorRunDual|block": "Motor|%motor1|velocidade %speed1|%motor2|velocidade %speed2",
     "hackbitmotors.MotorRun|block": "Motor|%index|velocidade %speed",
-    "hackbitmotors.MotorStopAll|block": "Para todos os motores",
+    "hackbitmotors.MotorStopAll|block": "Parar todos os motores",
     "hackbitmotors.MotorStop|block": "Parar Motor|%index|",
     "hackbitmotors.Servo|block": "Servo|%index|grau %degree",
     "hackbitmotors.StepperDegree|block": "Moto de passo 28BYJ-48 em|%index|grau %degree",
