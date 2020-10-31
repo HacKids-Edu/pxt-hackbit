@@ -11,8 +11,6 @@
         "_locales/hackbit-strings.json",
         "_locales/fr/hackbit-strings.json",
         "_locales/fr/hackbit-jsdoc-strings.json",
-        "_locale/pt-br/hackbit-strings.json",
-        "_locale/pt-br/hackbit-jsdoc-strings.json",
         "README.md",
         "main.ts",
         "hackbit.ts",
@@ -24,7 +22,8 @@
         "irr.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts"
+        "norbi.ts",
+        "_locale/pt-BR/hackbit-strings.json"
     ],
     "testFiles": [
         "test.ts"
