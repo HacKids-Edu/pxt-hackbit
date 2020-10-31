@@ -24,7 +24,9 @@
         "irr.ts",
         "main.ts",
         "hackbit.ts",
-        "oled.ts"
+        "oled.ts",
+        "_locale/pt/hackbit-jsdoc-strings.json",
+        "_locale/pt/hackbit-strings.json"
     ],
     "testFiles": [
         "test.ts"
