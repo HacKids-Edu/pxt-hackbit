@@ -1,14 +1,14 @@
 {
-    "hackbit.Color.Blue|block": "Azul",
-    "hackbit.Color.Clear|block": "Claro",
-    "hackbit.Color.Green|block": "Verde",
-    "hackbit.Color.Red|block": "Vermelho",
-    "hackbit.ColorList.blue|block": "Azul",
-    "hackbit.ColorList.cyan|block": "Ciano",
-    "hackbit.ColorList.green|block": "Verde",
-    "hackbit.ColorList.magenta|block": "Magenta",
-    "hackbit.ColorList.red|block": "Vermelho",
-    "hackbit.ColorList.white|block": "Branco",
-    "hackbit.ColorList.yellow|block": "Amarelo",
-    "hackbit.color|block": "sensor de cor - %Color detectado"
+  "hackbit.Color.Blue|block": "Azul",
+  "hackbit.Color.Clear|block": "Claro",
+  "hackbit.Color.Green|block": "Verde",
+  "hackbit.Color.Red|block": "Vermelho",
+  "hackbit.ColorList.blue|block": "Azul",
+  "hackbit.ColorList.cyan|block": "Ciano",
+  "hackbit.ColorList.green|block": "Verde",
+  "hackbit.ColorList.magenta|block": "Magenta",
+  "hackbit.ColorList.red|block": "Vermelho",
+  "hackbit.ColorList.white|block": "Branco",
+  "hackbit.ColorList.yellow|block": "Amarelo",
+  "hackbit.color|block": "sensor de cor - %Color detectado"
 }
