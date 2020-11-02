@@ -1,5 +1,4 @@
 {
-{
     "ESP8266ThingSpeak": "MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/",
     "ESP8266ThingSpeak.connectThingSpeak": "Connect to ThingSpeak and upload data. It would not upload anything if it failed to connect to Wifi or ThingSpeak.",
     "ESP8266ThingSpeak.connectWifi": "Initialize ESP8266 module and connect it to Wifi router",
