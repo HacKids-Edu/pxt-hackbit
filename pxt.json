@@ -19,8 +19,8 @@
         "neopixel.ts",
         "oled.ts",
         "lcd.ts",
-        "irt.ts",
         "irr.ts",
+        "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
         "norbi.ts"
