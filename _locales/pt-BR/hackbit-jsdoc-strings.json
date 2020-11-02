@@ -141,7 +141,7 @@
     "hackbitRTCDS1307.DateTime": "Definir data e hora",
     "hackbitRTCDS1307.DateTime|param|day": "dia a ser definido, ex: 20",
     "hackbitRTCDS1307.DateTime|param|hour": "hora a ser definida, ex: 12",
-    "hackbitRTCDS1307.DateTime|param|minute": "minuto a ser definido, ex: 31",
+    "hackbitRTCDS1307.DateTime|param|minute": "minuto a ser definido, ex: 28",
     "hackbitRTCDS1307.DateTime|param|month": "mês a ser definido, ex: 10",
     "hackbitRTCDS1307.DateTime|param|second": "segundos a ser definido, ex: 19",
     "hackbitRTCDS1307.DateTime|param|year": "ano a ser definido, ex: 2020",
