@@ -1,5 +1,5 @@
 {
-    "ESP8266ThingSpeak.connectThingSpeak|block": "Carregar dados para ThingSpeak|URL/IP = %ip|Write API key = %write_api_key|Campo 1 = %n1|Campo 2 = %n2|Campo 3 = %n3|Campo 4 = %n4|Campo 5 = %n5|Campo 6 = %n6|Campo 7 = %n7|Campo 8 = %n8",
+    "ESP8266ThingSpeak.connectThingSpeak|block": "Carregar dados para ThingSpeak|URL/IP = %ip|digite sua API key = %write_api_key|Campo 1 = %n1|Campo 2 = %n2|Campo 3 = %n3|Campo 4 = %n4|Campo 5 = %n5|Campo 6 = %n6|Campo 7 = %n7|Campo 8 = %n8",
     "ESP8266ThingSpeak.connectWifi|block": "Inicializar ESP8266|RX (Tx of micro:bit) %tx|TX (Rx of micro:bit) %rx|Taxa de transmissão %baudrate|Wifi SSID = %ssid|Senha Wifi = %pw",
     "ESP8266ThingSpeak.isLastUploadSuccessful|block": "Último upload de dados bem-sucedido ?",
     "ESP8266ThingSpeak.isThingSpeakConnected|block": "ThingSpeak conectado ?",
