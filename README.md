@@ -17,7 +17,9 @@ input.onButtonPressed(Button.B, function () {
     hackbitmotors.Servo(hackbitmotors.Servos.S1, 0)
 })
 ```
-## display LCD
+
+## Display LCD
+```blocks
 HackbitLCD.connectLcd(39)
 HackbitLCD.clearLcd1602()
 HackbitLCD.setLcdBacklight(LcdBacklight.Off)
@@ -25,7 +27,7 @@ basic.forever(function () {
     HackbitLCD.showStringOnLcd1602("Hack:bit", HackbitLCD.position1602(LcdPosition1602.Pos1), 16)
 })
 
-
+```
 ## Use as Extension
 
 Este repositório pode ser adicionado como uma **extensão** no MakeCode.
