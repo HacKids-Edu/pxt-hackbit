@@ -8,6 +8,8 @@
     },
     "files": [
         "main.blocks",
+        "_locales/hackbit-jsdoc-strings.json",
+        "_locales/pt-BR/hackbit-jsdoc-strings.json",
         "_locales/hackbit-strings.json",
         "_locales/pt-BR/hackbit-strings.json",
         "README.md",
@@ -21,9 +23,7 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts",
-        "_locales/hackbit-jsdoc-strings.json",
-        "_locales/pt-BR/hackbit-jsdoc-strings.json"
+        "norbi.ts"
     ],
     "testFiles": [
         "test.ts"
