@@ -202,8 +202,8 @@
     "neopixel.Strip.showRainbow|param|startHue": "the start hue value for the rainbow, eg: 1",
     "NeoPixelColors": "MakeCode extension for Neopixel \nWell known colors for a NeoPixel strip",
     "NeoPixelMode": "Different modes for RGB or RGB+W NeoPixel strips",
-    "norbi": "Blocks for Norbi\nNorbi is a small humanoid robot with movable arms and legs, and\nan LED matrix to express emotions. A tribute to The Norby Chronicles.  \nAnyone can easily use Norbi through programing and onboard sensors.",
-    "norbi.norbiServo": "Servo Execute",
-    "norbi.norbiServo|param|degree": "[0-180] degree of servo; eg: 0, 90, 180",
-    "norbi.norbiServo|param|index": "Servo Channel; eg: S1"    
+    "norbi": "Blocos para Norbi \nNorbi é um pequeno robô humanoide com braços e pernas móveis e uma matriz de LED para expressar emoções. Uma homenagem a The Norby Chronicles. \nQualquer pessoa pode usar o Norbi facilmente por meio da programação e dos sensores integrados.",
+    "norbi.norbiServo": "Executar servo motor",
+    "norbi.norbiServo|param|degree": "[0-180] grau do servo motor; ex: 0, 90, 180",
+    "norbi.norbiServo|param|index": "Canal do servo; ex: S1"
 }
