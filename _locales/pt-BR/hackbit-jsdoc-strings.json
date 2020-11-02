@@ -192,7 +192,7 @@
     "neopixel.Strip.shift": "Deslocar os LEDs para frente e apague-os com zeros.\nVocê precisa adicionar ``mostrar`` para tornar as alterações visíveis.",
     "neopixel.Strip.shift|param|offset": "número de pixels para avançar, ex: 1",
     "neopixel.Strip.show": "Envie todas as mudanças para a tira",
-    "neopixel.Strip.showBarGraph": "Displays a vertical bar graph based on the `value` and `high` value.\nIf `high` is 0, the chart gets adjusted automatically.",
+    "neopixel.Strip.showBarGraph": "Exibe um gráfico de barras verticais com base no valor `value` e `high`. \nSe `high` for 0, o gráfico será ajustado automaticamente.",    
     "neopixel.Strip.showBarGraph|param|high": "valor máximo, ex.: 255",
     "neopixel.Strip.showBarGraph|param|value": "valor atual para traçar (plot)",
     "neopixel.Strip.showColor": "Mostra todo os LED para uma determinada cor (intervalo 0-255 para r, g, b).",
