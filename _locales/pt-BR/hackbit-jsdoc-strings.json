@@ -148,7 +148,7 @@
     "hackbitRTCDS1307.getTime": "obter valor de tempo",
     "hackbitRTCDS1307.getWeekday": "obter tempo \n\nobter dia da semana \n0 significa domingo \n1 significa segunda-feira \n2 significa terça-feira \n3 significa quarta-feira \n4 significa quinta-feira \n5 significa sexta-feira \n6 significa sábado",
     "hackbitRTCDS1307.setTime": "Definir tempo",
-    "IrButton": "MakeCode extension for IR Kit",
+    "IrButton": "Extensão Makecode para Kit IR (infravermelho)",
     "neopixel": "Functions to operate NeoPixel strips.",
     "neopixel.colors": "Gets the RGB value of a known color",
     "neopixel.create": "Create a new NeoPixel driver for `numleds` LEDs.",
