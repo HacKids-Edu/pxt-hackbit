@@ -21,7 +21,9 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts"
+        "norbi.ts",
+        "_locales/hackbit-jsdoc-strings.json",
+        "_locales/pt-BR/hackbit-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
