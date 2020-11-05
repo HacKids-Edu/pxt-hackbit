@@ -2,7 +2,7 @@
 /**
  * MakeCode extension for IR Kit
  */
-//% color=#1198C0 icon="\uf14C" block="Hackbit IR"
+//% color=#129FC9 icon="\uf14C" block="Hackbit IR"
 //% category="IR Kit"
 namespace hackbitIR {
   let irLed: InfraredLed;
