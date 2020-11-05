@@ -6,7 +6,7 @@
 /**
  * MakeCode extension for RTC DS1307
  */
-//% color=#B2B2E5 icon="\uf017" block="Hackbit RTC1307"
+//% color=#9898CE icon="\uf017" block="Hackbit RTC1307"
 namespace hackbitRTCDS1307 {
     export enum TimeType {
         //% block="second" enumval=0
@@ -73,6 +73,7 @@ namespace hackbitRTCDS1307 {
     //% block="set %datatype |%data"
     //% datatype.fieldEditor="gridpicker"
     //% datatype.fieldOptions.columns=2
+    //% color=#A6A6D4    
     export function setTime(datatype: TimeType, data: number): void {
         switch (datatype) {
             case 0:
@@ -106,6 +107,7 @@ namespace hackbitRTCDS1307 {
     //% block="%data"
     //% data.fieldEditor="gridpicker"
     //% data.fieldOptions.columns=2
+    //% color=#A6A6D4    
     export function getTime(data: TimeType): number {
         switch (data) {
             case 0:
@@ -148,6 +150,7 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_GET_WEEKDAY" 
     //% block="weekday"
+    //% color=#A6A6D4    
     export function getWeekday(): number {
         // (d+2*m+3*(m+1)/5+y+y/4-y/100+y/400) mod 7
         let d = HexToDec(getReg(DS1307_REG_DAY))
@@ -180,6 +183,7 @@ namespace hackbitRTCDS1307 {
      */
     //% blockId="DS1307_SET_DATETIME" 
     //% block="set year %year|    month %month|      day %day|     hour %hour|   minute %minute|   second %second"
+    //% color=#A6A6D4    
     export function DateTime(year: number, month: number, day: number, hour: number, minute: number, second: number): void {
         let buf = pins.createBuffer(8);
         buf[0] = DS1307_REG_SECOND;
