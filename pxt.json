@@ -28,6 +28,10 @@
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "3.1.27",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],
