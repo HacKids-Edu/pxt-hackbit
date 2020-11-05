@@ -4,7 +4,7 @@
  * an LED matrix to express emotions. A tribute to The Norby Chronicles.  
  * Anyone can easily use Norbi through programing and onboard sensors.
  */
-//% color=#C9DEA6 icon="\uf215" block="Hackbit Norbi"
+//% color=#748465 icon="\uf215" block="Hackbit Norbi"
 namespace norbi {
     export enum ServoPort {
         S1 = 0x01,
@@ -57,6 +57,7 @@ namespace norbi {
     //% subcategory=Humanoid group="Custom"
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% color=#839372    
     export function norbiServo(index: ServoPort, degree: number): void {
         if (!initialized) {
             hackbitmotors.initPCA9685()
@@ -70,6 +71,7 @@ namespace norbi {
     //% blockId=norbi_init
     //% block="initial position"
     //% subcategory=Humanoid group="Custom"    
+    //% color=#839372    
 	export function InitialPosition2() {
 		for (let i = 0; i < 8; i++) {
 			DoServo(1, 20)
@@ -89,6 +91,7 @@ namespace norbi {
     //% block="calibrate"
     //% subcategory=Humanoid group="Custom"    
 	// Regulation of movement
+    //% color=#839372    
 	export function Calibrate() {
 		for (let i = 0; i < 4; i++) {
 			InitialPosition()
@@ -109,6 +112,7 @@ namespace norbi {
     //% blockId=norbi_Forward
     //% block="move forward"
     //% subcategory=Humanoid group="Basic Moviment"    
+    //% color=#919F82    
 	export function Forward() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(3, 100)
@@ -141,6 +145,7 @@ namespace norbi {
     //% blockId=norbi_MoveBack
     //% block="move back"
     //% subcategory=Humanoid group="Basic Moviment"    
+    //% color=#919F82    
 	export function MoveBack() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(3, 105)
@@ -173,6 +178,7 @@ namespace norbi {
     //% blockId=norbi_Left
     //% block="move left"
     //% subcategory=Humanoid group="Basic Moviment"    
+    //% color=#919F82    
 	export function Left() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(1, 140)
@@ -201,6 +207,7 @@ namespace norbi {
     //% blockId=norbi_Right
     //% block="move right"
     //% subcategory=Humanoid group="Basic Moviment"    
+    //% color=#919F82    
 	export function Right() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(1, 40)
@@ -229,6 +236,7 @@ namespace norbi {
     //% blockId=norbi_RightToLeft
     //% block="right to left"
     //% subcategory=Humanoid group="Steps"    
+    //% color=#9FAB92    
 	export function RightToLeft() {
 		for (let i = 0; i < 1; i++) {
 			Right()
@@ -245,6 +253,7 @@ namespace norbi {
     //% blockId=norbi_BackForward
     //% block="back forward"
     //% subcategory=Humanoid group="Steps"    
+    //% color=#9FAB92    
 	export function BackForward() {
 		for (let i = 0; i < 1; i++) {
 			MoveBack()
@@ -261,6 +270,7 @@ namespace norbi {
     //% blockId=norbi_MovimentHand
     //% block="moviment hand"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
 	export function MovimentHand() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 55)
@@ -297,6 +307,7 @@ namespace norbi {
     //% blockId=norbi_Shrug
     //% block="shrug"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
     export function Shrug() {
 	    for (let i = 0; i < 2; i++) {
 	        DoServo(2, 95)
@@ -369,6 +380,7 @@ namespace norbi {
     //% blockId=norbi_MovementChest
     //% block="moviment chest"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
 	export function MovementChest() {
 	    for (let i = 0; i < 8; i++) {
 	        DoServo(1, 170)
@@ -391,6 +403,7 @@ namespace norbi {
     //% blockId=norbi_MovementOfLimbs
     //% block="movement of limbs"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
 	export function MovementOfLimbs() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(1, 170)
@@ -413,6 +426,7 @@ namespace norbi {
     //% blockId=norbi_Sway
     //% block="sway"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
 	export function Sway() {
 		for (let i = 0; i < 2; i++) {
 			DoServo(2, 170)
@@ -453,6 +467,7 @@ namespace norbi {
     //% blockId=norbi_Relax
     //% block="Relax"
     //% subcategory=Humanoid group="Patterns"    
+    //% color=#ADB8A2    
 	export function Relax() {
 		for (let i = 0; i < 4; i++) {
 			DoServo(4, 100)
@@ -480,6 +495,7 @@ namespace norbi {
     //% blockId=norbi_InsideOutWave
     //% block="inside out wave"
     //% subcategory=Humanoid group="Movements"    
+    //% color=#BBC4B2    
 	export function InsideOutWave() {
 	    for (let i = 0; i < 2; i++) {
 			DoServo(2, 135)
