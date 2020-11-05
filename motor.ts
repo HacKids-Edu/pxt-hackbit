@@ -162,7 +162,7 @@ namespace hackbitmotors {
     //% degree.min=0 degree.max=180
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#c35d5f icon="\uf1eb"
 
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
@@ -184,7 +184,7 @@ namespace hackbitmotors {
     //% degree.min=-45 degree.max=225
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#c35d5f icon="\uf1eb"
     export function GeekServo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -206,7 +206,7 @@ namespace hackbitmotors {
     //% degree.min=0 degree.max=360
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#FF3D65 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#c35d5f icon="\uf1eb"
 
     export function GeekServo2KG(index: Servos, degree: number): void {
         if (!initialized) {
