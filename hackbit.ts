@@ -494,63 +494,6 @@ namespace hackbit {
     }
 
     /**
-     * Get button LED state [0-1]
-    */
-    //% blockId=hackbitButtonLEDRead
-    //% block="button pin LED |%pin| is pressed"
-    //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
-    //% color=#D84A51 
-    export function buttonLEDState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
-     * Get Tilt state [0-1]
-    */
-    //% blockId=hackbitTiltRead
-    //% block="tilt switch pin |%pin| tilted"
-    //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
-    //% color=#D84A51 
-    export function TiltState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
-     * Get Switch (P) state [0-1]
-    */
-    //% blockId=hackbitSwitchRead
-    //% block="switch(P) pin |%pin| activated"
-    //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
-    //% color=#D84A51 
-    export function SwitchState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    /**
     * Get soil moisture(0~100%)
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
     */
@@ -942,6 +885,63 @@ namespace hackbit {
             }
         })
         
+    }
+
+    /**
+     * Get Switch (P) state [0-1]
+    */
+    //% blockId=hackbitSwitchRead
+    //% block="switch(P) pin |%pin| activated"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
+    //% subcategory=Input  group="Analog" 
+    //% color=#DA5259 
+    export function SwitchState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get button LED state [0-1]
+    */
+    //% blockId=hackbitButtonLEDRead
+    //% block="button pin LED |%pin| is pressed"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
+    //% subcategory=Input  group="Analog" 
+    //% color=#DA5259 
+    export function buttonLEDState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    /**
+     * Get Tilt state [0-1]
+    */
+    //% blockId=hackbitTiltRead
+    //% block="tilt switch pin |%pin| tilted"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
+    //% subcategory=Input  group="Analog" 
+    //% color=#DA5259 
+    export function TiltState(pin: DigitalPin): boolean {
+        pins.setPull(pin, PinPullMode.PullUp)
+        if (pins.digitalReadPin(pin) == 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     /**
