@@ -254,7 +254,7 @@ const enum TextOption {
 /**
  * MakeCode extension for LCD Display
  */
-//% color=#1B91E0 icon="\uf0c9" block="Hackbit LCD"
+//% color=#F67D54 icon="\uf0c9" block="Hackbit LCD"
 
 namespace HackbitLCD {
   const enum Lcd {
