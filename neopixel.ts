@@ -2,7 +2,7 @@
  * MakeCode extension for Neopixel 
  * Well known colors for a NeoPixel strip 
  */
-//% color=#F57513 icon="\uf110" block="Hackbit NeoPixel"
+//% color=#DD546E icon="\uf110" block="Hackbit NeoPixel"
 
 enum NeoPixelColors {
     //% block=red
@@ -42,7 +42,7 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
-//% color=#F57513 icon="\uf110" block="Hackbit NeoPixel"
+//% color=#DD546E icon="\uf110" block="Hackbit NeoPixel"
 namespace neopixel {
     let neoStrip: neopixel.Strip;
     //% shim=sendBufferAsm
@@ -74,7 +74,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
+        //% group="Set" color=#DD546E icon="\uf1eb"
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
@@ -89,7 +89,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=5
         //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
+        //% group="Set" color=#DD546E icon="\uf1eb"
         setMatrixWidth(width: number, rotation: number, chain: number) {
             this._matrixWidth = Math.min(this._length, width >> 0);
             this._matrixRotation = rotation >> 0;
@@ -106,7 +106,7 @@ namespace neopixel {
         //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
         //% weight=4
         //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
+        //% group="Set" color=#DD546E icon="\uf1eb"
         setMatrixColor(x: number, y: number, rgb: number) {
             if (this._matrixWidth <= 0) return; // not a matrix, ignore
             x = x >> 0;
@@ -141,7 +141,7 @@ namespace neopixel {
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
+        //% group="Set" color=#DD546E icon="\uf1eb"
         setPixelWhiteLED(pixeloffset: number, white: number): void {
             if (this._mode === NeoPixelMode.RGBW) {
                 this.setPixelW(pixeloffset >> 0, white >> 0);
@@ -153,7 +153,7 @@ namespace neopixel {
          */
         //% weight=10
         //% parts="neopixel" advanced=false
-        //% group="Set" color=#D46109 icon="\uf1eb"
+        //% group="Set" color=#DD546E icon="\uf1eb"
 
         setPin(pin: DigitalPin): void {
             this.pin = pin;
@@ -168,7 +168,7 @@ namespace neopixel {
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
-        //% group="Show" color=#EF6D0A icon="\uf1eb"
+        //% group="Show" color=#DE5C74 icon="\uf1eb"
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
@@ -185,7 +185,7 @@ namespace neopixel {
         //% endHue.min=0 endHue.max=360
         //% weight=85 blockGap=8
         //% parts="neopixel"
-        //% group="Show" color=#EF6D0A icon="\uf1eb"
+        //% group="Show" color=#DE5C74 icon="\uf1eb"
 
         showRainbow(startHue: number = 1, endHue: number = 360) {
             if (this._length <= 0) return;
@@ -255,7 +255,7 @@ namespace neopixel {
         //% high.min=0 high.max=255
         //% icon="\uf080"
         //% parts="neopixel"
-        //% group="Show" color=#EF6D0A icon="\uf1eb"
+        //% group="Show" color=#DE5C74 icon="\uf1eb"
 
         showBarGraph(value: number, high: number): void {
             if (high <= 0) {
@@ -291,7 +291,7 @@ namespace neopixel {
         //% blockId="neopixel_show" block="%strip|show" blockGap=8
         //% weight=79
         //% parts="neopixel"
-        //% group="Show" color=#EF6D0A icon="\uf1eb"
+        //% group="Show" color=#DE5C74 icon="\uf1eb"
 
         show() {
             sendBuffer(this.buf, this.pin);
@@ -304,7 +304,7 @@ namespace neopixel {
         //% blockId="neopixel_clear" block="%strip|clear"
         //% weight=76
         //% parts="neopixel"
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         clear(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -316,7 +316,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_length" block="%strip|length" blockGap=8
         //% weight=60 advanced=false
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         length() {
             return this._length;
@@ -328,7 +328,7 @@ namespace neopixel {
         //% blockId="neopixel_each_brightness" block="%strip|ease brightness" blockGap=8
         //% weight=58
         //% parts="neopixel" advanced=false
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         easeBrightness(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -360,7 +360,7 @@ namespace neopixel {
         //% blockId="neopixel_shift" block="%strip|shift pixels by %offset" blockGap=8
         //% weight=40
         //% parts="neopixel"
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         shift(offset: number = 1): void {
             offset = offset >> 0;
@@ -376,7 +376,7 @@ namespace neopixel {
         //% blockId="neopixel_rotate" block="%strip|rotate pixels by %offset" blockGap=8
         //% weight=39
         //% parts="neopixel"
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         rotate(offset: number = 1): void {
             offset = offset >> 0;
@@ -389,7 +389,7 @@ namespace neopixel {
          */
         //% weight=9 blockId=neopixel_power block="%strip|power (mA)"
         //% advanced=false
-        //% group="More" color=#F79C56 icon="\uf1eb"
+        //% group="More" color=#E0647B icon="\uf1eb"
 
         power(): number {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -413,7 +413,7 @@ namespace neopixel {
         //% brightness.min=0 brightness.max=255
         //% weight=59
         //% parts="neopixel" advanced=false
-        //% subcategory="Configuration"  group="NeoPixel" color=#9E4806 icon="\uf1eb"
+        //% subcategory="Configuration"  group="NeoPixel" color=#DC536D icon="\uf1eb"
 
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
@@ -428,7 +428,7 @@ namespace neopixel {
         //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range
-        //% subcategory="Configuration"  group="NeoPixel" color=#9E4806 icon="\uf1eb"
+        //% subcategory="Configuration"  group="NeoPixel" color=#DC536D icon="\uf1eb"
 
         range(start: number, length: number): Strip {
             start = start >> 0;
@@ -539,7 +539,7 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    //% subcategory="Configuration"  group="NeoPixel" color=#9E4806 icon="\uf1eb"
+    //% subcategory="Configuration"  group="NeoPixel" color=#DC536D icon="\uf1eb"
 
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
@@ -566,7 +566,7 @@ namespace neopixel {
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
     //% advanced=false
-    //% subcategory="Color"  group="NeoPixel" color=#B95407 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#E16C82 icon="\uf1eb"
 
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
@@ -580,7 +580,7 @@ namespace neopixel {
     //% color.fieldEditor="gridpicker"
     //% color.fieldOptions.columns=3
     //% advanced=false
-    //% subcategory="Color"  group="NeoPixel" color=#B95407 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#E16C82 icon="\uf1eb"
 
     export function colors(color: NeoPixelColors): number {
         return color;
@@ -612,7 +612,7 @@ namespace neopixel {
     //% h.min=0 h.max=360
     //% s.min=0 s.max=99
     //% l.min=0 l.max=99
-    //% subcategory="Color"  group="NeoPixel" color=#B95407 icon="\uf1eb"
+    //% subcategory="Color"  group="NeoPixel" color=#E16C82 icon="\uf1eb"
 
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
