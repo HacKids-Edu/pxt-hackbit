@@ -1,7 +1,7 @@
 /**
 * Functions to hack:bit board by Hackids 
 */
-//% color=#EA5532 icon="\uf2c2" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
+//% color=#F67D54 icon="\uf2c2" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
 //% groups="OLED"
 namespace HackbitOLEDDisplay {
     /////////////////////OLED///////////////////////////////
@@ -162,7 +162,7 @@ namespace HackbitOLEDDisplay {
     //% line.min=1 line.max=8 line.defl=1
     //% text.defl="Hello, Hackids"
     //% block="OLED show line %line|text %text"
-    //% group="OLED" color=#00B1ED
+    //% group="OLED" color=#F67D54
     export function showUserText(line: number, text: string) {
         if (firstoledinit) {
             oledinit()
@@ -185,7 +185,7 @@ namespace HackbitOLEDDisplay {
     //% line.min=1 line.max=8 line.defl=2 
     //% n.defl=20200508
     //% block="OLED show line %line|number %n"
-    //% group="OLED" color=#00B1ED
+    //% group="OLED" color=#F67D54
     export function showUserNumber(line: number, n: number) {
         if (firstoledinit) {
             oledinit()
@@ -193,7 +193,7 @@ namespace HackbitOLEDDisplay {
         }
         showUserText(line, "" + n)
     }
-    //% block="clear display" color=#00B1ED
+    //% block="clear display" color=#F67D54
     //% group="OLED"
     export function oledClear() {
         //oledcmd(DISPLAY_OFF);   //display off
