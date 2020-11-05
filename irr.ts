@@ -170,6 +170,7 @@ namespace hackbitIR {
   //% pin.fieldOptions.columns=4
   //% pin.fieldOptions.tooltips="false"
   //% weight=90
+  //% color=#129FC9
   export function connectIrReceiver(
     pin: DigitalPin,
     protocol: IrProtocol
@@ -265,6 +266,7 @@ namespace hackbitIR {
   //% button.fieldOptions.columns=3
   //% button.fieldOptions.tooltips="false"
   //% weight=50
+  //% color=#129FC9
   export function onIrButton(
     button: IrButton,
     action: IrButtonAction,
@@ -288,6 +290,7 @@ namespace hackbitIR {
   //% blockId=hackbit_infrared_ir_button_pressed
   //% block="IR button"
   //% weight=70
+  //% color=#129FC9
   export function irButton(): number {
     if (!irState) {
       return IrButton.Any;
@@ -303,6 +306,7 @@ namespace hackbitIR {
   //% blockId=hackbit_infrared_on_ir_datagram
   //% block="on IR datagram received"
   //% weight=40
+  //% color=#129FC9
   export function onIrDatagram(handler: () => void) {
     control.onEvent(
       MICROBIT_HACKBIT_IR_DATAGRAM,
@@ -321,6 +325,7 @@ namespace hackbitIR {
   //% blockId=hackbit_infrared_ir_datagram
   //% block="IR datagram"
   //% weight=30
+  //% color=#129FC9
   export function irDatagram(): string {
     if (!irState) {
       return "0x00000000";
@@ -339,6 +344,7 @@ namespace hackbitIR {
   //% blockId=hackbit_infrared_was_any_ir_datagram_received
   //% block="IR data was received"
   //% weight=80
+  //% color=#129FC9
   export function wasIrDataReceived(): boolean {
     if (!irState) {
       return false;
@@ -362,6 +368,7 @@ namespace hackbitIR {
   //% button.fieldOptions.tooltips="false"
   //% block="IR button code %button"
   //% weight=60
+  //% color=#129FC9
   export function irButtonCode(button: IrButton): number {
     return button as number;
   }

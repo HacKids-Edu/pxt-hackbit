@@ -2,7 +2,7 @@
 /**
  * MakeCode extension for IR Kit
  */
-//% color=#129FC9 icon="\uf14C" block="Hackbit IR"
+//% color=#0F8AAE icon="\uf14C" block="Hackbit IR"
 //% category="IR Kit"
 namespace hackbitIR {
   let irLed: InfraredLed;
@@ -86,6 +86,7 @@ namespace hackbitIR {
   //% pin.fieldOptions.columns=4
   //% pin.fieldOptions.tooltips="false"
   //% weight=90
+  //% color=#0F8AAE  
   export function connectIrSenderLed(pin: AnalogPin): void {
     irLed = new InfraredLed(pin);
   }
@@ -98,6 +99,8 @@ namespace hackbitIR {
   //% blockId="hackbit_infrared_sender_send_datagram"
   //% block="send IR datagram %hex32bit"
   //% weight=80
+  //% color=#0F8AAE  
+    
   export function sendIrDatagram(hex32bit: string): void {
     if (!irLed) {
       return;
@@ -116,6 +119,7 @@ namespace hackbitIR {
   //% address.min=0 address.max=255
   //% command.min=0 command.max=255
   //% weight=56
+  //% color=#0F8AAE  
   export function irNec(address: number, command: number): string {
     const addrSection = ((address & 0xff) << 8) | (~address & 0xff);
     const cmdSection = ((command & 0xff) << 8) | (~command & 0xff);
