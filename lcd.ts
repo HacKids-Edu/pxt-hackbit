@@ -470,7 +470,7 @@ namespace HackbitLCD {
   //% expandableArgumentMode="toggle"
   //% inlineInputMode="inline"
   //% weight=90
-  //% color=#F0CC36 
+  //% color=#EFC723 
 
   export function showStringOnLcd1602(
     text: string,
@@ -495,7 +495,7 @@ namespace HackbitLCD {
   //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_clear_1602" block="LCD1602 clear display"
   //% weight=89
-  //% color=#F0CC36 
+  //% color=#EFC723 
   export function clearLcd1602(): void {
     showStringOnLcd1602("", 1, 32);
   }
@@ -517,7 +517,7 @@ namespace HackbitLCD {
   //% expandableArgumentMode="toggle"
   //% inlineInputMode="inline"
   //% weight=80
-  //% color=#F2D351 
+  //% color=#F0CC36 
   export function showStringOnLcd2004(
     text: string,
     startPosition: number,
@@ -541,7 +541,7 @@ namespace HackbitLCD {
   //% subcategory="LCD2004"
   //% blockId="hackbit_lcd_clear_2004" block="LCD2004 clear display"
   //% weight=79
-  //% color=#F2D351 
+  //% color=#F0CC36 
   export function clearLcd2004(): void {
     showStringOnLcd2004("", 1, 80);
   }
@@ -556,7 +556,7 @@ namespace HackbitLCD {
   //% pos.fieldEditor="gridpicker"
   //% pos.fieldOptions.columns=16
   //% blockHidden=true
-  //% color=#F0CC36 
+  //% color=#EFC723 
   export function position1602(pos: LcdPosition1602): number {
     return pos;
   }
@@ -585,7 +585,7 @@ namespace HackbitLCD {
   //% backlight.fieldEditor="gridpicker"
   //% backlight.fieldOptions.columns=2
   //% weight=79
-  //% color=#F0CC36 
+  //% color=#EFC723 
   export function setLcdBacklight(backlight: LcdBacklight): void {
     if (!lcdState && !connect()) {
       return;
@@ -603,7 +603,7 @@ namespace HackbitLCD {
   //% blockId="hackbit_lcd_set_address" block="connect LCD at I2C address %i2cAddress"
   //% i2cAddress.min=0 i2cAddress.max=127
   //% weight=70
-  //% color=#F0CC36 
+  //% color=#EFC723 
   export function connectLcd(i2cAddress: number): void {
 
     if (lcdState && lcdState.i2cAddress == i2cAddress) {
@@ -686,7 +686,7 @@ namespace HackbitLCD {
   //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_is_connected" block="LCD is connected"
   //% weight=69
-  //% color=#F0CC36 
+  //% color=#EFC723 
   export function isLcdConnected(): boolean {
     return !!lcdState || connect();
   }
