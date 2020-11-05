@@ -398,7 +398,7 @@ namespace hackbitmotors {
     //% blockId=hackbit_stop_all block="Motor Stop All"
     //% weight=79
     //% blockGap=50
-    //% color=#FF1344 
+    //% color=#DD546E 
 
     export function MotorStopAll(): void {
         if (!initialized) {
