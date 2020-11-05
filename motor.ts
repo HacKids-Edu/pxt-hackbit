@@ -389,7 +389,7 @@ namespace hackbitmotors {
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
     //% weight=80
-    //% subcategory="DC Motor"  group="DC Motor" color=#CD797B icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#C35D5F icon="\uf1eb"
 
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
