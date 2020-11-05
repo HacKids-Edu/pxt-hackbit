@@ -1,7 +1,7 @@
 /**
  * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/
  */
-//% color=#75BBAE icon="\uf20e" block="Hackbit IoT"
+//% color=#54AB9B icon="\uf20e" block="Hackbit IoT"
 namespace ESP8266ThingSpeak {
 
     let wifi_connected: boolean = false
@@ -48,7 +48,7 @@ namespace ESP8266ThingSpeak {
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
     //% subcategory="Thingspeak"     
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function connectWifi(tx: SerialPin, rx: SerialPin, baudrate: BaudRate, ssid: string, pw: string) {
         wifi_connected = false
         thingspeak_connected = false
@@ -72,7 +72,7 @@ namespace ESP8266ThingSpeak {
     //% ip.defl=api.thingspeak.com
     //% write_api_key.defl=your_write_api_key
     //% subcategory="Thingspeak" 
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function connectThingSpeak(ip: string, write_api_key: string, n1: number, n2: number, n3: number, n4: number, n5: number, n6: number, n7: number, n8: number) {
         if (wifi_connected && write_api_key != "") {
             thingspeak_connected = false
@@ -96,7 +96,7 @@ namespace ESP8266ThingSpeak {
     //% block="Wait %delay ms"
     //% delay.min=0 delay.defl=5000
     //% subcategory="Thingspeak" 
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function wait(delay: number) {
         if (delay > 0) basic.pause(delay)
     }
@@ -106,7 +106,7 @@ namespace ESP8266ThingSpeak {
     */
     //% block="Wifi connected ?"
     //% subcategory="Thingspeak" 
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function isWifiConnected() {
         return wifi_connected
     }
@@ -116,7 +116,7 @@ namespace ESP8266ThingSpeak {
     */
     //% block="ThingSpeak connected ?"
     //% subcategory="Thingspeak" 
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function isThingSpeakConnected() {
         return thingspeak_connected
     }
@@ -126,7 +126,7 @@ namespace ESP8266ThingSpeak {
     */
     //% block="Last data upload successful ?"
     //% subcategory="Thingspeak" 
-    //% color=#89C5BA    
+    //% color=#75BBAE    
     export function isLastUploadSuccessful() {
         return last_upload_successful
     }
