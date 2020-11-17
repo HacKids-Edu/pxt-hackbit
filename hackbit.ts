@@ -202,7 +202,7 @@ namespace hackbit {
     //% subcategory=Actuators  group="Digital" 
     //% color=#D74149 
     export function hackbitVibrationMotorState(pin: DigitalPin, VibrationMotorState: OnOff): void {
-        pins.setPull(pin, PinPullMode.PullDown)
+        pins.setPull(pin, PinPullMode.PullUp)
         switch (VibrationMotorState) {
             case 0:
                 pins.digitalWritePin(pin, 0)

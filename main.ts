@@ -1,10 +1,11 @@
-hackbit.hackbitVibrationMotorState(DigitalPin.P0, hackbit.OnOff.On)
+input.onButtonPressed(Button.A, function () {
+    hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
+})
+input.onButtonPressed(Button.B, function () {
+    hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.On)
+})
+hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
 // www.hackids.com.br
 basic.forever(function () {
-    if (input.temperature() > 34) {
-        music.playTone(262, music.beat(BeatFraction.Whole))
-        hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.On)
-    } else {
-        hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
-    }
+	
 })
