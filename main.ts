@@ -1,10 +1,10 @@
-input.onButtonPressed(Button.A, function () {
-    hackbit.digit_bit(0, 0)
-})
-hackbit.digit_createDisplay(DigitalPin.P0, DigitalPin.P1)
-hackbit.digit_set(7)
-hackbit.digit_point(true)
+hackbit.hackbitVibrationMotorState(DigitalPin.P0, hackbit.OnOff.On)
 // www.hackids.com.br
 basic.forever(function () {
-	
+    if (input.temperature() > 34) {
+        music.playTone(262, music.beat(BeatFraction.Whole))
+        hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.On)
+    } else {
+        hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
+    }
 })
