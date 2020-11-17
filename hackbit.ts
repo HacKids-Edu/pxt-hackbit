@@ -552,7 +552,7 @@ namespace hackbit {
     * Get dht11 temperature and humidity Value
     * @param dht11pin describe parameter here, eg: DigitalPin.P15     
     */
-    //% blockId="hackbitDHT11Read" block="DHT11 sensor %DHT11pin %DHT11Type value"
+    //% blockId="hackbitDHT11Read" block="DHT11 sensor %dht11pin %dht11type value"
     //% DHT11pin.fieldEditor="gridpicker"
     //% DHT11pin.fieldOptions.columns=3
     //% dht11state.fieldEditor="gridpicker"
@@ -560,23 +560,23 @@ namespace hackbit {
     //% dht11state.min=0 dht11state.max=1
     //% subcategory=Sensor  group="Analog" 
     //% color=#D84A51 
-    export function dht11Sensor(DHT11pin: DigitalPin, DHT11Type: DHT11Type): number {
-        pins.digitalWritePin(DHT11pin, 0)
+    export function dht11Sensor(dht11pin: DigitalPin, dht11type: DHT11Type): number {
+        pins.digitalWritePin(dht11pin, 0)
         basic.pause(18)
-        let i = pins.digitalReadPin(DHT11pin)
-        pins.setPull(DHT11pin, PinPullMode.PullUp);
+        let i = pins.digitalReadPin(dht11pin)
+        pins.setPull(dht11pin, PinPullMode.PullUp);
 
-        while (pins.digitalReadPin(DHT11pin) == 1);
-        while (pins.digitalReadPin(DHT11pin) == 0);
-        while (pins.digitalReadPin(DHT11pin) == 1);
+        while (pins.digitalReadPin(dht11pin) == 1);
+        while (pins.digitalReadPin(dht11pin) == 0);
+        while (pins.digitalReadPin(dht11pin) == 1);
 
         let value = 0;
         let counter = 0;
 
         for (let i = 0; i <= 32 - 1; i++) {
-            while (pins.digitalReadPin(DHT11pin) == 0);
+            while (pins.digitalReadPin(dht11pin) == 0);
             counter = 0
-            while (pins.digitalReadPin(DHT11pin) == 1) {
+            while (pins.digitalReadPin(dht11pin) == 1) {
                 counter += 1;
             }
             if (counter > 4) {
@@ -584,7 +584,7 @@ namespace hackbit {
             }
         }
 
-        switch (DHT11Type) {
+        switch (dht11type) {
             case 0:
                 return (value & 0x0000ff00) >> 8
                 break;
