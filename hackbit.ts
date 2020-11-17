@@ -372,10 +372,10 @@ namespace hackbit {
     export function MagneticSwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
-            return true
+            return false
         }
         else {
-            return false
+            return true
         }
     }
 
@@ -467,10 +467,10 @@ namespace hackbit {
     export function VibrationRead(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
-            return true
+            return false
         }
         else {
-            return false
+            return true
         }
     }        
 
