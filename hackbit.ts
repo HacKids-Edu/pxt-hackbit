@@ -648,7 +648,7 @@ namespace hackbit {
     * Get noise(dB)
     * @param noisepin describe parameter here, eg: AnalogPin.P1, (Loudness Sensor)
     */
-    //% blockId="hackbitNoiseRead" block="value of noise(dB) at pin %noisepin"
+    //% blockId="hackbitNoiseRead" block="value of noise(dB) at pin %noisepin (0~100)"
     //% noisepin.fieldEditor="gridpicker"
     //% noisepin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" 
