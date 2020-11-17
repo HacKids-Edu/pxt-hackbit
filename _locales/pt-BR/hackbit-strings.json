@@ -82,7 +82,7 @@
     "hackbit.ReadTemperature|block": "valor da temperatura (Celsius) no pino  %temperaturepin",
     "hackbit.rotaryValue|block": "Valor do sensor de ângulo rotação no pino |%pin|",
     "hackbit.SwitchState|block": "interruptor(P) no pino |%pin| ativado",
-    "hackbit.TiltState|block": "interruptor de inclinação no pino |%pin| ativado",
+    "hackbit.TiltState|block": "interruptor de inclinação (tilt) no pino |%pin| ativado",
     "hackbit.TouchState|block": "sensor de toque no pino |%pin| ativado",
     "hackbit.UVLevel|block": "valor do sensor de UV (0~15) no pino %uvlevelpin",
     "hackbit.VibrationRead|block": "sensor de vibração no pino |%pin| ativado",
