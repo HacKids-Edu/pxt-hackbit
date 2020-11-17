@@ -370,7 +370,7 @@ namespace hackbit {
     //% subcategory=Sensor  group="Digital" 
     //% color=#D84A51 
     export function MagneticSwitchState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
+        pins.setPull(pin, PinPullMode.PullDown)
         if (pins.digitalReadPin(pin) == 1) {
             return true
         }
