@@ -935,7 +935,7 @@ namespace hackbit {
     //% subcategory=Input  group="Digital" 
     //% color=#DA5259 
     export function TiltState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullDown)
+        pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
             return true
         }
