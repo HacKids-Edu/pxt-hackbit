@@ -553,11 +553,11 @@ namespace hackbit {
     * @param dht11pin describe parameter here, eg: DigitalPin.P15     
     */
     //% blockId="hackbitDHT11Read" block="DHT11 sensor %dht11pin %dht11type value"
-    //% DHT11pin.fieldEditor="gridpicker"
-    //% DHT11pin.fieldOptions.columns=3
-    //% dht11state.fieldEditor="gridpicker"
-    //% dht11state.fieldOptions.columns=2
-    //% dht11state.min=0 dht11state.max=1
+    //% dht11pin.fieldEditor="gridpicker"
+    //% dht11pin.fieldOptions.columns=3
+    //% dht11type.fieldEditor="gridpicker"
+    //% dht11type.fieldOptions.columns=2
+    //% dht11type.min=0 dht11state.max=1
     //% subcategory=Sensor  group="Analog" 
     //% color=#D84A51 
     export function dht11Sensor(dht11pin: DigitalPin, dht11type: DHT11Type): number {
