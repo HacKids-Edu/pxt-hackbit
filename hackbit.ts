@@ -936,7 +936,7 @@ namespace hackbit {
     //% color=#DA5259 
     export function TiltState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullDown)
-        if (pins.digitalReadPin(pin) == 0) {
+        if (pins.digitalReadPin(pin) == 1) {
             return true
         }
         else {
