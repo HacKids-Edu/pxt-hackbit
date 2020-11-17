@@ -3,6 +3,7 @@
     "version": "0.1.1",
     "description": "hack:bit - grove micro:bit project board https://www.hackids.com.br",
     "dependencies": {
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1",
         "core": "*",
         "radio": "*"
     },

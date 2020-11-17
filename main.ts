@@ -1,11 +1,13 @@
 input.onButtonPressed(Button.A, function () {
-    hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
+    strip.showRainbow(1, 360)
+    strip.show()
+    basic.pause(500)
+    strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    strip.show()
+    basic.pause(500)
 })
-input.onButtonPressed(Button.B, function () {
-    hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.On)
-})
-hackbit.hackbitVibrationMotorState(DigitalPin.P3, hackbit.OnOff.Off)
-// www.hackids.com.br
+let strip: neopixel.Strip = null
+strip = neopixel.create(DigitalPin.P1, 10, NeoPixelMode.RGB)
 basic.forever(function () {
 	
 })
