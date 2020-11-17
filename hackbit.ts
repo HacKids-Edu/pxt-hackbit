@@ -110,7 +110,7 @@ namespace hackbit {
         Wave = 9
     }
 
-    export enum DHT11_state {
+    export enum DHT11Type {
         //% block="temperature(℃)" enumval=0
         DHT11_temperature_C,
 
@@ -552,7 +552,7 @@ namespace hackbit {
     * Get dht11 temperature and humidity Value
     * @param dht11pin describe parameter here, eg: DigitalPin.P15     
     */
-    //% blockId="hackbitDHT11Read" block="DHT11 sensor %DHT11pin %dht11state value"
+    //% blockId="hackbitDHT11Read" block="DHT11 sensor %DHT11pin %DHT11Type value"
     //% DHT11pin.fieldEditor="gridpicker"
     //% DHT11pin.fieldOptions.columns=3
     //% dht11state.fieldEditor="gridpicker"
@@ -560,7 +560,7 @@ namespace hackbit {
     //% dht11state.min=0 dht11state.max=1
     //% subcategory=Sensor  group="Analog" 
     //% color=#D84A51 
-    export function dht11Sensor(DHT11pin: DigitalPin, dht11state: DHT11_state): number {
+    export function dht11Sensor(DHT11pin: DigitalPin, DHT11Type: DHT11Type): number {
         pins.digitalWritePin(DHT11pin, 0)
         basic.pause(18)
         let i = pins.digitalReadPin(DHT11pin)
@@ -584,7 +584,7 @@ namespace hackbit {
             }
         }
 
-        switch (dht11state) {
+        switch (DHT11Type) {
             case 0:
                 return (value & 0x0000ff00) >> 8
                 break;
