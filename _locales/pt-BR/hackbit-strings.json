@@ -6,7 +6,7 @@
     "ESP8266ThingSpeak.isWifiConnected|block": "WiFi conectado?",
     "ESP8266ThingSpeak.wait|block": "Aguarde %delay ms",
     "ESP8266ThingSpeak|block": "Hackbit IoT",
-    "hackbit.buttonLEDState|block": "Botão (LED) em pino |%pin| pressionado (a)",
+    "hackbit.buttonLEDState|block": "Botão (LED) em pino |%pin| pressionado (b)",
     "hackbit.buttonState|block": "Botão em pino |%pin| pressionado",
     "hackbit.checkColor|block": "Sensor de cor APDS9960 detectar %color",
     "hackbit.collisionSensor|block": "sensor de colisão/vibração em pino |%pin| ativado",
