@@ -910,7 +910,7 @@ namespace hackbit {
      * Get button LED state [0-1]
     */
     //% blockId=hackbitButtonLEDRead
-    //% block="button pin LED |%pin| is pressed"
+    //% block="button pin LED |%pin| is pressed (y)"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Digital" 
