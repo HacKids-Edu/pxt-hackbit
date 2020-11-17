@@ -28,7 +28,7 @@
     "hackbit.DHT11_state.DHT11_humidity|block": "humidade(0~100)",
     "hackbit.DHT11_state.DHT11_temperature_C|block": "temperatura(℃)",
     "hackbit.digit_bit|block": "%strip|mostrar número|%dispData|no endereço|%bitAddr",
-    "hackbit.digit_clear|block": "%strip|limpar",
+    "hackbit.digit_clear|block": "%strip|limpar display",
     "hackbit.digit_createDisplay|block": "Display de 4 dígitos em |%clkPin|e|%dataPin",
     "hackbit.digit_point|block": "%strip|alterar|%point|dois pontos",
     "hackbit.digit_set|block": "nível de brilho em|%level",
