@@ -24,8 +24,7 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts",
-        "ds18b20.cpp"
+        "norbi.ts"
     ],
     "testFiles": [
         "test.ts"
