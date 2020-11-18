@@ -11,8 +11,9 @@ enum DHT11Type {
     //% block="humidity(0~100)" enumval=2
     DHT11_humidity,
 }
+
 //% color=#54AB9B icon="\uf20e" block="Hackbit IoT"
-namespace Environment_IoT {
+namespace HackbitIoT {
     let Reference_VOLTAGE = 3100
 
     /**
