@@ -1,3 +1,4 @@
 basic.forever(function () {
-    basic.showNumber(hackbit.dht11Sensor(DigitalPin.P12, hackbit.DHT11Type.DHT11_humidity))
+    basic.showString("temp:")
+    basic.showNumber(hackbit.dht11value(hackbit.DHT11Type.DHT11_temperature_C, DigitalPin.P12))
 })
