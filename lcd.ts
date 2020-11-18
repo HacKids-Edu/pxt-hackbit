@@ -580,7 +580,6 @@ namespace HackbitLCD {
    * Enables or disables the backlight of the LCD.
    * @param backlight new state of backlight, eg: LcdBacklight.Off
    */
-  //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_backlight" block="switch LCD backlight %backlight"
   //% backlight.fieldEditor="gridpicker"
   //% backlight.fieldOptions.columns=2
@@ -599,7 +598,6 @@ namespace HackbitLCD {
    * The addresses 39 (PCF8574) or 63 (PCF8574A) seem to be widely used.
    * @param i2cAddress I2C address of LCD in the range from 0 to 127, eg: 39
    */
-  //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_set_address" block="connect LCD at I2C address %i2cAddress"
   //% i2cAddress.min=0 i2cAddress.max=127
   //% weight=70
@@ -683,7 +681,6 @@ namespace HackbitLCD {
   /**
    * Returns true if a LCD is connected. False otherwise.
    */
-  //% subcategory="LCD1602"
   //% blockId="hackbit_lcd_is_connected" block="LCD is connected"
   //% weight=69
   //% color=#EEC311 
