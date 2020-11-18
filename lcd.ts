@@ -596,7 +596,7 @@ namespace HackbitLCD {
   /**
    * Connects to the LCD at a given I2C address.
    * The addresses 39 (PCF8574) or 63 (PCF8574A) seem to be widely used.
-   * @param i2cAddress I2C address of LCD in the range from 0 to 127, eg: 39
+   * @param i2cAddress I2C address of LCD in the range from 0 to 127, eg: 33
    */
   //% blockId="hackbit_lcd_set_address" block="connect LCD at I2C address %i2cAddress"
   //% i2cAddress.min=0 i2cAddress.max=127
