@@ -24,8 +24,7 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts",
-        "iotsensorenvironment.ts"
+        "norbi.ts"
     ],
     "testFiles": [
         "test.ts"
