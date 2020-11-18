@@ -92,7 +92,7 @@
     "HackbitLCD": "Extensão Makecode para Display LCD",
     "HackbitLCD.clearLcd1602": "Limpa o LCD1602 completamente.",
     "HackbitLCD.clearLcd2004": "Limpa o LCD2004 completamente.",
-    "HackbitLCD.connectLcd": "Conecta-se ao display LCD em um determinado endereço I2C.\nOs endereços 39 (PCF8574) ou 63 (PCF8574A) parecem ser amplamente utilizados.",
+    "HackbitLCD.connectLcd": "Conecta-se ao display LCD em um determinado endereço I2C.\nOs endereços 33, 21, 27 (PCF8574T), 39 (PCF8574) ou 63 (PCF8574A) parecem ser amplamente utilizados.",
     "HackbitLCD.connectLcd|param|i2cAddress": "Endereço I2C do display LCD (faixa de 0 a 127), ex: 39",
     "HackbitLCD.isLcdConnected": "Retorna verdadeiro se um display LCD estiver conectado. Caso contrário, falso.",
     "HackbitLCD.position1602": "Transforma uma posição do display LCD em um número.",
