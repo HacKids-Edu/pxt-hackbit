@@ -557,7 +557,7 @@ namespace hackbit {
     //% dht11pin.fieldOptions.columns=3
     //% dht11type.fieldEditor="gridpicker"
     //% dht11type.fieldOptions.columns=2
-    //% dht11type.min=0 dht11state.max=1
+    //% dht11type.min=0 dht11type.max=1
     //% subcategory=Sensor  group="Analog" 
     //% color=#D84A51 
     export function dht11value(dht11pin: DigitalPin, dht11type: DHT11Type): number {
