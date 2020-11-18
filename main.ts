@@ -1,3 +1,7 @@
 basic.forever(function () {
-    basic.showNumber(0)
+    if (hackbit.detectline(DigitalPin.P1)) {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        basic.clearScreen()
+    }
 })

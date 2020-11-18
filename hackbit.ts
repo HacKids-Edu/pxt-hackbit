@@ -300,10 +300,10 @@ namespace hackbit {
     export function detectline(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
-            return true
+            return false
         }
         else {
-            return false
+            return true
         }
     }
 
