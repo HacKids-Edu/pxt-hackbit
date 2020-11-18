@@ -1,7 +1,6 @@
 /**
- * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/
+ * MakeCode extension for Environment & Science IoT Sensors
  */
-//% color=#54AB9B icon="\uf20e" block="Hackbit IoT"
 enum DHT11Type {
     //% block="temperature(℃)" enumval=0
     DHT11_temperature_C,
@@ -12,8 +11,8 @@ enum DHT11Type {
     //% block="humidity(0~100)" enumval=2
     DHT11_humidity,
 }
+//% color=#54AB9B icon="\uf20e" block="Hackbit IoT"
 namespace Environment_IoT {
-    
     let Reference_VOLTAGE = 3100
 
     /**
