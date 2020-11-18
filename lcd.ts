@@ -457,7 +457,7 @@ namespace HackbitLCD {
    * Displays a text on a LCD1602 in the given position range.
    * The text will be cropped if it is longer than the provided length.
    * If there is space left, it will be filled with pad characters.
-   * @param text the text to show, eg: "Hack:bit"
+   * @param text the text to show, eg: "hack:bit"
    * @param startPosition the start position on the LCD, [1 - 32]
    * @param length the maximum space used on the LCD, eg: 16
    * @param option configures padding and alignment, eg: TextOption.Left
@@ -504,7 +504,7 @@ namespace HackbitLCD {
    * Displays a text on a LCD2004 in the given position range.
    * The text will be cropped if it is longer than the provided length.
    * If there is space left, it will be filled with pad characters.
-   * @param text the text to show, eg: "Hack:bit"
+   * @param text the text to show, eg: "hack:bit"
    * @param startPosition the start position on the LCD, [1 - 80]
    * @param length the maximum space used on the LCD, eg: 20
    * @param option configures padding and alignment, eg: TextOption.Left
@@ -595,7 +595,7 @@ namespace HackbitLCD {
 
   /**
    * Connects to the LCD at a given I2C address.
-   * The addresses 39 (PCF8574) or 63 (PCF8574A) seem to be widely used.
+   * The addresses 33, 21, 27 (PCF8574T), 39 (PCF8574) or 63 (PCF8574A) seem to be widely used.
    * @param i2cAddress I2C address of LCD in the range from 0 to 127, eg: 33
    */
   //% blockId="hackbit_lcd_set_address" block="connect LCD at I2C address %i2cAddress"
