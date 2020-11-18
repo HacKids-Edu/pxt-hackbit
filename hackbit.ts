@@ -560,7 +560,7 @@ namespace hackbit {
     //% dht11type.min=0 dht11state.max=1
     //% subcategory=Sensor  group="Analog" 
     //% color=#D84A51 
-    export function dht11Sensor(dht11pin: DigitalPin, dht11type: DHT11Type): number {
+    export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number {
         pins.digitalWritePin(dht11pin, 0)
         basic.pause(18)
         let i = pins.digitalReadPin(dht11pin)
