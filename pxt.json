@@ -24,7 +24,8 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts"
+        "norbi.ts",
+        "newIR.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -1,7 +1,4 @@
-basic.forever(function () {
-    if (hackbit.detectline(DigitalPin.P1)) {
-        basic.showIcon(IconNames.Heart)
-    } else {
-        basic.clearScreen()
-    }
+hackbitIR.onIrButton(IrButton.Any, IrButtonAction.Pressed, function () {
+    serial.writeLine(hackbitIR.irDatagram())
 })
+hackbitIR.connectIrReceiver(DigitalPin.P0, IrProtocol.NEC)
