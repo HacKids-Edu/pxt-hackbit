@@ -131,7 +131,7 @@
     "hackbitmotors.Turns.T5B0|block": "5",
     "hackbitmotors|block": "Hackbit Motors",
     "HackbitOLEDDisplay.clear|block": "clear OLED display",
-    "HackbitOLEDDisplay.drawLoading|block": "draw loading bar at $percent percent",
+    "HackbitOLEDDisplay.drawLoading|block": "draw loading bar at $percent percent $str mensage",
     "HackbitOLEDDisplay.writeString|block": "show (without newline) string $str",
     "HackbitOLEDDisplay.writeNum|block": "show (without newline) number $n",
     "HackbitOLEDDisplay.writeStringNewLine|block": "show string $str",
