@@ -135,6 +135,10 @@ namespace HackbitOLEDDisplay {
         loadPercent = num
     }
 
+    /**
+    * @param percent the text to show, eg: "100"
+    * @param str the text to show, eg: "Carga: "
+    */
     //% block="draw loading bar at $percent percent $str mensage"
     //% percent.min=0 percent.max=100
     //% weight=2
