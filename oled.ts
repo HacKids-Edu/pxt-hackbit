@@ -76,7 +76,7 @@ namespace HackbitOLEDDisplay {
         charY = yOffset
     }
 
-    function drawLoadingFrame() {
+    function drawLoadingFrame(str: string) {
         command(SSD1306_SETCOLUMNADRESS)
         command(0x00)
         command(displayWidth - 1)
@@ -110,7 +110,7 @@ namespace HackbitOLEDDisplay {
         }
         charX = 30
         charY = 2
-        writeString("Loading:")
+        writeString(str)
     }
     function drawLoadingBar(percent: number) {
         charX = 78
@@ -135,14 +135,14 @@ namespace HackbitOLEDDisplay {
         loadPercent = num
     }
 
-    //% block="draw loading bar at $percent percent"
+    //% block="draw loading bar at $percent percent $str mensage"
     //% percent.min=0 percent.max=100
     //% weight=2
-    export function drawLoading(percent: number) {
+    export function drawLoading(percent: number, str: string) {
         if (loadStarted) {
             drawLoadingBar(percent)
         } else {
-            drawLoadingFrame()
+            drawLoadingFrame(str)
             drawLoadingBar(percent)
             loadStarted = true
         }
