@@ -160,7 +160,7 @@ namespace HackbitOLEDDisplay {
     }
 
     //% line.min=1 line.max=8 line.defl=1
-    //% text.defl="Hello, Hackids"
+    //% text.defl="Olá, Hackids"
     //% block="OLED show line %line|text %text"
     //% group="OLED" color=#F67D54
     export function showUserText(line: number, text: string) {
@@ -183,7 +183,7 @@ namespace HackbitOLEDDisplay {
         }
     }
     //% line.min=1 line.max=8 line.defl=2 
-    //% n.defl=20200508
+    //% n.defl=2001
     //% block="OLED show line %line|number %n"
     //% group="OLED" color=#F67D54
     export function showUserNumber(line: number, n: number) {
