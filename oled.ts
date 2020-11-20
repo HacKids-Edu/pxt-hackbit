@@ -53,6 +53,7 @@ namespace HackbitOLEDDisplay {
         buf[1] = cmd
         pins.i2cWriteBuffer(chipAdress, buf, false)
     }
+
     //% block="clear OLED display"
     //% weight=3
     export function clear() {
@@ -161,24 +162,28 @@ namespace HackbitOLEDDisplay {
             charX += 6
         }
     }
+
     //% block="show (without newline) number $n"
     //% weight=5
     export function writeNum(n: number) {
         let numString = n.toString()
         writeString(numString)
     }
+
     //% block="show string $str"
     //% weight=8
     export function writeStringNewLine(str: string) {
         writeString(str)
         newLine()
     }
+
     //% block="show number $n"
     //% weight=7
     export function writeNumNewLine(n: number) {
         writeNum(n)
         newLine()
     }
+
     //% block="insert newline"
     //% weight=4
     export function newLine() {
@@ -307,6 +312,7 @@ namespace HackbitOLEDDisplay {
         drawLine(x0, y0, x0, y1)
         drawLine(x1, y0, x1, y1)
     }
+    
     //% block="initialize OLED with width $width height $height"
     //% width.defl=128
     //% height.defl=64
