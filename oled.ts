@@ -1,15 +1,13 @@
+declare interface Math {
+    floor(x: number): number;
+}
+
 /**
 * Functions to hack:bit board by Hackids 
 */
 //% color=#F67D54 icon="\uf2c2" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
 //% groups="OLED"
 
-declare interface Math {
-    floor(x: number): number;
-}
-
-
-//% color=#27b0ba icon="\uf26c"
 namespace HackbitOLEDDisplay {
     let font: Buffer;
 
