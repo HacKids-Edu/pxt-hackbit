@@ -29,18 +29,18 @@ Este repositório pode ser adicionado como uma **extensão** no MakeCode.
 * clique em **Novo Projeto**
 * clique em **Avançado** 
 * clique em **Extensions** ao final do menu
-* procure por **https://github.com/hackids-edu/pxt-hackbit** e importe
+* procure por **https://github.com/hackidsedu/pxt-hackbit** e importe
 
 This repository can be added as an **extension** in MakeCode.
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
-* search for **https://github.com/hackids-edu/pxt-hackbit** and import
+* search for **https://github.com/hackidsedu/pxt-hackbit** and import
 
 
 ## Blocks preview
 
-![A rendered view of the blocks](https://github.com/hackids-edu/pxt-hackbit/raw/master/.github/makecode/blocks.png)
+![A rendered view of the blocks](https://github.com/hackidsedu/pxt-hackbit/raw/master/.github/makecode/blocks.png)
 
 #### Metadata (used for search, rendering)
 
