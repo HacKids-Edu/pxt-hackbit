@@ -55,4 +55,4 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 * for PXT/microbit
 
 ## Path
-* https://github.com/hackids-edu/pxt-hackbit
+* https://github.com/hackidsedu/pxt-hackbit
