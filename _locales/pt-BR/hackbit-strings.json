@@ -24,7 +24,7 @@
     "hackbit.color|block": "sensor de cor - %Color detectado",
     "hackbit.CrashButton|block": "sensor de colisão em |%pin| pressionado",
     "hackbit.detectline|block": "sensor no pino |%pin| localizando preto",
-    "hackbit.dht11value|block": "valor no pino %dht11pin da %dht11type do sensor DHT11",
+    "hackbit.dht11value|block": "valor da %dht11type no pino %dht11pin do sensor DHT11",
     "hackbit.DHT11Type.DHT11_humidity|block": "humidade(0~100)",
     "hackbit.DHT11Type.DHT11_temperature_C|block": "temperatura(℃)",
     "hackbit.DHT11Type.DHT11_temperature_F|block": "temperatura(℉)",
