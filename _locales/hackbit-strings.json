@@ -23,7 +23,7 @@
     "hackbit.ColorList.yellow|block": "Yellow",
     "hackbit.color|block": "color sensor detected %Color",
     "hackbit.CrashButton|block": "crash sensor |%pin| is pressed",
-    "hackbit.detectline|block": "pin |%pin| line finder is seeing black",
+    "hackbit.detectline|block": "pin |%pin| line finder is seeing black",    
     "hackbit.dht11Sensor|block": "DHT11 sensor %dht11pin %dht11type value",
     "hackbit.DHT11Type.DHT11_humidity|block": "humidity(0~100)",
     "hackbit.DHT11Type.DHT11_temperature_C|block": "temperature(℃)",
