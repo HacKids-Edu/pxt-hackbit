@@ -97,6 +97,21 @@ namespace neopixel {
         }
 
         /**
+         * Sets the number of pixels in a matrix shaped strip
+         * @param width number of pixels in a row
+         */
+        //% blockId=neopixel_set_matrix_width_basic block="%strip|set matrix width %width"
+        //% strip.defl=strip
+        //% blockGap=8
+        //% weight=5
+        //% parts="neopixel" advanced=false
+        //% group="Set" color=#DD546E icon="\uf1eb"
+        setMatrixWidthBasic(width: number) {
+            this._matrixWidth = Math.min(this._length, width >> 0);
+        }
+
+
+        /**
          * Set LED to a given color (range 0-255 for r, g, b) in a matrix shaped strip 
          * You need to call ``show`` to make the changes visible.
          * @param x horizontal position
