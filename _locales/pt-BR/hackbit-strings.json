@@ -301,6 +301,7 @@
     "neopixel.Strip.setBrightness|block": "%strip|definir brilho %brightness",
     "neopixel.Strip.setMatrixColor|block": "%strip|definir a cor da matriz em x %x|y %y|para %rgb=neopixel_colors",
     "neopixel.Strip.setMatrixWidth|block": "%strip|definir a largura da matriz em %width|rotação %rotation|encadeamento %chain",
+    "neopixel.Strip.setMatrixWidthBasic|block": "%strip|definir a largura da matriz em %width",
     "neopixel.Strip.setPixelColor|block": "%strip|definir a cor do pixel em %pixeloffset|para  %rgb=neopixel_colors",
     "neopixel.Strip.setPixelWhiteLED|block": "%strip|definir pixel LED (RGB+W) em %pixeloffset|para %white",
     "neopixel.Strip.shift|block": "%strip|deslocar pixels em %offset",

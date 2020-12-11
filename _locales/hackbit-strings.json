@@ -304,6 +304,7 @@
     "neopixel.Strip.setBrightness|block": "%strip|set brightness %brightness",
     "neopixel.Strip.setMatrixColor|block": "%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors",
     "neopixel.Strip.setMatrixWidth|block": "%strip|set matrix width %width|rotation %rotation|chain %chain",
+    "neopixel.Strip.setMatrixWidthBasic|block": "%strip|set matrix width %width",
     "neopixel.Strip.setPixelColor|block": "%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors",
     "neopixel.Strip.setPixelWhiteLED|block": "%strip|set pixel white LED at %pixeloffset|to %white",
     "neopixel.Strip.shift|block": "%strip|shift pixels by %offset",

@@ -178,6 +178,8 @@
     "neopixel.Strip.setMatrixColor|param|rgb": "RGB color of the LED",
     "neopixel.Strip.setMatrixColor|param|x": "horizontal position",
     "neopixel.Strip.setMatrixColor|param|y": "horizontal position",
+    "neopixel.Strip.setMatrixWidthBasic": "Sets the number of pixels in a matrix shaped strip",
+    "neopixel.Strip.setMatrixWidthBasic|param|width": "number of pixels in a row",
     "neopixel.Strip.setMatrixWidth": "Sets the number of pixels in a matrix shaped strip",
     "neopixel.Strip.setMatrixWidth|param|chain": "type of matrix",
     "neopixel.Strip.setMatrixWidth|param|rotation": "type of matrix",
