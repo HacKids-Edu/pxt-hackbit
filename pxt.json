@@ -26,7 +26,8 @@
         "thingspeak.ts",
         "rtc.ts",
         "norbi.ts",
-        "main.py"
+        "main.py",
+        "neopixelmatrix.ts"
     ],
     "testFiles": [
         "test.ts"
