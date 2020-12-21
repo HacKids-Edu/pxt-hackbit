@@ -9,6 +9,8 @@
 //                                              //
 //Written by Sjors Smit                         //
 //June 2020                                     //
+//Change Dec 2020 Wagner Rodrigues              //
+//remove zig zag model                          //
 //                                              //
 //**********************************************//
 enum drawDirection{
@@ -42,7 +44,7 @@ namespace HackbitNeoMatrix {
          */
         //% blockId="Matrix_Brightness" block="%matrix set brightness to %setpoint"
         //% weight=80
-        //% setpoint.defl=32
+        //% setpoint.defl=10
         //% blockGap=8 parts="NeoMatrix"
         Brightness(setpoint: number): void {
             this.strip.setBrightness(setpoint);
@@ -110,7 +112,6 @@ namespace HackbitNeoMatrix {
         //% weight=100
         //% x.defl=0 y.defl=0 width.defl=8 height.defl=8
         //% colour.shadow=neopixel_colors
-        //% advanced=true
         //% direction.shadow="drawDirection"
         drawBitmap(bitmap: number[], x: number, y: number, width: number, height: number, colour: number, direction:drawDirection): void {
             let byteInLine = Math.floor((width+7)/8) //The amount of bytes per horizontal line in the bitmap
@@ -140,7 +141,7 @@ namespace HackbitNeoMatrix {
      */
     //% blockId="Matrix_Create" block="Matrix at pin %pin|with a width of %matrixWidth |height of %matrixHeight | and with %mode pixeltype"
     //% weight=100
-    //% matrixWidth.defl=32 matrixHeight.defl=8
+    //% matrixWidth.defl=16 matrixHeight.defl=16
     //% blockSetVariable=matrix
     //% blockGap=8 parts="NeoMatrix"
     export function create(pin: DigitalPin, matrixWidth: number, matrixHeight: number, mode: NeoPixelMode): Matrix {
