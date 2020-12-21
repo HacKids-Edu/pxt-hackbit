@@ -3,8 +3,6 @@
  * 
  * 
  */
-//% color=#DD546E icon="\uf110" block="Hackbit NeoMatrix"
-
 
 //**********************************************//
 // library for NeoPixel Displays/Matrices       //
@@ -20,6 +18,7 @@ enum drawDirection{
     mirrored=0
 }
 
+//% color=#DD546E icon="\uf110" block="Hackbit NeoPixel"
 namespace HackbitNeoMatrix {
     /**
      * A Matrix made of ws2812b LEDs
@@ -33,7 +32,7 @@ namespace HackbitNeoMatrix {
          */
         //% blockId="Matrix_show" block="%matrix| show"
         //% weight=90
-        //% blockGap=8 parts="SmartMatrix"
+        //% blockGap=8 parts="NeoMatrix"
         show(): void {
             this.strip.show();
         }
@@ -44,7 +43,7 @@ namespace HackbitNeoMatrix {
         //% blockId="Matrix_Brightness" block="%matrix set brightness to %setpoint"
         //% weight=80
         //% setpoint.defl=32
-        //% blockGap=8 parts="SmartMatrix"
+        //% blockGap=8 parts="NeoMatrix"
         Brightness(setpoint: number): void {
             this.strip.setBrightness(setpoint);
         }
@@ -53,7 +52,7 @@ namespace HackbitNeoMatrix {
          */
         //% blockId="Matrix_clear" block="clear %matrix"
         //% weight=80
-        //% blockGap=8 parts="SmartMatrix"
+        //% blockGap=8 parts="NeoMatrix"
         clear(): void {
             this.strip.clear();
         }
@@ -66,7 +65,7 @@ namespace HackbitNeoMatrix {
         //% blockId="Matrix_setPixel" block="%matrix| set pixel at x %x| y %y| to colour %colour"
         //% weight=80
         //% colour.shadow=neopixel_colors
-        //% blockGap=8 parts="SmartMatrix"
+        //% blockGap=8 parts="NeoMatrix"
         setPixel(x: number, y: number, colour: number): void {
             if (x < 0 || x > this.Width || y < 0 || y > this.Height) { return } //If the pixel does not fit on screen, do not draw it
             if (!(x % 2)) { this.strip.setPixelColor(y + (x * this.Height), colour); } //Because of the zig-zag formation of the panel all even rows (including 0) are drawn top to bottom
@@ -83,7 +82,7 @@ namespace HackbitNeoMatrix {
         //% weight=75
         //% colour.shadow=neopixel_colors
         //% speed.min=1 speed.max=2000 speed.defl=1200
-        //% blockGap=8 parts="SmartMatrix"
+        //% blockGap=8 parts="NeoMatrix"
         scrollText(text: string, speed: number, yoffset:number, colour: number): void {
             this.strip.clear();
             for (let Xpos = this.Width; Xpos > -6 * text.length; Xpos--) {//for loop to scroll across the entire matrix
@@ -143,7 +142,7 @@ namespace HackbitNeoMatrix {
     //% weight=100
     //% matrixWidth.defl=32 matrixHeight.defl=8
     //% blockSetVariable=matrix
-    //% blockGap=8 parts="SmartMatrix"
+    //% blockGap=8 parts="NeoMatrix"
     export function create(pin: DigitalPin, matrixWidth: number, matrixHeight: number, mode: NeoPixelMode): Matrix {
         let matrix = new Matrix;
         matrix.strip = neopixel.create(pin, matrixHeight * matrixWidth, mode);
