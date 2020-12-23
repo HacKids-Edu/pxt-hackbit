@@ -117,7 +117,7 @@
     "hackbitmotors.MotorStopAll|block": "Parar todos os motores",
     "hackbitmotors.MotorStop|block": "Parar Motor|%index|",
     "hackbitmotors.Servo|block": "Servo|%index|grau %degree",
-    "hackbitmotors.StepperDegree|block": "Moto de passo 28BYJ-48 em|%index|grau %degree",
+    "hackbitmotors.StepperDegree|block": "Motor de passo 28BYJ-48 em|%index|grau %degree",
     "hackbitmotors.StepperDual|block": "Duplo motor de passo (graus) |M1 %degree1| M2 %degree2",
     "hackbitmotors.StepperTurn|block": "Motor de passo 28BYJ-48|%index|girar %turn",
     "hackbitmotors.StpCarMove|block": "Carro a frente|Distância(cm) %distance|Diâmetro da roda(mm) %diameter",
