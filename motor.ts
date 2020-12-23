@@ -45,6 +45,15 @@ namespace hackbitmotors {
         M2 = 0x2
      }
 
+    export enum enPos { 
+        //% blockId="forward" block="forward"
+        forward = 1,
+        //% blockId="reverse" block="reverse"
+        reverse = 2,
+        //% blockId="stop" block="stop"
+        stop = 3
+    }
+
     export enum Turns {
         //% blockId="T1B4" block="1/4"
         T1B4 = 90,
@@ -156,7 +165,7 @@ namespace hackbitmotors {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=hackbit_servo block="Servo|%index|degree %degree"
+    //% blockId=hackbit_servo block="Servo (180°)|%index|degree %degree"
     //% weight=100
     //% degree.shadow="protractorPicker"
     //% degree.min=0 degree.max=180
@@ -175,13 +184,13 @@ namespace hackbitmotors {
     }
 
     /**
-     * Geek Servo
+     * Geek Servo (270°)
      * @param index Servo Channel; eg: S1
-     * @param degree [-45-225] degree of servo; eg: -45, 90, 225
+     * @param degree [0-270] degree of servo; eg: 0, 90, 180, 275
     */
-    //% blockId=hackbit_gservo block="Geek Servo|%index|degree %degree"
+    //% blockId=hackbit_gservo block="Geek Servo (270°)|%index|degree %degree"
     //% weight=99
-    //% degree.min=-45 degree.max=225
+    //% degree.min=0 degree.max=270
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
     //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
@@ -190,9 +199,43 @@ namespace hackbitmotors {
             initPCA9685()
         }
         // 50hz: 20,000 us
-        let v_us = ((degree - 90) * 20 / 3 + 1500) // 0.6 ~ 2.4
-        let value = v_us * 4096 / 20000
-        setPwm(index + 7, 0, value)
+        let v_us_t = Math.map(degree, 0, 270, 0, 180);
+        let v_us = (v_us_t * 1800 / 180 + 600); // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000;
+        setPwm(index + 7, 0, value);
+    }
+
+    /**
+     * Geek Servo (360°)
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-360] degree of servo; eg: 0, 90, 180, 275, 360
+    */
+    //% blockId=hackbit_gservo360 block="Geek Servo (360°)|%index|pos %pos|value %value"
+    //% weight=99
+    //% value.min=0 value.max=90
+    //% index.fieldEditor="gridpicker"
+    //% index.fieldOptions.columns=2
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
+    export function GeekServo360(index: Servos, pos: enPos, value: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        // 50hz: 20,000 us
+        if (pos == enPos.stop) {
+            let v_us = (86 * 1800 / 180 + 600); // 0.6 ~ 2.4
+            let vpwm = v_us * 4096 / 20000;
+            setPwm(index + 7, 0, vpwm);
+        }
+        else if(pos == enPos.forward){ //0-90 -> 90 - 0
+            let v_us = ((90-value) * 1800 / 180 + 600); // 0.6 ~ 2.4
+            let vpwm = v_us * 4096 / 20000;
+            setPwm(index + 7, 0, vpwm);
+        }
+        else if(pos == enPos.reverse){ //0-90 -> 90 -180
+            let v_us = ((90+value) * 1800 / 180 + 600); // 0.6 ~ 2.4
+            let vpwm = v_us * 4096 / 20000;
+            setPwm(index + 7, 0, vpwm);
+        }        
     }
 
         /**

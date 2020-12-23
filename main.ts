@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    hackbitmotors.StepperDegree(hackbitmotors.Steppers.M1, -360)
+    hackbitmotors.StepperDual(-360, 0)
 })
 input.onButtonPressed(Button.B, function () {
     hackbitmotors.MotorStopAll()
