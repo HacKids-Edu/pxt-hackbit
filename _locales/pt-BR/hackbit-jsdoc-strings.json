@@ -119,6 +119,7 @@
     "hackbitmotors.GeekServo (270°)|param|degree": "[0-270] grau para servo motor (270º); ex: 0, 90, 180, 270",
     "hackbitmotors.GeekServo (270°)|param|index": "Servo motor; ex: S1",
     "hackbitmotors.GeekServo (360°)|param|value": "[0-90] velocidade para servo motor (360º); ex: 0, 90, 180, 275, 360",
+    "hackbitmotors.GeekServo (360°)|param|pos": "direção",
     "hackbitmotors.GeekServo (360°)|param|index": "Servo motor; ex: S1",
     "hackbitmotors.MotorRunDelay": "Executar motores individuais com atraso",
     "hackbitmotors.MotorRunDelay|param|delay": "atraso em segundo para parar; ex:1",
