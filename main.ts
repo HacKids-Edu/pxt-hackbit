@@ -1,10 +1,7 @@
-hackbit.selectTempType(hackbit.tempType.celsius)
+led.enable(false)
 basic.forever(function () {
-    hackbit.queryData(
-    hackbit.DHTtype.DHT11,
-    DigitalPin.P0,
-    true,
-    false,
-    true
-    )
+    basic.clearScreen()
+    if (hackbit.VibrationRead(DigitalPin.P6)) {
+        soundExpression.hello.playUntilDone()
+    }
 })

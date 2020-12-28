@@ -65,7 +65,7 @@
     "hackbit.TouchState": "Obter estado do sensor de toque [0-1]",
     "hackbit.UVLevel": "Obter nível UV (radiação ultravioleta) (0~15)",
     "hackbit.UVLevel|param|uvlevelpin": "descreva o parâmetro aqui, ex: AnalogPin.P1",
-    "hackbit.VibrationRead": "Obter estado do sensor de vibração [0-1]",
+    "hackbit.VibrationRead": "Obter estado do sensor de vibração [0-1] SW-420",
     "hackbit.WaterState": "Obter estado do sensor de água [0-1]",
     "hackbitIR": "Extensão Makecode para Kit IR (Infravermelho)",
     "hackbitIR.connectIrReceiver": "Conecta-se ao módulo receptor de IR no pino especificado e configura o protocolo de IR.",

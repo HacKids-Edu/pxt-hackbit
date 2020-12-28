@@ -476,7 +476,7 @@ namespace hackbit {
     }
 
     /**
-     * Get vibration state [0-1]
+     * Get vibration state [0-1] SW-420
     */
     //% blockId=hackbitVibrationRead
     //% block="vibration sensor pin |%pin| detects vibration"
