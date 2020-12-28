@@ -19,6 +19,7 @@
         "hackbit.ts",
         "motor.ts",
         "neopixel.ts",
+        "neopixelmatrix.ts",
         "oled.ts",
         "lcd.ts",
         "irr.ts",
@@ -26,8 +27,7 @@
         "thingspeak.ts",
         "rtc.ts",
         "norbi.ts",
-        "main.py",
-        "neopixelmatrix.ts"
+        "main.py"
     ],
     "testFiles": [
         "test.ts"

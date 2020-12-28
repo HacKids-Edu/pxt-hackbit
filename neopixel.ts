@@ -670,5 +670,4 @@ namespace neopixel {
         CounterClockwise,
         Shortest
     }
-
 }
