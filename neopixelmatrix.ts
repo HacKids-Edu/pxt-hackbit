@@ -74,30 +74,6 @@ namespace HackbitNeoMatrix {
             else { this.strip.setPixelColor(y + (x * this.Height), colour); } //While all odd rows are drawn bottom to top
         }
         /**
-         * scroll a string of text on the matrix
-         * @param text the text to scroll 
-         * @param speed how fast the text should scroll
-         * @param yoffset the y position for the text
-         * @param colour the colour in which the text will be displayed
-         */
-        //% blockId="Matrix_scrollText" block="%matrix scroll text %text| with speed %speed| on Y postition %yoffset| and colour %colour"
-        //% weight=75
-        //% colour.shadow=neopixel_colors
-        //% speed.min=1 speed.max=2000 speed.defl=1200
-        //% blockGap=8 parts="NeoMatrix"
-        scrollText(text: string, speed: number, yoffset:number, colour: number): void {
-            this.strip.clear();
-            for (let Xpos = this.Width; Xpos > -6 * text.length; Xpos--) {//for loop to scroll across the entire matrix
-                for (let letter = 0; letter < text.length; letter++) {//for loop to retrieve all the letters from te text
-                    let bitmap = getLettermap(text.charAt(letter))
-                    this.drawBitmap(bitmap, Xpos + (6 * letter), yoffset, 7, 8, colour, drawDirection.normal)
-                }
-                this.strip.show();
-                basic.pause(2000 / speed);
-                this.strip.clear();
-            }
-        }
-        /**
          * draw a monochrome bitmap on the matrix
          * a '1' will be set to the selected colour, a '0' will be ignored, allowing the bitmaps to be layered
          * @param bitmap -the bitmap array to display
