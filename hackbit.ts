@@ -1327,7 +1327,9 @@ namespace hackbit {
      * @param dataPin value of data pin number
      */
     //% blockId=hackbit_tm1637_create block="4-Digit Display at|%clkPin|and|%dataPin"
-    //% clkPin.fieldEditor="gridpicker"
+    //% clkPin.defl=AnalogPin.P13
+    //% dataPin.defl=AnalogPin.P14
+    //% clkPin.fieldEditor="gridpicker"    
     //% clkPin.fieldOptions.columns=3
     //% dataPin.fieldEditor="gridpicker"
     //% dataPin.fieldOptions.columns=3
