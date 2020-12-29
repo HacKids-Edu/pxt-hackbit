@@ -894,10 +894,10 @@ namespace hackbit {
     export function TiltState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullDown)
         if (pins.digitalReadPin(pin) == 1) {
-            return true
+            return false
         }
         else {
-            return false
+            return true
         }
     }
 
