@@ -372,7 +372,7 @@ namespace hackbit {
     //% color=#D84A51 
     export function WaterState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 1) {
+        if (pins.digitalReadPin(pin) == 0) {
             return true
         }
         else {
