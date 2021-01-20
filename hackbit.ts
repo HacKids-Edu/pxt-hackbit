@@ -315,7 +315,7 @@ namespace hackbit {
         else distance = distanceBackup;
         basic.pause(50);
 
-        return distance;
+        return Math.roundWithPrecision(distance, 4);
     }
 
     /**

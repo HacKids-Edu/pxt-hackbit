@@ -40,7 +40,7 @@
     "hackbit.joystickkey": "Converte o nome da chave em um número\nÚtil para comparações lógicas",
     "hackbit.ledState": "Definir estado do LED",
     "hackbit.MagneticSwitchState": "Obter estado da chave magnética [0-1]",
-    "hackbit.measureDistanceCentimeter": "obter distância do sensor ultrassônico [cm]",
+    "hackbit.measureDistanceCentimeter": "obter distância do sensor ultrassônico [cm|polegadas]",
     "hackbit.onGesture": "Faça algo quando um gesto for detectado",
     "hackbit.onGesture|param|gesture": "tipo de gesto a detectar",
     "hackbit.onGesture|param|handler": "código de execução",
