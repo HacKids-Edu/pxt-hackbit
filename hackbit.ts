@@ -59,6 +59,12 @@ namespace hackbit {
         Off = 0
     }
 
+    export enum DistanceUnit {
+        //% block="cm"
+        cm,
+        //% block="inch"
+        inch
+    }
     export enum Color {
         //% block="Red"
         Red,
@@ -279,28 +285,36 @@ namespace hackbit {
     }
 
     /**
-     * get distance from ultrasonic range sensor [cm]
+     * get distance from ultrasonic range sensor [cm|inch]
      * @param pin Input pin
      */
     //% blockId=RobotDriverultrasonic_cm 
-    //% block="ultrasonic ranger pin |%name| distance(cm)"
+    //% block="ultrasonic ranger pin |%name| distance in %Unit"
     //% name.fieldEditor="gridpicker" 
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
     //% subcategory=Sensor  group="Digital" 
     //% color=#D84A51 
-    export function measureDistanceCentimeter(name: DigitalPin): number {
+    export function measureDistanceCentimeter(name: DigitalPin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
+        let distanceBackup = 0;
         pins.digitalWritePin(name, 0); //make sure pin is low
         control.waitMicros(2);
         pins.digitalWritePin(name, 1); //send echo
-        control.waitMicros(20);
+        control.waitMicros(10);
         pins.digitalWritePin(name, 0);
+
         duration = pins.pulseIn(name, PulseValue.High, 50000); // Max duration 50 ms - receive echo
-        distance = duration * 153 / 29 / 2 / 100;
-        Math.constrain(distance, 0, 500);
+
+        if (Unit == DistanceUnit.cm) distance = duration * 153 / 58 / 100;
+        else distance = duration * 153 / 148 / 100;
+
+        if (distance > 0) distanceBackup = distance;
+        else distance = distanceBackup;
+        basic.pause(50);
+
         return distance;
     }
 
