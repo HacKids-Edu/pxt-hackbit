@@ -319,6 +319,40 @@ namespace hackbit {
     }
 
     /**
+     * get distance from ultrasonic range sensor [cm|inch]
+     * @param pin Input pin
+     */
+    //% blockId=RobotDriverultrasonic_cm_v2 
+    //% block="(v2) ultrasonic ranger pin |%name| distance in %Unit"
+    //% name.fieldEditor="gridpicker" 
+    //% name.fieldOptions.columns=5
+    //% name.fieldOptions.tooltips="false"
+    //% name.fieldOptions.width="0"
+    //% subcategory=Sensor  group="Digital" 
+    //% color=#D84A51 
+    export function measureDistanceCentimeter_v2(name: DigitalPin, Unit: DistanceUnit): number {
+        let duration = 0;
+        let distance = 0;
+        let distanceBackup = 0;
+        pins.digitalWritePin(name, 0); //make sure pin is low
+        control.waitMicros(2);
+        pins.digitalWritePin(name, 1); //send echo
+        control.waitMicros(10);
+        pins.digitalWritePin(name, 0);
+
+        duration = pins.pulseIn(name, PulseValue.High, 50000); // Max duration 50 ms - receive echo
+
+        if (Unit == DistanceUnit.cm) distance = duration * 153 / 88 / 100;
+        else distance = duration * 153 / 226 / 100;
+
+        if (distance > 0) distanceBackup = distance;
+        else distance = distanceBackup;
+        basic.pause(50);
+
+        return Math.roundWithPrecision(distance, 4);
+    }
+
+    /**
      * Get line finder sensor state [0-1]
     */
     //% blockId=hackbitLineFinderRead
