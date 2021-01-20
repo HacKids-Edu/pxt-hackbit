@@ -296,7 +296,7 @@ namespace hackbit {
     //% name.fieldOptions.width="0"
     //% subcategory=Sensor  group="Digital" 
     //% color=#D84A51 
-    export function measureDistanceCentimeter(name: DigitalPin, Unit: DistanceUnit): number {
+    export function measureDistance(name: DigitalPin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
         let distanceBackup = 0;
@@ -330,7 +330,7 @@ namespace hackbit {
     //% name.fieldOptions.width="0"
     //% subcategory=Sensor  group="Digital" 
     //% color=#D84A51 
-    export function measureDistanceCentimeter_v2(name: DigitalPin, Unit: DistanceUnit): number {
+    export function measureDistance_v2(name: DigitalPin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
         let distanceBackup = 0;
