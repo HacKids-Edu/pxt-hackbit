@@ -364,8 +364,8 @@ namespace hackbit {
     /**
      * Send a ping and get the echo time (in microseconds) as a result
      * get distance from ultrasonic range sensor (HC-SR04) [μs|cm|inch|]
-     * @param trig tigger pin
-     * @param echo echo pin
+     * @param trig tigger pins.P13
+     * @param echo echo pins.P14
      * @param unit desired conversion unit
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
@@ -375,7 +375,7 @@ namespace hackbit {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensor  group="Digital" 
+    //% subcategory=Sensor group="Digital" 
     //% color=#D84A51 
 
     export function us_sonar(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
