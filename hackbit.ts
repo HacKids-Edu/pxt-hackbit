@@ -362,7 +362,6 @@ namespace hackbit {
     }
 
     /**
-     * Send a ping and get the echo time (in microseconds) as a result
      * get distance from ultrasonic range sensor (HC-SR04) [μs|cm|inch|]
      * @param trig tigger pin
      * @param echo echo pin
