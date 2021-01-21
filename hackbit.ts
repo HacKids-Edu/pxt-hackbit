@@ -285,7 +285,7 @@ namespace hackbit {
     }
 
     /**
-     * get distance from ultrasonic range sensor [cm|inch]
+     * get distance from Grove ultrasonic range sensor [cm|inch]
      * @param pin Input pin
      */
     //% blockId=RobotDriverultrasonic_cm 
@@ -319,7 +319,7 @@ namespace hackbit {
     }
 
     /**
-     * get distance from ultrasonic range sensor [cm|inch]
+     * get distance from Grove ultrasonic range sensor [cm|inch]
      * @param pin Input pin
      */
     //% blockId=RobotDriverultrasonic_cm_v2 
@@ -350,6 +350,51 @@ namespace hackbit {
         basic.pause(50);
 
         return Math.roundWithPrecision(distance, 4);
+    }
+
+    export enum PingUnit {
+        //% block="μs"
+        MicroSeconds,
+        //% block="cm"
+        Centimeters,
+        //% block="inches"
+        Inches
+    }
+
+    /**
+     * Send a ping and get the echo time (in microseconds) as a result
+     * get distance from ultrasonic range sensor (HC-SR04) [cm|inch]
+     * @param trig tigger pin
+     * @param echo echo pin
+     * @param unit desired conversion unit
+     * @param maxCmDistance maximum distance in centimeters (default is 500)
+     */
+    //% blockId=ultrasonicsonar 
+    //% block="(HC-SR04) ultrasonic pin %trig|echo %echo|unit %unit"
+    //% name.fieldEditor="gridpicker" 
+    //% name.fieldOptions.columns=5
+    //% name.fieldOptions.tooltips="false"
+    //% name.fieldOptions.width="0"
+    //% subcategory=Sensor  group="Digital" 
+    //% color=#D84A51 
+
+    export function us_sonar(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
+        // send pulse
+        pins.setPull(trig, PinPullMode.PullNone);
+        pins.digitalWritePin(trig, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(trig, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(trig, 0);
+
+        // read pulse
+        const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
+
+        switch (unit) {
+            case PingUnit.Centimeters: return Math.roundWithPrecision(d/58, 4);
+            case PingUnit.Inches: return Math.roundWithPrecision(d/148,4);
+            default: return Math.roundWithPrecision(d,4) ;
+        }
     }
 
     /**
