@@ -373,7 +373,7 @@ namespace hackbit {
     //% block="(HC-SR04) ultrasonic pin |trig %trig|echo %echo|unit %unit"
     //% trig.defl=DigitalPin.P13
     //% echo.defl=DigitalPin.P14
-    //% unit.defl="cm"
+    //% unit.defl=cm
     //% name.fieldEditor="gridpicker" 
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
