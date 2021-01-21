@@ -59,6 +59,15 @@ namespace hackbit {
         Off = 0
     }
 
+    export enum PingUnit {
+        //% block="cm",
+        cm,
+        //% block="inch"
+        inch,
+        //% block="μs"
+        MicroSeconds
+    }
+
     export enum DistanceUnit {
         //% block="cm"
         cm,
@@ -352,17 +361,8 @@ namespace hackbit {
         return Math.roundWithPrecision(distance, 4);
     }
 
-    export enum PingUnit {
-        //% block="cm",
-        Centimeters,
-        //% block="inch"
-        Inches,
-        //% block="μs"
-        MicroSeconds
-    }
-
     /**
-     * get distance from ultrasonic range sensor (HC-SR04) [μs|cm|inch|]
+     * get distance from ultrasonic range sensor (HC-SR04) [cm|inch|μs]
      * @param trig tigger pin
      * @param echo echo pin
      * @param unit desired conversion unit
@@ -392,8 +392,8 @@ namespace hackbit {
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
         switch (unit) {
-            case PingUnit.Centimeters: return Math.roundWithPrecision(d/58, 4);
-            case PingUnit.Inches: return Math.roundWithPrecision(d/148,4);
+            case PingUnit.cm: return Math.roundWithPrecision(d/58, 4);
+            case PingUnit.inch: return Math.roundWithPrecision(d/148,4);
             default: return Math.roundWithPrecision(d,4) ;
         }
     }

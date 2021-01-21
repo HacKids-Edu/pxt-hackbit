@@ -42,7 +42,7 @@
     "hackbit.MagneticSwitchState": "Obter estado da chave magnética [0-1]",
     "hackbit.measureDistance": "obter distância do sensor ultrassônico Grove [cm|pol]",
     "hackbit.measureDistance_v2": "(v2) obter distância do sensor ultrassônico Grove [cm|pol]",
-    "hackbit.ultrasonicsonar": "obter distância do sensor ultrassônico HC-SR04 [cm|pol|ms]",
+    "hackbit.us_sonar": "obter distância do sensor ultrassônico HC-SR04 [cm|pol|ms]",
     "hackbit.onGesture": "Faça algo quando um gesto for detectado",
     "hackbit.onGesture|param|gesture": "tipo de gesto a detectar",
     "hackbit.onGesture|param|handler": "código de execução",

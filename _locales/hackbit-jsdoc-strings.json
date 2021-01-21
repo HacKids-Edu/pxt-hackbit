@@ -42,6 +42,7 @@
     "hackbit.MagneticSwitchState": "Get Magnetic Switch state [0-1]",
     "hackbit.measureDistance": "get distance from Grove ultrasonic range sensor [cm]",
     "hackbit.measureDistance_v2": "(v2) get distance from Grove ultrasonic range sensor [cm]",
+    "hackbit.us_sonar": "get distance from ultrasonic range sensor (HC-SR04) [cm|inch|μs|]",
     "hackbit.onGesture": "Do something when a gesture is detected",
     "hackbit.onGesture|param|gesture": "type of gesture to detect",
     "hackbit.onGesture|param|handler": "code to run",
