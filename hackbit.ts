@@ -1966,7 +1966,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_temperature_decimal
     //% block="Get temperature (decimal)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
 
@@ -1979,7 +1979,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_temperature_fine
     //% block="Get temperature (x100)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getTemperatureFine(): number {
@@ -1991,7 +1991,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_pressure_decimal
     //% block="Get pressure (decimal)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getPressureDecimal(): number {
@@ -2003,7 +2003,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_pressure_fine
     //% block="Get pressure (x100)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getPressureFine(): number {
@@ -2015,7 +2015,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_humidity_decimal
     //% block="Get humidity (decimal)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getHumidityDecimal(): number {
@@ -2027,7 +2027,7 @@ namespace hackbit {
      */
     //% blockId=envirobit_get_humidity_fine
     //% block="Get humidity (x100)"
-    //% subcategory=Sensor  group="Air & Weather (BMP/BME280)" 
+    //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getHumidityFine(): number {
