@@ -44,6 +44,7 @@
     "hackbit.getPressureFine|block": "Obter pressão (x100)",
     "hackbit.getHumidityDecimal|block": "Obter umidade (decimal)",
     "hackbit.getHumidityFine|block": "Obter umidade (x100)",
+    "hackbit.getAltitudeDecimal|block": "Obter altitude (decimal) |%stdatmosphere| Pa",
     "hackbit.digit_bit|block": "mostrar número|%strip|no endereço|%dispData|bit|%bitAddr|",
     "hackbit.digit_clear|block": "%strip|limpar display",
     "hackbit.digit_createDisplay|block": "Display de 4 dígitos em |%clkPin|e|%dataPin",
