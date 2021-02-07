@@ -2055,7 +2055,7 @@ namespace hackbit {
         let vAlt3: number = vAlt2*vRd;
         let vAlt4: number = vAlt3*((vTemperatureF+vTZ)*5/9);
         let vAltitude: number = vAlt4/-9.8;
-        return Math.roundWithPrecision(vAltitude,4)
+        return Math.roundWithPrecision(vAltitude,2)
     }
 
 }
