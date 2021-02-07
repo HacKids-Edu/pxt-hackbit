@@ -2033,6 +2033,31 @@ namespace hackbit {
     export function getHumidityFine(): number {
         return Math.round((_bme280.getHumidity() * 100.0) / 1024.0)
     }
+
+    /**
+     * Get the altitude  
+     * @param atmosphere Input atmosphere (Pa)
+     */
+    //% blockId=envirobit_get_altitude_decimal
+    //% block="Get altitude (decimal) $stdatmosphere Pa"
+    //% stdatmosphere.defl=101325
+    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% color=#E38A8E
+    //% advanced=false
+    export function getAltitudeDecimal(stdatmosphere: number): number {
+        let vAtmosphere: number = stdatmosphere; // Standard atmosphere
+        let vRd: number = 287.053; // Ideal Gas Constant
+        let vTZ: number = 459.67; // Absolute zero Fahrenheit scale
+        let vTemperatureF: number = getTemperatureDecimal()*9/5+32;
+        let vPressure: number = getPressureDecimal()*100;
+        let vAlt1: number = vPressure/vAtmosphere;
+        let vAlt2: number = Math.log(vAlt1);
+        let vAlt3: number = vAlt2*vRd;
+        let vAlt4: number = vAlt3*((vTemperatureF+vTZ)*5/9);
+        let vAltitude: number = vAlt4/-9.8;
+        return Math.roundWithPrecision(vAltitude,4)
+    }
+
 }
 
 namespace smbus {
