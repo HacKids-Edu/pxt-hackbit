@@ -2065,12 +2065,11 @@ namespace hackbit {
     //% blockId=hackibit_roundprecision
     //% block="round $value decimal $decimal"
     //% decimal.defl=2
-    //% color=#E38A8E
+    //% color=#CB00FF
     //% advanced=false
     export function roundwithprecision(value: number, decimal: number): number {
         return Math.roundWithPrecision(value,decimal)
     }
-
 }
 
 namespace smbus {
