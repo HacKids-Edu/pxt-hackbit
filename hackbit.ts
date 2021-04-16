@@ -949,7 +949,7 @@ namespace hackbit {
     //% color=#DA5259 
     export function SwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
+        if (pins.digitalReadPin(pin) == 1) {
             return true
         }
         else {
