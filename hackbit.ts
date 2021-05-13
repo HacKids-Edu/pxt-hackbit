@@ -964,24 +964,23 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% reverseAction.defl=false
-    //% blockExternalInputs=true
     //% subcategory=Input  group="Digital" 
     //% color=#DA5259 
     export function buttonState(pin: DigitalPin, reverseAction: boolean): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (reverseAction) {
             if (pins.digitalReadPin(pin) == 1) {
-                return true
+                return false
             }
             else {
-                return false
+                return true
             }
         }   else {
                 if (pins.digitalReadPin(pin) == 1) {
-                    return false
+                    return true
                 }
                 else {
-                    return true
+                    return false
                 }
             }
     }
