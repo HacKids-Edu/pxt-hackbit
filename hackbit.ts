@@ -588,6 +588,43 @@ namespace hackbit {
         }
     }        
 
+    let initairlevel: number = 0
+    /**
+    * Initialize Grove Air Quality Sensor (v1.3)
+    * @param airlevelpin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitInitAirSensor" block="Initialize Air quality sensor at pin %airlevelpin"
+    //% airlevelpin.fieldEditor="gridpicker"
+    //% airlevelpin.fieldOptions.columns=3
+    //% subcategory=Sensor  group="Analog" 
+    //% color=#D84A51 
+	export function begin(airlevelpin: AnalogPin){
+		initairlevel = pins.analogReadPin(airlevelpin)
+	}
+    
+    /**
+    * Get Grove Air Quality Sensor (v1.3) level value (0~1023)
+    * @param airlevelpin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitAirLevelRead" block="Air quality sensor (0~1023) at pin %airlevelpin |Serial output $serialOutput"
+    //% airlevelpin.fieldEditor="gridpicker"
+    //% airlevelpin.fieldOptions.columns=3
+    //% serialOutput.defl=false
+    //% subcategory=Sensor  group="Analog" 
+    //% color=#D84A51 
+    export function AirLevel(airlevelpin: AnalogPin, serialOutput: boolean): number {
+        if (serialOutput) {
+            serial.writeLine("Init air level " + initairlevel)
+        }
+        let airlevel = (initairlevel + pins.analogReadPin(airlevelpin))/2
+        initairlevel = airlevel
+        if (serialOutput) {
+            serial.writeLine("airlevel " + airlevel)
+            serial.writeLine("----------------------------------------")
+        }
+        return Math.round(airlevel)
+    }
+
     /**
     * Get soil moisture(0~100%)
     * @param soilmoisturepin describe parameter here, eg: AnalogPin.P1
