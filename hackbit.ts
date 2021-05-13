@@ -627,7 +627,7 @@ namespace hackbit {
 
     /**
     * Get soil moisture(0~100%) [capacitive]
-    * @param capacitive soil moisture pin describe parameter here, eg: AnalogPin.P1
+    * @param capacitive soil moisture (range: 380~620) pin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitCapacitiveSoilMoistureRead" block="value of soil moisture(0~100) at pin %capacitivesoilhumiditypin"
     //% soilhumiditypin.fieldEditor="gridpicker"
@@ -639,8 +639,8 @@ namespace hackbit {
         let soilmoisture = 0;
         voltage = pins.map(
             pins.analogReadPin(capacitivesoilhumiditypin),
-            1023,
-            0,
+            620,
+            380,
             0,
             100
         );
