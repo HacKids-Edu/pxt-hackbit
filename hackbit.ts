@@ -614,16 +614,40 @@ namespace hackbit {
     //% color=#D84A51 
     export function AirLevel(airlevelpin: AnalogPin, serialOutput: boolean): number {
         if (serialOutput) {
-            serial.writeLine("Init air level " + initairlevel)
+            serial.writeLine("Init value quality air level " + initairlevel)
         }
         let airlevel = (initairlevel + pins.analogReadPin(airlevelpin))/2
         initairlevel = airlevel
         if (serialOutput) {
-            serial.writeLine("airlevel " + airlevel)
+            serial.writeLine("New value quality air level " + airlevel)
             serial.writeLine("----------------------------------------")
         }
         return Math.round(airlevel)
     }
+
+    /**
+    * Get soil moisture(0~100%) [capacitive]
+    * @param capacitive soil moisture pin describe parameter here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitCapacitiveSoilMoistureRead" block="value of soil moisture(0~100) at pin %capacitivesoilhumiditypin"
+    //% soilhumiditypin.fieldEditor="gridpicker"
+    //% soilhumiditypin.fieldOptions.columns=3
+    //% subcategory=Sensor  group="Analog" 
+    //% color=#D84A51 
+    export function ReadCapacitiveSoilHumidity(capacitivesoilhumiditypin: AnalogPin): number {
+        let voltage = 0;
+        let soilmoisture = 0;
+        voltage = pins.map(
+            pins.analogReadPin(capacitivesoilhumiditypin),
+            1023,
+            0,
+            0,
+            100
+        );
+        soilmoisture = voltage;
+        return Math.round(soilmoisture);
+    }
+
 
     /**
     * Get soil moisture(0~100%)

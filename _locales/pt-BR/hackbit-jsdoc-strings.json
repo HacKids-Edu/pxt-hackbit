@@ -57,6 +57,7 @@
     "hackbit.ReadLightIntensity|param|lightintensitypin": "descreva o parâmetro aqui, ex: AnalogPin.P1",
     "hackbit.ReadNoise": "Obter ruído (dB)",
     "hackbit.ReadNoise|param|noisepin": "descreva o parâmetro aqui, por exemplo: AnalogPin.P1 (Sensor de Ruído)",
+    "hackbit.ReadCapacitiveSoilHumidity": "Obter valor de umidade do solo(0~100%) [capacitivo]",
     "hackbit.ReadSoilHumidity": "Obter valor de umidade do solo(0~100%)",
     "hackbit.ReadSoilHumidity|param|soilmoisturepin": "descreva o parâmetro aqui, ex: AnalogPin.P1",
     "hackbit.ReadTemperature": "Obter valor da temperatura em Celsius",

@@ -98,6 +98,7 @@
     "hackbit.readColor|block": "APDS9960 get color HUE (0~360)",
     "hackbit.ReadLightIntensity|block": "value of light intensity(0~100) at pin %lightintensitypin",
     "hackbit.ReadNoise|block": "value of noise(dB) at pin %noisepin",
+    "hackbit.ReadCapacitiveSoilHumidity|block": "value of soil moisture(0~100) at pin %capacitivesoilhumiditypin",
     "hackbit.ReadSoilHumidity|block": "value of soil moisture(0~100) at pin %soilhumiditypin",
     "hackbit.ReadTemperature|block": "value of temperature (Celsius) at pin %temperaturepin",
     "hackbit.rotaryValue|block": "rotary angle sensor pin |%pin| value",
