@@ -960,10 +960,11 @@ namespace hackbit {
      * Get button state [0-1]
     */
     //% blockId=hackbitButtonRead
-    //% block="button pin |%pin| is pressed. Reverse action |$reverseAction|"
+    //% block="button pin |%pin| is pressed. Reverse action |%reverseAction|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% reverseAction.defl=false
+    //% blockExternalInputs=true
     //% subcategory=Input  group="Digital" 
     //% color=#DA5259 
     export function buttonState(pin: DigitalPin, reverseAction: boolean): boolean {
