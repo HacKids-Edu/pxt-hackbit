@@ -402,19 +402,28 @@ namespace hackbit {
      * Get line finder sensor state [0-1]
     */
     //% blockId=hackbitLineFinderRead
-    //% block="pin |%pin| line finder is seeing black"
+    //% block="pin |%pin| line finder is seeing black. Reverse action |$reverseAction|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Digital" 
     //% color=#D84A51 
-    export function detectline(pin: DigitalPin): boolean {
+    export function detectline(pin: DigitalPin, reverseAction: boolean): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return false
-        }
-        else {
-            return true
-        }
+        if (reverseAction) {
+            if (pins.digitalReadPin(pin) == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+        }   else {
+                if (pins.digitalReadPin(pin) == 1) {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
     }
 
     /**

@@ -28,7 +28,7 @@
     "hackbit.ColorList.yellow|block": "Amarelo",
     "hackbit.color|block": "sensor de cor - %Color detectado",
     "hackbit.CrashButton|block": "sensor de colisão em |%pin| pressionado",
-    "hackbit.detectline|block": "sensor no pino |%pin| localizando preto",
+    "hackbit.detectline|block": "sensor no pino |%pin| localizando preto. Inverter ação |$reverseAction|",
     "hackbit.dataType.humidity|block": "umidade",
     "hackbit.dataType.temperature|block": "temperatura",
     "hackbit.tempType.celsius|block": "Celsius (℃)",

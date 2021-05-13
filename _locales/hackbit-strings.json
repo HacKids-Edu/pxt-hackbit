@@ -28,7 +28,7 @@
     "hackbit.ColorList.yellow|block": "Yellow",
     "hackbit.color|block": "color sensor detected %Color",
     "hackbit.CrashButton|block": "crash sensor |%pin| is pressed",
-    "hackbit.detectline|block": "pin |%pin| line finder is seeing black",    
+    "hackbit.detectline|block": "pin |%pin| line finder is seeing black. Reverse action |$reverseAction|",   
     "hackbit.dataType.humidity|block": "humidity",
     "hackbit.dataType.temperature|block": "temperature",
     "hackbit.tempType.celsius|block": "Celsius (℃)",
