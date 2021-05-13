@@ -627,13 +627,13 @@ namespace hackbit {
 
     /**
     * Get soil moisture(0~100%) [capacitive]
-    * @param capacitive soil moisture (range: 380~620) pin describe parameter here, eg: AnalogPin.P1
+    * @param capacitive soil moisture (range: 390~615) pin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitCapacitiveSoilMoistureRead" block="value of soil moisture(0~100) at pin %capacitivesoilhumiditypin. Range (sensor read) min|%vmin| max|%vmax|"
     //% capacitivesoilhumiditypin.fieldEditor="gridpicker"
     //% capacitivesoilhumiditypin.fieldOptions.columns=3
-    //% vmin.defl=380
-    //% vmax.defl=620
+    //% vmin.defl=390
+    //% vmax.defl=615
     //% subcategory=Sensor  group="Analog" 
     //% color=#BA474C 
     export function ReadCapacitiveSoilHumidity(capacitivesoilhumiditypin: AnalogPin, vmin:number, vmax: number): number {
