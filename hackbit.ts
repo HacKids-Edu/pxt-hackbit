@@ -633,7 +633,7 @@ namespace hackbit {
     //% capacitivesoilhumiditypin.fieldEditor="gridpicker"
     //% capacitivesoilhumiditypin.fieldOptions.columns=3
     //% vmin.defl=380
-    //% vmax.defl=390
+    //% vmax.defl=620
     //% subcategory=Sensor  group="Analog" 
     //% color=#BA474C 
     export function ReadCapacitiveSoilHumidity(capacitivesoilhumiditypin: AnalogPin, vmin:number, vmax: number): number {
