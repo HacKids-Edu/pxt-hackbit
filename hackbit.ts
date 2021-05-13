@@ -960,7 +960,7 @@ namespace hackbit {
      * Get button state [0-1]
     */
     //% blockId=hackbitButtonRead
-    //% block="button pin |%pin| is pressed. Reverse action $reverseAction"
+    //% block="button pin |%pin| is pressed. Reverse action |$reverseAction|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% reverseAction.defl=false
