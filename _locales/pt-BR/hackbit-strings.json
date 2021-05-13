@@ -98,7 +98,7 @@
     "hackbit.readColor|block": "APDS9960 obter matiz(HUE) de cor (0~360)",
     "hackbit.ReadLightIntensity|block": "valor da intensidade da luz (0~100) no pino  %lightintensitypin",
     "hackbit.ReadNoise|block": "valor do ruído(dB) no pino %noisepin (0~100)",
-    "hackbit.ReadCapacitiveSoilHumidity|block": "value da umidade do solo (0~100) no pino %capacitivesoilhumiditypin",    
+    "hackbit.ReadCapacitiveSoilHumidity|block": "valor da umidade do solo (0~100) no pino %capacitivesoilhumiditypin. Faixa de leitura min|%vmin| max|%vmax|",    
     "hackbit.ReadSoilHumidity|block": "valor da umidade do solo (0~100) no pino %soilhumiditypin",
     "hackbit.ReadTemperature|block": "valor da temperatura (Celsius) no pino  %temperaturepin",
     "hackbit.rotaryValue|block": "Valor do sensor de ângulo rotação no pino |%pin|",
