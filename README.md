@@ -1,28 +1,14 @@
 # HACKBIT block package for hack:bit expansion board
-
 powered by micro:bit
+
+<a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="200" alt="Hackids Logo" align="right"></a>
+
 
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
 https://www.hackids.com.br
 
-![HackidsEdu](icon.png)  
+![](icon.png)  
 
-## Exemplos/Samples:
-
-## Servo Motor
-```blocks
-// Reproduz movimento do Servo Motor quando 
-// o botão A ou o botão B é pressionado
-input.onButtonPressed(Button.A, function () {
-    hackbitmotors.Servo(hackbitmotors.Servos.S1, 180)
-})
-input.onButtonPressed(Button.B, function () {
-    hackbitmotors.Servo(hackbitmotors.Servos.S1, 0)
-})
-```
-
-## Display LCD
-```blocks
 
 ```
 ## Use as Extension
