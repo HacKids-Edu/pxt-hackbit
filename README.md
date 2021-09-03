@@ -14,6 +14,7 @@ https://www.hackids.com.br
 
 ## Code Example
 ```JavaScript
+```
 
 ## Blocks preview
 
