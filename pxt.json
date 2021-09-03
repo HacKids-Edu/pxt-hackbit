@@ -1,6 +1,6 @@
 {
     "name": "hackbit",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "description": "hack:bit - grove micro:bit project board https://www.hackids.com.br",
     "dependencies": {
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1",
