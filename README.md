@@ -34,7 +34,12 @@ Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conj
 
 #### Metadata (used for search, rendering)
 
-## License
+
+
+
+
+
+# License
 
 MIT
 
