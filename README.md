@@ -7,7 +7,6 @@ Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conj
 https://www.hackids.com.br
 
 ![](hackbit1.png)  
-![](hackbit2.png)  
 
 # Examples
 
