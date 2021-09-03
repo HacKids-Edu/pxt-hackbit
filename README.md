@@ -6,7 +6,7 @@ powered by micro:bit | Made in Brazil
 # Description
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
 
-![](hackbit1.png)  
+![](hackbit0.png)  
 
 # Examples
 
