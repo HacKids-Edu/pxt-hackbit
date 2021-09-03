@@ -1,7 +1,7 @@
 <a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
 # HACK:BIT expansion board
 <a href=""><img src="brazil.png" width="50" alt="pinout hack:bit" align="right"></a>
-powered by micro:bit | Made in Brazil
+powered by micro:bit | made in Brazil
 
 # Description
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
