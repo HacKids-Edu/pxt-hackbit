@@ -2,6 +2,7 @@
 # HACK:BIT expansion board
 powered by micro:bit
 
+![](brazil.png)  
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
 
 ![](hackbit1.png)  
