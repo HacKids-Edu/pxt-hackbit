@@ -1,6 +1,6 @@
 <a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
 # HACK:BIT expansion board
-<a href=""><img src="brazil.png" width="100" alt="pinout hack:bit" align="right"></a>
+<a href=""><img src="brazil.png" width="50" alt="pinout hack:bit" align="right"></a>
 powered by micro:bit | Made in Brazil
 
 # Description
