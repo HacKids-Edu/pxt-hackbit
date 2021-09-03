@@ -34,10 +34,7 @@ This repository can be added as an **extension** in MakeCode.
 
 ![A rendered view of the blocks](https://github.com/hackidsedu/pxt-hackbit/raw/master/.github/makecode/blocks.png)
 
-## Pinout
-<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="https://hackids.com.br/wp-content/uploads/2020/11/aprenda-PlacaHackbit01.png" width="800" alt="pinout hack:bit" align="right"></a>
-<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="https://hackids.com.br/wp-content/uploads/2020/11/aprenda-PlacaHackbit02.png" width="800" alt="pinout hack:bit" align="right"></a>
-<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="https://hackids.com.br/wp-content/uploads/2020/11/aprenda-PlacaHackbit03.png" width="800" alt="pinout hack:bit" align="right"></a>
+
 
 #### Metadata (used for search, rendering)
 
