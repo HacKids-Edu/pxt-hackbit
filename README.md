@@ -5,7 +5,7 @@ powered by micro:bit | made in Brazil
 
 ![](https://img.shields.io/badge/Platform-micro%3Abit-red) 
 ![](https://img.shields.io/travis/com/HackidsEdu/pxt-hackbit) 
-![](https://img.shields.io/github/v/version/HackidsEdu/pxt-hackbit) 
+![](https://img.shields.io/github/v/release/HackidsEdu/pxt-hackbit) 
 ![](https://img.shields.io/github/last-commit/HackidsEdu/pxt-hackbit) 
 ![](https://img.shields.io/github/languages/top/HackidsEdu/pxt-hackbit) 
 ![](https://img.shields.io/github/issues/HackidsEdu/pxt-hackbit) 
