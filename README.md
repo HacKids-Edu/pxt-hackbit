@@ -1,7 +1,7 @@
 # HACKBIT block package for hack:bit expansion board
 powered by micro:bit
 
-<a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="200" alt="Hackids Logo" align="right"></a>
+<a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
 
 
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
