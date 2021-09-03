@@ -1,7 +1,7 @@
 {
     "name": "hackbit",
-    "version": "0.1.2",
-    "description": "hack:bit - grove micro:bit project board https://www.hackids.com.br",
+    "version": "1.0.0",
+    "description": "hack:bit - micro:bit project board https://www.hackids.com.br",
     "dependencies": {
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1",
         "core": "*",
@@ -36,6 +36,7 @@
         "target": "4.0.11",
         "targetId": "microbit"
     },
+    "public": true,
     "supportedTargets": [
         "microbit"
     ],
