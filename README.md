@@ -35,9 +35,6 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 
 * for PXT/microbit
 
-## Path
-* https://github.com/hackidsedu/pxt-hackbit
-
 ---
 
 Made with &#x2764;&nbsp; by [**Hackids**](https://www.hackids.com.br) - Londrina - Brazil.
