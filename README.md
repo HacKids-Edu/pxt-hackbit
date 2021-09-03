@@ -1,10 +1,8 @@
 <a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
-
-# HACKBIT expansion board
+# HACK:BIT expansion board
 powered by micro:bit
 
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit
-https://www.hackids.com.br
 
 ![](hackbit1.png)  
 
