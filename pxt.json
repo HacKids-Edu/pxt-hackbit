@@ -14,7 +14,6 @@
         "_locales/hackbit-strings.json",
         "_locales/pt-BR/hackbit-strings.json",
         "README.md",
-        "main.ts",
         "hackbit.ts",
         "motor.ts",
         "neopixel.ts",
