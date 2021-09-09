@@ -19,9 +19,8 @@ The package adds support hack:bit board.
 ![](hackbit0.png)  
 
 # Examples
-## Code Example
-### Blocos de Motor de Passo
-Use o bloco da hack:bit para mover 1 ou 2 motores de passo para frente e para trás. O motor é ajustável entre -360 a 360
+### Motor de Passo
+Use este bloco da hack:bit para mover 1 ou 2 motores de passo para frente e para trás. O motor é ajustável entre -360 a 360
 ```JavaScript
 input.onButtonPressed(Button.A, function () {
     basic.showString("A")
