@@ -9,7 +9,6 @@
         "microphone": "*"
     },
     "files": [
-        "main.blocks",
         "_locales/hackbit-jsdoc-strings.json",
         "_locales/pt-BR/hackbit-jsdoc-strings.json",
         "_locales/hackbit-strings.json",
@@ -26,8 +25,7 @@
         "irt.ts",
         "thingspeak.ts",
         "rtc.ts",
-        "norbi.ts",
-        "main.py"
+        "norbi.ts"
     ],
     "testFiles": [
         "test.ts"
