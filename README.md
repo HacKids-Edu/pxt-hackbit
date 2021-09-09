@@ -32,8 +32,6 @@ Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conj
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="https://hackids.com.br/wp-content/uploads/2020/11/aprenda-PlacaHackbit03.png" width="800" alt="pinout hack:bit" align="right"></a>
 
 
-#### Metadata (used for search, rendering)
-
 
 
 
@@ -54,3 +52,7 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 ---
 
 Made with &#x2764;&nbsp; by [**Hackids**](https://www.hackids.com.br) - Londrina - Brazil.
+
+```package
+hackbit=github:HackidsEdu/pxt-hackbit
+```
