@@ -1,5 +1,5 @@
 /**
- * Library for hackbit,  grove micro:bit project board https://www.hackids.com.br
+ * Library for hackbit,  micro:bit project board https://www.hackids.com.br
 */
 //% weight=10 color=#C82A32 icon="\uf0eb"    
 namespace hackbit {
