@@ -22,6 +22,18 @@ The package adds support hack:bit board.
 
 ## Code Example
 ```JavaScript
+input.onButtonPressed(Button.A, function () {
+    basic.showString("A")
+    for (let index = 0; index < 4; index++) {
+        hackbitmotors.StepperDual(360, 360)
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showString("B")
+    for (let index = 0; index < 4; index++) {
+        hackbitmotors.StepperDual(-360, -360)
+    }
+})
 ```
 
 ## Blocks preview
