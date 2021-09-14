@@ -11,6 +11,8 @@ powered by micro:bit | made in Brazil
 ![](https://img.shields.io/github/issues/HackidsEdu/pxt-hackbit) 
 ![](https://img.shields.io/github/license/HackidsEdu/pxt-hackbit)
 
+![](icon.png)
+
 # Description
 Biblioteca para sensores, atuadores, displays, LEDs e motores utilizados em conjunto com a placa hack:bit.
 The package adds support hack:bit board.
