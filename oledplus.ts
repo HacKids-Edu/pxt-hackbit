@@ -2,7 +2,7 @@
  * Based Kitronik VIEW 128x64 Display blocks
  * LCD chip SSD1306
  **/
-//% weight=200 color=#F67D54 icon="\uf2c2" block="Hackbit OLED+" blockId="HackbitOLEDPlus"
+//% weight=10 color=#F67D54 icon="\uf2c2" block="Hackbit OLED+" blockId="HackbitOLEDPlus"
 //% groups='["Control", "Show", "Draw", "Delete"]'
 namespace hackbit_VIEW128x64 {
     let font: number[] = [];
