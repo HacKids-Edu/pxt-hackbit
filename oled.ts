@@ -5,7 +5,7 @@ declare interface Math {
 /**
 * Functions to hack:bit board by Hackids 
 */
-//% weight=10 color=#f68f54 icon="\uf26c" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
+//% weight=10 color=#db54f6 icon="\uf26c" block="Hackbit OLED" blockId="HackbitOLEDDisplay"
 //% groups="OLED"
 
 namespace HackbitOLEDDisplay {
