@@ -89,7 +89,7 @@ namespace HackbitNeoMatrix {
          * @param direction -set this to 0 to mirror the image
          */
         //% blockId="Matrix_drawBitmap" block="%matrix draw bitmap %bitmap at x %x y %y | with width %width height %height in colour %colour | draw direction %direction"
-        //% block.loc.pt-BR="%matrix desenhar bitmap %bitmap em x %x y %y | com largura %width altura %height cor %colour | direção %direction"
+        //% block.loc.pt-BR="%matrix desenhar bitmap %bitmap em x %x y %y | largura %width | altura %height | cor %colour | direção %direction"
         //% weight=100
         //% x.defl=0 y.defl=0 width.defl=8 height.defl=8
         //% colour.shadow=neopixel_colors
@@ -120,8 +120,8 @@ namespace HackbitNeoMatrix {
      * @param matrixHeight the amount of leds vertically
      * @param mode the format/type of the LED
      */
-    //% blockId="Matrix_Create" block="Matrix at pin %pin|with a width of %matrixWidth |height of %matrixHeight | and with %mode pixeltype"
-    //% block.loc.pt-BR="Matrix no pino %pin|com largura de %matrixWidth |altura de %matrixHeight | e com %mode pixeltype"
+    //% blockId="Matrix_Create" block="matrix at pin %pin|with a width of %matrixWidth |height of %matrixHeight | and with %mode pixeltype"
+    //% block.loc.pt-BR="matrix no pino %pin| largura %matrixWidth | altura %matrixHeight | modo %mode"
     //% weight=100
     //% matrixWidth.defl=16 matrixHeight.defl=16
     //% blockSetVariable=matrix
