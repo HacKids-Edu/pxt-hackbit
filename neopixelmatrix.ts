@@ -33,7 +33,7 @@ namespace HackbitNeoMatrix {
          * Push all changes made to the framebuffer to the display
          */
         //% blockId="Matrix_show" block="%matrix| show"
-        //% block.loc.pt-BR="mostrar %matriz"
+        //% block.loc.pt-BR="mostrar %matrix"
         //% weight=90
         //% blockGap=8 parts="NeoMatrix"
         show(): void {
@@ -44,7 +44,7 @@ namespace HackbitNeoMatrix {
          * @param setpoint -the brightness setpoint, on a scale from 0-255
          */
         //% blockId="Matrix_Brightness" block="%matrix set brightness to %setpoint"
-        //% block.loc.pt-BR="definir brilho de %matriz para %setpoint"
+        //% block.loc.pt-BR="definir brilho de %matrix para %setpoint"
         //% weight=80
         //% setpoint.defl=10
         //% blockGap=8 parts="NeoMatrix"
@@ -68,7 +68,7 @@ namespace HackbitNeoMatrix {
          * @param colour - the colour to set the pixel to
          */
         //% blockId="Matrix_setPixel" block="%matrix| set pixel at x %x| y %y| to colour %colour"
-        //% block.loc.pt-BR="%matriz| definir pixel para x %x| y %y| para cor %colour"
+        //% block.loc.pt-BR="%matrix| definir pixel para x %x| y %y| para cor %colour"
         //% weight=80
         //% colour.shadow=neopixel_colors
         //% blockGap=8 parts="NeoMatrix"
@@ -89,7 +89,7 @@ namespace HackbitNeoMatrix {
          * @param direction -set this to 0 to mirror the image
          */
         //% blockId="Matrix_drawBitmap" block="%matrix draw bitmap %bitmap at x %x y %y | with width %width height %height in colour %colour | draw direction %direction"
-        //% block.loc.pt-BR="%matriz desenhar bitmap %bitmap em x %x y %y | largura %width | altura %height | cor %colour | direção %direction"
+        //% block.loc.pt-BR="%matrix desenhar bitmap %bitmap em x %x y %y | largura %width | altura %height | cor %colour | direção %direction"
         //% weight=100
         //% x.defl=0 y.defl=0 width.defl=8 height.defl=8
         //% colour.shadow=neopixel_colors
