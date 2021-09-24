@@ -395,10 +395,9 @@
     "{id:group}Set": "Configuração",
     "{id:group}Show": "Mostrar",
     "{id:group}Advanced": "Avançado",
-    "{id:group}paint": "pintar",
-    "{id:group}draw": "desenhar",
-    "{id:group}delete": "excluir",
-    "{id:group}control": "controle",
+    "{id:group}Draw": "Desenhar",
+    "{id:group}Delete": "Excluir",
+    "{id:group}Control": "Controle",
     "{id:group}Stepper Motor": "Motor de Passo",
     "{id:group}Steps": "Passos",
     "{id:group}Thumb Joystick": "Thumb Joystick",
@@ -416,5 +415,7 @@
     "{id:subcategory}Sensor": "Sensor",
     "{id:subcategory}Servo Motor": "Servo Motor",
     "{id:subcategory}Stepper Motor": "Motor de Passo",
-    "{id:subcategory}Thingspeak": "Thingspeak"
+    "{id:subcategory}Thingspeak": "Thingspeak",
+    "{id:subcategory}paint": "pintar",
+    "{id:subcategory}advanced": "avançado"    
 }
