@@ -64,7 +64,7 @@ const enum IrProtocol {
   NEC = 1,
 }
 
-//% color=#0F8AAE icon="\uf14C" block="Hackbit IR"
+//% weight=9 color=#0F8AAE icon="\uf14C" block="Hackbit IR"
 //% category="IR Kit"
 namespace hackbitIR {
   let irState: IrState;

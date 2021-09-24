@@ -20,7 +20,7 @@ enum drawDirection{
     mirrored=0
 }
 
-//% color=#DD546E icon="\uf110" block="Hackbit NeoMatrix"
+//% weight=9 color=#DD546E icon="\uf110" block="Hackbit NeoMatrix"
 namespace HackbitNeoMatrix {
     /**
      * A Matrix made of ws2812b LEDs

@@ -2,7 +2,7 @@
  * MakeCode extension for Neopixel 
  * Well known colors for a NeoPixel strip 
  */
-//% color=#DD546E icon="\uf110" block="Hackbit NeoPixel"
+//% weight=9 color=#DD546E icon="\uf110" block="Hackbit NeoPixel"
 
 enum NeoPixelColors {
     //% block=red

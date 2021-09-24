@@ -6,7 +6,7 @@
 /**
  * MakeCode extension for RTC DS1307
  */
-//% color=#9898CE icon="\uf017" block="Hackbit RTC1307"
+//% weight=9 color=#9898CE icon="\uf017" block="Hackbit RTC1307"
 namespace hackbitRTCDS1307 {
     export enum TimeType {
         //% block="second" enumval=0

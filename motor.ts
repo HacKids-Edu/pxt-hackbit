@@ -1,7 +1,7 @@
 /**
  * MakeCode extension for DC Motor, Steep Motor and Servo Motor
  */
-//% color=#BE4F51 icon="\uf1b6" block="Hackbit Motors"
+//% weight=9 color=#BE4F51 icon="\uf1b6" block="Hackbit Motors"
 
 namespace hackbitmotors {
     const PCA9685_ADDRESS = 0x40
