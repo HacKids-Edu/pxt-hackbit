@@ -351,6 +351,8 @@ namespace hackbit_VIEW128x64 {
     //% blockId=drawSegment block="paint segment %seg at position %pos"
     //% block.loc.pt-BR="escrever texto %seg na posição %pos"
     //% subcategory=advanced
+    //% group="Show"
+
     export function drawsegment(seg: string, pos: number) {
         switch (seg) {
             case "A": {
@@ -387,6 +389,7 @@ namespace hackbit_VIEW128x64 {
     //% blockId=drawnum block="paint number %num at position %pos"
     //% block.loc.pt-BR="escrever número %num na posição %pos"
     //% subcategory=advanced
+    //% group="Show"
     export function drawnum(num: number, pos: number) {
         switch (pos) {
             case 0: {
