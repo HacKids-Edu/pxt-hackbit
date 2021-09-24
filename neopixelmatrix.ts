@@ -33,6 +33,7 @@ namespace HackbitNeoMatrix {
          * Push all changes made to the framebuffer to the display
          */
         //% blockId="Matrix_show" block="%matrix| show"
+        //% block.loc.pt-BR="%matrix| mostrar"
         //% weight=90
         //% blockGap=8 parts="NeoMatrix"
         show(): void {
@@ -43,6 +44,7 @@ namespace HackbitNeoMatrix {
          * @param setpoint -the brightness setpoint, on a scale from 0-255
          */
         //% blockId="Matrix_Brightness" block="%matrix set brightness to %setpoint"
+        //% block.loc.pt-BR="definir brilho de %matrix para %setpoint"
         //% weight=80
         //% setpoint.defl=10
         //% blockGap=8 parts="NeoMatrix"
@@ -53,6 +55,7 @@ namespace HackbitNeoMatrix {
          * Empty the entire framebuffer, a call to "show()" must be made to made changes visible
          */
         //% blockId="Matrix_clear" block="clear %matrix"
+        //% block.loc.pt-BR="limpar %matrix"
         //% weight=80
         //% blockGap=8 parts="NeoMatrix"
         clear(): void {
@@ -65,6 +68,7 @@ namespace HackbitNeoMatrix {
          * @param colour - the colour to set the pixel to
          */
         //% blockId="Matrix_setPixel" block="%matrix| set pixel at x %x| y %y| to colour %colour"
+        //% block.loc.pt-BR="%matrix| definir pixel para x %x| y %y| para cor %colour"
         //% weight=80
         //% colour.shadow=neopixel_colors
         //% blockGap=8 parts="NeoMatrix"
@@ -85,6 +89,7 @@ namespace HackbitNeoMatrix {
          * @param direction -set this to 0 to mirror the image
          */
         //% blockId="Matrix_drawBitmap" block="%matrix draw bitmap %bitmap at x %x y %y | with width %width height %height in colour %colour | draw direction %direction"
+        //% block.loc.pt-BR="%matrix desenhar bitmap %bitmap em x %x y %y | com largura %width altura %height cor %colour | direção %direction"
         //% weight=100
         //% x.defl=0 y.defl=0 width.defl=8 height.defl=8
         //% colour.shadow=neopixel_colors
@@ -116,6 +121,7 @@ namespace HackbitNeoMatrix {
      * @param mode the format/type of the LED
      */
     //% blockId="Matrix_Create" block="Matrix at pin %pin|with a width of %matrixWidth |height of %matrixHeight | and with %mode pixeltype"
+    //% block.loc.pt-BR="Matrix no pino %pin|com largura de %matrixWidth |altura de %matrixHeight | e com %mode pixeltype"
     //% weight=100
     //% matrixWidth.defl=16 matrixHeight.defl=16
     //% blockSetVariable=matrix

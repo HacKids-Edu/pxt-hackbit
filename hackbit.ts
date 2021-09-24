@@ -2146,6 +2146,7 @@ namespace hackbit {
      */
     //% blockId=hackibit_roundprecision
     //% block="round $value decimal $decimal"
+    //% block.loc.pt-BR="arrendar $value decimal $decimal"
     //% decimal.defl=2
     //% color=#600DA3
     //% advanced=false
