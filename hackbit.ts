@@ -1,7 +1,7 @@
 /**
  * Library for hackbit,  micro:bit project board https://www.hackids.com.br
 */
-//% weight=100 color=#C82A32 icon="\uf0eb"    
+//% weight=50 color=#C82A32 icon="\uf0eb"    
 namespace hackbit {
     let gesture_first_init = true
     const initRegisterArray: number[] = [
