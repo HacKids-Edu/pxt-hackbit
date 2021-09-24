@@ -1,7 +1,7 @@
 /**
  * MakeCode extension for DC Motor, Steep Motor and Servo Motor
  */
-//% weight=9 color=#BE4F51 icon="\uf1b6" block="Hackbit Motors"
+//% weight=9 color=#43b3f0 icon="\uf1b6" block="Hackbit Motors"
 
 namespace hackbitmotors {
     const PCA9685_ADDRESS = 0x40
@@ -171,7 +171,7 @@ namespace hackbitmotors {
     //% degree.min=0 degree.max=180
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#43b3f0 icon="\uf1eb"
 
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
@@ -193,7 +193,7 @@ namespace hackbitmotors {
     //% degree.min=0 degree.max=270
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#43b3f0 icon="\uf1eb"
     export function GeekServo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -215,7 +215,7 @@ namespace hackbitmotors {
     //% value.min=0 value.max=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#43b3f0 icon="\uf1eb"
     export function GeekServo360(index: Servos, pos: enPos, value: number): void {
         if (!initialized) {
             initPCA9685()
@@ -249,7 +249,7 @@ namespace hackbitmotors {
     //% degree.min=0 degree.max=360
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Servo Motor"  group="Servo Motor" color=#BE4F50 icon="\uf1eb"
+    //% subcategory="Servo Motor"  group="Servo Motor" color=#43b3f0 icon="\uf1eb"
 
     export function GeekServo2KG(index: Servos, degree: number): void {
         if (!initialized) {
@@ -266,7 +266,7 @@ namespace hackbitmotors {
     //% weight=90
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#C05658 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#43b3f0 icon="\uf1eb"
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -283,7 +283,7 @@ namespace hackbitmotors {
     //% index.fieldOptions.columns=2
     //% turn.fieldEditor="gridpicker"
     //% turn.fieldOptions.columns=2
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#C05658 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#43b3f0 icon="\uf1eb"
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
         StepperDegree(index, degree);
@@ -291,7 +291,7 @@ namespace hackbitmotors {
 
     //% blockId=hackbit_stepper_dual block="Dual Stepper(Degree) |M1 %degree1| M2 %degree2"
     //% weight=89
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#C05658 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#43b3f0 icon="\uf1eb"
     export function StepperDual(degree1: number, degree2: number): void {
         if (!initialized) {
             initPCA9685()
@@ -318,7 +318,7 @@ namespace hackbitmotors {
     */
     //% blockId=hackbit_stpcar_move block="Car Forward|Distance(cm) %distance|Wheel Diameter(mm) %diameter"
     //% weight=88
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#C05658 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#43b3f0 icon="\uf1eb"
 
     export function StpCarMove(distance: number, diameter: number): void {
         if (!initialized) {
@@ -341,7 +341,7 @@ namespace hackbitmotors {
     //% blockId=hackbit_stpcar_turn block="Car Turn|Degree %turn|Wheel Diameter(mm) %diameter|Track(mm) %track"
     //% weight=87
     //% blockGap=50
-    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#C05658 icon="\uf1eb"
+    //% subcategory="Stepper Motor"  group="Stepper Motor" color=#43b3f0 icon="\uf1eb"
 
     export function StpCarTurn(turn: number, diameter: number, track: number): void {
         if (!initialized) {
@@ -360,7 +360,7 @@ namespace hackbitmotors {
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
     //% speed.min=-255 speed.max=255
-    //% subcategory="DC Motor"  group="DC Motor" color=#C35D5F icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#43b3f0 icon="\uf1eb"
 
     export function MotorRun(index: Motors, speed: number): void {
         if (!initialized) {
@@ -402,7 +402,7 @@ namespace hackbitmotors {
     //% motor2.fieldOptions.columns=2
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
-    //% subcategory="DC Motor"  group="DC Motor" color=#C35D5F icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#43b3f0 icon="\uf1eb"
 
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
         MotorRun(motor1, speed1);
@@ -420,7 +420,7 @@ namespace hackbitmotors {
     //% index.fieldOptions.columns=2
     //% weight=81
     //% speed.min=-255 speed.max=255
-    //% subcategory="DC Motor"  group="DC Motor" color=#C35D5F icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#43b3f0 icon="\uf1eb"
 
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
@@ -432,7 +432,7 @@ namespace hackbitmotors {
     //% index.fieldEditor="gridpicker"
     //% index.fieldOptions.columns=2
     //% weight=80
-    //% subcategory="DC Motor"  group="DC Motor" color=#C35D5F icon="\uf1eb"
+    //% subcategory="DC Motor"  group="DC Motor" color=#43b3f0 icon="\uf1eb"
 
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
@@ -441,7 +441,7 @@ namespace hackbitmotors {
     //% blockId=hackbit_stop_all block="Motor Stop All"
     //% weight=79
     //% blockGap=50
-    //% color=#BE4F51 
+    //% color=#43b3f0
 
     export function MotorStopAll(): void {
         if (!initialized) {
