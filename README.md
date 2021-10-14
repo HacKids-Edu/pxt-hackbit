@@ -1,7 +1,9 @@
-<a href="https://www.hackids.com.br/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
+<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
 # HACK:BIT block package 
-<a href=""><img src="brazil.png" width="50" alt="pinout hack:bit" align="right"></a>
+<a href=""><img src="brazil.png" width="50" alt="Made in Brazil" align="right"></a>
 powered by micro:bit | made in Brazil
+
+https://hackids.com.br/suporte/boards/hackbit/
 
 ![](https://img.shields.io/badge/Platform-micro%3Abit-red) 
 ![](https://img.shields.io/travis/com/HackidsEdu/pxt-hackbit) 
