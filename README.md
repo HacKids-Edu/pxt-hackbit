@@ -1,6 +1,4 @@
-<div align="right">
-<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo"></a>
-</div>
+<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
 # HACK:BIT block package 
 <a href=""><img src="brazil.png" width="50" alt="Made in Brazil" align="right"></a>
 powered by micro:bit | made in Brazil
