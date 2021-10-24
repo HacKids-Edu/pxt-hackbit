@@ -1,4 +1,6 @@
-<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo" align="right"></a>
+<div align="right">
+<a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackids-logo.svg" width="300" alt="Hackids Logo"></a>
+</div>
 # HACK:BIT block package 
 <a href=""><img src="brazil.png" width="50" alt="Made in Brazil" align="right"></a>
 powered by micro:bit | made in Brazil
@@ -179,13 +181,6 @@ basic.forever(function () {
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackbit3.png" width="800" alt="hack:bit pinout"></a>
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackbit4.png" width="800" alt="hack:bit pinout"></a>
 </div>
-
-
-
-
-
-
-
 
 
 
