@@ -177,7 +177,8 @@ basic.forever(function () {
 ## hack:bit Pin Assignment
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackbit3.png" width="800" alt="hack:bit pinout" align="right"></a>
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackbit4.png" width="800" alt="hack:bit pinout" align="right"></a>
-<br>
+
+<p>
 
 
 
