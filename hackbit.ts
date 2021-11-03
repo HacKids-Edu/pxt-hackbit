@@ -1133,7 +1133,7 @@ namespace hackbit {
     //% BluePin.fieldOptions.tooltips="false" BluePin.fieldOptions.width="300"
     //% subcategory=Display  group="Analog" 
     //% color=#DC5A60
-    export function RGBLight(myType: LEDType, RedPin: AnalogPin, GreenPin: AnalogPin, BluePin: AnalogPin, RedValue: number, GreenValue: number, BlueValue: number): void {
+    export function hckRGBLight(myType: LEDType, RedPin: AnalogPin, GreenPin: AnalogPin, BluePin: AnalogPin, RedValue: number, GreenValue: number, BlueValue: number): void {
         pins.analogWritePin(RedPin, pins.map((myType == LEDType.cathode ? RedValue : (255 - RedValue)), 0, 255, 0, 1023));
         pins.analogWritePin(GreenPin, pins.map((myType == LEDType.cathode ? GreenValue : (255 - GreenValue)), 0, 255, 0, 1023));
         pins.analogWritePin(BluePin, pins.map((myType == LEDType.cathode ? BlueValue : (255 - BlueValue)), 0, 255, 0, 1023));
