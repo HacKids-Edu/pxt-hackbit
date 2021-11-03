@@ -74,6 +74,16 @@ namespace hackbit {
         //% block="inch"
         inch
     }
+
+    export enum LEDType {
+        //% block="cathode"
+        //% block.loc.pt-BR="cátodo"
+        cathode,
+        //% block="anode"
+        //% block.loc.pt-BR="ânodo"
+        anode
+    }
+
     export enum Color {
         //% block="Red"
         Red,
@@ -1110,6 +1120,23 @@ namespace hackbit {
             300
         );
         return Math.round(RotaryAngle)
+    }
+
+    //% blockId=hackbitRGBLight block="set RGB type:common %myType|red pin %RedPin|green pin %GreenPin|blue pin %BluePin|value of red(0~255) %RedValue|value of green(0~255) %GreenValue|value of blue(0~255) %BlueValue" blockExternalInputs=false
+    //% block.loc.pt-BR="definir RGB:comum %myType|(R) vermelho pino %RedPin|(G) verde pino %GreenPin|(B) azul pino %BluePin|valor de R(0~255) %RedValue|valor de G(0~255) %GreenValue|valor de B(0~255) %BlueValue" blockExternalInputs=false
+    //% RedValue.min=0 RedValue.max=255 GreenValue.min=0 GreenValue.max=255 BlueValue.min=0 BlueValue.max=255
+    //% RedPin.fieldEditor="gridpicker" RedPin.fieldOptions.columns=4
+    //% RedPin.fieldOptions.tooltips="false" RedPin.fieldOptions.width="300"
+    //% GreenPin.fieldEditor="gridpicker" GreenPin.fieldOptions.columns=4
+    //% GreenPin.fieldOptions.tooltips="false" GreenPin.fieldOptions.width="300"
+    //% BluePin.fieldEditor="gridpicker" BluePin.fieldOptions.columns=4
+    //% BluePin.fieldOptions.tooltips="false" BluePin.fieldOptions.width="300"
+    //% subcategory=Display  group="Analog" 
+    //% color=#DC5A60
+    export function RGBLight(myType: LEDType, RedPin: AnalogPin, GreenPin: AnalogPin, BluePin: AnalogPin, RedValue: number, GreenValue: number, BlueValue: number): void {
+        pins.analogWritePin(RedPin, pins.map((myType == LEDType.cathode ? RedValue : (255 - RedValue)), 0, 255, 0, 1023));
+        pins.analogWritePin(GreenPin, pins.map((myType == LEDType.cathode ? GreenValue : (255 - GreenValue)), 0, 255, 0, 1023));
+        pins.analogWritePin(BluePin, pins.map((myType == LEDType.cathode ? BlueValue : (255 - BlueValue)), 0, 255, 0, 1023));
     }
 
     /**
