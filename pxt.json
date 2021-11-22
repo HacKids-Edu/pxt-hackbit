@@ -23,7 +23,6 @@
         "irr.ts",
         "irt.ts",
         "thingspeak.ts",
-        "rtc.ts",
         "norbi.ts",
         "oledplus.ts"
     ],
