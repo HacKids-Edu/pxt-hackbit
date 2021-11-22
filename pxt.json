@@ -22,7 +22,6 @@
         "irr.ts",
         "irt.ts",
         "thingspeak.ts",
-        "norbi.ts",
         "oledplus.ts"
     ],
     "testFiles": [
