@@ -17,7 +17,6 @@
         "hackbit.ts",
         "motor.ts",
         "neopixel.ts",
-        "neopixelmatrix.ts",
         "oled.ts",
         "lcd.ts",
         "irr.ts",
