@@ -180,6 +180,9 @@ basic.forever(function () {
 <a href="https://hackids.com.br/suporte/boards/hackbit/"><img src="hackbit4.png" width="800" alt="hack:bit pinout"></a>
 </div>
 
+---
+
+Made with &#x2764;&nbsp; by [**Hackids**](https://www.hackids.com.br) - Londrina - Brazil.
 
 
 ## License
@@ -191,10 +194,7 @@ Copyright (c) 2020, Hackids Editora Educacional Ltda
 ## Supported targets
 
 * for PXT/microbit
-
----
-
-Made with &#x2764;&nbsp; by [**Hackids**](https://www.hackids.com.br) - Londrina - Brazil.
+(The metadata above is needed for package search.)
 
 ```package
 hackbit=github:HackidsEdu/pxt-hackbit
