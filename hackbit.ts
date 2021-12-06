@@ -393,7 +393,7 @@ namespace hackbit {
     //% dataPin.fieldEditor="gridpicker"
     //% dataPin.fieldOptions.columns=3
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     //% weight=60
     export function digit_createDisplay(clkPin: DigitalPin, dataPin: DigitalPin): void {
         digit_buf = pins.createBuffer(4);
@@ -410,7 +410,7 @@ namespace hackbit {
     */
     //% blockId=hackbit_tm1637_display_number block="show number|%dispData"
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     //% weight=59
     export function digit_show(dispData: number) {
         let compare_01: number = dispData % 100;
@@ -481,7 +481,7 @@ namespace hackbit {
     //% level.min=0 level.max=7
     //% weight=58
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     export function digit_set(level: number) {
         digit_brightnessLevel = level;
 
@@ -500,7 +500,7 @@ namespace hackbit {
     //% dispData.min=0 dispData.max=9
     //% bitAddr.min=0 bitAddr.max=3
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     //% advanced=false
     export function digit_bit(dispData: number, bitAddr: number) {
         if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
@@ -528,7 +528,7 @@ namespace hackbit {
      */
     //% blockId=grove_tm1637_display_point block="%strip|turn|%point|colon point"
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     //% advanced=false
     export function digit_point(point: boolean) {
         digit_pointFlag = point;
@@ -544,7 +544,7 @@ namespace hackbit {
      */
     //% blockId=grove_tm1637_display_clear block="%strip|clear"
     //% subcategory=Display  group="7-Seg" 
-    //% color=#DE6268 
+    //% color=#38a878
     //% advanced=false
     export function digit_clear() {
         digit_bit(0x7f, 0x00);
