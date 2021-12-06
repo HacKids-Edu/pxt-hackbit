@@ -375,7 +375,7 @@ namespace hackbit {
 
     //% state.min=0 state.max=1
     //% subcategory=Display  group="Digital" 
-    //% color=#DC5A60 
+    //% color=#38a878
     export function ledState(pin: DigitalPin, state: OnOff): void {
         pins.digitalWritePin(pin, state);
     }
