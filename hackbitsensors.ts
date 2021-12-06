@@ -1,4 +1,4 @@
-//% weight=10 color=#C82A32 icon="\uf043" block="Hackbit Sensors"
+//% weight=10 color=#4AD89A icon="\uf043" block="Hackbit Sensors"
 namespace hackbitsensor {
     let gesture_first_init = true
     const initRegisterArray: number[] = [
