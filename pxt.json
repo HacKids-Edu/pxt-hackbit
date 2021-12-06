@@ -16,6 +16,7 @@
         "_locales/pt-BR/hackbit-strings.json",
         "README.md",
         "hackbit.ts",
+        "hackbitsensors.ts",
         "motor.ts",
         "neopixel.ts",
         "oled.ts",
@@ -23,8 +24,7 @@
         "irr.ts",
         "irt.ts",
         "thingspeak.ts",
-        "oledplus.ts",
-        "hackbitsensors.ts"
+        "oledplus.ts"
     ],
     "testFiles": [
         "test.ts"
