@@ -1,4 +1,4 @@
-//% weight=10 color=#C82A32 icon="\uf0eb" block="Hackbit Sensors"
+//% weight=10 color=#C82A32 icon="\uf043" block="Hackbit Sensors"
 namespace hackbitsensor {
     let gesture_first_init = true
     const initRegisterArray: number[] = [
@@ -1457,7 +1457,7 @@ namespace hackbitsensor {
     /**
      * Return the temperature in degrees celcius with two decimal places
      */
-    //% blockId=envirobit_get_temperature_decimal
+    //% blockId=hackbit_get_temperature_decimal
     //% block="Get temperature (decimal)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1470,7 +1470,7 @@ namespace hackbitsensor {
     /**
      * Return the temperature in degrees celcius * 100
      */
-    //% blockId=envirobit_get_temperature_fine
+    //% blockId=hackbit_get_temperature_fine
     //% block="Get temperature (x100)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1482,7 +1482,7 @@ namespace hackbitsensor {
     /**
      * Get the air pressure in hPa with two decimal places
      */
-    //% blockId=envirobit_get_pressure_decimal
+    //% blockId=hackbit_get_pressure_decimal
     //% block="Get pressure (decimal)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1494,7 +1494,7 @@ namespace hackbitsensor {
     /**
      * Get the air pressure in pascals (hPa * 100)
      */
-    //% blockId=envirobit_get_pressure_fine
+    //% blockId=hackbit_get_pressure_fine
     //% block="Get pressure (x100)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1506,7 +1506,7 @@ namespace hackbitsensor {
     /**
      * Get the relative humidity in % with two decimal places
      */
-    //% blockId=envirobit_get_humidity_decimal
+    //% blockId=hackbit_get_humidity_decimal
     //% block="Get humidity (decimal)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1518,7 +1518,7 @@ namespace hackbitsensor {
     /**
      * Get the relative humidity in % * 100
      */
-    //% blockId=envirobit_get_humidity_fine
+    //% blockId=hackbit_get_humidity_fine
     //% block="Get humidity (x100)"
     //% subcategory=Sensor  group="BMP280/BME280" 
     //% color=#E38A8E
@@ -1531,7 +1531,7 @@ namespace hackbitsensor {
      * Get the altitude  
      * @param atmosphere Input atmosphere (Pa)
      */
-    //% blockId=envirobit_get_altitude_decimal
+    //% blockId=hackbit_get_altitude_decimal
     //% block="Get altitude (decimal) $stdatmosphere Pa"
     //% stdatmosphere.defl=101325
     //% subcategory=Sensor  group="BMP280/BME280" 
