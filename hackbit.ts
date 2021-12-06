@@ -1,7 +1,7 @@
 /**
  * Library for hackbit,  micro:bit project board https://www.hackids.com.br
 */
-//% weight=50 color=#C82A32 icon="\uf0eb"    
+//% weight=50 color=#4AD89A icon="\uf0eb"    
 namespace hackbit {
     export enum OnOff {
         //% block="On"
@@ -56,7 +56,7 @@ namespace hackbit {
     //% RelayState.fieldOptions.columns=2
     //% RelayState.min=0 RelayState.max=1
     //% subcategory=Actuators  group="Digital" 
-    //% color=#D74149 
+    //% color=#42c98f
     export function hackbitRelayState(pin: DigitalPin, RelayState: OnOff): void {
         switch (RelayState) {
             case 0:
@@ -79,7 +79,7 @@ namespace hackbit {
     //% VibrationMotorState.fieldOptions.columns=2
     //% VibrationMotorState.min=0 VibrationMotorState.max=1
     //% subcategory=Actuators  group="Digital" 
-    //% color=#D74149 
+    //% color=#42c98f
     export function hackbitVibrationMotorState(pin: DigitalPin, VibrationMotorState: OnOff): void {
         pins.setPull(pin, PinPullMode.PullUp)
         switch (VibrationMotorState) {
@@ -103,7 +103,7 @@ namespace hackbit {
     //% MiniFanState.fieldOptions.columns=2
     //% MiniFanState.min=0 MiniFanState.max=1
     //% subcategory=Actuators  group="Digital" 
-    //% color=#D74149 
+    //% color=#42c98f
     export function hackbitMiniFanState(pin: DigitalPin, MiniFanState: OnOff): void {
         switch (MiniFanState) {
             case 0:
@@ -126,7 +126,7 @@ namespace hackbit {
     //% LaserState.fieldOptions.columns=2
     //% LaserState.min=0 LaserState.max=1
     //% subcategory=Actuators  group="Digital" 
-    //% color=#D74149 
+    //% color=#42c98f
     export function hackbitLaserState(pin: DigitalPin, LaserState: OnOff): void {
         switch (LaserState) {
             case 0:
@@ -190,7 +190,7 @@ namespace hackbit {
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
     //% group="Thumb Joystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
-    //% subcategory=Input  color=#DA5259 
+    //% subcategory=Input  color=#3eb884
     export function getJoystick(xpin: AnalogPin, ypin: AnalogPin): number {
         return joystick.joyread(xpin, ypin);
     }
@@ -203,7 +203,7 @@ namespace hackbit {
     //% key.fieldEditor="gridpicker"
     //% key.fieldOptions.columns=2
     //% group="Thumb Joystick"
-    //% subcategory=Input  color=#DA5259 
+    //% subcategory=Input  color=#3eb884
 
     export function joystickkey(key: GroveJoystickKey): number {
         return key;
@@ -224,7 +224,7 @@ namespace hackbit {
     //% ypin.fieldEditor="gridpicker"
     //% ypin.fieldOptions.columns=3
     //% group="Thumb Joystick" xpin.defl=AnalogPin.C16 ypin.defl=AnalogPin.C17
-    //% subcategory=Input  color=#DA5259 
+    //% subcategory=Input  color=#3eb884
 
     export function onJoystick(key: GroveJoystickKey, xpin: AnalogPin, ypin: AnalogPin, handler: () => void) {
         control.onEvent(joystickEventID, key, handler);
@@ -250,7 +250,7 @@ namespace hackbit {
     //% pin.fieldOptions.columns=3
     //% reverseAction.defl=false
     //% subcategory=Input  group="Digital" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function buttonState(pin: DigitalPin, reverseAction: boolean): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (reverseAction) {
@@ -278,7 +278,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Digital" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function SwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 1) {
@@ -297,7 +297,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Digital" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function buttonLEDState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
@@ -316,7 +316,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Digital" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function TiltState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullDown)
         if (pins.digitalReadPin(pin) == 1) {
@@ -335,7 +335,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Analog" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function potarValue(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
@@ -348,7 +348,7 @@ namespace hackbit {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
     //% subcategory=Input  group="Analog" 
-    //% color=#DA5259 
+    //% color=#3eb884
     export function rotaryValue(pin: AnalogPin): number {
         let tRotaryAngle = pins.analogReadPin(pin)
         let RotaryAngle
