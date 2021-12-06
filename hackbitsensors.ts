@@ -1,4 +1,4 @@
-//% weight=9 color=#C82A32 icon="\uf0eb" block="Hackbit Sensors"
+//% weight=51 color=#C82A32 icon="\uf0eb" block="Hackbit Sensors"
 namespace hackbitsensor {
     export enum PingUnit {
         //% block="cm",
