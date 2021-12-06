@@ -1559,8 +1559,7 @@ namespace hackbitsensor {
     //% block="round $value decimal $decimal"
     //% block.loc.pt-BR="arredondar $value decimal $decimal"
     //% decimal.defl=2
-    //% subcategory=Maths
-    //% subcategory.loc.pt-BR="Matemática"
+    //% subcategory=Extras
     //% color=#600DA3
     //% advanced=false
     export function roundwithprecision(value: number, decimal: number): number {
