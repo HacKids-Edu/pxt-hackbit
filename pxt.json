@@ -23,7 +23,8 @@
         "irr.ts",
         "irt.ts",
         "thingspeak.ts",
-        "oledplus.ts"
+        "oledplus.ts",
+        "hackbitsensors.ts"
     ],
     "testFiles": [
         "test.ts"
