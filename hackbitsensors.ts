@@ -468,6 +468,7 @@ namespace hackbitsensor {
     * @param airlevelpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitInitAirSensor" block="Initialize Air quality sensor at pin %airlevelpin"
+    //% block.loc.pt-BR="Inicializar sensor de qualidade do ar em pino %airlevelpin"
     //% airlevelpin.fieldEditor="gridpicker"
     //% airlevelpin.fieldOptions.columns=3
     //% subcategory=Sensor  group="Analog" 
@@ -481,6 +482,7 @@ namespace hackbitsensor {
     * @param airlevelpin describe parameter here, eg: AnalogPin.P1
     */
     //% blockId="hackbitAirLevelRead" block="Air quality sensor (0~1023) at pin %airlevelpin |Serial output $serialOutput"
+    //% block.loc.pt-BR="Sensor de qualidade do ar (0~1023) no pino %airlevelpin |Saída serial $serialOutput"
     //% airlevelpin.fieldEditor="gridpicker"
     //% airlevelpin.fieldOptions.columns=3
     //% serialOutput.defl=false
