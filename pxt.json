@@ -1,6 +1,6 @@
 {
     "name": "hackbit",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "hack:bit - micro:bit project board https://www.hackids.com.br",
     "license": "MIT",
     "dependencies": {
