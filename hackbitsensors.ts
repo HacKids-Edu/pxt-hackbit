@@ -168,7 +168,7 @@ namespace hackbitsensor {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function measureDistance(name: DigitalPin, Unit: DistanceUnit): number {
         let duration = 0;
@@ -202,7 +202,7 @@ namespace hackbitsensor {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function measureDistance_v2(name: DigitalPin, Unit: DistanceUnit): number {
         let duration = 0;
@@ -241,7 +241,7 @@ namespace hackbitsensor {
     //% name.fieldOptions.columns=5
     //% name.fieldOptions.tooltips="false"
     //% name.fieldOptions.width="0"
-    //% subcategory=Sensor group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
 
     export function us_sonar(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
@@ -270,7 +270,7 @@ namespace hackbitsensor {
     //% block="pin |%pin| line finder is seeing black. Reverse action |$reverseAction|"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function detectline(pin: DigitalPin, reverseAction: boolean): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -298,7 +298,7 @@ namespace hackbitsensor {
     //% block="collision sensor pin |%pin| activated"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function collisionSensor(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -317,7 +317,7 @@ namespace hackbitsensor {
     //% block="PIR sensor pin |%pin| detects motion"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function PIRState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -336,7 +336,7 @@ namespace hackbitsensor {
     //% block="water sensor pin |%pin| detects water"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function WaterState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -355,7 +355,7 @@ namespace hackbitsensor {
     //% block="magnetic switch pin |%pin| activated"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function MagneticSwitchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullDown)
@@ -374,7 +374,7 @@ namespace hackbitsensor {
     //% block="hall sensor pin |%pin| activated"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function HallState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -393,7 +393,7 @@ namespace hackbitsensor {
     //% block="crash sensor |%pin| is pressed"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function CrashButton(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -412,7 +412,7 @@ namespace hackbitsensor {
     //% block="flame sensor pin |%pin| detects flame"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function FlameState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -431,7 +431,7 @@ namespace hackbitsensor {
     //% block="touch sensor pin |%pin| touched"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function TouchState(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -450,7 +450,7 @@ namespace hackbitsensor {
     //% block="vibration sensor pin |%pin| detects vibration"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Digital" 
+    //% group="Digital" 
     //% color=#D84A51 
     export function VibrationRead(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
@@ -471,7 +471,7 @@ namespace hackbitsensor {
     //% block.loc.pt-BR="Inicializar sensor de qualidade do ar em pino %airlevelpin"
     //% airlevelpin.fieldEditor="gridpicker"
     //% airlevelpin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function begin(airlevelpin: AnalogPin) {
         initairlevel = pins.analogReadPin(airlevelpin)
@@ -486,7 +486,7 @@ namespace hackbitsensor {
     //% airlevelpin.fieldEditor="gridpicker"
     //% airlevelpin.fieldOptions.columns=3
     //% serialOutput.defl=false
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function AirLevel(airlevelpin: AnalogPin, serialOutput: boolean): number {
         if (serialOutput) {
@@ -510,7 +510,7 @@ namespace hackbitsensor {
     //% capacitivesoilhumiditypin.fieldOptions.columns=3
     //% vmin.defl=390
     //% vmax.defl=615
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#BA474C 
     export function ReadCapacitiveSoilHumidity(capacitivesoilhumiditypin: AnalogPin, vmin: number, vmax: number): number {
         let voltage = 0;
@@ -534,7 +534,7 @@ namespace hackbitsensor {
     //% blockId="hackbitSoilMoistureRead" block="value of soil moisture(0~100) at pin %soilhumiditypin"
     //% soilhumiditypin.fieldEditor="gridpicker"
     //% soilhumiditypin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function ReadSoilHumidity(soilmoisturepin: AnalogPin): number {
         let voltage = 0;
@@ -557,7 +557,7 @@ namespace hackbitsensor {
     //% blockId="hackbitLightIntensityRead" block="value of light intensity(0~100) at pin %lightintensitypin"
     //% lightintensitypin.fieldEditor="gridpicker"
     //% lightintensitypin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function ReadLightIntensity(lightintensitypin: AnalogPin): number {
         let voltage2 = 0;
@@ -580,7 +580,7 @@ namespace hackbitsensor {
     //% blockId="hackbitUVLevelRead" block="UV sensor (0~15) at pin %uvlevelpin"
     //% uvlevelpin.fieldEditor="gridpicker"
     //% uvlevelpin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function UVLevel(uvlevelpin: AnalogPin): number {
         let UVlevel = pins.analogReadPin(uvlevelpin);
@@ -604,7 +604,7 @@ namespace hackbitsensor {
     //% blockId="hackbitTemperatureRead" block="value of temperature (Celsius) at pin %temperaturepin"
     //% temperaturepin.fieldEditor="gridpicker"
     //% temperaturepin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function ReadTemperature(temperaturepin: AnalogPin): number {
         let A               // value 
@@ -625,7 +625,7 @@ namespace hackbitsensor {
     //% blockId="hackbitGasRead" block="%sensor gas sensor at pin %gaspin concentration value"
     //% gaspin.fieldEditor="gridpicker" gaspin.fieldOptions.columns=3
     //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2    
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function hackbitGasRead(sensor: GasList, gaspin: AnalogPin): number {
         if (sensor == GasList.Co2) {
@@ -641,7 +641,7 @@ namespace hackbitsensor {
     //% blockId="hackbitNoiseRead" block="value of noise(dB) at pin %noisepin (0~100)"
     //% noisepin.fieldEditor="gridpicker"
     //% noisepin.fieldOptions.columns=3
-    //% subcategory=Sensor  group="Analog" 
+    //% group="Analog" 
     //% color=#D84A51 
     export function ReadNoise(noisepin: AnalogPin): number {
         let level = 0
@@ -763,7 +763,7 @@ namespace hackbitsensor {
     //% block="color sensor detected %Color"
     //% Color.fieldEditor="gridpicker"
     //% Color.fieldOptions.columns=2
-    //% subcategory=Sensor  group="IIC" 
+    //% group="IIC" 
     //% color=#EB8071 
     export function color(col: Color): NumberFormat.UInt16BE {
         let nums, red, green, blue, clear: number;
@@ -855,7 +855,7 @@ namespace hackbitsensor {
     * Read color from I2C APDS9960 Color Sensor [0;360]
     */
     //% blockId=apds9960_readcolor block="APDS9960 get color HUE (0~360)"
-    //% subcategory=Sensor  group="IIC" 
+    //% group="IIC" 
     //% color=#EB8071 
 
     export function readColor(): number {
@@ -887,9 +887,8 @@ namespace hackbitsensor {
     * @param selected color
     */
     //% block="APDS9960 color sensor %color detects"
-    //% subcategory=Sensor group="IIC Port"
     //% color.fieldEditor="gridpicker" color.fieldOptions.columns=3
-    //% subcategory=Sensor  group="IIC" 
+    //% group="IIC" 
     //% color=#EB8071 
 
     export function checkColor(color: ColorList): boolean {
@@ -1035,7 +1034,7 @@ namespace hackbitsensor {
     */
     //% blockId= gesture_create_event block="on gesture sensor is %gesture"
     //% gesture.fieldEditor="gridpicker" gesture.fieldOptions.columns=3
-    //% subcategory=Sensor  group="IIC" 
+    //% group="IIC" 
     //% color=#EB8071 
     export function onGesture(gesture: GroveGesture, handler: () => void) {
         control.onEvent(gestureEventId, gesture, handler);
@@ -1138,7 +1137,7 @@ namespace hackbitsensor {
     //% serialOtput.defl=false
     //% wait.defl=true
     //% blockExternalInputs=true
-    //% subcategory=Sensor  group="DHT11/DHT22" 
+    //% group="DHT11/DHT22" 
     //% color=#DE6268 
     //% advanced=false
 
@@ -1247,7 +1246,7 @@ namespace hackbitsensor {
     */
     //% block="Read $data"
     //% blockId=dhtRead     
-    //% subcategory=Sensor  group="DHT11/DHT22" 
+    //% group="DHT11/DHT22" 
     //% color=#DE6268 
     //% advanced=false
 
@@ -1260,7 +1259,7 @@ namespace hackbitsensor {
     */
     //% block="Temperature type: $temp" 
     //% blockId=dhtTempType     
-    //% subcategory=Sensor  group="DHT11/DHT22" 
+    //% group="DHT11/DHT22" 
     //% color=#DE6268 
     //% advanced=false
 
@@ -1273,7 +1272,7 @@ namespace hackbitsensor {
     */
     //% block="Last query successful?"
     //% blockId=dhtLastQuerySuccess     
-    //% subcategory=Sensor  group="DHT11/DHT22" 
+    //% group="DHT11/DHT22" 
     //% color=#DE6268 
     //% advanced=false
 
@@ -1286,7 +1285,7 @@ namespace hackbitsensor {
     */
     //% block="Last query sensor responding?" 
     //% blockId=dhtLastQueryResponding     
-    //% subcategory=Sensor  group="DHT11/DHT22" 
+    //% group="DHT11/DHT22" 
     //% color=#DE6268 
     //% advanced=false
 
@@ -1461,7 +1460,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_temperature_decimal
     //% block="Get temperature (decimal)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
 
@@ -1474,7 +1473,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_temperature_fine
     //% block="Get temperature (x100)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getTemperatureFine(): number {
@@ -1486,7 +1485,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_pressure_decimal
     //% block="Get pressure (decimal)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getPressureDecimal(): number {
@@ -1498,7 +1497,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_pressure_fine
     //% block="Get pressure (x100)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getPressureFine(): number {
@@ -1510,7 +1509,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_humidity_decimal
     //% block="Get humidity (decimal)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getHumidityDecimal(): number {
@@ -1522,7 +1521,7 @@ namespace hackbitsensor {
      */
     //% blockId=hackbit_get_humidity_fine
     //% block="Get humidity (x100)"
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getHumidityFine(): number {
@@ -1536,7 +1535,7 @@ namespace hackbitsensor {
     //% blockId=hackbit_get_altitude_decimal
     //% block="Get altitude (decimal) $stdatmosphere Pa"
     //% stdatmosphere.defl=101325
-    //% subcategory=Sensor  group="BMP280/BME280" 
+    //% group="BMP280/BME280" 
     //% color=#E38A8E
     //% advanced=false
     export function getAltitudeDecimal(stdatmosphere: number): number {
