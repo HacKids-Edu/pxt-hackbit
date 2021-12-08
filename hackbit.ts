@@ -44,6 +44,20 @@ namespace hackbit {
     export let digit_pointFlag: boolean;
     export let digit_buf: Buffer;
 
+    /**
+     * round with precision 
+     * @param decimals
+     */
+    //% blockId=hackibit_roundprecision
+    //% block="round $value decimal $decimal"
+    //% block.loc.pt-BR="arredondar $value decimal $decimal"
+    //% decimal.defl=2
+    //% color=#42c98f
+    //% advanced=false
+    export function roundwithprecision(value: number, decimal: number): number {
+        return Math.roundWithPrecision(value, decimal)
+    }
+
 
     /**
     * Set relay state

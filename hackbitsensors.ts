@@ -1553,20 +1553,6 @@ namespace hackbitsensor {
         return Math.roundWithPrecision(vAltitude, 2)
     }
 
-    /**
-     * round with precision 
-     * @param decimals
-     */
-    //% blockId=hackibit_roundprecision
-    //% block="round $value decimal $decimal"
-    //% block.loc.pt-BR="arredondar $value decimal $decimal"
-    //% decimal.defl=2
-    //% subcategory=Extras
-    //% color=#600DA3
-    //% advanced=false
-    export function roundwithprecision(value: number, decimal: number): number {
-        return Math.roundWithPrecision(value, decimal)
-    }
 }
 
 namespace smbus {
