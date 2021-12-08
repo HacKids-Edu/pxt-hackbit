@@ -1552,7 +1552,7 @@ namespace hackbitsensor {
     }
 
     /**
-     * round with precision  
+     * round with precision 
      * @param decimals
      */
     //% blockId=hackibit_roundprecision
