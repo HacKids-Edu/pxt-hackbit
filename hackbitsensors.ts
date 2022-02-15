@@ -453,7 +453,7 @@ namespace hackbitsensor {
     //% group="Analog" 
     //% color=#D84A51
     export function PIRState(pin: AnalogPin): boolean {
-        if (pins.analogReadPin(pin) < 500) {
+        if (pins.analogReadPin(pin) < 600) {
             return false
         }
         else {
