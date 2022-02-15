@@ -317,11 +317,10 @@ namespace hackbitsensor {
     //% block="PIR sensor pin |%pin| detects motion"
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.columns=3
-    //% group="Digital" 
-    //% color=#D84A51 
-    export function PIRState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
+    //% group="Analog" 
+    //% color=#D84A51
+    export function PIRState(pin: AnalogPin): boolean {
+        if (pins.analogReadPin(pin) < 500) {
             return false
         }
         else {
