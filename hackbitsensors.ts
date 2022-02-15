@@ -311,24 +311,6 @@ namespace hackbitsensor {
     }
 
     /**
-     * Get PIR sensor state [0-1]
-    */
-    //% blockId=hackbitPIRRead
-    //% block="PIR sensor pin |%pin| detects motion"
-    //% pin.fieldEditor="gridpicker"
-    //% pin.fieldOptions.columns=3
-    //% group="Analog" 
-    //% color=#D84A51
-    export function PIRState(pin: AnalogPin): boolean {
-        if (pins.analogReadPin(pin) < 500) {
-            return false
-        }
-        else {
-            return true
-        }
-    }
-
-    /**
      * Get water sensor state [0-1]
     */
     //% blockId=hackbitWaterRead
@@ -454,6 +436,24 @@ namespace hackbitsensor {
     export function VibrationRead(pin: DigitalPin): boolean {
         pins.setPull(pin, PinPullMode.PullUp)
         if (pins.digitalReadPin(pin) == 0) {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    /**
+     * Get PIR sensor state [0-1]
+    */
+    //% blockId=hackbitPIRRead
+    //% block="PIR sensor pin |%pin| detects motion"
+    //% pin.fieldEditor="gridpicker"
+    //% pin.fieldOptions.columns=3
+    //% group="Analog" 
+    //% color=#D84A51
+    export function PIRState(pin: AnalogPin): boolean {
+        if (pins.analogReadPin(pin) < 500) {
             return false
         }
         else {
