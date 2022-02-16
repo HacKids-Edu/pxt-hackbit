@@ -100,6 +100,7 @@
     "hackbitsensor.ReadNoise|block": "valor do ruído(dB) no pino %noisepin (0~100)",
     "hackbitsensor.ReadCapacitiveSoilHumidity|block": "valor da umidade do solo (0~100) no pino %capacitivesoilhumiditypin. Faixa de leitura min|%vmin| max|%vmax|",    
     "hackbitsensor.ReadSoilHumidity|block": "valor da umidade do solo (0~100) no pino %soilhumiditypin",
+    "hackbitsensor.ReadRaindrop|block": "valor do detector de chuva (0~100) no pino %raindroppin",
     "hackbitsensor.ReadTemperature|block": "valor da temperatura (Celsius) no pino  %temperaturepin",
     "hackbit.rotaryValue|block": "Valor do sensor de ângulo rotação no pino |%pin|",
     "hackbit.SwitchState|block": "interruptor(P) no pino |%pin| ativado",

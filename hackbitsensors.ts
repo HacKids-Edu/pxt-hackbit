@@ -501,6 +501,30 @@ namespace hackbitsensor {
     }
 
     /**
+    * Get raindrop (0~100%)
+    * @param raindroppin describe parameter (range: 0-700) here, eg: AnalogPin.P1
+    */
+    //% blockId="hackbitRaindropRead" block="value of raindrop sensor (0~100) at pin %raindroppin"
+    //% raindroppin.fieldEditor="gridpicker"
+    //% raindroppin.fieldOptions.columns=3
+    //% group="Analog" 
+    //% color=#D84A51 
+    export function ReadRaindrop(raindroppin: AnalogPin): number {
+        let voltage = 0;
+        let raindrop = 0;
+        voltage = pins.map(
+            pins.analogReadPin(raindroppin),
+            0,
+            700,
+            0,
+            100
+        );
+        raindrop = voltage;
+        return Math.round(raindrop);
+    }
+
+
+    /**
     * Get soil moisture(0~100%) [capacitive]
     * @param capacitive soil moisture (range: 390~615) pin describe parameter here, eg: AnalogPin.P1
     */
@@ -510,7 +534,7 @@ namespace hackbitsensor {
     //% vmin.defl=390
     //% vmax.defl=615
     //% group="Analog" 
-    //% color=#BA474C 
+    //% color=#D84A51
     export function ReadCapacitiveSoilHumidity(capacitivesoilhumiditypin: AnalogPin, vmin: number, vmax: number): number {
         let voltage = 0;
         let soilmoisture = 0;
@@ -524,7 +548,6 @@ namespace hackbitsensor {
         soilmoisture = voltage;
         return Math.round(soilmoisture);
     }
-
 
     /**
     * Get soil moisture(0~100%)
