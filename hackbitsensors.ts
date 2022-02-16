@@ -504,18 +504,20 @@ namespace hackbitsensor {
     * Get raindrop (0~100%)
     * @param raindroppin describe parameter (range: 0-700) here, eg: AnalogPin.P1
     */
-    //% blockId="hackbitRaindropRead" block="value of raindrop sensor (0~100) at pin %raindroppin"
+    //% blockId="hackbitRaindropRead" block="value of raindrop sensor (0~100) at pin %raindroppin. Range (sensor read) min|%vmin| max|%vmax|""
     //% raindroppin.fieldEditor="gridpicker"
     //% raindroppin.fieldOptions.columns=3
+    //% vmin.defl=0
+    //% vmax.defl=700
     //% group="Analog" 
     //% color=#D84A51 
-    export function ReadRaindrop(raindroppin: AnalogPin): number {
+    export function ReadRaindrop(raindroppin: AnalogPin, vmin: number, vmax: number): number {
         let voltage = 0;
         let raindrop = 0;
         voltage = pins.map(
             pins.analogReadPin(raindroppin),
-            0,
-            700,
+            vmin,
+            vmax,
             0,
             100
         );

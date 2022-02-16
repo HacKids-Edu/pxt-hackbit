@@ -60,7 +60,7 @@
     "hackbitsensor.ReadCapacitiveSoilHumidity": "Obter valor de umidade do solo(0~100%) [capacitivo]",
     "hackbitsensor.ReadCapacitiveSoilHumidity|param|capacitivesoilmoisturepin": "Sensor capacitivo de umidade (faixa: 380~620) descreva o parâmetro aqui, eg: AnalogPin.P1",
     "hackbitsensor.ReadRaindrop": "Obter valor do detector de chuva(0~100%)",
-    "hackbitsensor.ReadRaindrop|param|raindroppin": "descreva o parâmetro aqui (faixa de leitura:0-700), ex: AnalogPin.P1",
+    "hackbitsensor.ReadRaindrop|param|raindroppin": "descreva o parâmetro aqui (faixa:0~700), ex: AnalogPin.P1",
     "hackbitsensor.ReadSoilHumidity": "Obter valor de umidade do solo(0~100%)",
     "hackbitsensor.ReadSoilHumidity|param|soilmoisturepin": "descreva o parâmetro aqui, ex: AnalogPin.P1",
     "hackbitsensor.ReadTemperature": "Obter valor da temperatura em Celsius",
