@@ -1,5 +1,5 @@
 {
-    "ESP8266ThingSpeak": "Extensão MakeCode para módulos WiFi ESP8266 e ThinkSpeak (https://thingspeak.com)",
+    "ESP8266ThingSpeak": "Extensão MakeCode para módulos WiFi ESP8266 e ThinkSpeak e IFTT (https://thingspeak.com e https://maker.ifttt.com/)",
     "ESP8266ThingSpeak.connectThingSpeak": "Conecte ao ThingSpeak e faça upload de dados. Isso não funcionará caso a conexão ao Wi-Fi ou ThingSpeak foi falha",
     "ESP8266ThingSpeak.connectWifi": "Inicializar o módulo ESP8266 e conecte-o ao roteador de Wi-Fi",
     "ESP8266ThingSpeak.isLastUploadSuccessful": "Verifique se o ESP8266 carregou os dados com sucesso para ThingSpeak",

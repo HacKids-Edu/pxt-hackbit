@@ -1,5 +1,5 @@
 /**
- * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak website https://thingspeak.com/
+ * MakeCode extension for ESP8266 Wifi modules and ThinkSpeak and IFTTT. https://thingspeak.com/ e https://maker.ifttt.com/
  */
 //% weight=9 color=#54AB9B icon="\uf20e" block="Hackbit IoT"
 namespace ESP8266ThingSpeak {
@@ -7,6 +7,8 @@ namespace ESP8266ThingSpeak {
     let wifi_connected: boolean = false
     let thingspeak_connected: boolean = false
     let last_upload_successful: boolean = false
+
+    // ThingSpeak
 
     // write AT command with CR+LF ending
     function sendAT(command: string, wait: number = 100) {
@@ -33,12 +35,37 @@ namespace ESP8266ThingSpeak {
         return result
     }
 
+    // IFTTT
+
+    function sendAtCmd(cmd: string) {
+        serial.writeString(cmd + "\u000D\u000A")
+    }
+
+
+    function waitAtResponse(target1: string, target2: string, target3: string, timeout: number) {
+        let buffer = ""
+        let start = input.runningTime()
+
+        while ((input.runningTime() - start) < timeout) {
+            buffer += serial.readString()
+
+            if (buffer.includes(target1)) return 1
+            if (buffer.includes(target2)) return 2
+            if (buffer.includes(target3)) return 3
+
+            basic.pause(100)
+        }
+
+        return 0
+    }
+
+
     /**
     * Initialize ESP8266 module and connect it to Wifi router
     */
     //% block="Initialize ESP8266|RX (Tx of micro:bit) %tx|TX (Rx of micro:bit) %rx|Baud rate %baudrate|Wifi SSID = %ssid|Wifi PW = %pw"
-    //% tx.defl=SerialPin.P0
-    //% rx.defl=SerialPin.P1
+    //% tx.defl=SerialPin.P16
+    //% rx.defl=SerialPin.P15
     //% tx.fieldEditor="gridpicker"
     //% tx.fieldOptions.columns=3
     //% rx.fieldEditor="gridpicker"
@@ -47,7 +74,7 @@ namespace ESP8266ThingSpeak {
     //% baudrate.fieldOptions.columns=3
     //% ssid.defl=your_ssid
     //% pw.defl=your_pw
-    //% subcategory="Thingspeak"     
+    //% subcategory="WiFi"     
     //% color=#75BBAE    
     export function connectWifi(tx: SerialPin, rx: SerialPin, baudrate: BaudRate, ssid: string, pw: string) {
         wifi_connected = false
@@ -95,7 +122,7 @@ namespace ESP8266ThingSpeak {
     */
     //% block="Wait %delay ms"
     //% delay.min=0 delay.defl=5000
-    //% subcategory="Thingspeak" 
+    //% subcategory="WiFi" 
     //% color=#75BBAE    
     export function wait(delay: number) {
         if (delay > 0) basic.pause(delay)
@@ -105,7 +132,7 @@ namespace ESP8266ThingSpeak {
     * Check if ESP8266 successfully connected to Wifi
     */
     //% block="Wifi connected ?"
-    //% subcategory="Thingspeak" 
+    //% subcategory="WiFi" 
     //% color=#75BBAE    
     export function isWifiConnected() {
         return wifi_connected
@@ -129,6 +156,62 @@ namespace ESP8266ThingSpeak {
     //% color=#75BBAE    
     export function isLastUploadSuccessful() {
         return last_upload_successful
+    }
+
+    /**
+     * Send data to IFTTT
+     */
+    //% block="Send Data to your IFTTT Event|Event %event|Key %key|value1 %value1|value2 %value2|value3 %value3"
+    //% group="UartWiFi"
+    //% event.defl="Event"
+    //% key.defl="Key"
+    //% value1.defl="hello"
+    //% value2.defl="hack:"
+    //% value3.defl="bit"
+    //% subcategory="IFTTT" 
+    //% color=#75BBAE    
+    export function sendToIFTTT(event: string, key: string, value1: string, value2: string, value3: string) {
+        let result = 0
+        let retry = 2
+
+        // close the previous TCP connection
+        if (isWifiConnected) {
+            sendAtCmd("AT+CIPCLOSE")
+            waitAtResponse("OK", "ERROR", "None", 2000)
+        }
+
+        while (isWifiConnected && retry > 0) {
+            retry = retry - 1;
+            // establish TCP connection
+            sendAtCmd("AT+CIPSTART=\"TCP\",\"maker.ifttt.com\",80")
+            result = waitAtResponse("OK", "ALREADY CONNECTED", "ERROR", 2000)
+            if (result == 3) continue
+
+            let data = "GET /trigger/" + event + "/with/key/" + key
+            data = data + "?value1=" + value1
+            data = data + "&value2=" + value2
+            data = data + "&value3=" + value3
+            data = data + " HTTP/1.1"
+            data = data + "\u000D\u000A"
+            data = data + "User-Agent: curl/7.58.0"
+            data = data + "\u000D\u000A"
+            data = data + "Host: maker.ifttt.com"
+            data = data + "\u000D\u000A"
+            data = data + "Accept: */*"
+            data = data + "\u000D\u000A"
+
+            sendAtCmd("AT+CIPSEND=" + (data.length + 2))
+            result = waitAtResponse(">", "OK", "ERROR", 2000)
+            if (result == 3) continue
+            sendAtCmd(data)
+            result = waitAtResponse("SEND OK", "SEND FAIL", "ERROR", 5000)
+
+            // // close the TCP connection
+            // sendAtCmd("AT+CIPCLOSE")
+            // waitAtResponse("OK", "ERROR", "None", 2000)
+
+            if (result == 1) break
+        }
     }
 
 }
