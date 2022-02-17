@@ -13,6 +13,12 @@ namespace ESP8266ThingSpeak {
     let httpReturnString: string = ""
     let HTTP_received: (Error_code: string, Data: string) => void = null;
 
+    let Wifi_remote = false
+    let myChannel = ""
+    let Wifi_Remote_Conn: (channel: string, WifiMessage: string) => void = null;
+    let Wifi_Remote_Conn_value: (channel: string, WifiMessage: string, Value: number) => void = null;
+    let Wifi_sender: (status: string, Error_code: string) => void = null;
+    let Wifi_Remote_create: (channel: string, Error_code: string) => void = null;
 
     export enum httpMethod {
         //% block="GET"
@@ -332,6 +338,70 @@ namespace ESP8266ThingSpeak {
     export function getHttpReturn(): string {
         return httpReturnString;
 
+    }
+
+    // ------- Channel -------
+    //%subcategory=Channel
+    //%blockId=wifi_listen_channel
+    //%block="WiFi Receiver join channel %channel"
+    //% weight=20 group="Receiver"
+    export function wifi_listen_channel(channel: string): void {
+        Wifi_remote = true
+        myChannel = channel
+        serial.writeLine("(AT+pubnubreceiver?channel=" + myChannel + ")")
+    }
+    //%subcategory=Channel
+    //%blockId=wifi_ext_board_on_wifi_receieved
+    //%block="On WiFi Receiver received"
+    //% weight=18 group="Receiver"
+    //% draggableParameters=reporter
+    export function on_wifi_received(handler: (Channel: string, receivedMessage: string) => void): void {
+        Wifi_Remote_Conn = handler;
+    }
+    //%subcategory=Channel
+    //%blockId=wifi_ext_board_on_wifi_receieved_value
+    //%block="On WiFi Receiver received"
+    //% weight=17 draggableParameters=reporter group="Receiver"
+    export function on_wifi_received_value(handler: (Channel: string, receivedMessage: string, Value: number) => void): void {
+        Wifi_Remote_Conn_value = handler;
+    }
+
+    //%subcategory=Channel
+    //%blockId=wifi_send_message
+    //%block="WiFi Sender send channel %channel message %message"
+    //% weight=15
+    //% group="Sender"
+    export function wifi_send_message(Channel: string, message: string): void {
+        myChannel = Channel
+        serial.writeLine("(AT+pubnubsender?channel=" + myChannel + "&message=" + message + ")")
+    }
+
+    //%subcategory=Channel
+    //%blockId=wifi_send_message_value
+    //%block="WiFi Sender send channel %channel message %message value %value"
+    //% weight=14
+    //% group="Sender"
+    export function wifi_send_message_value(channel: string, message: string, value: number): void {
+        myChannel = channel
+        serial.writeLine("(AT+pubnubsender?channel=" + myChannel + "&message=" + message + "&value=" + value + ")");
+    }
+
+    //%subcategory=Channel
+    //%blockId=wifi_ext_board_on_wifi_sent
+    //%block="On Wifi message sent"
+    //% weight=13 draggableParameters=reporter group="Advanced"
+
+    export function on_wifi_sender_sent(handler: (Status: string, Error_code: string) => void): void {
+        Wifi_sender = handler;
+    }
+
+    //%subcategory=Channel
+    //%blockId=wifi_ext_board_on_wifi_channel_create
+    //%block="On WiFi channel joined" group="Receiver"
+    //% weight=19 draggableParameters=reporter group="Advanced"
+
+    export function on_wifi_create_channel(handler: (Channel: string, Error_code: string) => void): void {
+        Wifi_Remote_create = handler;
     }
 
 }
