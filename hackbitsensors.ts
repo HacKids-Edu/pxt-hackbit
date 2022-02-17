@@ -300,14 +300,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function collisionSensor(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
+    export function collisionSensor(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -319,14 +313,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function WaterState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 1) {
-            return false
-        }
-        else {
-            return true
-        }
+    export function WaterState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -338,14 +326,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function MagneticSwitchState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullDown)
-        if (pins.digitalReadPin(pin) == 1) {
-            return true
-        }
-        else {
-            return false
-        }
+    export function MagneticSwitchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -357,14 +339,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function HallState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
+    export function HallState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -376,14 +352,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function CrashButton(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
+    export function CrashButton(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -395,14 +365,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function FlameState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return true
-        }
-        else {
-            return false
-        }
+    export function FlameState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -414,14 +378,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function TouchState(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return false
-        }
-        else {
-            return true
-        }
+    export function TouchState(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
@@ -433,14 +391,8 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function VibrationRead(pin: DigitalPin): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
-        if (pins.digitalReadPin(pin) == 0) {
-            return false
-        }
-        else {
-            return true
-        }
+    export function VibrationRead(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
 
     /**
