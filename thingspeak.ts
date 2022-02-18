@@ -8,6 +8,48 @@ namespace ESP8266ThingSpeak {
     let thingspeak_connected: boolean = false
     let last_upload_successful: boolean = false
 
+// ---- MQTT
+    enum Cmd {
+        None,
+        ConnectWifi,
+        ConnectThingSpeak,
+        ConnectMqtt,
+    }
+
+    export enum SchemeList {
+        //% block="TCP"
+        TCP = 1,
+        //% block="TLS"
+        TLS = 2
+    }
+
+    export enum QosList {
+        //% block="0"
+        Qos0 = 0,
+        //% block="1"
+        Qos1,
+        //% block="2"
+        Qos2
+    }
+
+    const EspEventSource = 3000
+
+    const EspEventValue = {
+        None: Cmd.None,
+        ConnectWifi: Cmd.ConnectWifi,
+        ConnectThingSpeak: Cmd.ConnectThingSpeak,
+        ConnectMqtt: Cmd.ConnectMqtt,
+        PostIFTTT: 255
+    }
+
+    let mqtthost_def = "HACKIDS"
+    let currentCmd: Cmd = Cmd.None
+    const mqttSubscribeHandlers: { [topic: string]: (message: string) => void } = {}
+    const mqttSubscribeQos: { [topic: string]: number } = {}
+    let mqttBrokerConnected: boolean = false
+// ---- MQTT
+
+
     // ------- WiFi -------
 
     /**
@@ -211,5 +253,82 @@ namespace ESP8266ThingSpeak {
             if (result == 1) break
         }
     }
+    // ------- MQTT -------
+    /**
+     * Set  MQTT client
+     */
+    //% blockId=initMQTT block="Set MQTT client config|scheme: %scheme clientID: %clientID username: %username password: %password path: %path"
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function setMQTT(scheme: SchemeList, clientID: string, username: string, password: string, path: string): void {
+        sendAT(`AT+MQTTUSERCFG=0,${scheme},"${clientID}","${username}","${password}",0,0,"${path}"`, 1000)
+    }
+
+    /**
+     * Connect to MQTT broker
+     */
+    //% blockId=connectMQTT block="connect MQTT broker host: %host port: %port reconnect: $reconnect"
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function connectMQTT(host: string, port: number, reconnect: boolean): void {
+        mqtthost_def = host
+        const rec = reconnect ? 0 : 1
+        currentCmd = Cmd.ConnectMqtt
+        sendAT(`AT+MQTTCONN=0,"${host}",${port},${rec}`)
+        control.waitForEvent(EspEventSource, EspEventValue.ConnectMqtt)
+        Object.keys(mqttSubscribeQos).forEach(topic => {
+            const qos = mqttSubscribeQos[topic]
+            sendAT(`AT+MQTTSUB=0,"${topic}",${qos}`, 1000)
+        })
+    }
+
+    /**
+     * Check if ESP8266 successfully connected to mqtt broker
+     */
+    //% block="MQTT broker is connected"
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function isMqttBrokerConnected() {
+        return mqttBrokerConnected
+    }
+
+    /**
+     * send message
+     */
+    //% blockId=sendMQTT block="publish %msg to Topic:%topic with Qos:%qos"
+    //% msg.defl=hello
+    //% topic.defl=topic/1
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function publishMqttMessage(msg: string, topic: string, qos: QosList): void {
+        sendAT(`AT+MQTTPUB=0,"${topic}","${msg}",${qos},0`, 1000)
+    }
+
+    /**
+     * disconnect MQTT broker
+     */
+    //% blockId=breakMQTT block="Disconnect from broker"
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function breakMQTT(): void {
+        sendAT("AT+MQTTCLEAN=0", 1000)
+    }
+
+    //% block="when Topic: %topic have new $message with Qos: %qos"
+    //% draggableParameters
+    //% topic.defl=topic/1
+    //% subcategory="IoT Service" 
+    //% weight=130 group="MQTT"
+    //% color=#75BBAE
+    export function MqttEvent(topic: string, qos: QosList, handler: (message: string) => void) {
+        mqttSubscribeHandlers[topic] = handler
+        mqttSubscribeQos[topic] = qos
+    }
+
 
 }
