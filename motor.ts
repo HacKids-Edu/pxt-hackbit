@@ -222,7 +222,7 @@ namespace hackbitmotors {
         }
         // 50hz: 20,000 us
         if (pos == enPos.stop) {
-            Servo(index,pos);
+            Servo(index,value);
             //let v_us = (86 * 1800 / 180 + 600); // 0.6 ~ 2.4
             //let vpwm = v_us * 4096 / 20000;
             //setPwm(index + 7, 0, vpwm);
