@@ -272,17 +272,16 @@ namespace hackbitsensor {
     //% pin.fieldOptions.columns=3
     //% group="Digital" 
     //% color=#D84A51 
-    export function detectline(pin: DigitalPin, reverseAction: boolean): boolean {
-        pins.setPull(pin, PinPullMode.PullUp)
+    export function detectline(pin: AnalogPin, reverseAction: boolean): boolean {
         if (reverseAction) {
-            if (pins.digitalReadPin(pin) == 1) {
+            if (pins.analogReadPin(pin) < 505) {
                 return false
             }
             else {
                 return true
             }
         } else {
-            if (pins.digitalReadPin(pin) == 1) {
+            if (pins.analogReadPin(pin) < 505) {
                 return true
             }
             else {
