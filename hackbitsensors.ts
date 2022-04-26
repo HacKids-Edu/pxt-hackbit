@@ -32,7 +32,7 @@ namespace hackbitsensor {
         0x7C, 0x84, 0x7D, 0x03, 0x7E, 0x01
     ];
     /////////////////////////color/////////////////////////
-    const APDS9960_ADDR = 0x39
+    const APDS9960_ADDR = 0x41
     const APDS9960_ENABLE = 0x80
     const APDS9960_ATIME = 0x81
     const APDS9960_CONTROL = 0x8F
